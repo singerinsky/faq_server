@@ -6,7 +6,7 @@ cmake_policy(SET CMP0015 OLD)
 set(libname "ubuntu")
 #set out put path
 
-SET(EXECUTABLE_OUTPUT_PATH ../)
+SET(EXECUTABLE_OUTPUT_PATH ../../game_exe)
 
 
 PROJECT (gate_server)
