@@ -32,8 +32,15 @@ struct timeval lasttime;
 
 int event_is_persistent;
 
-static void
-timeout_cb(evutil_socket_t fd, short event, void *arg)
+class static_class 
+{
+    public:
+        static void timeout_cb(evutil_socket_t fd,short event,void *arg);
+
+};
+
+void
+static_class::timeout_cb(evutil_socket_t fd, short event, void *arg)
 {
 	struct timeval newtime, difference;
 	struct event *timeout = (struct event*)arg;
@@ -77,7 +84,7 @@ main(int argc, char **argv)
 	base = event_base_new();
 
 	/* Initalize one event */
-	event_assign(&timeout, base, -1, flags, timeout_cb, (void*) &timeout);
+	event_assign(&timeout, base, -1, flags, static_class::timeout_cb, (void*) &timeout);
 
 	evutil_timerclear(&tv);
 	tv.tv_sec = 2;
