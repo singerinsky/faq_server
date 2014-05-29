@@ -8,21 +8,26 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +93 common/socketclient.h
-args common/socketclient.h
-edit common/socketclient.h
+badd +1 common/reactor_core.h
+badd +25 common/singleton.h
+badd +1 common/reactor.h
+badd +36 common/head.h
+badd +185 common/lock.h
+badd +1 ~/faq_server/common/../include/tinyxml.h
+args common/reactor_core.h
+edit common/head.h
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:l = 93 - ((37 * winheight(0) + 19) / 38)
+let s:l = 36 - ((33 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-93
-normal! 0
+36
+normal! 025|
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
