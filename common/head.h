@@ -22,6 +22,7 @@
 #include <netinet/tcp.h>
 #include <sys/prctl.h>
 #include <cstddef>
+#include <cstdlib>
 #include <stdint.h>
 #include <stdarg.h>
 #include <sys/param.h>
@@ -40,7 +41,7 @@
 #include <event2/listener.h>
 #include <event2/util.h>
 #include <event2/event.h>
-
+using namespace std;
 //local
 
 #endif

@@ -1,6 +1,6 @@
 #ifndef _TEMPLATE_SINGLETON_H_
 #define _TEMPLATE_SINGLETON_H_
-
+#include <cstdlib>
 template<class T>
 class Singleton
 {
@@ -8,6 +8,7 @@ class Singleton
     protected:
         Singleton(){}
         ~Singleton(){}
+    public:
         static T* GetInstance()
         {
             if(_instance == NULL)
