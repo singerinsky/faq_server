@@ -2,6 +2,8 @@
 #include "net_util.h"
 #include "listener.h"
 
+template<> 
+ReactorCore* Singleton<ReactorCore>::_instance = 0;
 
 void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data)
 {

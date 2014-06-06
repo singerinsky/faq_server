@@ -14,12 +14,13 @@ PROJECT (gate_server)
 MESSAGE("Building ${CMAKE_CXX_FLAGS_DEBUG}")
 
 
-INCLUDE_DIRECTORIES(../../include)
-AUX_SOURCE_DIRECTORY(../ DIR_SRCS)
+INCLUDE_DIRECTORIES(../include)
+INCLUDE_DIRECTORIES(../common)
+AUX_SOURCE_DIRECTORY(./ DIR_SRCS)
+LINK_DIRECTORIES(../game_lib)
 LINK_DIRECTORIES(/usr/local/lib)
-LINK_DIRECTORIES(../../lib)
 
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 ADD_EXECUTABLE(gate_server ${DIR_SRCS})
-TARGET_LINK_LIBRARIES(gate_server libevent.a gflags glog)
+TARGET_LINK_LIBRARIES(gate_server gflags glog common event )
 

@@ -8,21 +8,20 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +13 common/singleton.h
-badd +4 common/reactor.h
-args common/singleton.h
-edit common/singleton.h
+badd +0 common/server_application.j
+args common/server_application.j
+edit common/server_application.j
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:l = 13 - ((12 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
+1
 normal! 0
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

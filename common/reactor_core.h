@@ -2,7 +2,7 @@
 #include "head.h"
 
 class socketlistener;
-static void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data);
+void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data);
 
 class ReactorCore:public Singleton<ReactorCore>
 {
@@ -21,3 +21,4 @@ class ReactorCore:public Singleton<ReactorCore>
         std::vector<evconnlistener*> _all_listener; 
 
 };
+
