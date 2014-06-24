@@ -15,8 +15,6 @@ gate_application::~gate_application()
 bool gate_application::init()
 {
     LOG(INFO)<<"init gate_application...";
-    client_service_ = new client_service("127.0.0.1",9999);
-    add_service(client_service_);
     return true;
 }
 
@@ -33,6 +31,9 @@ int main(int argc,char** argv)
 	   
     gate_application app;
     app.init();
+    client_service* cs = new client_service("127.0.0.1",9999);
+    app.add_service(cs);
+
     app.start_service();
     return 0;
 }
