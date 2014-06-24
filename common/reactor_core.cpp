@@ -1,6 +1,6 @@
 #include "reactor_core.h"
 #include "net_util.h"
-#include "listener.h"
+#include "service.h"
 
 template<> 
 ReactorCore* Singleton<ReactorCore>::_instance = 0;
@@ -8,7 +8,7 @@ ReactorCore* Singleton<ReactorCore>::_instance = 0;
 void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data)
 {
     struct bufferevent* bev;
-    socketlistenr* ls = (socketlistenr*)user_data; 
+    service* ls = (service*)user_data; 
     bev = bufferevent_socket_new(ReactorCore::GetInstance()->GetEventBase(), fd, BEV_OPT_CLOSE_ON_FREE);
     if(!bev)
     {
@@ -28,7 +28,7 @@ void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struc
 bool ReactorCore::init()
 {
     _base = event_base_new(); 
-    if(_base)
+    if(_base == NULL)
     {
         LOG(ERROR)<<"init event base failed"; 
         return false;
@@ -36,7 +36,7 @@ bool ReactorCore::init()
     return true;
 }
 
-int ReactorCore::AddListenerEvent(std::string ip,int port,socketlistener* ls)
+int ReactorCore::add_listener_event(std::string ip,int port,service* ls)
 {
     sockaddr_in addr_in;
     int rst = init_sa_in(&addr_in, ip.c_str(),port);

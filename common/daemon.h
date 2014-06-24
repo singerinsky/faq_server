@@ -3,7 +3,7 @@
 
 #include "head.h"
 
-int init_daemon(void)
+static int init_daemon(void)
 {
   pid_t pid;
   /* parent exits , child continues */

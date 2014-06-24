@@ -1,7 +1,7 @@
 #include "singleton.h"
 #include "head.h"
 
-class socketlistener;
+class service;
 void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data);
 
 class ReactorCore:public Singleton<ReactorCore>
@@ -12,7 +12,7 @@ class ReactorCore:public Singleton<ReactorCore>
         bool init();
         event_base* GetEventBase(){return _base;} 
         void        AddEvent(){}
-        int         AddListenerEvent(string ip,int port,socketlistener* ls);
+        int         add_listener_event(string ip,int port,service* ls);
         void        RemoveEvent(){}
         void        Start();
 

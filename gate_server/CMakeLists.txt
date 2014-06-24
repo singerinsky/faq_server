@@ -19,8 +19,9 @@ INCLUDE_DIRECTORIES(../common)
 AUX_SOURCE_DIRECTORY(./ DIR_SRCS)
 LINK_DIRECTORIES(../game_lib)
 LINK_DIRECTORIES(/usr/local/lib)
+LINK_DIRECTORIES(/usr/lib)
 
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 ADD_EXECUTABLE(gate_server ${DIR_SRCS})
-TARGET_LINK_LIBRARIES(gate_server gflags glog common event )
+TARGET_LINK_LIBRARIES(gate_server gflags glog common event)
 

@@ -3,6 +3,7 @@
 #include "head.h"
 #include "server_application.h" 
 
+class client_service;
 class gate_application: public server_appliaction
 {
     public:
@@ -10,6 +11,7 @@ class gate_application: public server_appliaction
         ~gate_application();
         virtual bool init();
     private:
+        client_service* client_service_;
         
 };
 
