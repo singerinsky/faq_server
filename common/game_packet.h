@@ -4,7 +4,7 @@
 #include <sstream>
 #include <exception>
 #include "packet.h"
-#include "../common/aliased_buf.h"
+#include "aliased_buf.h"
 /*
 typedef unsigned __int8 uint8_t;
 typedef unsigned __int16 uint16_t;
