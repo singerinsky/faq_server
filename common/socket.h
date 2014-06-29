@@ -23,8 +23,10 @@ class socket_client
         virtual ~socket_client();
         int connect_to(const char*,int);
         int send_msg(const char* buffer,int size);
-        int get_packet_info(const char* buffer,int size);
+        int check_packet_info(packet_info* packet,evbuffer* read_buffer);
         virtual int process_msg(packet* msg_packet)=0;
+    private:
+        void init_cb();
 
     public:
         int on_read(bufferevent* bev);
