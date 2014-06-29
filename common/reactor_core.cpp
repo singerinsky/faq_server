@@ -59,3 +59,14 @@ void ReactorCore::Start()
 {
     event_base_dispatch(_base);
 }
+
+bufferevent* ReactorCore::GetNewSocketEvent()
+{
+    bufferevent* bev = bufferevent_socket_new(_base,-1,BEV_OPT_CLOSE_ON_FREE);
+    if(bev == NULL)
+    {
+        LOG(ERROR)<<"create new socket error!"; 
+        return NULL;
+    }
+    return bev;
+}

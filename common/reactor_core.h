@@ -15,6 +15,7 @@ class ReactorCore:public Singleton<ReactorCore>
         int         add_listener_event(string ip,int port,service* ls);
         void        RemoveEvent(){}
         void        Start();
+        bufferevent* GetNewSocketEvent();
 
     private:
         event_base* _base;
