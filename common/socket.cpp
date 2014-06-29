@@ -1,5 +1,5 @@
 #include "socket.h"
-#include "head.h"
+#include "net_util.h"
 
 socket_client::~socket_client()
 {
@@ -32,7 +32,7 @@ int socket_client::connect_to(const char* host_name,int port)
  
     if(bufferevent_socket_connect(_bev,(struct sockaddr*)&addr_in,sizeof(addr_in)) < 0 )
     {
-        buffereven_free(_bev);
+        bufferevent_free(_bev);
         LOG(ERROR)<<"connect failed";
         return -2;
     }
@@ -41,10 +41,16 @@ int socket_client::connect_to(const char* host_name,int port)
 //TODO
 int socket_client::on_read(bufferevent* ev)
 {
+    char buf[1024];
+    evbuffer* input = bufferevent_get_input(ev); 
+    int n = 0;
+    while ((n = evbuffer_remove(input, buf, sizeof(buf))) > 0) {
+        fwrite(buf, 1, n, stdout);
+    }
     return 1;
 }
 
-int socket_client::on_wirte(bufferevent* ev)
+int socket_client::on_write(bufferevent* ev)
 {
     return 1;
 }
