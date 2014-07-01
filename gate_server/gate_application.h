@@ -12,7 +12,6 @@ class gate_application: public server_appliaction
         virtual bool init();
     private:
         client_service* client_service_;
-        
 };
 
 
