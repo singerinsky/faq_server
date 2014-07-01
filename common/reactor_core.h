@@ -1,3 +1,5 @@
+#ifndef _REATOR_CORE_H_
+#define _REATOR_CORE_H_
 #include "singleton.h"
 #include "head.h"
 
@@ -23,3 +25,4 @@ class ReactorCore:public Singleton<ReactorCore>
 
 };
 
+#endif

@@ -8,7 +8,7 @@ class service
         {
         }
         virtual ~service(){}
-        virtual int on_accept(struct bufferevent* event,evutil_socket_t fd) = 0;
+        virtual int on_accept(struct bufferevent* event,evutil_socket_t fd,struct sockaddr_in* sa) = 0;
         string  get_service_ip()
         {
             return _ip; 

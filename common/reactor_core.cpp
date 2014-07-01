@@ -16,7 +16,7 @@ void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struc
         event_base_loopbreak(ReactorCore::GetInstance()->GetEventBase());
         return;
     }
-    int rst = ls->on_accept(bev,fd);
+    int rst = ls->on_accept(bev,fd,(sockaddr_in*)sa);
     if(rst < 0 )
     {
         LOG(ERROR)<<"accept error ,free bev"; 

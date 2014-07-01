@@ -22,5 +22,6 @@ bool server_appliaction::start_service()
 void server_appliaction::add_service(service *pservice)
 {
     _reactor->add_listener_event(pservice->get_service_ip(),pservice->get_service_port(),pservice);
+    LOG(INFO)<<"add service listen in "<<pservice->get_service_ip() <<":"<<pservice->get_service_port();
 }
 

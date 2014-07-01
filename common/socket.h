@@ -9,10 +9,10 @@ void common_write_cb(struct bufferevent* ev,void *user_data);
 class socket_client
 {
     public:
-        socket_client(bufferevent* bev,int socket,sockaddr_in& addr):_bev(bev),_socket(socket),_sock_addr(addr)
+        socket_client(bufferevent* bev,evutil_socket_t socket,sockaddr_in* addr):_bev(bev),_socket(socket)
         {
-           _ip = inet_ntoa(addr.sin_addr);     
-           _port = addr.sin_port;
+           _ip = inet_ntoa(addr->sin_addr);     
+           _port = addr->sin_port;
         }
 
         socket_client()
@@ -24,7 +24,7 @@ class socket_client
         int connect_to(const char*,int);
         int send_msg(const char* buffer,int size);
         int check_packet_info(packet_info* packet,evbuffer* read_buffer);
-        virtual int process_msg(packet* msg_packet)=0;
+        virtual int process_msg(packet_info* msg_packet)=0;
     private:
         void init_cb();
 
@@ -36,7 +36,6 @@ class socket_client
     private:
         bufferevent* _bev;
         int          _socket;
-        sockaddr_in  _sock_addr;
     protected:
         std::string  _ip;
         int          _port;
