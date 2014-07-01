@@ -1,6 +1,7 @@
 #include "gate_application.h"
 #include "client_service.h"
 #include "daemon.h"
+#include "test.h"
 
 gate_application::gate_application()
 {
@@ -21,6 +22,8 @@ bool gate_application::init()
 DEFINE_bool(daemon,true,"if start not daemon");
 int main(int argc,char** argv)
 {
+    test* te = new test(); 
+    te->do_message_action();
  	google::ParseCommandLineFlags(&argc,&argv,true);		
 	google::InitGoogleLogging(argv[0]);
 	if(FLAGS_daemon){
