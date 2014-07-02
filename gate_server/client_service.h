@@ -5,7 +5,10 @@ class client_service:public service
 {
     public:
         client_service(const char* ip,int port):service(ip,port)
-    {}
+    {
+
+
+    }
         ~client_service(){};
 
     public:
