@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/gl/faq_server/message
 CMakeFiles/message_lib.dir/all:
 	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/depend
 	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles 
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles  1 2
 	@echo "Built target message_lib"
 .PHONY : CMakeFiles/message_lib.dir/all
 
@@ -69,7 +69,7 @@ all: CMakeFiles/message_lib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/message_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl/faq_server/message/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl/faq_server/message/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/message_lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl/faq_server/message/CMakeFiles 0
 .PHONY : CMakeFiles/message_lib.dir/rule

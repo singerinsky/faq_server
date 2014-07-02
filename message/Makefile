@@ -111,6 +111,36 @@ message_lib/fast:
 	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/build
 .PHONY : message_lib/fast
 
+# target to build an object file
+message.pb.o:
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.o
+.PHONY : message.pb.o
+
+# target to preprocess a source file
+message.pb.i:
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.i
+.PHONY : message.pb.i
+
+# target to generate assembly for a file
+message.pb.s:
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.s
+.PHONY : message.pb.s
+
+# target to build an object file
+role_info.pb.o:
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/role_info.pb.o
+.PHONY : role_info.pb.o
+
+# target to preprocess a source file
+role_info.pb.i:
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/role_info.pb.i
+.PHONY : role_info.pb.i
+
+# target to generate assembly for a file
+role_info.pb.s:
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/role_info.pb.s
+.PHONY : role_info.pb.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -120,6 +150,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... message_lib"
 	@echo "... rebuild_cache"
+	@echo "... message.pb.o"
+	@echo "... message.pb.i"
+	@echo "... message.pb.s"
+	@echo "... role_info.pb.o"
+	@echo "... role_info.pb.i"
+	@echo "... role_info.pb.s"
 .PHONY : help
 
 

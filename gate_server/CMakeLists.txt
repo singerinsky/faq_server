@@ -23,5 +23,5 @@ LINK_DIRECTORIES(/usr/lib)
 
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 ADD_EXECUTABLE(gate_server ${DIR_SRCS})
-TARGET_LINK_LIBRARIES(gate_server gflags glog common event rt)
+TARGET_LINK_LIBRARIES(gate_server gflags glog common event rt message_lib)
 

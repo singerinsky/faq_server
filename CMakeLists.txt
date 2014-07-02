@@ -14,6 +14,7 @@ SET(CMAKE_BUILD_TYPE DEBUG)
 #SET(CMAKE_BUILD_TYPE RELEASE)
 
 MESSAGE(${PROJECT_SOURCE_DIR})
+ADD_SUBDIRECTORY(message)
 ADD_SUBDIRECTORY(common)
 ADD_SUBDIRECTORY(gate_server)                             
 ADD_SUBDIRECTORY(unit_test)                             
