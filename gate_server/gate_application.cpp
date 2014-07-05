@@ -2,11 +2,6 @@
 #include "client_service.h"
 #include "daemon.h"
 
-gate_application::gate_application()
-{
-
-}
-
 gate_application::~gate_application()
 {
 
@@ -18,7 +13,8 @@ bool gate_application::init()
     return true;
 }
 
-DEFINE_bool(daemon,true,"if start not daemon");
+DEFINE_bool(daemon,false,"if start not daemon");
+DEFINE_bool(logtostderr,true,"if log to std");
 int main(int argc,char** argv)
 {
 //    test* te = new test(); 
@@ -31,7 +27,7 @@ int main(int argc,char** argv)
 		}
 	}
 	   
-    gate_application app;
+    gate_application app("gate");
     app.init();
     client_service* cs = new client_service("127.0.0.1",9999);
     app.add_service(cs);

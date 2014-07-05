@@ -46,7 +46,7 @@ int ReactorCore::add_listener_event(std::string ip,int port,service* ls)
         return -2;
     }
     evconnlistener *new_ev_ls = evconnlistener_new_bind(_base,common_listener_cb,(void*)ls, LEV_OPT_REUSEABLE|LEV_OPT_CLOSE_ON_FREE, -1,(struct sockaddr*)&addr_in,sizeof(addr_in));
-    if(!ls)
+    if(!new_ev_ls)
     {
         LOG(ERROR)<<"can't create listener on"<<ip.c_str()<<":"<<port; 
         return -1;

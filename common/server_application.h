@@ -7,12 +7,13 @@ class service;
 class server_appliaction
 {
     public:
-        server_appliaction();
+        server_appliaction(std::string name);
         virtual ~server_appliaction();
         bool start_service();
         virtual bool init()=0;
         void add_service(service* pservice);
     private:
         ReactorCore* _reactor;
+        std::string _service_name;
 };
 #endif

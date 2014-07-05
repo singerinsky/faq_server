@@ -1,4 +1,3 @@
-import "role_info.proto";
 
 enum MSG_ACTION_TYPE
 {
@@ -17,17 +16,6 @@ enum MessageType
     MSG_DB_COMMON_UPDATE    = 5;//common update
 }
 
-message SoccerPlayerInfoRequest
-{
-    required int32 player_id = 1;
-}
-
-message SoccerPlayerInfoResponse
-{
-    required int32 player_id = 1;
-    required string player_name = 2;
-    required int32 age = 3;
-}
 
 message ClientHeartBeatRequest
 {
@@ -39,33 +27,3 @@ message ClientHeartBeatResponse
     required int32 server_time = 1;
 }
 
-message ClientLoginRequest
-{
-    required int32 player_id = 1;
-    required string player_pwd = 2;
-    required string md5_code = 3;
-}
-
-message ClientLoginResponse
-{
-    required int32 ret = 1;
-    optional int32 player_id = 2;
-    optional string player_name = 3;
-    optional db_role_info role_data = 4;
-}
-
-message GateServerRegisterRequest
-{
-    required int32 server_index = 1;
-}
-
-message GateServerRegisterResponse
-{
-    required int32 ret = 1;
-}
-
-message DataCommonUpdateNtf
-{
-    required int32  key = 1;
-    required string sql_str = 2;
-}

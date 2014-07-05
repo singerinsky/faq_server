@@ -7,7 +7,8 @@ class client_service;
 class gate_application: public server_appliaction
 {
     public:
-        gate_application();
+        gate_application(std::string name):server_appliaction(name)
+        {}
         ~gate_application();
         virtual bool init();
     private:

@@ -13,7 +13,7 @@ void actions_mananger::register_action(int action_id,action_handler* p_action)
         LOG(ERROR)<<"register same action "<<action_id; 
         exit(-1); 
     }
-
+    LOG(INFO)<<"register action "<<action_id;
     _actions[action_id] = p_action;
 }
 

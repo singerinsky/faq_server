@@ -29,10 +29,10 @@ class template_message:public action_handler
             //TODO decode from packet_info
             message_packet t; 
             if(t.decode(info->data,info->size) != info->size)return -1;
-            process_message(t);
+            process_message(&(t.body));
             return 1;
         }
-        virtual int process_message(message_packet &t) = 0;
+        virtual int process_message(RequestBody *body) = 0;
 
 };
 

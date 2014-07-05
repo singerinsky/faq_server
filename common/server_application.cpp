@@ -2,8 +2,9 @@
 #include "daemon.h"
 #include "service.h"
 
-server_appliaction::server_appliaction()
+server_appliaction::server_appliaction(std::string name)
 {
+    _service_name = name;
     _reactor = Singleton<ReactorCore>::GetInstance();
     _reactor->init(); 
 }
@@ -21,7 +22,10 @@ bool server_appliaction::start_service()
 
 void server_appliaction::add_service(service *pservice)
 {
-    _reactor->add_listener_event(pservice->get_service_ip(),pservice->get_service_port(),pservice);
-    LOG(INFO)<<"add service listen in "<<pservice->get_service_ip() <<":"<<pservice->get_service_port();
+    if(_reactor->add_listener_event(pservice->get_service_ip(),pservice->get_service_port(),pservice) < 0)
+    {
+        LOG(INFO)<<"add server " <<_service_name.c_str() << "not success"; 
+    }
+    LOG(INFO)<<"add service"<<_service_name.c_str()<<" listen in "<<pservice->get_service_ip() <<":"<<pservice->get_service_port();
 }
 
