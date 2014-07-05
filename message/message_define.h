@@ -29,8 +29,8 @@ enum
 //typedef cs_packet<CS_MSG_SOCCER_PLAYER_REQ,SoccerPlayerInfoRequest> cs_soccer_player_request;
 //typedef cs_packet<CS_MSG_SOCCER_PLAYER_REP,SoccerPlayerInfoResponse> cs_soccer_player_response;
 
-typedef cs_packet<CS_MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_client_hb_request;
-typedef cs_packet<CS_MSG_HEART_BEAT_REP,ClientHeartBeatResponse> cs_client_hb_response;
+//typedef cs_packet<CS_MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_client_hb_request;
+//typedef cs_packet<CS_MSG_HEART_BEAT_REP,ClientHeartBeatResponse> cs_client_hb_response;
 /*
 typedef cs_packet<CS_MSG_CLIENT_LOGIN_REQ,ClientLoginRequest> cs_client_login_request;
 typedef cs_packet<CS_MSG_CLIENT_LOGIN_REP,ClientLoginResponse> cs_client_login_response;
