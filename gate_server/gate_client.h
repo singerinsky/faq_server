@@ -11,12 +11,13 @@ class gate_client: public socket_client
         {
             LOG(INFO)<<"new socket connect"; 
         }
-        ~gate_client(){};
+        virtual ~gate_client(){
+        };
 
 
     public:
         int process_msg(packet_info* info);
-        int on_error(bufferevent* ev);
+        void on_error(bufferevent* ev);
 
 };
 

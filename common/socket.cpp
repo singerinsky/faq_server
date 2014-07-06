@@ -85,6 +85,7 @@ int socket_client::on_read(bufferevent* ev)
         return 0;
    
     process_msg(&info);
+    delete info.data;
 
     /*
     int n = 0;
@@ -122,6 +123,7 @@ void common_read_cb(struct bufferevent* ev,void *user_data)
 void common_event_cb(struct bufferevent* ev,short int,void *user_data)
 {
     LOG(INFO)<<"lost connection";
+    ((socket_client*)user_data)->on_error(ev);
 }
 void common_write_cb(struct bufferevent* ev,void *user_data)
 {

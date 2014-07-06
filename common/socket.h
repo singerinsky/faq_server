@@ -4,6 +4,8 @@
 #include "head.h"
 #include "reactor_core.h"
 
+typedef int SESSION_ID;
+
 void common_read_cb(struct bufferevent* ev,void *user_data);
 void common_event_cb(struct bufferevent* ev,short int,void *user_data);
 void common_write_cb(struct bufferevent* ev,void *user_data);
@@ -25,19 +27,26 @@ class socket_client
         int connect_to(const char*,int);
         int send_msg(const char* buffer,int size);
         int check_packet_info(packet_info* packet,evbuffer* read_buffer);
-        virtual int process_msg(packet_info* msg_packet)=0;
-    private:
     public:
+        int  get_socket_fd(){return _socket;}
         void init_cb();
+        SESSION_ID get_session_id() 
+        {
+            return _session_id; 
+        }
 
     public:
         int on_read(bufferevent* bev);
         int on_write(bufferevent* bev);
-        virtual int on_error(bufferevent* bev) = 0;
+
+    public:
+        virtual void on_error(bufferevent* bev) = 0;
+        virtual int process_msg(packet_info* msg_packet)=0;
 
     private:
         bufferevent* _bev;
         int          _socket;
+        SESSION_ID   _session_id;
     protected:
         std::string  _ip;
         int          _port;

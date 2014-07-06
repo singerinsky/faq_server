@@ -10,8 +10,8 @@ int gate_client::process_msg(packet_info* info)
 }
 
 
-int gate_client::on_error(bufferevent* ev)
+void gate_client::on_error(bufferevent* ev)
 {
-    LOG(INFO)<<"gate client error";
-    return 1;
+    LOG(INFO)<<"gate client error"<<get_socket_fd();
+    delete this;
 }
