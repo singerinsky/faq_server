@@ -8,7 +8,9 @@ class gate_client: public socket_client
 //bufferevent* bev,int socket,sockaddr_in& addr
         gate_client(bufferevent* bev,evutil_socket_t socket,sockaddr_in* addr
 ):socket_client(bev,socket,addr)
-        {}
+        {
+            LOG(INFO)<<"new socket connect"; 
+        }
         ~gate_client(){};
 
 

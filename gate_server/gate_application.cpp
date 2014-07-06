@@ -14,7 +14,6 @@ bool gate_application::init()
 }
 
 DEFINE_bool(daemon,false,"if start not daemon");
-DEFINE_bool(logtostderr,true,"if log to std");
 int main(int argc,char** argv)
 {
 //    test* te = new test(); 
@@ -26,7 +25,8 @@ int main(int argc,char** argv)
 			VLOG(0)<<"ERROR OF DAEMON";
 		}
 	}
-	   
+    FLAGS_logtostderr = !FLAGS_daemon;
+
     gate_application app("gate");
     app.init();
     client_service* cs = new client_service("127.0.0.1",9999);

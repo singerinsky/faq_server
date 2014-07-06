@@ -107,5 +107,5 @@ int socket_client::send_msg(const char* buffer,int size)
 
 void socket_client::init_cb()
 {
-
+    bufferevent_setcb(_bev,common_read_cb,common_write_cb,common_event_cb,NULL);
 }

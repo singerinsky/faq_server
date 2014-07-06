@@ -5,6 +5,7 @@
 #include "reactor_core.h"
 
 void common_read_cb(struct bufferevent* ev,void *user_data);
+void common_event_cb(struct bufferevent* ev,void *user_data);
 void common_write_cb(struct bufferevent* ev,void *user_data);
 class socket_client
 {
