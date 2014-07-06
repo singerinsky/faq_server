@@ -1,9 +1,11 @@
 #include "gate_client.h"
+#include "actions_mananger.h"
 
 
 int gate_client::process_msg(packet_info* info)
 {
     LOG(INFO)<<"Recive message type "<<info->type;
+    Singleton<actions_mananger>::GetInstance()->do_action(info->type,info);
     return 1;
 }
 

@@ -16,6 +16,7 @@ MESSAGE("Building ${CMAKE_CXX_FLAGS_DEBUG}")
 
 INCLUDE_DIRECTORIES(../include)
 INCLUDE_DIRECTORIES(../common)
+INCLUDE_DIRECTORIES(../message)
 AUX_SOURCE_DIRECTORY(./ DIR_SRCS)
 LINK_DIRECTORIES(../game_lib)
 LINK_DIRECTORIES(/usr/local/lib)
@@ -23,5 +24,5 @@ LINK_DIRECTORIES(/usr/lib)
 
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 ADD_EXECUTABLE(unit_test ${DIR_SRCS})
-TARGET_LINK_LIBRARIES(unit_test gflags glog common event rt)
+TARGET_LINK_LIBRARIES(unit_test gflags glog common event rt message_lib protobuf)
 

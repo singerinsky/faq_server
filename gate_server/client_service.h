@@ -17,6 +17,7 @@ class client_service:public service
         {
             //bufferevent* bev,int socket,sockaddr_in& addr
             gate_client* client = new gate_client(event,fd,sa);
+            client->init_cb();
             LOG(INFO)<<"trigger client accept in fd "<<fd; 
             return 1;
         }

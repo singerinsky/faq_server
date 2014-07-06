@@ -67,6 +67,7 @@ int socket_client::on_read(bufferevent* ev)
     evbuffer* input = bufferevent_get_input(ev); 
     if(evbuffer_get_length(input)< sizeof(cs_head))
     {
+        LOG(INFO)<<"get uncomplete msg len"<<evbuffer_get_length(input);
         return 0; 
     }
     
@@ -107,5 +108,23 @@ int socket_client::send_msg(const char* buffer,int size)
 
 void socket_client::init_cb()
 {
-    bufferevent_setcb(_bev,common_read_cb,common_write_cb,common_event_cb,NULL);
+    bufferevent_setcb(_bev,common_read_cb,/*common_write_cb*/NULL,common_event_cb,this);
+    bufferevent_enable(_bev,EV_READ);
+    bufferevent_enable(_bev,EV_PERSIST);
+}
+
+void common_read_cb(struct bufferevent* ev,void *user_data)
+{
+    LOG(INFO)<<"get data";
+    ((socket_client*)user_data)->on_read(ev);
+}
+
+void common_event_cb(struct bufferevent* ev,short int,void *user_data)
+{
+    LOG(INFO)<<"lost connection";
+}
+void common_write_cb(struct bufferevent* ev,void *user_data)
+{
+
+
 }
