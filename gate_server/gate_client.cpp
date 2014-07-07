@@ -15,3 +15,10 @@ void gate_client::on_error(bufferevent* ev)
     LOG(INFO)<<"gate client error"<<get_socket_fd();
     delete this;
 }
+
+
+void gate_client::init_timer()
+{
+   _m_timer.set_owner(this); 
+   _m_timer.set_expire(2000); 
+}

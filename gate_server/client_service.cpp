@@ -13,6 +13,7 @@ int client_service::on_accept(struct bufferevent* event,evutil_socket_t fd,struc
     client->init_cb();
     LOG(INFO)<<"trigger client accept in fd "<<fd; 
     Singleton<client_manager>::GetInstance()->add_session(fd,client);
+    client->init_timer();
     return 1;
 }
 

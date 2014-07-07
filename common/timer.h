@@ -22,7 +22,12 @@ class template_timer:public base_timer
         
         }
 
-        ~template_timer(){}
+        ~template_timer(){
+            if(m_ev != NULL)
+            {
+                evtimer_del(m_ev);
+            }
+        }
 
         void set_owner(T* owner)
         {
@@ -48,7 +53,7 @@ class template_timer:public base_timer
     protected:
         virtual void on_timeout()
         {
-            m_owner->*callback(); 
+            (m_owner->*callback)(); 
         }
 
     private:
