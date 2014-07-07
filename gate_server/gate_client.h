@@ -21,9 +21,7 @@ class gate_client: public socket_client
     public:
         int process_msg(packet_info* info);
         void on_error(bufferevent* ev);
-        void on_timeout(){
-            LOG(INFO)<<"on time out"; 
-        }
+        void on_timeout();
     private:
         template_timer<gate_client,&gate_client::on_timeout>    _m_timer;
 

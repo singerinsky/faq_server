@@ -30,6 +30,15 @@ class session_manager:public Singleton<session_manager<SessionIdType,SessionType
             return itr->second; 
         }
 
+        void remove_session(SessionIdType key)
+        {
+            auto itr = _session_map.find(key);
+            if(itr == _session_map.end())
+                return;
+            delete itr->second;
+           _session_map.erase(itr);  
+        }
+
     private:
         std::map<SessionIdType,SessionType*>  _session_map;
 };

@@ -2,6 +2,7 @@
 #define _GATE_APPLICATION_H_
 #include "head.h"
 #include "server_application.h" 
+#define SERVER_XML "server.xml"
 
 class client_service;
 class gate_application: public server_appliaction

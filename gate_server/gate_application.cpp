@@ -27,7 +27,21 @@ int main(int argc,char** argv)
 		}
 	}
     FLAGS_logtostderr = !FLAGS_daemon;
+/////////////////////////////////////////////
+    TiXmlDocument doc(SERVER_XML);
+    bool load_rst = doc.LoadFile();
+    if(!load_rst)
+    {
+        LOG(ERROR)<<"load server failed!"; 
+        exit(-1);
+    }
 
+    TiXmlNode* node = doc.FirstChild("server");
+    TiXmlElement* ele = node->ToElement();
+    int id = 0;
+    ele->Attribute("id",&id);
+    LOG(INFO)<<"ID"<<id;
+///////////////////////////////////////////////
     gate_application app("gate");
     app.init();
     client_service* cs = new client_service("127.0.0.1",9999);

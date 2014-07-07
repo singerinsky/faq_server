@@ -48,8 +48,17 @@ class template_timer:public base_timer
                    LOG(ERROR)<<"add timer error"<<ms; 
                }
             }
-        
         }
+
+        void remove_timer()
+        {
+            if(m_ev != NULL)
+            {
+                evtimer_del(m_ev); 
+                m_ev = NULL;
+            }
+        }
+
     protected:
         virtual void on_timeout()
         {
