@@ -8,10 +8,30 @@
 #include "message.pb.h"
 #include "game_packet.h"
 #include "packet.h"
+#include "mysql/mysql.h"
 
 void init_server_log(int argc, char** argv){
 	google::ParseCommandLineFlags(&argc,&argv,true);		
 	google::InitGoogleLogging(argv[0]);
+}
+
+void do_mysql_test()
+{
+    MYSQL* conn;
+    conn = mysql_init(NULL);
+    if(conn ==NULL)
+    {
+        LOG(ERROR)<<"init mysql failed!"; 
+        return;
+    }
+
+    if(mysql_real_connect(conn,"127.0.0.1","root","firefly","faq_server",3306,NULL,CLIENT_FOUND_ROWS) != NULL)
+    {
+        LOG(INFO)<<"DB CONNECTION OK";
+    }
+    LOG(INFO)<<"do mysql test";
+
+
 }
 
 
@@ -20,6 +40,8 @@ typedef cs_packet<CS_MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_client_hb_req
 int main(int argc,char** argv){
 	init_server_log(argc,argv);
 	
+    do_mysql_test();
+    return 1;
 	int port = 1;
 	struct sockaddr_in addr;
 	socklen_t len;
