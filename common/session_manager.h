@@ -2,11 +2,11 @@
 #define _SESSION_MANAGER_H_
 #include "singleton.h"
 
-template<class SessionIdType,classs SessionType>
-class session_manager:public Singleton<session_manager>
+template<class SessionIdType,class SessionType>
+class session_manager:public Singleton<session_manager<SessionIdType,SessionType> >
 {
     public:
-        friend Singleton<session_manager>;
+        friend Singleton<session_manager<SessionIdType,SessionType> >;
 
     public:
         bool add_session(SessionIdType key,SessionType* value)
@@ -31,7 +31,7 @@ class session_manager:public Singleton<session_manager>
         }
 
     private:
-        std::map<SessionIdType,SessionIdType*>  _session_map;
+        std::map<SessionIdType,SessionType*>  _session_map;
 };
 
 #endif

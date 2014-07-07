@@ -1,6 +1,7 @@
 #include "gate_application.h"
 #include "client_service.h"
 #include "daemon.h"
+#include "session_manager.h"
 
 gate_application::~gate_application()
 {
