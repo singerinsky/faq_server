@@ -1,7 +1,9 @@
 #include "db_application.h"
-#include "client_service.h"
+#include "db_service.h"
 #include "daemon.h"
 #include "session_manager.h"
+#include "db_connection_pool.h"
+#include "db_connection_pool.h"
 
 db_application::~db_application()
 {
@@ -44,8 +46,11 @@ int main(int argc,char** argv)
 ///////////////////////////////////////////////
     db_application app("db");
     app.init();
-    client_service* cs = new client_service("127.0.0.1",9999);
+    db_service* cs = new db_service("127.0.0.1",9999);
     app.add_service(cs);
+
+    Singleton<db_pool>::GetInstance()->init(100);
+
 
     app.start_service();
     return 0;
