@@ -9,7 +9,7 @@
 #define CTHREAD_H_
 
 #include <pthread.h>
-#include "../common/head.h"
+#include "head.h"
 
 typedef pthread_t THREAD_HANDLE;
 
@@ -17,19 +17,23 @@ class thread {
 public:
 	thread();
 	virtual ~thread();
-	virtual bool Create();
-	virtual void Run()=0;
-	virtual bool InitInstance();
-	virtual void ExitInstance();
-	inline	THREAD_HANDLE	GetHandle();
+	virtual bool create();
+	virtual void run()=0;
+	virtual bool init_instance();
+	virtual void exit_instance();
+	THREAD_HANDLE	get_handle()
+	{
+		return m_hThread;
+	}
 
-	void OSSleep(int seconds);
+	void os_sleep(timespec);
 
-	static THREAD_HANDLE GetCurrentHandle();
+	static THREAD_HANDLE get_current_handle();
 
-	void ThreadResume(struct timespec *time=NULL);
+	void thread_resume(struct timespec *time=NULL);
 
-	void ThreadSuspend();
+	void thread_suspend();
+
 
 private:
 
@@ -42,8 +46,5 @@ public:
 
 };
 
-inline THREAD_HANDLE thread::GetHandle(){
-	return m_hThread;
-}
 
 #endif /* CTHREAD_H_ */
