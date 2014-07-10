@@ -10,7 +10,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-#include <mysql.h>
+#include "mysql/mysql.h"
 
 
 bool have_escape_char(const char* data,int size) ;
