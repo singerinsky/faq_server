@@ -29,27 +29,12 @@ int main(int argc,char** argv)
 		}
 	}
     FLAGS_logtostderr = !FLAGS_daemon;
-/////////////////////////////////////////////
-    TiXmlDocument doc(SERVER_XML);
-    bool load_rst = doc.LoadFile();
-    if(!load_rst)
-    {
-        LOG(ERROR)<<"load server failed!"; 
-        exit(-1);
-    }
-
-    TiXmlNode* node = doc.FirstChild("server");
-    TiXmlElement* ele = node->ToElement();
-    int id = 0;
-    ele->Attribute("id",&id);
-    LOG(INFO)<<"ID"<<id;
-///////////////////////////////////////////////
     db_application app("db");
     app.init();
     db_service* cs = new db_service("127.0.0.1",9999);
     app.add_service(cs);
 
-    Singleton<db_pool>::GetInstance()->init(100);
+    Singleton<db_pool>::GetInstance()->init(10);
 
 
     app.start_service();

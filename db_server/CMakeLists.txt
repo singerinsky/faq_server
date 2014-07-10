@@ -24,5 +24,5 @@ LINK_DIRECTORIES(/usr/lib)
 
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 ADD_EXECUTABLE(db_server ${DIR_SRCS})
-TARGET_LINK_LIBRARIES(db_server gflags glog protobuf common event rt message_lib mysqlclient)
+TARGET_LINK_LIBRARIES(db_server gflags glog protobuf common event rt message_lib mysqlclient tinyxml)
 
