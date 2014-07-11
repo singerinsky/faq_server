@@ -34,6 +34,9 @@ public:
 
 	void thread_suspend();
 
+    void thread_lock();
+    void thread_unlock();
+
 
 private:
 
