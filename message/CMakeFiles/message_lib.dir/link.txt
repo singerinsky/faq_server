@@ -1,0 +1,2 @@
+/usr/bin/ar cr /home/gl/faq_server/game_lib/libmessage_lib.a  CMakeFiles/message_lib.dir/message.pb.o CMakeFiles/message_lib.dir/db_message.pb.o
+/usr/bin/ranlib /home/gl/faq_server/game_lib/libmessage_lib.a

@@ -1,10 +1,15 @@
 
-enum DB_MESSAGE_DEFINE
+enum DbMessageType
 {
-    DB_MSG_GET_USER_INFO = 0;    
-    DB_MSG_UPDATE_USER_INFO = 1;
+    MSG_DB_WORK_START = 10000;//common update
+    MSG_DB_GET_USER_INFO = 10001;//Get user info
 }
 
 
+message db_get_user_info
+{
+    required int32  user_id = 1;
+    required string user_name = 2;
+}
 
 
