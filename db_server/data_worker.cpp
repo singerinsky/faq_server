@@ -3,8 +3,12 @@
 
 void data_worker::do_job(db_job* event)
 {
-    LOG(INFO)<<"process one job"<<_job_count;
-    _job_count++;
+    _db_conn->exec_format(event->_sql_str.c_str());
+    int row = _db_conn->result_row_count();
+    if(row > 0 )
+    {
+       LOG(INFO)<<"Get data "<<_db_conn->result_row_data(0)[0]; 
+    }
 }
 
 int data_worker::init()

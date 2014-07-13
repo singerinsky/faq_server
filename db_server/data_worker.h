@@ -7,6 +7,7 @@ class db_job
 {
     public:
         int         _seq;
+        int         _operate_type;
         std::string _sql_str;
 };
 
