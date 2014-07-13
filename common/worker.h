@@ -24,7 +24,7 @@ class worker:public thread
             {
                 T* event = pop_job(); 
                 do_job(event); 
-                delete event;
+                //delete event;
             }
 
         }
