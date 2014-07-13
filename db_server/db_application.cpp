@@ -3,7 +3,7 @@
 #include "daemon.h"
 #include "session_manager.h"
 #include "db_connection_pool.h"
-#include "db_connection_pool.h"
+#include "data_worker.h"
 
 db_application::~db_application()
 {
@@ -36,6 +36,21 @@ int main(int argc,char** argv)
 
     Singleton<db_pool>::GetInstance()->init(10);
 
+    ///////////test
+    data_worker* work = new data_worker();
+    work->init();
+    
+    db_job* job = new db_job(); 
+    job->_sql_str = "SELECT * FROM tb_user";
+    work->add_job(job);
+    work->create();
+    for(int i=0;i<10000;i++)
+    {
+        LOG(INFO)<<"add job "<<i;
+        work->add_job(job); 
+    }
+//    db_factory::GetInstance()->init();
+    //////////////end test
 
     app.start_service();
     return 0;

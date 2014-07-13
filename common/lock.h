@@ -10,8 +10,6 @@ class LockBase
         virtual ~LockBase(void){}
         virtual void lock(void) = 0;
         virtual void unlock(void) = 0;
-        virtual void lock_hold()=0;
-        virtual void lock_continue()= 0;
 };
 
 class Locker
@@ -57,8 +55,6 @@ class NullLock : public LockBase
         virtual void lock(void) {}
         virtual void unlock(void) {}
 
-        virtual void lock_hold(){}
-        virtual void lock_continue(){}
 };
 
 class MutexLock : public LockBase
@@ -162,10 +158,6 @@ retry:
 
             pthread_spin_unlock(_lock);
         }
-
-        virtual void lock_hold(){}
-
-        virtual void lock_continue(){}
 
 
     private:

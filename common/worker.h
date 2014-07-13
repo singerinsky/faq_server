@@ -3,13 +3,8 @@
 #include <queue>
 #include "thread.h"
 #include "lock.h"
-class job_event
-{
-    public:
-        virtual void do_job() = 0;
-};
 
-
+template<class T>
 class worker:public thread
 {
 
@@ -17,6 +12,7 @@ class worker:public thread
         worker()
         {
             _list_locker.init(); 
+            _work_flag = true;
         }
         void set_flag(bool value)
         {
@@ -24,28 +20,28 @@ class worker:public thread
         }
         void run()
         {
-           while(_work_flag)
-           {
-                job_event* event = pop_job(); 
+            while(_work_flag)
+            {
+                T* event = pop_job(); 
                 do_job(event); 
-           }
-        
+            }
+
         }
 
-        virtual void do_job(job_event* event)=0;
-        
-        
-        void add_job(job_event* event)
+        virtual void do_job(T* event)=0;
+
+
+        void add_job(T* event)
         {
             _list_locker.lock(); 
-            _job_list.push_back(event);  
+            _job_list.push(event);  
             _list_locker.unlock();
             thread_suspend(); 
         }
 
-        job_event* pop_job()
+        T* pop_job()
         {
-            job_event* event = NULL;
+            T* event = NULL;
             _list_locker.lock();
             if(_job_list.size() == 0)
             {
@@ -53,16 +49,25 @@ class worker:public thread
                 thread_resume(NULL);
                 _list_locker.lock();
             }
-            event = _job_list.pop();
+
+            if(_job_list.size() >0)
+            {
+                event = _job_list.front();
+                _job_list.pop();
+            }
             _list_locker.unlock();
             return event;
-            
+        }
+
+        bool is_working()
+        {
+            return _work_flag; 
         }
 
     private:
-        std::queue<job_event*> _job_list;
-        bool                   _work_flag;
-        MutexLock              _list_locker;
+        std::queue<T*> _job_list;
+        volatile bool  _work_flag;
+        MutexLock      _list_locker;
 };
 
 
