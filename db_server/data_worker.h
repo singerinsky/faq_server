@@ -3,12 +3,22 @@
 #include "worker.h"
 #include "mysql_connection.h"
 
+
 class db_job
 {
     public:
         int         _seq;
         int         _operate_type;
         std::string _sql_str;
+        (void)(*)() _call_back; 
+
+    public:
+        db_job()
+        {
+            _seq = -1; 
+            _operate_type = -1;
+            _client = NULL;
+        }
 };
 
 class data_worker: public worker<db_job>
