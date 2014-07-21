@@ -11,9 +11,40 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include "mysql/mysql.h"
+#include <string>
+using namespace std;
 
 
 bool have_escape_char(const char* data,int size) ;
+class MysqlResultRow
+{
+    public:
+        MysqlResultRow(const char** mysql_data):_data(mysql_data)
+        {
+        
+        }
+
+    public:
+        int get_int(int column)
+        {
+            return atoi(_data[column]); 
+        }
+
+        int64_t get_int64(int column)
+        {
+            return atol(_data[column]); 
+        }  
+
+        std::string get_string(int column)
+        {
+            std::string str;
+            str.assign(_data[column]);  
+            return str;
+        }
+
+    private:
+        const char** _data;
+};
 
 
 class MysqlConnection
@@ -115,9 +146,15 @@ public:
 	    if(m_result == NULL) return NULL ;
 	    mysql_data_seek(m_result,rowno) ;
 	    return (const char**)mysql_fetch_row(m_result) ;
-
 	}
 
+    MysqlResultRow mysql_result_row(int rowno)
+    {
+       if(m_result == NULL) return NULL ;
+	    mysql_data_seek(m_result,rowno) ;
+	    MysqlResultRow result_row((const char**)mysql_fetch_row(m_result)) ;
+        return result_row;
+    }
 
 
 private:

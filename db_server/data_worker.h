@@ -10,7 +10,8 @@ class db_job
         int         _seq;
         int         _operate_type;
         std::string _sql_str;
-        (void)(*)() _call_back; 
+        (void)(*)(MYSQL_RES*) _call_back; 
+        int         _selector_id;
 
     public:
         db_job()
@@ -18,6 +19,8 @@ class db_job
             _seq = -1; 
             _operate_type = -1;
             _client = NULL;
+            _call_back = NULL;
+            _selector_id = -1;
         }
 };
 
