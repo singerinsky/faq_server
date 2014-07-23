@@ -1,6 +1,12 @@
 #include "data_worker.h"
 #include "db_connection_pool.h"
 
+void data_worker::~data_worker()
+{
+    Singleton<db_pool>::GetInstance()->push(_db_conn);    
+    _db_conn = NULL;
+}
+
 void data_worker::do_job(db_job* event)
 {
     _db_conn->exec_format(event->_sql_str.c_str());

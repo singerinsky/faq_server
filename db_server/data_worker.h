@@ -28,11 +28,12 @@ class data_worker: public worker<db_job>
 {
     public:
         void do_job(db_job* event);
+        virtual ~data_worker();
         int  init();
+        
 
     private:
         MysqlConnection*    _db_conn;
-        int                 _job_count;
 };
 
 #endif

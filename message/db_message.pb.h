@@ -20,9 +20,11 @@
 #endif
 
 #include <google/protobuf/generated_message_util.h>
+#include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
+#include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -30,33 +32,222 @@ void  protobuf_AddDesc_db_5fmessage_2eproto();
 void protobuf_AssignDesc_db_5fmessage_2eproto();
 void protobuf_ShutdownFile_db_5fmessage_2eproto();
 
+class db_get_user_info;
 
-enum DB_MESSAGE_DEFINE {
-  DB_MSG_GET_USER_INFO = 0,
-  DB_MSG_UPDATE_USER_INFO = 1
+enum DbMessageType {
+  MSG_DB_WORK_START = 10000,
+  MSG_DB_GET_USER_INFO = 10001
 };
-bool DB_MESSAGE_DEFINE_IsValid(int value);
-const DB_MESSAGE_DEFINE DB_MESSAGE_DEFINE_MIN = DB_MSG_GET_USER_INFO;
-const DB_MESSAGE_DEFINE DB_MESSAGE_DEFINE_MAX = DB_MSG_UPDATE_USER_INFO;
-const int DB_MESSAGE_DEFINE_ARRAYSIZE = DB_MESSAGE_DEFINE_MAX + 1;
+bool DbMessageType_IsValid(int value);
+const DbMessageType DbMessageType_MIN = MSG_DB_WORK_START;
+const DbMessageType DbMessageType_MAX = MSG_DB_GET_USER_INFO;
+const int DbMessageType_ARRAYSIZE = DbMessageType_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* DB_MESSAGE_DEFINE_descriptor();
-inline const ::std::string& DB_MESSAGE_DEFINE_Name(DB_MESSAGE_DEFINE value) {
+const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor();
+inline const ::std::string& DbMessageType_Name(DbMessageType value) {
   return ::google::protobuf::internal::NameOfEnum(
-    DB_MESSAGE_DEFINE_descriptor(), value);
+    DbMessageType_descriptor(), value);
 }
-inline bool DB_MESSAGE_DEFINE_Parse(
-    const ::std::string& name, DB_MESSAGE_DEFINE* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<DB_MESSAGE_DEFINE>(
-    DB_MESSAGE_DEFINE_descriptor(), name, value);
+inline bool DbMessageType_Parse(
+    const ::std::string& name, DbMessageType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DbMessageType>(
+    DbMessageType_descriptor(), name, value);
 }
 // ===================================================================
 
+class db_get_user_info : public ::google::protobuf::Message {
+ public:
+  db_get_user_info();
+  virtual ~db_get_user_info();
 
+  db_get_user_info(const db_get_user_info& from);
+
+  inline db_get_user_info& operator=(const db_get_user_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const db_get_user_info& default_instance();
+
+  void Swap(db_get_user_info* other);
+
+  // implements Message ----------------------------------------------
+
+  db_get_user_info* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const db_get_user_info& from);
+  void MergeFrom(const db_get_user_info& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 user_id = 1;
+  inline bool has_user_id() const;
+  inline void clear_user_id();
+  static const int kUserIdFieldNumber = 1;
+  inline ::google::protobuf::int32 user_id() const;
+  inline void set_user_id(::google::protobuf::int32 value);
+
+  // required string user_name = 2;
+  inline bool has_user_name() const;
+  inline void clear_user_name();
+  static const int kUserNameFieldNumber = 2;
+  inline const ::std::string& user_name() const;
+  inline void set_user_name(const ::std::string& value);
+  inline void set_user_name(const char* value);
+  inline void set_user_name(const char* value, size_t size);
+  inline ::std::string* mutable_user_name();
+  inline ::std::string* release_user_name();
+  inline void set_allocated_user_name(::std::string* user_name);
+
+  // @@protoc_insertion_point(class_scope:db_get_user_info)
+ private:
+  inline void set_has_user_id();
+  inline void clear_has_user_id();
+  inline void set_has_user_name();
+  inline void clear_has_user_name();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* user_name_;
+  ::google::protobuf::int32 user_id_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_db_5fmessage_2eproto();
+  friend void protobuf_AssignDesc_db_5fmessage_2eproto();
+  friend void protobuf_ShutdownFile_db_5fmessage_2eproto();
+
+  void InitAsDefaultInstance();
+  static db_get_user_info* default_instance_;
+};
 // ===================================================================
 
 
 // ===================================================================
+
+// db_get_user_info
+
+// required int32 user_id = 1;
+inline bool db_get_user_info::has_user_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void db_get_user_info::set_has_user_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void db_get_user_info::clear_has_user_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void db_get_user_info::clear_user_id() {
+  user_id_ = 0;
+  clear_has_user_id();
+}
+inline ::google::protobuf::int32 db_get_user_info::user_id() const {
+  return user_id_;
+}
+inline void db_get_user_info::set_user_id(::google::protobuf::int32 value) {
+  set_has_user_id();
+  user_id_ = value;
+}
+
+// required string user_name = 2;
+inline bool db_get_user_info::has_user_name() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void db_get_user_info::set_has_user_name() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void db_get_user_info::clear_has_user_name() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void db_get_user_info::clear_user_name() {
+  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
+    user_name_->clear();
+  }
+  clear_has_user_name();
+}
+inline const ::std::string& db_get_user_info::user_name() const {
+  return *user_name_;
+}
+inline void db_get_user_info::set_user_name(const ::std::string& value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+}
+inline void db_get_user_info::set_user_name(const char* value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+}
+inline void db_get_user_info::set_user_name(const char* value, size_t size) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* db_get_user_info::mutable_user_name() {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  return user_name_;
+}
+inline ::std::string* db_get_user_info::release_user_name() {
+  clear_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = user_name_;
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void db_get_user_info::set_allocated_user_name(::std::string* user_name) {
+  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
+    delete user_name_;
+  }
+  if (user_name) {
+    set_has_user_name();
+    user_name_ = user_name;
+  } else {
+    clear_has_user_name();
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
 
 
 // @@protoc_insertion_point(namespace_scope)
@@ -66,8 +257,8 @@ namespace google {
 namespace protobuf {
 
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::DB_MESSAGE_DEFINE>() {
-  return ::DB_MESSAGE_DEFINE_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::DbMessageType>() {
+  return ::DbMessageType_descriptor();
 }
 
 }  // namespace google

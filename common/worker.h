@@ -14,6 +14,10 @@ class worker:public thread
             _list_locker.init(); 
             _work_flag = true;
         }
+        virtual ~worker()
+        {
+        }
+
         void set_flag(bool value)
         {
             _work_flag = value; 
@@ -63,6 +67,12 @@ class worker:public thread
         bool is_working()
         {
             return _work_flag; 
+        }
+
+        size_t job_in_list()
+        {
+            ScopeLock<MutexLock> lock(_list_locker);   
+            return _job_list.size();
         }
 
     private:

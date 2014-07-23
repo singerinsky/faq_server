@@ -27,3 +27,10 @@ void db_client::on_timeout()
     LOG(INFO)<<"without login virfy,kick out";
     //on_error(NULL);
 }
+
+void db_client::do_data_call(MysqlResultRow& row,db_job* job)
+{
+    LOG(INFO)<<"finish data query"<<job->_operate_type;
+
+
+}

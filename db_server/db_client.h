@@ -3,6 +3,8 @@
 #include "socket.h"
 #include "timer.h"
 
+class MysqlResultRow;
+class db_job;
 class db_client: public socket_client
 {
     public:
@@ -22,6 +24,8 @@ class db_client: public socket_client
         int process_msg(packet_info* info);
         void on_error(bufferevent* ev);
         void on_timeout();
+    public:
+        void do_data_call(MysqlResultRow& row,db_job* job);
     private:
         template_timer<db_client,&db_client::on_timeout>    _m_timer;
 

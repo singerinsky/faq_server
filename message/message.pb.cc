@@ -101,16 +101,16 @@ void protobuf_AddDesc_message_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::protobuf_AddDesc_db_5fmessage_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rmessage.proto\"-\n\026ClientHeartBeatReques"
-    "t\022\023\n\013client_time\030\001 \002(\005\".\n\027ClientHeartBea"
-    "tResponse\022\023\n\013server_time\030\001 \002(\005*D\n\017MSG_AC"
-    "TION_TYPE\022\017\n\013MSG_REQUEST\020\000\022\020\n\014MSG_RESPON"
-    "SE\020\001\022\016\n\nMSG_NOTIFY\020\002*\213\001\n\013MessageType\022\032\n\026"
-    "MSG_SOCCER_PLAYER_INFO\020\001\022\022\n\016MSG_HEART_BE"
-    "AT\020\002\022\024\n\020MSG_CLIENT_LOGIN\020\003\022\034\n\030MSG_GATE_S"
-    "ERVER_REGISTER\020\004\022\030\n\024MSG_DB_COMMON_UPDATE"
-    "\020\005", 322);
+    "\n\rmessage.proto\032\020db_message.proto\"-\n\026Cli"
+    "entHeartBeatRequest\022\023\n\013client_time\030\001 \002(\005"
+    "\".\n\027ClientHeartBeatResponse\022\023\n\013server_ti"
+    "me\030\001 \002(\005*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQUE"
+    "ST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*q"
+    "\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_INFO\020"
+    "\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOGI"
+    "N\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004", 313);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   ClientHeartBeatRequest::default_instance_ = new ClientHeartBeatRequest();
@@ -151,7 +151,6 @@ bool MessageType_IsValid(int value) {
     case 2:
     case 3:
     case 4:
-    case 5:
       return true;
     default:
       return false;

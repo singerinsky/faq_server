@@ -25,6 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "db_message.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -59,12 +60,11 @@ enum MessageType {
   MSG_SOCCER_PLAYER_INFO = 1,
   MSG_HEART_BEAT = 2,
   MSG_CLIENT_LOGIN = 3,
-  MSG_GATE_SERVER_REGISTER = 4,
-  MSG_DB_COMMON_UPDATE = 5
+  MSG_GATE_SERVER_REGISTER = 4
 };
 bool MessageType_IsValid(int value);
 const MessageType MessageType_MIN = MSG_SOCCER_PLAYER_INFO;
-const MessageType MessageType_MAX = MSG_DB_COMMON_UPDATE;
+const MessageType MessageType_MAX = MSG_GATE_SERVER_REGISTER;
 const int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor();
