@@ -1,7 +1,7 @@
 #include "data_worker.h"
 #include "db_connection_pool.h"
 
-void data_worker::~data_worker()
+data_worker::~data_worker()
 {
     Singleton<db_pool>::GetInstance()->push(_db_conn);    
     _db_conn = NULL;

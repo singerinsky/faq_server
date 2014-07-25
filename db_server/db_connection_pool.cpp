@@ -19,7 +19,6 @@ bool db_pool::init_config()
     TiXmlNode* node = doc->FirstChild("db");
     TiXmlElement* ele = node->ToElement();
 
-    int port = 0;
     ele->QueryIntAttribute("port",&(_config._port));
     _config._ip.append(ele->Attribute("ip"));
     _config._user.append(ele->Attribute("user"));

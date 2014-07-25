@@ -25,11 +25,12 @@ class object_pool:public Singleton<object_pool<T> >
                 }
                 
             }
+            return _object_list.size();
         }
         T*      pop()
         {
             if(_object_list.size() == 0 )return NULL;
-            T* t = *(_object_list.front()); 
+            T* t = (_object_list.front()); 
             _object_list.pop_front();
             return t;
         }

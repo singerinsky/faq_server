@@ -19,22 +19,10 @@ bool have_escape_char(const char* data,int size) ;
 class MysqlResultRow
 {
     public:
-        MysqlResultRow(MYSQL_RES* result):_result(result)
+        MysqlResultRow(const char** data):_data(data)
     {
-        _row_count =  mysql_num_rows(result) ;
-        _start_index = 0;
-    }
 
-    public:
-        bool next()
-        {
-            if(_data == NULL)return false; 
-            if(_start_index >= _row_count)return false;
-            mysql_data_seek(_result,_start_index) ;
-            _data = (const char**)mysql_fetch_row(_result) ;
-            _start_index++;
-            return true;
-        }
+    }
 
         int get_int(int column)
         {
@@ -54,8 +42,35 @@ class MysqlResultRow
         }
 
     private:
+        const char** _data;
+
+};
+
+class MysqlResult
+{
+    public:
+        MysqlResult(MYSQL_RES* result):_result(result)
+    {
+        _row_count =  mysql_num_rows(result) ;
+        _start_index = 0;
+    }
+
+    public:
+        bool next()
+        {
+            if(_start_index >= _row_count)return false;
+            mysql_data_seek(_result,_start_index) ;
+            _start_index++;
+            return true;
+        }
+
+        MysqlResultRow get_next_row()
+        {
+            MysqlResultRow row((const char**)mysql_fetch_row(_result)) ;
+            return row; 
+        }
+    private:
         size_t       _start_index;
-        char** _data;
         size_t       _row_count;
         MYSQL_RES*   _result ;
 };
@@ -162,16 +177,10 @@ class MysqlConnection
             return (const char**)mysql_fetch_row(m_result) ;
         }
 
-        MysqlResultRow get_data_rows()
+        MysqlResult get_data_result()
         {
-            if(m_result == NULL) 
-            {
-                MysqlResultRow result_row(NULL,0);
-                return result_row;
-            }
-            mysql_data_seek(m_result,0) ;
-            MysqlResultRow result_row((const char**)mysql_fetch_row(m_result),result_row_count()) ;
-            return result_row;
+           MysqlResult result(m_result);
+           return result;
         }
 
 

@@ -1,5 +1,7 @@
 #include "db_client.h"
 #include "actions_mananger.h"
+#include "mysql_connection.h"
+#include "data_worker.h"
 
 
 int db_client::process_msg(packet_info* info)
@@ -31,6 +33,5 @@ void db_client::on_timeout()
 void db_client::do_data_call(MysqlResultRow& row,db_job* job)
 {
     LOG(INFO)<<"finish data query"<<job->_operate_type;
-
 
 }
