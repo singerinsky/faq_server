@@ -34,7 +34,8 @@ int main(int argc,char** argv)
     db_service* cs = new db_service("127.0.0.1",9999);
     app.add_service(cs);
 
-    Singleton<db_pool>::GetInstance()->init(10);
+    int init_number = Singleton<db_pool>::GetInstance()->init(10);
+    LOG(INFO)<<"init db pool "<<init_number;
 
     ///////////test
     data_worker* work = new data_worker();

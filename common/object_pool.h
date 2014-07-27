@@ -24,6 +24,7 @@ class object_pool:public Singleton<object_pool<T> >
                 }else
                 {
                     LOG(ERROR)<<"create object error"; 
+                    exit(-1);
                 }
             }
             LOG(INFO)<<"init "<<"pool "<<_object_list.size();

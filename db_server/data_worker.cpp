@@ -9,12 +9,20 @@ data_worker::~data_worker()
 
 void data_worker::do_job(db_job* event)
 {
-    _db_conn->exec_format(event->_sql_str.c_str());
-    int row = _db_conn->result_row_count();
-    if(row > 0 )
+    int ret = _db_conn->exec_format(event->_sql_str.c_str());
+    if(ret < 0)
     {
-       LOG(INFO)<<"Get data "<<_db_conn->result_row_data(0)[0]; 
+        LOG(ERROR)<<ret<<event->_sql_str.c_str(); 
+        return;
     }
+    
+    MysqlResult result = _db_conn->get_data_result();
+    while(result.next())
+    {
+        MysqlResultRow row = result.get_next_row(); 
+        LOG(INFO)<<row.get_int(0); 
+    }
+
 }
 
 int data_worker::init()

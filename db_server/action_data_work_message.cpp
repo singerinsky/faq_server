@@ -4,7 +4,7 @@
 #include "template_message.h"
 #include "message.pb.h"
 #include "message_define.h"
-#include "db_message.h"
+#include "db_message.pb.h"
 #include "head.h"
 
 class data_work_action: public template_message<ClientHeartBeatRequest,CS_MSG_HEART_BEAT_REQ>  

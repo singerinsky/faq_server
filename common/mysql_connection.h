@@ -23,6 +23,7 @@ class MysqlResultRow
     {
 
     }
+    public:
 
         int get_int(int column)
         {
