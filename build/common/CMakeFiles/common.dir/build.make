@@ -49,55 +49,78 @@ include common/CMakeFiles/common.dir/progress.make
 # Include the compile flags for this target's objects.
 include common/CMakeFiles/common.dir/flags.make
 
-common/CMakeFiles/common.dir/tinystr.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/tinystr.cpp.o: ../common/tinystr.cpp
+common/CMakeFiles/common.dir/game_packet.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/game_packet.cpp.o: ../common/game_packet.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/tinystr.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/tinystr.cpp.o -c /home/gl/faq_server/common/tinystr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/game_packet.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/game_packet.cpp.o -c /home/gl/faq_server/common/game_packet.cpp
 
-common/CMakeFiles/common.dir/tinystr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/tinystr.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/tinystr.cpp > CMakeFiles/common.dir/tinystr.cpp.i
+common/CMakeFiles/common.dir/game_packet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/game_packet.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/game_packet.cpp > CMakeFiles/common.dir/game_packet.cpp.i
 
-common/CMakeFiles/common.dir/tinystr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/tinystr.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/tinystr.cpp -o CMakeFiles/common.dir/tinystr.cpp.s
+common/CMakeFiles/common.dir/game_packet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/game_packet.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/game_packet.cpp -o CMakeFiles/common.dir/game_packet.cpp.s
 
-common/CMakeFiles/common.dir/tinystr.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/tinystr.cpp.o.requires
+common/CMakeFiles/common.dir/game_packet.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/game_packet.cpp.o.requires
 
-common/CMakeFiles/common.dir/tinystr.cpp.o.provides: common/CMakeFiles/common.dir/tinystr.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinystr.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/tinystr.cpp.o.provides
+common/CMakeFiles/common.dir/game_packet.cpp.o.provides: common/CMakeFiles/common.dir/game_packet.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/game_packet.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/game_packet.cpp.o.provides
 
-common/CMakeFiles/common.dir/tinystr.cpp.o.provides.build: common/CMakeFiles/common.dir/tinystr.cpp.o
+common/CMakeFiles/common.dir/game_packet.cpp.o.provides.build: common/CMakeFiles/common.dir/game_packet.cpp.o
 
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.o: ../common/tinyxmlparser.cpp
+common/CMakeFiles/common.dir/thread.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/thread.cpp.o: ../common/thread.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/tinyxmlparser.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/tinyxmlparser.cpp.o -c /home/gl/faq_server/common/tinyxmlparser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/thread.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/thread.cpp.o -c /home/gl/faq_server/common/thread.cpp
 
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/tinyxmlparser.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/tinyxmlparser.cpp > CMakeFiles/common.dir/tinyxmlparser.cpp.i
+common/CMakeFiles/common.dir/thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/thread.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/thread.cpp > CMakeFiles/common.dir/thread.cpp.i
 
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/tinyxmlparser.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/tinyxmlparser.cpp -o CMakeFiles/common.dir/tinyxmlparser.cpp.s
+common/CMakeFiles/common.dir/thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/thread.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/thread.cpp -o CMakeFiles/common.dir/thread.cpp.s
 
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires
+common/CMakeFiles/common.dir/thread.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/thread.cpp.o.requires
 
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides
+common/CMakeFiles/common.dir/thread.cpp.o.provides: common/CMakeFiles/common.dir/thread.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/thread.cpp.o.provides
 
-common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides.build: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o
+common/CMakeFiles/common.dir/thread.cpp.o.provides.build: common/CMakeFiles/common.dir/thread.cpp.o
+
+common/CMakeFiles/common.dir/timer.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/timer.cpp.o: ../common/timer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/timer.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/timer.cpp.o -c /home/gl/faq_server/common/timer.cpp
+
+common/CMakeFiles/common.dir/timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/timer.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/timer.cpp > CMakeFiles/common.dir/timer.cpp.i
+
+common/CMakeFiles/common.dir/timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/timer.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/timer.cpp -o CMakeFiles/common.dir/timer.cpp.s
+
+common/CMakeFiles/common.dir/timer.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/timer.cpp.o.requires
+
+common/CMakeFiles/common.dir/timer.cpp.o.provides: common/CMakeFiles/common.dir/timer.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/timer.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/timer.cpp.o.provides
+
+common/CMakeFiles/common.dir/timer.cpp.o.provides.build: common/CMakeFiles/common.dir/timer.cpp.o
 
 common/CMakeFiles/common.dir/net_util.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/net_util.cpp.o: ../common/net_util.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/net_util.cpp.o"
 	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/net_util.cpp.o -c /home/gl/faq_server/common/net_util.cpp
 
@@ -118,55 +141,78 @@ common/CMakeFiles/common.dir/net_util.cpp.o.provides: common/CMakeFiles/common.d
 
 common/CMakeFiles/common.dir/net_util.cpp.o.provides.build: common/CMakeFiles/common.dir/net_util.cpp.o
 
-common/CMakeFiles/common.dir/actions_mananger.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/actions_mananger.cpp.o: ../common/actions_mananger.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/actions_mananger.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/actions_mananger.cpp.o -c /home/gl/faq_server/common/actions_mananger.cpp
-
-common/CMakeFiles/common.dir/actions_mananger.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/actions_mananger.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/actions_mananger.cpp > CMakeFiles/common.dir/actions_mananger.cpp.i
-
-common/CMakeFiles/common.dir/actions_mananger.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/actions_mananger.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/actions_mananger.cpp -o CMakeFiles/common.dir/actions_mananger.cpp.s
-
-common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires
-
-common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides: common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides
-
-common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides.build: common/CMakeFiles/common.dir/actions_mananger.cpp.o
-
-common/CMakeFiles/common.dir/socket.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/socket.cpp.o: ../common/socket.cpp
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.o: ../common/tinyxmlparser.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/socket.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/socket.cpp.o -c /home/gl/faq_server/common/socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/tinyxmlparser.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/tinyxmlparser.cpp.o -c /home/gl/faq_server/common/tinyxmlparser.cpp
 
-common/CMakeFiles/common.dir/socket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/socket.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/socket.cpp > CMakeFiles/common.dir/socket.cpp.i
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/tinyxmlparser.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/tinyxmlparser.cpp > CMakeFiles/common.dir/tinyxmlparser.cpp.i
 
-common/CMakeFiles/common.dir/socket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/socket.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/socket.cpp -o CMakeFiles/common.dir/socket.cpp.s
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/tinyxmlparser.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/tinyxmlparser.cpp -o CMakeFiles/common.dir/tinyxmlparser.cpp.s
 
-common/CMakeFiles/common.dir/socket.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/socket.cpp.o.requires
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires
 
-common/CMakeFiles/common.dir/socket.cpp.o.provides: common/CMakeFiles/common.dir/socket.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/socket.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/socket.cpp.o.provides
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides
 
-common/CMakeFiles/common.dir/socket.cpp.o.provides.build: common/CMakeFiles/common.dir/socket.cpp.o
+common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.provides.build: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o
+
+common/CMakeFiles/common.dir/mysql_connection.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/mysql_connection.cpp.o: ../common/mysql_connection.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/mysql_connection.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/mysql_connection.cpp.o -c /home/gl/faq_server/common/mysql_connection.cpp
+
+common/CMakeFiles/common.dir/mysql_connection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/mysql_connection.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/mysql_connection.cpp > CMakeFiles/common.dir/mysql_connection.cpp.i
+
+common/CMakeFiles/common.dir/mysql_connection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/mysql_connection.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/mysql_connection.cpp -o CMakeFiles/common.dir/mysql_connection.cpp.s
+
+common/CMakeFiles/common.dir/mysql_connection.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/mysql_connection.cpp.o.requires
+
+common/CMakeFiles/common.dir/mysql_connection.cpp.o.provides: common/CMakeFiles/common.dir/mysql_connection.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/mysql_connection.cpp.o.provides
+
+common/CMakeFiles/common.dir/mysql_connection.cpp.o.provides.build: common/CMakeFiles/common.dir/mysql_connection.cpp.o
+
+common/CMakeFiles/common.dir/db_connection_pool.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/db_connection_pool.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/db_connection_pool.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/db_connection_pool.cpp.o -c /home/gl/faq_server/common/db_connection_pool.cpp
+
+common/CMakeFiles/common.dir/db_connection_pool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/db_connection_pool.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/db_connection_pool.cpp > CMakeFiles/common.dir/db_connection_pool.cpp.i
+
+common/CMakeFiles/common.dir/db_connection_pool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/db_connection_pool.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/db_connection_pool.cpp -o CMakeFiles/common.dir/db_connection_pool.cpp.s
+
+common/CMakeFiles/common.dir/db_connection_pool.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/db_connection_pool.cpp.o.requires
+
+common/CMakeFiles/common.dir/db_connection_pool.cpp.o.provides: common/CMakeFiles/common.dir/db_connection_pool.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/db_connection_pool.cpp.o.provides
+
+common/CMakeFiles/common.dir/db_connection_pool.cpp.o.provides.build: common/CMakeFiles/common.dir/db_connection_pool.cpp.o
 
 common/CMakeFiles/common.dir/tinyxmlerror.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/tinyxmlerror.cpp.o: ../common/tinyxmlerror.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/tinyxmlerror.cpp.o"
 	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/tinyxmlerror.cpp.o -c /home/gl/faq_server/common/tinyxmlerror.cpp
 
@@ -187,9 +233,124 @@ common/CMakeFiles/common.dir/tinyxmlerror.cpp.o.provides: common/CMakeFiles/comm
 
 common/CMakeFiles/common.dir/tinyxmlerror.cpp.o.provides.build: common/CMakeFiles/common.dir/tinyxmlerror.cpp.o
 
+common/CMakeFiles/common.dir/job_factory.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/job_factory.cpp.o: ../common/job_factory.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/job_factory.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/job_factory.cpp.o -c /home/gl/faq_server/common/job_factory.cpp
+
+common/CMakeFiles/common.dir/job_factory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/job_factory.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/job_factory.cpp > CMakeFiles/common.dir/job_factory.cpp.i
+
+common/CMakeFiles/common.dir/job_factory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/job_factory.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/job_factory.cpp -o CMakeFiles/common.dir/job_factory.cpp.s
+
+common/CMakeFiles/common.dir/job_factory.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/job_factory.cpp.o.requires
+
+common/CMakeFiles/common.dir/job_factory.cpp.o.provides: common/CMakeFiles/common.dir/job_factory.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/job_factory.cpp.o.provides
+
+common/CMakeFiles/common.dir/job_factory.cpp.o.provides.build: common/CMakeFiles/common.dir/job_factory.cpp.o
+
+common/CMakeFiles/common.dir/socket.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/socket.cpp.o: ../common/socket.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/socket.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/socket.cpp.o -c /home/gl/faq_server/common/socket.cpp
+
+common/CMakeFiles/common.dir/socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/socket.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/socket.cpp > CMakeFiles/common.dir/socket.cpp.i
+
+common/CMakeFiles/common.dir/socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/socket.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/socket.cpp -o CMakeFiles/common.dir/socket.cpp.s
+
+common/CMakeFiles/common.dir/socket.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/socket.cpp.o.requires
+
+common/CMakeFiles/common.dir/socket.cpp.o.provides: common/CMakeFiles/common.dir/socket.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/socket.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/socket.cpp.o.provides
+
+common/CMakeFiles/common.dir/socket.cpp.o.provides.build: common/CMakeFiles/common.dir/socket.cpp.o
+
+common/CMakeFiles/common.dir/actions_mananger.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/actions_mananger.cpp.o: ../common/actions_mananger.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/actions_mananger.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/actions_mananger.cpp.o -c /home/gl/faq_server/common/actions_mananger.cpp
+
+common/CMakeFiles/common.dir/actions_mananger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/actions_mananger.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/actions_mananger.cpp > CMakeFiles/common.dir/actions_mananger.cpp.i
+
+common/CMakeFiles/common.dir/actions_mananger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/actions_mananger.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/actions_mananger.cpp -o CMakeFiles/common.dir/actions_mananger.cpp.s
+
+common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires
+
+common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides: common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides
+
+common/CMakeFiles/common.dir/actions_mananger.cpp.o.provides.build: common/CMakeFiles/common.dir/actions_mananger.cpp.o
+
+common/CMakeFiles/common.dir/server_application.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/server_application.cpp.o: ../common/server_application.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/server_application.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/server_application.cpp.o -c /home/gl/faq_server/common/server_application.cpp
+
+common/CMakeFiles/common.dir/server_application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/server_application.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/server_application.cpp > CMakeFiles/common.dir/server_application.cpp.i
+
+common/CMakeFiles/common.dir/server_application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/server_application.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/server_application.cpp -o CMakeFiles/common.dir/server_application.cpp.s
+
+common/CMakeFiles/common.dir/server_application.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/server_application.cpp.o.requires
+
+common/CMakeFiles/common.dir/server_application.cpp.o.provides: common/CMakeFiles/common.dir/server_application.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/server_application.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/server_application.cpp.o.provides
+
+common/CMakeFiles/common.dir/server_application.cpp.o.provides.build: common/CMakeFiles/common.dir/server_application.cpp.o
+
+common/CMakeFiles/common.dir/tinystr.cpp.o: common/CMakeFiles/common.dir/flags.make
+common/CMakeFiles/common.dir/tinystr.cpp.o: ../common/tinystr.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/tinystr.cpp.o"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/tinystr.cpp.o -c /home/gl/faq_server/common/tinystr.cpp
+
+common/CMakeFiles/common.dir/tinystr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/tinystr.cpp.i"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/tinystr.cpp > CMakeFiles/common.dir/tinystr.cpp.i
+
+common/CMakeFiles/common.dir/tinystr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/tinystr.cpp.s"
+	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/tinystr.cpp -o CMakeFiles/common.dir/tinystr.cpp.s
+
+common/CMakeFiles/common.dir/tinystr.cpp.o.requires:
+.PHONY : common/CMakeFiles/common.dir/tinystr.cpp.o.requires
+
+common/CMakeFiles/common.dir/tinystr.cpp.o.provides: common/CMakeFiles/common.dir/tinystr.cpp.o.requires
+	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinystr.cpp.o.provides.build
+.PHONY : common/CMakeFiles/common.dir/tinystr.cpp.o.provides
+
+common/CMakeFiles/common.dir/tinystr.cpp.o.provides.build: common/CMakeFiles/common.dir/tinystr.cpp.o
+
 common/CMakeFiles/common.dir/tinyxml.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/tinyxml.cpp.o: ../common/tinyxml.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/tinyxml.cpp.o"
 	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/tinyxml.cpp.o -c /home/gl/faq_server/common/tinyxml.cpp
 
@@ -212,7 +373,7 @@ common/CMakeFiles/common.dir/tinyxml.cpp.o.provides.build: common/CMakeFiles/com
 
 common/CMakeFiles/common.dir/reactor_core.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/reactor_core.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/reactor_core.cpp.o"
 	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/reactor_core.cpp.o -c /home/gl/faq_server/common/reactor_core.cpp
 
@@ -233,103 +394,42 @@ common/CMakeFiles/common.dir/reactor_core.cpp.o.provides: common/CMakeFiles/comm
 
 common/CMakeFiles/common.dir/reactor_core.cpp.o.provides.build: common/CMakeFiles/common.dir/reactor_core.cpp.o
 
-common/CMakeFiles/common.dir/timer.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/timer.cpp.o: ../common/timer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/timer.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/timer.cpp.o -c /home/gl/faq_server/common/timer.cpp
-
-common/CMakeFiles/common.dir/timer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/timer.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/timer.cpp > CMakeFiles/common.dir/timer.cpp.i
-
-common/CMakeFiles/common.dir/timer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/timer.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/timer.cpp -o CMakeFiles/common.dir/timer.cpp.s
-
-common/CMakeFiles/common.dir/timer.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/timer.cpp.o.requires
-
-common/CMakeFiles/common.dir/timer.cpp.o.provides: common/CMakeFiles/common.dir/timer.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/timer.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/timer.cpp.o.provides
-
-common/CMakeFiles/common.dir/timer.cpp.o.provides.build: common/CMakeFiles/common.dir/timer.cpp.o
-
-common/CMakeFiles/common.dir/server_application.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/server_application.cpp.o: ../common/server_application.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_10)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/server_application.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/server_application.cpp.o -c /home/gl/faq_server/common/server_application.cpp
-
-common/CMakeFiles/common.dir/server_application.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/server_application.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/server_application.cpp > CMakeFiles/common.dir/server_application.cpp.i
-
-common/CMakeFiles/common.dir/server_application.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/server_application.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/server_application.cpp -o CMakeFiles/common.dir/server_application.cpp.s
-
-common/CMakeFiles/common.dir/server_application.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/server_application.cpp.o.requires
-
-common/CMakeFiles/common.dir/server_application.cpp.o.provides: common/CMakeFiles/common.dir/server_application.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/server_application.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/server_application.cpp.o.provides
-
-common/CMakeFiles/common.dir/server_application.cpp.o.provides.build: common/CMakeFiles/common.dir/server_application.cpp.o
-
-common/CMakeFiles/common.dir/game_packet.cpp.o: common/CMakeFiles/common.dir/flags.make
-common/CMakeFiles/common.dir/game_packet.cpp.o: ../common/game_packet.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_11)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object common/CMakeFiles/common.dir/game_packet.cpp.o"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/common.dir/game_packet.cpp.o -c /home/gl/faq_server/common/game_packet.cpp
-
-common/CMakeFiles/common.dir/game_packet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/game_packet.cpp.i"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/common/game_packet.cpp > CMakeFiles/common.dir/game_packet.cpp.i
-
-common/CMakeFiles/common.dir/game_packet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/game_packet.cpp.s"
-	cd /home/gl/faq_server/build/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/common/game_packet.cpp -o CMakeFiles/common.dir/game_packet.cpp.s
-
-common/CMakeFiles/common.dir/game_packet.cpp.o.requires:
-.PHONY : common/CMakeFiles/common.dir/game_packet.cpp.o.requires
-
-common/CMakeFiles/common.dir/game_packet.cpp.o.provides: common/CMakeFiles/common.dir/game_packet.cpp.o.requires
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/game_packet.cpp.o.provides.build
-.PHONY : common/CMakeFiles/common.dir/game_packet.cpp.o.provides
-
-common/CMakeFiles/common.dir/game_packet.cpp.o.provides.build: common/CMakeFiles/common.dir/game_packet.cpp.o
-
 # Object files for target common
 common_OBJECTS = \
-"CMakeFiles/common.dir/tinystr.cpp.o" \
-"CMakeFiles/common.dir/tinyxmlparser.cpp.o" \
-"CMakeFiles/common.dir/net_util.cpp.o" \
-"CMakeFiles/common.dir/actions_mananger.cpp.o" \
-"CMakeFiles/common.dir/socket.cpp.o" \
-"CMakeFiles/common.dir/tinyxmlerror.cpp.o" \
-"CMakeFiles/common.dir/tinyxml.cpp.o" \
-"CMakeFiles/common.dir/reactor_core.cpp.o" \
+"CMakeFiles/common.dir/game_packet.cpp.o" \
+"CMakeFiles/common.dir/thread.cpp.o" \
 "CMakeFiles/common.dir/timer.cpp.o" \
+"CMakeFiles/common.dir/net_util.cpp.o" \
+"CMakeFiles/common.dir/tinyxmlparser.cpp.o" \
+"CMakeFiles/common.dir/mysql_connection.cpp.o" \
+"CMakeFiles/common.dir/db_connection_pool.cpp.o" \
+"CMakeFiles/common.dir/tinyxmlerror.cpp.o" \
+"CMakeFiles/common.dir/job_factory.cpp.o" \
+"CMakeFiles/common.dir/socket.cpp.o" \
+"CMakeFiles/common.dir/actions_mananger.cpp.o" \
 "CMakeFiles/common.dir/server_application.cpp.o" \
-"CMakeFiles/common.dir/game_packet.cpp.o"
+"CMakeFiles/common.dir/tinystr.cpp.o" \
+"CMakeFiles/common.dir/tinyxml.cpp.o" \
+"CMakeFiles/common.dir/reactor_core.cpp.o"
 
 # External object files for target common
 common_EXTERNAL_OBJECTS =
 
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/tinystr.cpp.o
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/game_packet.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/thread.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/timer.cpp.o
 ../game_lib/libcommon.a: common/CMakeFiles/common.dir/net_util.cpp.o
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/actions_mananger.cpp.o
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/socket.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/mysql_connection.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/db_connection_pool.cpp.o
 ../game_lib/libcommon.a: common/CMakeFiles/common.dir/tinyxmlerror.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/job_factory.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/socket.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/actions_mananger.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/server_application.cpp.o
+../game_lib/libcommon.a: common/CMakeFiles/common.dir/tinystr.cpp.o
 ../game_lib/libcommon.a: common/CMakeFiles/common.dir/tinyxml.cpp.o
 ../game_lib/libcommon.a: common/CMakeFiles/common.dir/reactor_core.cpp.o
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/timer.cpp.o
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/server_application.cpp.o
-../game_lib/libcommon.a: common/CMakeFiles/common.dir/game_packet.cpp.o
 ../game_lib/libcommon.a: common/CMakeFiles/common.dir/build.make
 ../game_lib/libcommon.a: common/CMakeFiles/common.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../../game_lib/libcommon.a"
@@ -340,17 +440,21 @@ common_EXTERNAL_OBJECTS =
 common/CMakeFiles/common.dir/build: ../game_lib/libcommon.a
 .PHONY : common/CMakeFiles/common.dir/build
 
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/tinystr.cpp.o.requires
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/game_packet.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/thread.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/timer.cpp.o.requires
 common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/net_util.cpp.o.requires
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/socket.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/tinyxmlparser.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/mysql_connection.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/db_connection_pool.cpp.o.requires
 common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/tinyxmlerror.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/job_factory.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/socket.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/actions_mananger.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/server_application.cpp.o.requires
+common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/tinystr.cpp.o.requires
 common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/tinyxml.cpp.o.requires
 common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/reactor_core.cpp.o.requires
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/timer.cpp.o.requires
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/server_application.cpp.o.requires
-common/CMakeFiles/common.dir/requires: common/CMakeFiles/common.dir/game_packet.cpp.o.requires
 .PHONY : common/CMakeFiles/common.dir/requires
 
 common/CMakeFiles/common.dir/clean:
