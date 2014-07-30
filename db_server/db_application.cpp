@@ -45,12 +45,7 @@ int main(int argc,char** argv)
     job->_sql_str = "SELECT * FROM tb_user";
     work->add_job(job);
     work->create();
-    for(int i=0;i<10;i++)
-    {
-        LOG(INFO)<<"add job "<<i;
-        work->add_job(job); 
-    }
-//    db_factory::GetInstance()->init();
+    //    db_factory::GetInstance()->init();
     //////////////end test
 
     app.start_service();

@@ -15,6 +15,7 @@ class object_pool:public Singleton<object_pool<T> >
         int     init(int number)
         {
             init_config();
+
             for(int i=0;i<number;i++)
             {
                 T* t = create();
