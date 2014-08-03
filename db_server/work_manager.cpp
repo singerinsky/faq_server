@@ -30,9 +30,27 @@ void    work_manager::remove_client(db_client* client)
     }
 }
 
-void    work_manager::do_job(db_job*)
+bool    work_manager::check_client(db_client* client)
 {
-
+    ScopeLock<MutexLock> lock(_lock);
+    auto itr = std::find(_db_clients.begin(),_db_clients.end(), client);
+    if(itr != _db_clients.end())
+    {
+        return true;
+    }
+    return false;
 }
 
 
+void    work_manager::process_query(MysqlResult& result,db_job* job)
+{
+    if(check_client(job->_selector))
+    {
+        job->_selector->process_query(result,job); 
+    }
+    else
+    {
+        LOG(ERROR)<<"db_client disconnection.job result drop"; 
+    }
+    
+}

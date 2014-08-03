@@ -58,6 +58,7 @@ int socket_client::connect_to(const char* host_name,int port)
         LOG(ERROR)<<"connect failed";
         return -2;
     }
+    _is_online = true;
     return 1;
 }
 
@@ -77,7 +78,7 @@ int socket_client::on_read(bufferevent* ev)
     if(msg_len < 0)
     {
         LOG(ERROR)<<"message error !"; 
-        on_error(_bev);
+        on_disconnection(_bev);
         return -1;
     }
 
@@ -123,7 +124,7 @@ void common_read_cb(struct bufferevent* ev,void *user_data)
 void common_event_cb(struct bufferevent* ev,short int,void *user_data)
 {
     LOG(INFO)<<"lost connection";
-    ((socket_client*)user_data)->on_error(ev);
+    ((socket_client*)user_data)->on_disconnection(ev);
 }
 void common_write_cb(struct bufferevent* ev,void *user_data)
 {

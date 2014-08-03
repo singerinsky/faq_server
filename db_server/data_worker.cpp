@@ -15,13 +15,17 @@ void data_worker::do_job(db_job* event)
         LOG(ERROR)<<ret<<event->_sql_str.c_str(); 
         return;
     }
-    
+
     MysqlResult result = _db_conn->get_data_result();
+
+    Singleton<data_worker>::GetInstance()->process_query(result,event); 
+    /*
     while(result.next())
     {
         MysqlResultRow row = result.get_next_row(); 
         LOG(INFO)<<row.get_int(0); 
     }
+    */
 
 }
 
@@ -36,4 +40,14 @@ int data_worker::init()
     return 1;
 }
 
+void data_worker::do_test(MysqlResult& result)
+{
+    while(result.next())
+    {
+        MysqlResultRow row = result.get_next_row(); 
+        LOG(INFO)<<row.get_int(0); 
+    }
+
+
+}
 

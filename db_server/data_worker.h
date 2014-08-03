@@ -10,17 +10,15 @@ class db_job
         int         _seq;
         int         _operate_type;
         std::string _sql_str;
-        //(void)(*)(MYSQL_RES*) _call_back; 
-        int         _selector_id;
+        db_client*  _selector;
 
     public:
         db_job()
         {
             _seq = -1; 
             _operate_type = -1;
-         //   _client = NULL;
-         //   _call_back = NULL;
-            _selector_id = -1;
+            _selector = NULL;
+            _sql_str = "";
         }
 };
 
@@ -30,7 +28,8 @@ class data_worker: public worker<db_job>
         void do_job(db_job* event);
         virtual ~data_worker();
         int  init();
-        
+    public:
+        void do_test(MysqlResult& result);
 
     private:
         MysqlConnection*    _db_conn;
