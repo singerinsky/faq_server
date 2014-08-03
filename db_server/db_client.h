@@ -27,10 +27,10 @@ class db_client: public socket_client
         void on_error(bufferevent* ev);
         void on_timeout();
     protected:
-//        int work_job_left();
-//       void release();
+        //        int work_job_left();
+        //       void release();
     public:
-        void do_data_call(MysqlResult& row,db_job* job);
+        void do_data_call(MysqlResult& result,db_job* job);
     private:
         template_timer<db_client,&db_client::on_timeout>    _m_timer;
 };

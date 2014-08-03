@@ -32,6 +32,8 @@ void    work_manager::remove_client(db_client* client)
 
 bool    work_manager::check_client(db_client* client)
 {
+    if((client == NULL) || (client->_selector == NULL))
+        return false;
     ScopeLock<MutexLock> lock(_lock);
     auto itr = std::find(_db_clients.begin(),_db_clients.end(), client);
     if(itr != _db_clients.end())
@@ -46,7 +48,7 @@ void    work_manager::process_query(MysqlResult& result,db_job* job)
 {
     if(check_client(job->_selector))
     {
-        job->_selector->process_query(result,job); 
+        job->_selector->do_data_call(result,job); 
     }
     else
     {
