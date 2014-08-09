@@ -3,7 +3,7 @@
 #include "worker.h"
 #include "mysql_connection.h"
 
-
+class db_client;
 class db_job
 {
     public:

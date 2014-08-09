@@ -2,6 +2,7 @@
 #define _GATE_CLEINT_H_
 #include "socket.h"
 #include "timer.h"
+#include "mysql_connection.h"
 
 class MysqlResultRow;
 class db_job;

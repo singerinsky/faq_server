@@ -1,4 +1,10 @@
 #include "work_manager.h"
+#include "db_client.h"
+#include "head.h"
+#include <algorithm>
+
+template<>
+work_manager* Singleton<work_manager>::_instance = 0;
 
 void    work_manager::init()
 {
@@ -30,12 +36,12 @@ void    work_manager::remove_client(db_client* client)
     }
 }
 
-bool    work_manager::check_client(db_client* client)
+bool    work_manager::check_client(db_job* job)
 {
-    if((client == NULL) || (client->_selector == NULL))
+    if((job== NULL) || (job->_selector == NULL))
         return false;
     ScopeLock<MutexLock> lock(_lock);
-    auto itr = std::find(_db_clients.begin(),_db_clients.end(), client);
+    auto itr = std::find(_db_clients.begin(),_db_clients.end(), job->_selector);
     if(itr != _db_clients.end())
     {
         return true;
@@ -46,7 +52,7 @@ bool    work_manager::check_client(db_client* client)
 
 void    work_manager::process_query(MysqlResult& result,db_job* job)
 {
-    if(check_client(job->_selector))
+    if(check_client(job))
     {
         job->_selector->do_data_call(result,job); 
     }

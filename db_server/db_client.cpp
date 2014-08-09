@@ -2,6 +2,7 @@
 #include "actions_mananger.h"
 #include "mysql_connection.h"
 #include "data_worker.h"
+#include "mysql_connection.h"
 
 
 int db_client::process_msg(packet_info* info)
@@ -15,15 +16,7 @@ void db_client::on_error(bufferevent* ev)
 {
     LOG(INFO)<<"db client error"<<get_socket_fd();
     //Singleton<client_manager>::GetInstance()->remove_session(get_socket_fd());
-    size_t job_count = work_job_left();
-    if(job_count <= 0 )
-    {
-        release();
-    }
-    else//wait for all write in
-    {
-        init_timer();    
-    }
+    //init_timer();    
 }
 
 void db_client::init_timer()
@@ -36,19 +29,17 @@ void db_client::on_timeout()
 {
     LOG(INFO)<<"without login virfy,kick out";
     //on_error(NULL);
-    if(work_job_left() > 0)
-    {
-        init_timer();
-    }
-    else
-    {
-        release(); 
-    }
+    //release(); 
 }
 
 void db_client::do_data_call(MysqlResult& result,db_job* job)
 {
     LOG(INFO)<<"finish data query"<<job->_operate_type;
+    while(result.next())
+    {
+        MysqlResultRow row = result.get_next_row(); 
+        LOG(INFO)<<row.get_int(0); 
+    }
 }
 
 void db_client::init(int db_work)

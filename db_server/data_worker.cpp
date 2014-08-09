@@ -1,5 +1,6 @@
 #include "data_worker.h"
 #include "db_connection_pool.h"
+#include "work_manager.h"
 
 data_worker::~data_worker()
 {
@@ -18,7 +19,7 @@ void data_worker::do_job(db_job* event)
 
     MysqlResult result = _db_conn->get_data_result();
 
-    Singleton<data_worker>::GetInstance()->process_query(result,event); 
+    Singleton<work_manager>::GetInstance()->process_query(result,event); 
     /*
     while(result.next())
     {
