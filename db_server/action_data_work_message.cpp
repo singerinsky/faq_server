@@ -7,10 +7,10 @@
 #include "db_message.pb.h"
 #include "head.h"
 
-class data_work_action: public template_message<ClientHeartBeatRequest,CS_MSG_HEART_BEAT_REQ>  
+class data_work_action: public template_message<ClientHeartBeatRequest,ClientHeartBeatResponse,MSG_HEART_BEAT>  
 {
     public:
-        int process_message(ClientHeartBeatRequest *request)
+        int process_message(ClientHeartBeatRequest *request,socket_client* client)
         {
             LOG(INFO)<<request->client_time();
             return 1;

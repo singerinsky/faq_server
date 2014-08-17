@@ -108,6 +108,15 @@ int socket_client::send_msg(const char* buffer,int size)
     return bufferevent_write(_bev,buffer,size);
 }
 
+int socket_client::send_packet(packet* p)
+{
+    int size = p->encode_size();
+    char buffer[8096]={0};
+    size = p->encode(buffer,8096);
+    if(size <0)return -1;
+    return send_msg(buffer,size); 
+}
+
 void socket_client::init_cb()
 {
     bufferevent_setcb(_bev,common_read_cb,/*common_write_cb*/NULL,common_event_cb,this);

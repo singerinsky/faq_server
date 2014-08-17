@@ -28,6 +28,7 @@ class socket_client
         virtual ~socket_client();
         int connect_to(const char*,int);
         int send_msg(const char* buffer,int size);
+        int send_packet(packet* p);
         int check_packet_info(packet_info* packet,evbuffer* read_buffer);
         bool is_online()
         {

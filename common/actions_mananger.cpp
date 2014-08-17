@@ -18,12 +18,12 @@ void actions_mananger::register_action(int action_id,action_handler* p_action)
 }
 
 
-void actions_mananger::do_action(int action_id,packet_info* packet)
+void actions_mananger::do_action(int action_id,packet_info* packet,socket_client* client)
 {
     auto itr = _actions.find(action_id);
     if(itr != _actions.end())
     {
-        itr->second->do_message_action(packet); 
+        itr->second->do_message_action(packet,client); 
     }
     else
     {

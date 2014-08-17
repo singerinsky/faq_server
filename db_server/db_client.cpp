@@ -8,7 +8,7 @@
 int db_client::process_msg(packet_info* info)
 {
     VLOG(1)<<"Recive message type "<<info->type;
-    Singleton<actions_mananger>::GetInstance()->do_action(info->type,info);
+    Singleton<actions_mananger>::GetInstance()->do_action(info->type,info,this);
     return 1;
 }
 
