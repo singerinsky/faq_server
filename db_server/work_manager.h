@@ -10,11 +10,12 @@ class work_manager:public Singleton<work_manager>
 {
     public:
         friend class Singleton<work_manager>;
-        void    init();
+        void    init(int);
         void    register_client(db_client*);
         void    remove_client(db_client*);
         void    process_query(MysqlResult& result,db_job* job);
         bool    check_client(db_job* job);
+        void    add_work_job(db_job* job);
 
     private:
         std::vector<data_worker*>   _data_vec;

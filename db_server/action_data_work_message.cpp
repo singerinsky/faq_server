@@ -6,6 +6,8 @@
 #include "message_define.h"
 #include "db_message.pb.h"
 #include "head.h"
+#include "data_worker.h"
+#include "work_manager.h"
 
 class data_work_action: public template_message<ClientHeartBeatRequest,ClientHeartBeatResponse,MSG_HEART_BEAT>  
 {
@@ -18,7 +20,7 @@ class data_work_action: public template_message<ClientHeartBeatRequest,ClientHea
             job->_selector = (db_client*)client;
             job->_operate_type = 1;
             job->_seq = 1;
-
+            Singleton<work_manager>::GetInstance()->add_work_job(job);
             return 1;
         }
 

@@ -4,6 +4,7 @@
 #include "session_manager.h"
 #include "db_connection_pool.h"
 #include "data_worker.h"
+#include "work_manager.h"
 
 db_application::~db_application()
 {
@@ -35,18 +36,8 @@ int main(int argc,char** argv)
     app.add_service(cs);
 
     int init_number = Singleton<db_pool>::GetInstance()->init(10);
+    Singleton<work_manager>::GetInstance()->init(10);
     LOG(INFO)<<"init db pool "<<init_number;
-
-    ///////////test
-    data_worker* work = new data_worker();
-    work->init();
-    
-    db_job* job = new db_job(); 
-    job->_sql_str = "SELECT * FROM tb_user";
-    work->add_job(job);
-    work->create();
-    //    db_factory::GetInstance()->init();
-    //////////////end test
 
     app.start_service();
     return 0;

@@ -33,7 +33,7 @@ class template_message:public action_handler
         template_message()
         {
             //TODO do register action
-            Singleton<actions_mananger>::GetInstance()->register_action(MessageCode,(action_handler*)this); 
+            Singleton<actions_mananger>::GetInstance()->register_action(REQ_ID,(action_handler*)this); 
         }
         
         int do_message_action(packet_info* info,socket_client* client)
