@@ -13,6 +13,12 @@ class data_work_action: public template_message<ClientHeartBeatRequest,ClientHea
         int process_message(ClientHeartBeatRequest *request,socket_client* client)
         {
             LOG(INFO)<<request->client_time();
+            db_job* job = new db_job();
+            job->_sql_str = "select * from tb_user";
+            job->_selector = (db_client*)client;
+            job->_operate_type = 1;
+            job->_seq = 1;
+
             return 1;
         }
 
