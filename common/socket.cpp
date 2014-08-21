@@ -57,6 +57,9 @@ int socket_client::connect_to(const char* host_name,int port)
         bufferevent_free(_bev);
         LOG(ERROR)<<"connect failed";
         return -2;
+    }else
+    {
+        LOG(INFO)<<"connect db server success!"; 
     }
     _is_online = true;
     return 1;

@@ -2,6 +2,7 @@
 #include "client_service.h"
 #include "daemon.h"
 #include "session_manager.h"
+#include "db_connection.h"
 
 gate_application::~gate_application()
 {
@@ -11,6 +12,8 @@ gate_application::~gate_application()
 bool gate_application::init()
 {
     LOG(INFO)<<"init gate_application...";
+    db_conn_ = new db_connection();
+    db_conn_->connect_to("127.0.0.1",9999);
     return true;
 }
 
@@ -30,7 +33,7 @@ int main(int argc,char** argv)
 
     gate_application app("gate");
     app.init();
-    client_service* cs = new client_service("127.0.0.1",9999);
+    client_service* cs = new client_service("127.0.0.1",9998);
     app.add_service(cs);
 
     app.start_service();
