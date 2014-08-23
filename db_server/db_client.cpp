@@ -3,6 +3,7 @@
 #include "mysql_connection.h"
 #include "data_worker.h"
 #include "mysql_connection.h"
+#include "db_message.pb.h"
 
 
 int db_client::process_msg(packet_info* info)
@@ -27,19 +28,24 @@ void db_client::init_timer()
 
 void db_client::on_timeout()
 {
-    LOG(INFO)<<"without login virfy,kick out";
+    //LOG(INFO)<<"without login virfy,kick out";
     //on_error(NULL);
     //release(); 
 }
 
 void db_client::do_data_call(MysqlResult& result,db_job* job)
 {
-    LOG(INFO)<<"finish data query"<<job->_operate_type;
-    while(result.next())
+    DbMessageType query_type = ( DbMessageType )job->_operate_type;
+    LOG(INFO)<<"finish query  "<<DbMessageType_Name(query_type);
+    switch(query_type)
     {
-        MysqlResultRow row = result.get_next_row(); 
-        LOG(INFO)<<row.get_int(0); 
+        case DbMessageType::MSG_DB_GET_USER_INFO:
+             on_load_user_data(result,job); 
+             break;
+        default:
+            LOG(ERROR)<<"unkown query type "<<query_type;
     }
+   
 }
 
 void db_client::init(int db_work)
@@ -55,24 +61,12 @@ void db_client::init(int db_work)
     */
 }
 
-/*
-int db_client::work_job_left()
+void db_client::on_load_user_data(MysqlResult& result,db_job* job)
 {
-    int job_left = 0;
-    for(auto& worker_: _db_works)
+    LOG(INFO)<<"finish data query"<<job->_operate_type;
+    while(result.next())
     {
-        job_left += worker_->job_in_list(); 
+        MysqlResultRow row = result.get_next_row(); 
+        LOG(INFO)<<row.get_int(0); 
     }
-    return job_left;
 }
-
-void db_client::release()
-{
-    for(auto& worker_:_db_works)
-    {
-        delete worker_; 
-    }
-    _db_works.clear();
-    delete this;
-}
-*/

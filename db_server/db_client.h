@@ -28,6 +28,8 @@ class db_client: public socket_client
         void on_error(bufferevent* ev);
         void on_timeout();
     protected:
+        
+        void on_load_user_data(MysqlResult& result,db_job* job);
         //        int work_job_left();
         //       void release();
     public:

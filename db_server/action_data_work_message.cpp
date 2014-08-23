@@ -18,7 +18,7 @@ class data_work_action: public template_message<ClientHeartBeatRequest,ClientHea
             db_job* job = new db_job();
             job->_sql_str = "select * from tb_user";
             job->_selector = (db_client*)client;
-            job->_operate_type = 1;
+            job->_operate_type = DbMessageType::MSG_DB_GET_USER_INFO;
             job->_seq = 1;
             Singleton<work_manager>::GetInstance()->add_work_job(job);
             return 1;
