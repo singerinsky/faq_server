@@ -26,6 +26,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
   ClientHeartBeatResponse_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* MSG_ACTION_TYPE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -68,6 +69,7 @@ void protobuf_AssignDesc_message_2eproto() {
       sizeof(ClientHeartBeatResponse));
   MSG_ACTION_TYPE_descriptor_ = file->enum_type(0);
   MessageType_descriptor_ = file->enum_type(1);
+  DbMessageType_descriptor_ = file->enum_type(2);
 }
 
 namespace {
@@ -110,7 +112,8 @@ void protobuf_AddDesc_message_2eproto() {
     "ST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*q"
     "\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_INFO\020"
     "\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOGI"
-    "N\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004", 313);
+    "N\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004*#\n\rDbM"
+    "essageType\022\022\n\rMSG_DB_COMMON\020\220N", 350);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   ClientHeartBeatRequest::default_instance_ = new ClientHeartBeatRequest();
@@ -151,6 +154,19 @@ bool MessageType_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return DbMessageType_descriptor_;
+}
+bool DbMessageType_IsValid(int value) {
+  switch(value) {
+    case 10000:
       return true;
     default:
       return false;

@@ -35,11 +35,12 @@ void db_client::on_timeout()
 
 void db_client::do_data_call(MysqlResult& result,db_job* job)
 {
-    DbMessageType query_type = ( DbMessageType )job->_operate_type;
-    LOG(INFO)<<"finish query  "<<DbMessageType_Name(query_type);
+    DbOperateType query_type = ( DbOperateType)job->_operate_type;
+    LOG(INFO)<<"finish query  "<<DbOperateType_Name(query_type);
+    
     switch(query_type)
     {
-        case DbMessageType::MSG_DB_GET_USER_INFO:
+        case DbOperateType::MSG_DB_GET_USER_INFO:
              on_load_user_data(result,job); 
              break;
         default:

@@ -48,7 +48,5 @@ void data_worker::do_test(MysqlResult& result)
         MysqlResultRow row = result.get_next_row(); 
         LOG(INFO)<<row.get_int(0); 
     }
-
-
 }
 

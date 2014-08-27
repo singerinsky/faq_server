@@ -77,6 +77,24 @@ inline bool MessageType_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<MessageType>(
     MessageType_descriptor(), name, value);
 }
+enum DbMessageType {
+  MSG_DB_COMMON = 10000
+};
+bool DbMessageType_IsValid(int value);
+const DbMessageType DbMessageType_MIN = MSG_DB_COMMON;
+const DbMessageType DbMessageType_MAX = MSG_DB_COMMON;
+const int DbMessageType_ARRAYSIZE = DbMessageType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor();
+inline const ::std::string& DbMessageType_Name(DbMessageType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DbMessageType_descriptor(), value);
+}
+inline bool DbMessageType_Parse(
+    const ::std::string& name, DbMessageType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DbMessageType>(
+    DbMessageType_descriptor(), name, value);
+}
 // ===================================================================
 
 class ClientHeartBeatRequest : public ::google::protobuf::Message {
@@ -310,6 +328,10 @@ inline const EnumDescriptor* GetEnumDescriptor< ::MSG_ACTION_TYPE>() {
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::MessageType>() {
   return ::MessageType_descriptor();
+}
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::DbMessageType>() {
+  return ::DbMessageType_descriptor();
 }
 
 }  // namespace google

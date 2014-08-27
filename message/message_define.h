@@ -1,31 +1,28 @@
 #ifndef _MESSAGE_DEFINE_
 #define _MESSAGE_DEFINE_
 
-
-#include "../common/packet.h"
-#include "../common/game_packet.h"
+#include "packet.h"
+#include "game_packet.h"
 #include "message.pb.h"
+#include "db_message.pb.h"
 
 enum
 {
-    CS_MSG_GET_USER_INFO_REQ    = MSG_HEART_BEAT        << 2|MSG_REQUEST,
-    CS_MSG_GET_USER_INFO_REP    = MSG_HEART_BEAT        << 2|MSG_RESPONSE,
+    MSG_HEART_BEAT_REQ = MSG_HEART_BEAT << 2|MSG_REQUEST,
+    MSG_HEART_BEAT_REP = MSG_HEART_BEAT << 2|MSG_RESPONSE,
+};
+
+enum
+{
+    DB_MSG_COMMON_REQ = MSG_DB_COMMON << 2|MSG_REQUEST,
+    DB_MSG_COMMON_REP = MSG_DB_COMMON << 2|MSG_RESPONSE,
 };
 
 
+typedef cs_packet<DB_MSG_COMMON_REQ,DBCommonReq> cs_packet_db_common_request;
+typedef cs_packet<DB_MSG_COMMON_REP,DBCommonRep> cs_packet_db_common_response;
+typedef cs_packet<MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_packet_heart_request;
+typedef cs_packet<MSG_HEART_BEAT_REP,ClientHeartBeatResponse> cs_packet_heart_response;
 
-//typedef cs_packet<CS_MSG_SOCCER_PLAYER_REQ,SoccerPlayerInfoRequest> cs_soccer_player_request;
-//typedef cs_packet<CS_MSG_SOCCER_PLAYER_REP,SoccerPlayerInfoResponse> cs_soccer_player_response;
 
-//typedef cs_packet<CS_MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_client_hb_request;
-//typedef cs_packet<CS_MSG_HEART_BEAT_REP,ClientHeartBeatResponse> cs_client_hb_response;
-/*
-typedef cs_packet<CS_MSG_CLIENT_LOGIN_REQ,ClientLoginRequest> cs_client_login_request;
-typedef cs_packet<CS_MSG_CLIENT_LOGIN_REP,ClientLoginResponse> cs_client_login_response;
-
-typedef cs_packet<CS_MSG_GATE_REGISTER_REQ,GateServerRegisterRequest> cs_gate_register_request;
-typedef cs_packet<CS_MSG_GATE_REGISTER_REP,GateServerRegisterResponse> cs_gate_register_response;
-
-typedef cs_packet<CS_MSG_COMMON_DATA_UPDATE_NTF,DataCommonUpdateNtf> cs_data_common_update_ntf;
-*/
 #endif

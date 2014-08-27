@@ -18,6 +18,10 @@ enum MessageType
     //data server start......
 }
 
+enum DbMessageType
+{
+    MSG_DB_COMMON   = 10000;
+}
 
 message ClientHeartBeatRequest
 {
