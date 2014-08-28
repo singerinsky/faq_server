@@ -62,8 +62,10 @@ int socket_client::connect_to(const char* host_name,int port)
         LOG(INFO)<<"connect db server success!"; 
     }
     _is_online = true;
+    init_cb();
     return 1;
 }
+
 
 //TODO
 int socket_client::on_read(bufferevent* ev)
@@ -74,9 +76,15 @@ int socket_client::on_read(bufferevent* ev)
         LOG(INFO)<<"get uncomplete msg len"<<evbuffer_get_length(input);
         return 0; 
     }
-    
+
     packet_info info;
-    int msg_len = check_packet_info(&info,input);
+    int msg_len = 0;
+    while((msg_len = check_packet_info(&info,input)) > 0)
+    {
+        process_msg(&info);
+        delete info.data;
+    }
+
     //TODO断开链接
     if(msg_len < 0)
     {
@@ -87,13 +95,11 @@ int socket_client::on_read(bufferevent* ev)
 
     if(msg_len == 0)
         return 0;
-   
-    process_msg(&info);
-    delete info.data;
+
 
     /*
-    int n = 0;
-    while ((n = evbuffer_remove(input, buf, sizeof(buf))) > 0) {
+       int n = 0;
+       while ((n = evbuffer_remove(input, buf, sizeof(buf))) > 0) {
         //fwrite(buf, 1, n, stdout);
         LOG(INFO)<<buf;
     }
@@ -124,6 +130,7 @@ void socket_client::init_cb()
 {
     bufferevent_setcb(_bev,common_read_cb,/*common_write_cb*/NULL,common_event_cb,this);
     bufferevent_enable(_bev,EV_READ);
+    bufferevent_enable(_bev,EV_WRITE);
     bufferevent_enable(_bev,EV_PERSIST);
 }
 

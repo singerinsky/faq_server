@@ -38,6 +38,7 @@ class socket_client
         {
             _is_online = value; 
         }
+
     public:
         int  get_socket_fd(){return _socket;}
         void init_cb();

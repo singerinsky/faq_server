@@ -14,7 +14,8 @@ class data_work_action: public template_message<DBCommonReq,DBCommonRep,MSG_DB_C
     public:
         int process_message(DBCommonReq* request,socket_client* client)
         {
-            LOG(INFO)<<"message  common "<<request->operate_string() << count++;
+            count++;
+            LOG(INFO)<<"message  common "<< count;
             db_job* job = new db_job();
             job->_sql_str = request->operate_string();
             job->_selector = (db_client*)client;
