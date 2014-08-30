@@ -33,16 +33,19 @@ void protobuf_AssignDesc_db_5fmessage_2eproto();
 void protobuf_ShutdownFile_db_5fmessage_2eproto();
 
 class DBUserInfo;
+class DBUserItem;
+class DBUserItemList;
 class DBCommonReq;
 class DBCommonRep;
 
 enum DbOperateType {
   MSG_DB_WORK_START = 10000,
-  MSG_DB_GET_USER_INFO = 10001
+  MSG_DB_GET_USER_INFO = 10001,
+  MSG_DB_GET_ITEM_LIST = 10002
 };
 bool DbOperateType_IsValid(int value);
 const DbOperateType DbOperateType_MIN = MSG_DB_WORK_START;
-const DbOperateType DbOperateType_MAX = MSG_DB_GET_USER_INFO;
+const DbOperateType DbOperateType_MAX = MSG_DB_GET_ITEM_LIST;
 const int DbOperateType_ARRAYSIZE = DbOperateType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DbOperateType_descriptor();
@@ -151,6 +154,183 @@ class DBUserInfo : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static DBUserInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class DBUserItem : public ::google::protobuf::Message {
+ public:
+  DBUserItem();
+  virtual ~DBUserItem();
+
+  DBUserItem(const DBUserItem& from);
+
+  inline DBUserItem& operator=(const DBUserItem& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DBUserItem& default_instance();
+
+  void Swap(DBUserItem* other);
+
+  // implements Message ----------------------------------------------
+
+  DBUserItem* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const DBUserItem& from);
+  void MergeFrom(const DBUserItem& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 item_id = 1;
+  inline bool has_item_id() const;
+  inline void clear_item_id();
+  static const int kItemIdFieldNumber = 1;
+  inline ::google::protobuf::int32 item_id() const;
+  inline void set_item_id(::google::protobuf::int32 value);
+
+  // required int32 item_num = 2;
+  inline bool has_item_num() const;
+  inline void clear_item_num();
+  static const int kItemNumFieldNumber = 2;
+  inline ::google::protobuf::int32 item_num() const;
+  inline void set_item_num(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:DBUserItem)
+ private:
+  inline void set_has_item_id();
+  inline void clear_has_item_id();
+  inline void set_has_item_num();
+  inline void clear_has_item_num();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 item_id_;
+  ::google::protobuf::int32 item_num_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_db_5fmessage_2eproto();
+  friend void protobuf_AssignDesc_db_5fmessage_2eproto();
+  friend void protobuf_ShutdownFile_db_5fmessage_2eproto();
+
+  void InitAsDefaultInstance();
+  static DBUserItem* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class DBUserItemList : public ::google::protobuf::Message {
+ public:
+  DBUserItemList();
+  virtual ~DBUserItemList();
+
+  DBUserItemList(const DBUserItemList& from);
+
+  inline DBUserItemList& operator=(const DBUserItemList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DBUserItemList& default_instance();
+
+  void Swap(DBUserItemList* other);
+
+  // implements Message ----------------------------------------------
+
+  DBUserItemList* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const DBUserItemList& from);
+  void MergeFrom(const DBUserItemList& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .DBUserItem item_list = 1;
+  inline int item_list_size() const;
+  inline void clear_item_list();
+  static const int kItemListFieldNumber = 1;
+  inline const ::DBUserItem& item_list(int index) const;
+  inline ::DBUserItem* mutable_item_list(int index);
+  inline ::DBUserItem* add_item_list();
+  inline const ::google::protobuf::RepeatedPtrField< ::DBUserItem >&
+      item_list() const;
+  inline ::google::protobuf::RepeatedPtrField< ::DBUserItem >*
+      mutable_item_list();
+
+  // @@protoc_insertion_point(class_scope:DBUserItemList)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::RepeatedPtrField< ::DBUserItem > item_list_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_db_5fmessage_2eproto();
+  friend void protobuf_AssignDesc_db_5fmessage_2eproto();
+  friend void protobuf_ShutdownFile_db_5fmessage_2eproto();
+
+  void InitAsDefaultInstance();
+  static DBUserItemList* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -328,6 +508,15 @@ class DBCommonRep : public ::google::protobuf::Message {
   inline ::DBUserInfo* release_user_info();
   inline void set_allocated_user_info(::DBUserInfo* user_info);
 
+  // optional .DBUserItemList user_item_list = 4;
+  inline bool has_user_item_list() const;
+  inline void clear_user_item_list();
+  static const int kUserItemListFieldNumber = 4;
+  inline const ::DBUserItemList& user_item_list() const;
+  inline ::DBUserItemList* mutable_user_item_list();
+  inline ::DBUserItemList* release_user_item_list();
+  inline void set_allocated_user_item_list(::DBUserItemList* user_item_list);
+
   // @@protoc_insertion_point(class_scope:DBCommonRep)
  private:
   inline void set_has_ret();
@@ -336,15 +525,18 @@ class DBCommonRep : public ::google::protobuf::Message {
   inline void clear_has_operate_type();
   inline void set_has_user_info();
   inline void clear_has_user_info();
+  inline void set_has_user_item_list();
+  inline void clear_has_user_item_list();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int32 ret_;
   ::google::protobuf::int32 operate_type_;
   ::DBUserInfo* user_info_;
+  ::DBUserItemList* user_item_list_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
 
   friend void  protobuf_AddDesc_db_5fmessage_2eproto();
   friend void protobuf_AssignDesc_db_5fmessage_2eproto();
@@ -450,6 +642,83 @@ inline void DBUserInfo::set_allocated_user_name(::std::string* user_name) {
     clear_has_user_name();
     user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
+}
+
+// -------------------------------------------------------------------
+
+// DBUserItem
+
+// required int32 item_id = 1;
+inline bool DBUserItem::has_item_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void DBUserItem::set_has_item_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void DBUserItem::clear_has_item_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void DBUserItem::clear_item_id() {
+  item_id_ = 0;
+  clear_has_item_id();
+}
+inline ::google::protobuf::int32 DBUserItem::item_id() const {
+  return item_id_;
+}
+inline void DBUserItem::set_item_id(::google::protobuf::int32 value) {
+  set_has_item_id();
+  item_id_ = value;
+}
+
+// required int32 item_num = 2;
+inline bool DBUserItem::has_item_num() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void DBUserItem::set_has_item_num() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void DBUserItem::clear_has_item_num() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void DBUserItem::clear_item_num() {
+  item_num_ = 0;
+  clear_has_item_num();
+}
+inline ::google::protobuf::int32 DBUserItem::item_num() const {
+  return item_num_;
+}
+inline void DBUserItem::set_item_num(::google::protobuf::int32 value) {
+  set_has_item_num();
+  item_num_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// DBUserItemList
+
+// repeated .DBUserItem item_list = 1;
+inline int DBUserItemList::item_list_size() const {
+  return item_list_.size();
+}
+inline void DBUserItemList::clear_item_list() {
+  item_list_.Clear();
+}
+inline const ::DBUserItem& DBUserItemList::item_list(int index) const {
+  return item_list_.Get(index);
+}
+inline ::DBUserItem* DBUserItemList::mutable_item_list(int index) {
+  return item_list_.Mutable(index);
+}
+inline ::DBUserItem* DBUserItemList::add_item_list() {
+  return item_list_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::DBUserItem >&
+DBUserItemList::item_list() const {
+  return item_list_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::DBUserItem >*
+DBUserItemList::mutable_item_list() {
+  return &item_list_;
 }
 
 // -------------------------------------------------------------------
@@ -631,6 +900,44 @@ inline void DBCommonRep::set_allocated_user_info(::DBUserInfo* user_info) {
     set_has_user_info();
   } else {
     clear_has_user_info();
+  }
+}
+
+// optional .DBUserItemList user_item_list = 4;
+inline bool DBCommonRep::has_user_item_list() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void DBCommonRep::set_has_user_item_list() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void DBCommonRep::clear_has_user_item_list() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void DBCommonRep::clear_user_item_list() {
+  if (user_item_list_ != NULL) user_item_list_->::DBUserItemList::Clear();
+  clear_has_user_item_list();
+}
+inline const ::DBUserItemList& DBCommonRep::user_item_list() const {
+  return user_item_list_ != NULL ? *user_item_list_ : *default_instance_->user_item_list_;
+}
+inline ::DBUserItemList* DBCommonRep::mutable_user_item_list() {
+  set_has_user_item_list();
+  if (user_item_list_ == NULL) user_item_list_ = new ::DBUserItemList;
+  return user_item_list_;
+}
+inline ::DBUserItemList* DBCommonRep::release_user_item_list() {
+  clear_has_user_item_list();
+  ::DBUserItemList* temp = user_item_list_;
+  user_item_list_ = NULL;
+  return temp;
+}
+inline void DBCommonRep::set_allocated_user_item_list(::DBUserItemList* user_item_list) {
+  delete user_item_list_;
+  user_item_list_ = user_item_list;
+  if (user_item_list) {
+    set_has_user_item_list();
+  } else {
+    clear_has_user_item_list();
   }
 }
 

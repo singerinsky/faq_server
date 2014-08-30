@@ -19,30 +19,34 @@ bool have_escape_char(const char* data,int size) ;
 class MysqlResultRow
 {
     public:
-        MysqlResultRow(const char** data):_data(data)
+        MysqlResultRow(const char** data,int column):_data(data),_field_column(column)
     {
-
+    
     }
     public:
 
         int get_int(int column)
         {
+            assert(column < _field_column);
             return atoi(_data[column]); 
         }
 
         int64_t get_int64(int column)
         {
+            assert(column < _field_column);
             return atol(_data[column]); 
         }  
 
         std::string get_string(int column)
         {
+            assert(column < _field_column);
             std::string str;
             str.assign(_data[column]);  
             return str;
         }
 
     private:
+        int         _field_column;
         const char** _data;
 
 };
@@ -53,6 +57,7 @@ class MysqlResult
         MysqlResult(MYSQL_RES* result):_result(result)
     {
         _row_count =  mysql_num_rows(result) ;
+        _field_count = mysql_num_fields(result);
         _start_index = 0;
     }
 
@@ -67,12 +72,13 @@ class MysqlResult
 
         MysqlResultRow get_next_row()
         {
-            MysqlResultRow row((const char**)mysql_fetch_row(_result)) ;
+            MysqlResultRow row((const char**)mysql_fetch_row(_result),_field_count) ;
             return row; 
         }
     private:
         size_t       _start_index;
         size_t       _row_count;
+        size_t       _field_count;
         MYSQL_RES*   _result ;
 };
 

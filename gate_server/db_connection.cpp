@@ -1,6 +1,7 @@
 #include "db_connection.h"
 #include "actions_mananger.h"
 #include "message_define.h"
+#include "db_message.pb.h"
 
 void db_connection::on_error(bufferevent* bev)
 {
@@ -11,7 +12,15 @@ int db_connection::process_msg(packet_info* info)
 {
     VLOG(1)<<"db_connection Recive message type "<<info->type;
     int message_type = info->type;
-    Singleton<actions_mananger>::GetInstance()->do_action(info->type,info,this);
+    switch(message_type)
+    {
+        case   cs_packet_db_common_response::packet_type: 
+            process_db_response(info);
+            break;
+        default:
+            LOG(ERROR)<<"message type unregister"<<message_type;
+    
+    }
     return 1;
 }
 
@@ -33,10 +42,53 @@ void db_connection::on_timeout()
     {
         LOG(ERROR)<<"error ";
          return;
-     }
+    }
+
+    req.body.set_operate_type(DbOperateType::MSG_DB_GET_ITEM_LIST);
+    req.body.set_operate_string("select * from tb_user_item where bi_ply_guid = 1");
+    ret = send_packet(&req);
+    
      
     if(process_count== 10000)
         LOG(INFO)<<"end ";
-    else
-        _m_timer.set_expire(1); 
+   // else
+       // _m_timer.set_expire(1); 
 }
+
+int db_connection::process_db_response(packet_info* info)
+{
+    cs_packet_db_common_response response;
+    if(response.decode(info->data,info->size) != info->size)return -1;
+    if(response.body.ret() != 0)
+    {
+        LOG(ERROR)<<"db response error "<<response.body.operate_type(); 
+    }
+    switch(response.body.operate_type())
+    {
+        case DbOperateType::MSG_DB_GET_USER_INFO:
+            return load_user_info(response.body.user_info());
+        case DbOperateType::MSG_DB_GET_ITEM_LIST:
+            return load_user_item_list(response.body.user_item_list());
+        default:
+            LOG(INFO)<<"unregister db operate "<<response.body.operate_type();
+            return -2;
+    }
+}
+
+int db_connection::load_user_info(const DBUserInfo& info)
+{
+    LOG(INFO)<<"load user info "<<info.user_name();
+    return 1;
+}
+
+int db_connection::load_user_item_list(const DBUserItemList& info)
+{
+    return 1;
+}
+
+
+
+
+
+
+

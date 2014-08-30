@@ -30,6 +30,7 @@ class db_client: public socket_client
     protected:
         
         void on_load_user_data(MysqlResult& result,db_job* job);
+        void on_load_item_list_data(MysqlResult& result,db_job* job);
         //        int work_job_left();
         //       void release();
     public:

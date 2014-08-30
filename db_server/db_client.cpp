@@ -4,6 +4,7 @@
 #include "data_worker.h"
 #include "mysql_connection.h"
 #include "db_message.pb.h"
+#include "message_define.h"
 
 
 int db_client::process_msg(packet_info* info)
@@ -43,6 +44,8 @@ void db_client::do_data_call(MysqlResult& result,db_job* job)
         case DbOperateType::MSG_DB_GET_USER_INFO:
              on_load_user_data(result,job); 
              break;
+        case DbOperateType::MSG_DB_GET_ITEM_LIST:
+             on_load_item_list_data(result,job);
         default:
             LOG(ERROR)<<"unkown query type "<<query_type;
     }
@@ -65,9 +68,28 @@ void db_client::init(int db_work)
 void db_client::on_load_user_data(MysqlResult& result,db_job* job)
 {
     LOG(INFO)<<"finish data query"<<job->_operate_type;
-    while(result.next())
+    if(result.next())
     {
         MysqlResultRow row = result.get_next_row(); 
         LOG(INFO)<<row.get_int(0); 
+        cs_packet_db_common_response response ;
+        response.body.set_ret(0);
+        response.body.set_operate_type(job->_operate_type);
+        DBUserInfo* user_info = response.body.mutable_user_info();
+        user_info->set_user_id(row.get_int(0));
+        user_info->set_user_name(row.get_string(1));
+        LOG(INFO)<<response.body.user_info().user_name();
+        send_packet(&response);
+    }
+
+}
+
+void db_client::on_load_item_list_data(MysqlResult& result,db_job* job)
+{
+    LOG(INFO)<<"finish data query"<<job->_operate_type;
+    while(result.next())
+    {
+        MysqlResultRow row = result.get_next_row(); 
+        LOG(INFO)<<row.get_int(0)<<":"<<row.get_int(1); 
     }
 }
