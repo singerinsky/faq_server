@@ -2,6 +2,7 @@
 #include "actions_mananger.h"
 #include "message_define.h"
 #include "db_message.pb.h"
+#include "logic_player.h"
 
 void db_connection::on_error(bufferevent* bev)
 {
@@ -78,6 +79,8 @@ int db_connection::process_db_response(packet_info* info)
 int db_connection::load_user_info(const DBUserInfo& info)
 {
     LOG(INFO)<<"load user info "<<info.user_name();
+    LogicPlayer* player = new LogicPlayer();
+    
     return 1;
 }
 
@@ -85,6 +88,22 @@ int db_connection::load_user_item_list(const DBUserItemList& info)
 {
     return 1;
 }
+
+int db_connection::build_query(int operate_type,const char* sql_str,...)
+{
+    char buffer[2048] = {0};
+    va_list argp;
+    va_start (argp,sql_str);
+    vsnprintf(buffer,2048,sql_str,argp);
+    va_end(argp);
+    cs_packet_db_common_request request;
+    request.body.set_operate_type(operate_type);
+    request.body.set_operate_string(buffer);
+    return send_packet(&request);
+}
+
+
+
 
 
 

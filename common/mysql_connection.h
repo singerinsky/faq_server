@@ -8,6 +8,7 @@
 #ifndef MYSQL_CONNECTION_H_
 #define MYSQL_CONNECTION_H_
 
+#include <assert.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include "mysql/mysql.h"
@@ -19,9 +20,10 @@ bool have_escape_char(const char* data,int size) ;
 class MysqlResultRow
 {
     public:
-        MysqlResultRow(const char** data,int column):_data(data),_field_column(column)
+        MysqlResultRow(int column,const char** data)
     {
-    
+        _field_column = column;
+        _data = data;
     }
     public:
 
@@ -48,7 +50,6 @@ class MysqlResultRow
     private:
         int         _field_column;
         const char** _data;
-
 };
 
 class MysqlResult
@@ -72,7 +73,7 @@ class MysqlResult
 
         MysqlResultRow get_next_row()
         {
-            MysqlResultRow row((const char**)mysql_fetch_row(_result),_field_count) ;
+            MysqlResultRow row(_field_count,(const char**)mysql_fetch_row(_result)) ;
             return row; 
         }
     private:

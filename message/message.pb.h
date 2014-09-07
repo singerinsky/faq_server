@@ -35,6 +35,8 @@ void protobuf_ShutdownFile_message_2eproto();
 
 class ClientHeartBeatRequest;
 class ClientHeartBeatResponse;
+class ClientLoginRequest;
+class ClientLoginResponse;
 
 enum MSG_ACTION_TYPE {
   MSG_REQUEST = 0,
@@ -259,6 +261,185 @@ class ClientHeartBeatResponse : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static ClientHeartBeatResponse* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class ClientLoginRequest : public ::google::protobuf::Message {
+ public:
+  ClientLoginRequest();
+  virtual ~ClientLoginRequest();
+
+  ClientLoginRequest(const ClientLoginRequest& from);
+
+  inline ClientLoginRequest& operator=(const ClientLoginRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientLoginRequest& default_instance();
+
+  void Swap(ClientLoginRequest* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientLoginRequest* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ClientLoginRequest& from);
+  void MergeFrom(const ClientLoginRequest& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 role_id = 1;
+  inline bool has_role_id() const;
+  inline void clear_role_id();
+  static const int kRoleIdFieldNumber = 1;
+  inline ::google::protobuf::int32 role_id() const;
+  inline void set_role_id(::google::protobuf::int32 value);
+
+  // required string token = 2;
+  inline bool has_token() const;
+  inline void clear_token();
+  static const int kTokenFieldNumber = 2;
+  inline const ::std::string& token() const;
+  inline void set_token(const ::std::string& value);
+  inline void set_token(const char* value);
+  inline void set_token(const char* value, size_t size);
+  inline ::std::string* mutable_token();
+  inline ::std::string* release_token();
+  inline void set_allocated_token(::std::string* token);
+
+  // @@protoc_insertion_point(class_scope:ClientLoginRequest)
+ private:
+  inline void set_has_role_id();
+  inline void clear_has_role_id();
+  inline void set_has_token();
+  inline void clear_has_token();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* token_;
+  ::google::protobuf::int32 role_id_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientLoginRequest* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientLoginResponse : public ::google::protobuf::Message {
+ public:
+  ClientLoginResponse();
+  virtual ~ClientLoginResponse();
+
+  ClientLoginResponse(const ClientLoginResponse& from);
+
+  inline ClientLoginResponse& operator=(const ClientLoginResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientLoginResponse& default_instance();
+
+  void Swap(ClientLoginResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientLoginResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ClientLoginResponse& from);
+  void MergeFrom(const ClientLoginResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 ret = 1;
+  inline bool has_ret() const;
+  inline void clear_ret();
+  static const int kRetFieldNumber = 1;
+  inline ::google::protobuf::int32 ret() const;
+  inline void set_ret(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:ClientLoginResponse)
+ private:
+  inline void set_has_ret();
+  inline void clear_has_ret();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 ret_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientLoginResponse* default_instance_;
+};
 // ===================================================================
 
 
@@ -312,6 +493,128 @@ inline ::google::protobuf::int32 ClientHeartBeatResponse::server_time() const {
 inline void ClientHeartBeatResponse::set_server_time(::google::protobuf::int32 value) {
   set_has_server_time();
   server_time_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientLoginRequest
+
+// required int32 role_id = 1;
+inline bool ClientLoginRequest::has_role_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientLoginRequest::set_has_role_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientLoginRequest::clear_has_role_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientLoginRequest::clear_role_id() {
+  role_id_ = 0;
+  clear_has_role_id();
+}
+inline ::google::protobuf::int32 ClientLoginRequest::role_id() const {
+  return role_id_;
+}
+inline void ClientLoginRequest::set_role_id(::google::protobuf::int32 value) {
+  set_has_role_id();
+  role_id_ = value;
+}
+
+// required string token = 2;
+inline bool ClientLoginRequest::has_token() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientLoginRequest::set_has_token() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientLoginRequest::clear_has_token() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientLoginRequest::clear_token() {
+  if (token_ != &::google::protobuf::internal::kEmptyString) {
+    token_->clear();
+  }
+  clear_has_token();
+}
+inline const ::std::string& ClientLoginRequest::token() const {
+  return *token_;
+}
+inline void ClientLoginRequest::set_token(const ::std::string& value) {
+  set_has_token();
+  if (token_ == &::google::protobuf::internal::kEmptyString) {
+    token_ = new ::std::string;
+  }
+  token_->assign(value);
+}
+inline void ClientLoginRequest::set_token(const char* value) {
+  set_has_token();
+  if (token_ == &::google::protobuf::internal::kEmptyString) {
+    token_ = new ::std::string;
+  }
+  token_->assign(value);
+}
+inline void ClientLoginRequest::set_token(const char* value, size_t size) {
+  set_has_token();
+  if (token_ == &::google::protobuf::internal::kEmptyString) {
+    token_ = new ::std::string;
+  }
+  token_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* ClientLoginRequest::mutable_token() {
+  set_has_token();
+  if (token_ == &::google::protobuf::internal::kEmptyString) {
+    token_ = new ::std::string;
+  }
+  return token_;
+}
+inline ::std::string* ClientLoginRequest::release_token() {
+  clear_has_token();
+  if (token_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = token_;
+    token_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void ClientLoginRequest::set_allocated_token(::std::string* token) {
+  if (token_ != &::google::protobuf::internal::kEmptyString) {
+    delete token_;
+  }
+  if (token) {
+    set_has_token();
+    token_ = token;
+  } else {
+    clear_has_token();
+    token_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// -------------------------------------------------------------------
+
+// ClientLoginResponse
+
+// required int32 ret = 1;
+inline bool ClientLoginResponse::has_ret() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientLoginResponse::set_has_ret() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientLoginResponse::clear_has_ret() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientLoginResponse::clear_ret() {
+  ret_ = 0;
+  clear_has_ret();
+}
+inline ::google::protobuf::int32 ClientLoginResponse::ret() const {
+  return ret_;
+}
+inline void ClientLoginResponse::set_ret(::google::protobuf::int32 value) {
+  set_has_ret();
+  ret_ = value;
 }
 
 

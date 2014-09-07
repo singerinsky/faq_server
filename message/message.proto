@@ -13,8 +13,8 @@ enum MessageType
     //gate server start......
     MSG_SOCCER_PLAYER_INFO = 1;
     MSG_HEART_BEAT          = 2;//心跳
-    MSG_CLIENT_LOGIN        =3;//client login
-    MSG_GATE_SERVER_REGISTER =4;//gate server register
+    MSG_CLIENT_LOGIN        = 3;//client login
+    MSG_GATE_SERVER_REGISTER = 4;//gate server register
     //data server start......
 }
 
@@ -33,3 +33,14 @@ message ClientHeartBeatResponse
     required int32 server_time = 1;
 }
 
+
+message ClientLoginRequest
+{
+    required int32 role_id = 1;
+    required string token = 2;
+}
+
+message ClientLoginResponse
+{
+    required int32 ret = 1;
+}

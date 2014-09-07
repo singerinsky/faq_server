@@ -4,10 +4,12 @@
 #include "session_manager.h"
 #include "db_connection.h"
 
+db_connection* gate_application::db_conn_ = NULL;
 gate_application::~gate_application()
 {
 
 }
+
 
 bool gate_application::init()
 {

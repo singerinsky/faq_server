@@ -19,6 +19,7 @@ class db_connection:public socket_client
         void on_error(bufferevent* bev);
         int process_msg(packet_info* msg_packet);
         void on_timeout();
+        int  build_query(int operate_type,const char* sql_str,...);
     protected:
         int process_db_response(packet_info* info);
         int load_user_info(const DBUserInfo& info);

@@ -15,7 +15,8 @@ class gate_application: public server_appliaction
         virtual bool init();
     private:
         client_service* client_service_;
-        db_connection*  db_conn_;
+    public:
+        static db_connection*  db_conn_;
 };
 
 
