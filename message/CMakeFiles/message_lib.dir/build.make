@@ -49,32 +49,9 @@ include CMakeFiles/message_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/message_lib.dir/flags.make
 
-CMakeFiles/message_lib.dir/role_info.pb.o: CMakeFiles/message_lib.dir/flags.make
-CMakeFiles/message_lib.dir/role_info.pb.o: role_info.pb.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/message_lib.dir/role_info.pb.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/role_info.pb.o -c /home/gl/faq_server/message/role_info.pb.cc
-
-CMakeFiles/message_lib.dir/role_info.pb.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/role_info.pb.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/role_info.pb.cc > CMakeFiles/message_lib.dir/role_info.pb.i
-
-CMakeFiles/message_lib.dir/role_info.pb.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/role_info.pb.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/role_info.pb.cc -o CMakeFiles/message_lib.dir/role_info.pb.s
-
-CMakeFiles/message_lib.dir/role_info.pb.o.requires:
-.PHONY : CMakeFiles/message_lib.dir/role_info.pb.o.requires
-
-CMakeFiles/message_lib.dir/role_info.pb.o.provides: CMakeFiles/message_lib.dir/role_info.pb.o.requires
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/role_info.pb.o.provides.build
-.PHONY : CMakeFiles/message_lib.dir/role_info.pb.o.provides
-
-CMakeFiles/message_lib.dir/role_info.pb.o.provides.build: CMakeFiles/message_lib.dir/role_info.pb.o
-
 CMakeFiles/message_lib.dir/message.pb.o: CMakeFiles/message_lib.dir/flags.make
 CMakeFiles/message_lib.dir/message.pb.o: message.pb.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/message_lib.dir/message.pb.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/message.pb.o -c /home/gl/faq_server/message/message.pb.cc
 
@@ -95,16 +72,39 @@ CMakeFiles/message_lib.dir/message.pb.o.provides: CMakeFiles/message_lib.dir/mes
 
 CMakeFiles/message_lib.dir/message.pb.o.provides.build: CMakeFiles/message_lib.dir/message.pb.o
 
+CMakeFiles/message_lib.dir/db_message.pb.o: CMakeFiles/message_lib.dir/flags.make
+CMakeFiles/message_lib.dir/db_message.pb.o: db_message.pb.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/message_lib.dir/db_message.pb.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/db_message.pb.o -c /home/gl/faq_server/message/db_message.pb.cc
+
+CMakeFiles/message_lib.dir/db_message.pb.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/db_message.pb.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/db_message.pb.cc > CMakeFiles/message_lib.dir/db_message.pb.i
+
+CMakeFiles/message_lib.dir/db_message.pb.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/db_message.pb.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/db_message.pb.cc -o CMakeFiles/message_lib.dir/db_message.pb.s
+
+CMakeFiles/message_lib.dir/db_message.pb.o.requires:
+.PHONY : CMakeFiles/message_lib.dir/db_message.pb.o.requires
+
+CMakeFiles/message_lib.dir/db_message.pb.o.provides: CMakeFiles/message_lib.dir/db_message.pb.o.requires
+	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/db_message.pb.o.provides.build
+.PHONY : CMakeFiles/message_lib.dir/db_message.pb.o.provides
+
+CMakeFiles/message_lib.dir/db_message.pb.o.provides.build: CMakeFiles/message_lib.dir/db_message.pb.o
+
 # Object files for target message_lib
 message_lib_OBJECTS = \
-"CMakeFiles/message_lib.dir/role_info.pb.o" \
-"CMakeFiles/message_lib.dir/message.pb.o"
+"CMakeFiles/message_lib.dir/message.pb.o" \
+"CMakeFiles/message_lib.dir/db_message.pb.o"
 
 # External object files for target message_lib
 message_lib_EXTERNAL_OBJECTS =
 
-/home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/role_info.pb.o
 /home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/message.pb.o
+/home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/db_message.pb.o
 /home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/build.make
 /home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library /home/gl/faq_server/game_lib/libmessage_lib.a"
@@ -115,8 +115,8 @@ message_lib_EXTERNAL_OBJECTS =
 CMakeFiles/message_lib.dir/build: /home/gl/faq_server/game_lib/libmessage_lib.a
 .PHONY : CMakeFiles/message_lib.dir/build
 
-CMakeFiles/message_lib.dir/requires: CMakeFiles/message_lib.dir/role_info.pb.o.requires
 CMakeFiles/message_lib.dir/requires: CMakeFiles/message_lib.dir/message.pb.o.requires
+CMakeFiles/message_lib.dir/requires: CMakeFiles/message_lib.dir/db_message.pb.o.requires
 .PHONY : CMakeFiles/message_lib.dir/requires
 
 CMakeFiles/message_lib.dir/clean:

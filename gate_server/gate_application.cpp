@@ -2,15 +2,20 @@
 #include "client_service.h"
 #include "daemon.h"
 #include "session_manager.h"
+#include "db_connection.h"
 
+db_connection* gate_application::db_conn_ = NULL;
 gate_application::~gate_application()
 {
 
 }
 
+
 bool gate_application::init()
 {
     LOG(INFO)<<"init gate_application...";
+    db_conn_ = new db_connection();
+    db_conn_->connect_to("127.0.0.1",9999);
     return true;
 }
 
@@ -27,24 +32,10 @@ int main(int argc,char** argv)
 		}
 	}
     FLAGS_logtostderr = !FLAGS_daemon;
-/////////////////////////////////////////////
-    TiXmlDocument doc(SERVER_XML);
-    bool load_rst = doc.LoadFile();
-    if(!load_rst)
-    {
-        LOG(ERROR)<<"load server failed!"; 
-        exit(-1);
-    }
 
-    TiXmlNode* node = doc.FirstChild("server");
-    TiXmlElement* ele = node->ToElement();
-    int id = 0;
-    ele->Attribute("id",&id);
-    LOG(INFO)<<"ID"<<id;
-///////////////////////////////////////////////
     gate_application app("gate");
     app.init();
-    client_service* cs = new client_service("127.0.0.1",9999);
+    client_service* cs = new client_service("127.0.0.1",9998);
     app.add_service(cs);
 
     app.start_service();

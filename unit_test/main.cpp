@@ -40,8 +40,8 @@ typedef cs_packet<CS_MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_client_hb_req
 int main(int argc,char** argv){
 	init_server_log(argc,argv);
 	
-    do_mysql_test();
-    return 1;
+    //do_mysql_test();
+    //return 1;
 	int port = 1;
 	struct sockaddr_in addr;
 	socklen_t len;

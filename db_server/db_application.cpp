@@ -3,7 +3,8 @@
 #include "daemon.h"
 #include "session_manager.h"
 #include "db_connection_pool.h"
-#include "db_connection_pool.h"
+#include "data_worker.h"
+#include "work_manager.h"
 
 db_application::~db_application()
 {
@@ -29,28 +30,14 @@ int main(int argc,char** argv)
 		}
 	}
     FLAGS_logtostderr = !FLAGS_daemon;
-/////////////////////////////////////////////
-    TiXmlDocument doc(SERVER_XML);
-    bool load_rst = doc.LoadFile();
-    if(!load_rst)
-    {
-        LOG(ERROR)<<"load server failed!"; 
-        exit(-1);
-    }
-
-    TiXmlNode* node = doc.FirstChild("server");
-    TiXmlElement* ele = node->ToElement();
-    int id = 0;
-    ele->Attribute("id",&id);
-    LOG(INFO)<<"ID"<<id;
-///////////////////////////////////////////////
     db_application app("db");
     app.init();
     db_service* cs = new db_service("127.0.0.1",9999);
     app.add_service(cs);
 
-    Singleton<db_pool>::GetInstance()->init(100);
-
+    int init_number = Singleton<db_pool>::GetInstance()->init(10);
+    Singleton<work_manager>::GetInstance()->init(10);
+    LOG(INFO)<<"init db pool "<<init_number;
 
     app.start_service();
     return 0;

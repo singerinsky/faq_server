@@ -2,7 +2,11 @@
 #define _GATE_CLEINT_H_
 #include "socket.h"
 #include "timer.h"
+#include "mysql_connection.h"
 
+class MysqlResultRow;
+class db_job;
+class data_worker;
 class db_client: public socket_client
 {
     public:
@@ -14,6 +18,7 @@ class db_client: public socket_client
         }
         virtual ~db_client(){
         };
+        void init(int db_work);
 
         void init_timer();
 
@@ -22,9 +27,16 @@ class db_client: public socket_client
         int process_msg(packet_info* info);
         void on_error(bufferevent* ev);
         void on_timeout();
+    protected:
+        
+        void on_load_user_data(MysqlResult& result,db_job* job);
+        void on_load_item_list_data(MysqlResult& result,db_job* job);
+        //        int work_job_left();
+        //       void release();
+    public:
+        void do_data_call(MysqlResult& result,db_job* job);
     private:
         template_timer<db_client,&db_client::on_timeout>    _m_timer;
-
 };
 
 #endif

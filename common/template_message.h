@@ -4,35 +4,47 @@
 #include "game_packet.h"
 #include "actions_mananger.h"
 
+enum
+{
+    MSG_REQUEST_MASK,
+    MSG_RESPONSE_MASK,
+};
+class socket_client;
 class action_handler
 {
     public:
-        virtual int do_message_action(packet_info* info) = 0;
+        virtual int do_message_action(packet_info* info,socket_client*) = 0;
 
 };
 
-template<class RequestBody,int MessageCode>
+template<class RequestBody,class ResponseBoby,int MessageCode>
 class template_message:public action_handler
 {
     public:
         //typedef RequestBody typeT;
-        typedef cs_packet<MessageCode,RequestBody>    message_packet;
+        enum
+        {
+            REQ_ID = MessageCode<<2|MSG_REQUEST_MASK,
+            RSP_ID = MessageCode<<2|MSG_RESPONSE_MASK,
+        };
+        typedef cs_packet<REQ_ID,RequestBody>    req_message_packet;
+        typedef cs_packet<RSP_ID,ResponseBoby>    rsp_message_packet;
     public:
         template_message()
         {
             //TODO do register action
-            Singleton<actions_mananger>::GetInstance()->register_action(MessageCode,(action_handler*)this); 
+            Singleton<actions_mananger>::GetInstance()->register_action(REQ_ID,(action_handler*)this); 
         }
         
-        int do_message_action(packet_info* info)
+        int do_message_action(packet_info* info,socket_client* client)
         {
             //TODO decode from packet_info
-            message_packet t; 
+            req_message_packet t; 
             if(t.decode(info->data,info->size) != info->size)return -1;
-            process_message(&(t.body));
+            process_message(&(t.body),client);
             return 1;
         }
-        virtual int process_message(RequestBody *body) = 0;
+        virtual int process_message(RequestBody *body,socket_client*) = 0;
 
 };
 

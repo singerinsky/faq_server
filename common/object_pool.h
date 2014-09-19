@@ -9,10 +9,13 @@ class object_pool:public Singleton<object_pool<T> >
 {
     protected:
         virtual T*  create() = 0;
+        virtual bool init_config() = 0;
     public:
         friend class Singleton<object_pool<T> >;
         int     init(int number)
         {
+            init_config();
+
             for(int i=0;i<number;i++)
             {
                 T* t = create();
@@ -22,14 +25,17 @@ class object_pool:public Singleton<object_pool<T> >
                 }else
                 {
                     LOG(ERROR)<<"create object error"; 
+                    exit(-1);
                 }
-                
             }
+            LOG(INFO)<<"init "<<"pool "<<_object_list.size();
+            return _object_list.size();
         }
+
         T*      pop()
         {
             if(_object_list.size() == 0 )return NULL;
-            T* t = *(_object_list.front()); 
+            T* t = (_object_list.front()); 
             _object_list.pop_front();
             return t;
         }

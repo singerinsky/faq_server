@@ -5,6 +5,7 @@
 #define SERVER_XML "server.xml"
 
 class client_service;
+class db_connection;
 class gate_application: public server_appliaction
 {
     public:
@@ -14,6 +15,8 @@ class gate_application: public server_appliaction
         virtual bool init();
     private:
         client_service* client_service_;
+    public:
+        static db_connection*  db_conn_;
 };
 
 

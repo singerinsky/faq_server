@@ -136,6 +136,30 @@ actions_mananger.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/actions_mananger.cpp.s
 .PHONY : actions_mananger.cpp.s
 
+db_connection_pool.o: db_connection_pool.cpp.o
+.PHONY : db_connection_pool.o
+
+# target to build an object file
+db_connection_pool.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.o
+.PHONY : db_connection_pool.cpp.o
+
+db_connection_pool.i: db_connection_pool.cpp.i
+.PHONY : db_connection_pool.i
+
+# target to preprocess a source file
+db_connection_pool.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.i
+.PHONY : db_connection_pool.cpp.i
+
+db_connection_pool.s: db_connection_pool.cpp.s
+.PHONY : db_connection_pool.s
+
+# target to generate assembly for a file
+db_connection_pool.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.s
+.PHONY : db_connection_pool.cpp.s
+
 game_packet.o: game_packet.cpp.o
 .PHONY : game_packet.o
 
@@ -159,6 +183,54 @@ game_packet.s: game_packet.cpp.s
 game_packet.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/game_packet.cpp.s
 .PHONY : game_packet.cpp.s
+
+job_factory.o: job_factory.cpp.o
+.PHONY : job_factory.o
+
+# target to build an object file
+job_factory.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.o
+.PHONY : job_factory.cpp.o
+
+job_factory.i: job_factory.cpp.i
+.PHONY : job_factory.i
+
+# target to preprocess a source file
+job_factory.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.i
+.PHONY : job_factory.cpp.i
+
+job_factory.s: job_factory.cpp.s
+.PHONY : job_factory.s
+
+# target to generate assembly for a file
+job_factory.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.s
+.PHONY : job_factory.cpp.s
+
+mysql_connection.o: mysql_connection.cpp.o
+.PHONY : mysql_connection.o
+
+# target to build an object file
+mysql_connection.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.o
+.PHONY : mysql_connection.cpp.o
+
+mysql_connection.i: mysql_connection.cpp.i
+.PHONY : mysql_connection.i
+
+# target to preprocess a source file
+mysql_connection.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.i
+.PHONY : mysql_connection.cpp.i
+
+mysql_connection.s: mysql_connection.cpp.s
+.PHONY : mysql_connection.s
+
+# target to generate assembly for a file
+mysql_connection.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.s
+.PHONY : mysql_connection.cpp.s
 
 net_util.o: net_util.cpp.o
 .PHONY : net_util.o
@@ -255,6 +327,30 @@ socket.s: socket.cpp.s
 socket.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/socket.cpp.s
 .PHONY : socket.cpp.s
+
+thread.o: thread.cpp.o
+.PHONY : thread.o
+
+# target to build an object file
+thread.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.o
+.PHONY : thread.cpp.o
+
+thread.i: thread.cpp.i
+.PHONY : thread.i
+
+# target to preprocess a source file
+thread.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.i
+.PHONY : thread.cpp.i
+
+thread.s: thread.cpp.s
+.PHONY : thread.s
+
+# target to generate assembly for a file
+thread.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.s
+.PHONY : thread.cpp.s
 
 timer.o: timer.cpp.o
 .PHONY : timer.o
@@ -388,9 +484,18 @@ help:
 	@echo "... actions_mananger.o"
 	@echo "... actions_mananger.i"
 	@echo "... actions_mananger.s"
+	@echo "... db_connection_pool.o"
+	@echo "... db_connection_pool.i"
+	@echo "... db_connection_pool.s"
 	@echo "... game_packet.o"
 	@echo "... game_packet.i"
 	@echo "... game_packet.s"
+	@echo "... job_factory.o"
+	@echo "... job_factory.i"
+	@echo "... job_factory.s"
+	@echo "... mysql_connection.o"
+	@echo "... mysql_connection.i"
+	@echo "... mysql_connection.s"
 	@echo "... net_util.o"
 	@echo "... net_util.i"
 	@echo "... net_util.s"
@@ -403,6 +508,9 @@ help:
 	@echo "... socket.o"
 	@echo "... socket.i"
 	@echo "... socket.s"
+	@echo "... thread.o"
+	@echo "... thread.i"
+	@echo "... thread.s"
 	@echo "... timer.o"
 	@echo "... timer.i"
 	@echo "... timer.s"
