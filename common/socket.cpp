@@ -59,7 +59,7 @@ int socket_client::connect_to(const char* host_name,int port)
         return -2;
     }else
     {
-        LOG(INFO)<<"connect db server success!"; 
+        LOG(INFO)<<"connect to"<<host_name<<":"<<port ; 
     }
     _is_online = true;
     init_cb();
@@ -142,11 +142,10 @@ void common_read_cb(struct bufferevent* ev,void *user_data)
 
 void common_event_cb(struct bufferevent* ev,short int,void *user_data)
 {
-    LOG(INFO)<<"lost connection";
+    VLOG(1)<<"lost connection";
     ((socket_client*)user_data)->on_disconnection(ev);
 }
 void common_write_cb(struct bufferevent* ev,void *user_data)
 {
-
 
 }

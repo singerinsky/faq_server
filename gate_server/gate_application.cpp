@@ -22,6 +22,7 @@ bool gate_application::init()
 DEFINE_bool(daemon,false,"if start not daemon");
 int main(int argc,char** argv)
 {
+    signal(SIGPIPE, SIG_IGN);
 //    test* te = new test(); 
 //    te->do_message_action();
  	google::ParseCommandLineFlags(&argc,&argv,true);		

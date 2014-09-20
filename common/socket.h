@@ -54,8 +54,8 @@ class socket_client
     public:
         void on_disconnection(bufferevent* bev)
         {
-            _is_online = false;
             on_error(bev); 
+            _is_online = false;
         }
         virtual void on_error(bufferevent* bev) = 0;
         virtual int process_msg(packet_info* msg_packet)=0;
