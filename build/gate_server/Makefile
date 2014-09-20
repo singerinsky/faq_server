@@ -136,6 +136,30 @@ action_heart_message.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.s
 .PHONY : action_heart_message.cpp.s
 
+action_login_message.o: action_login_message.cpp.o
+.PHONY : action_login_message.o
+
+# target to build an object file
+action_login_message.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o
+.PHONY : action_login_message.cpp.o
+
+action_login_message.i: action_login_message.cpp.i
+.PHONY : action_login_message.i
+
+# target to preprocess a source file
+action_login_message.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.i
+.PHONY : action_login_message.cpp.i
+
+action_login_message.s: action_login_message.cpp.s
+.PHONY : action_login_message.s
+
+# target to generate assembly for a file
+action_login_message.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.s
+.PHONY : action_login_message.cpp.s
+
 client_service.o: client_service.cpp.o
 .PHONY : client_service.o
 
@@ -159,6 +183,30 @@ client_service.s: client_service.cpp.s
 client_service.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/client_service.cpp.s
 .PHONY : client_service.cpp.s
+
+db_connection.o: db_connection.cpp.o
+.PHONY : db_connection.o
+
+# target to build an object file
+db_connection.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o
+.PHONY : db_connection.cpp.o
+
+db_connection.i: db_connection.cpp.i
+.PHONY : db_connection.i
+
+# target to preprocess a source file
+db_connection.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.i
+.PHONY : db_connection.cpp.i
+
+db_connection.s: db_connection.cpp.s
+.PHONY : db_connection.s
+
+# target to generate assembly for a file
+db_connection.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.s
+.PHONY : db_connection.cpp.s
 
 gate_application.o: gate_application.cpp.o
 .PHONY : gate_application.o
@@ -208,6 +256,30 @@ gate_client.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.s
 .PHONY : gate_client.cpp.s
 
+logic_player.o: logic_player.cpp.o
+.PHONY : logic_player.o
+
+# target to build an object file
+logic_player.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
+.PHONY : logic_player.cpp.o
+
+logic_player.i: logic_player.cpp.i
+.PHONY : logic_player.i
+
+# target to preprocess a source file
+logic_player.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.i
+.PHONY : logic_player.cpp.i
+
+logic_player.s: logic_player.cpp.s
+.PHONY : logic_player.s
+
+# target to generate assembly for a file
+logic_player.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.s
+.PHONY : logic_player.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -220,15 +292,24 @@ help:
 	@echo "... action_heart_message.o"
 	@echo "... action_heart_message.i"
 	@echo "... action_heart_message.s"
+	@echo "... action_login_message.o"
+	@echo "... action_login_message.i"
+	@echo "... action_login_message.s"
 	@echo "... client_service.o"
 	@echo "... client_service.i"
 	@echo "... client_service.s"
+	@echo "... db_connection.o"
+	@echo "... db_connection.i"
+	@echo "... db_connection.s"
 	@echo "... gate_application.o"
 	@echo "... gate_application.i"
 	@echo "... gate_application.s"
 	@echo "... gate_client.o"
 	@echo "... gate_client.i"
 	@echo "... gate_client.s"
+	@echo "... logic_player.o"
+	@echo "... logic_player.i"
+	@echo "... logic_player.s"
 .PHONY : help
 
 

@@ -22,7 +22,7 @@ class gate_client: public socket_client
         }
         virtual ~gate_client()
         {
-
+            VLOG(1)<<"delete gate_client";
         };
 
         void init();

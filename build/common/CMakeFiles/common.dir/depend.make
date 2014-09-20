@@ -23,32 +23,6 @@ common/CMakeFiles/common.dir/actions_mananger.cpp.o: ../common/tinyxml.h
 common/CMakeFiles/common.dir/actions_mananger.cpp.o: ../include/tinystr.h
 common/CMakeFiles/common.dir/actions_mananger.cpp.o: ../include/tinyxml.h
 
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/event2/buffer.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/event2/bufferevent.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/event2/event-config.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/event2/event.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/event2/listener.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/event2/util.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/gflags/gflags.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/glog/log_severity.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/glog/logging.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/glog/vlog_is_on.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/my_alloc.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/my_list.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/mysql.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/mysql_com.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/mysql_time.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/mysql_version.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: .././include/mysql/typelib.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/db_connection_pool.cpp
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/db_connection_pool.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/head.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/object_pool.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/singleton.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../common/tinyxml.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../include/tinystr.h
-common/CMakeFiles/common.dir/db_connection_pool.cpp.o: ../include/tinyxml.h
-
 common/CMakeFiles/common.dir/game_packet.cpp.o: ../common/aliased_buf.h
 common/CMakeFiles/common.dir/game_packet.cpp.o: ../common/game_packet.cpp
 common/CMakeFiles/common.dir/game_packet.cpp.o: ../common/game_packet.h

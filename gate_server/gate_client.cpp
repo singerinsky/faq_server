@@ -17,7 +17,7 @@ int gate_client::process_msg(packet_info* info)
 
 void gate_client::on_error(bufferevent* ev)
 {
-    LOG(INFO)<<"gate client error"<<get_socket_fd();
+    LOG(INFO)<<"gate client disconnection "<<get_socket_fd();
     //Singleton<client_manager>::GetInstance()->remove_session(get_socket_fd());
     delete this;
 }

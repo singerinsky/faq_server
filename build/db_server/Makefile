@@ -136,6 +136,30 @@ action_data_work_message.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.s
 .PHONY : action_data_work_message.cpp.s
 
+action_heart_message.o: action_heart_message.cpp.o
+.PHONY : action_heart_message.o
+
+# target to build an object file
+action_heart_message.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o
+.PHONY : action_heart_message.cpp.o
+
+action_heart_message.i: action_heart_message.cpp.i
+.PHONY : action_heart_message.i
+
+# target to preprocess a source file
+action_heart_message.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.i
+.PHONY : action_heart_message.cpp.i
+
+action_heart_message.s: action_heart_message.cpp.s
+.PHONY : action_heart_message.s
+
+# target to generate assembly for a file
+action_heart_message.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.s
+.PHONY : action_heart_message.cpp.s
+
 data_worker.o: data_worker.cpp.o
 .PHONY : data_worker.o
 
@@ -256,6 +280,30 @@ db_service.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/db_service.cpp.s
 .PHONY : db_service.cpp.s
 
+work_manager.o: work_manager.cpp.o
+.PHONY : work_manager.o
+
+# target to build an object file
+work_manager.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/work_manager.cpp.o
+.PHONY : work_manager.cpp.o
+
+work_manager.i: work_manager.cpp.i
+.PHONY : work_manager.i
+
+# target to preprocess a source file
+work_manager.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/work_manager.cpp.i
+.PHONY : work_manager.cpp.i
+
+work_manager.s: work_manager.cpp.s
+.PHONY : work_manager.s
+
+# target to generate assembly for a file
+work_manager.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/work_manager.cpp.s
+.PHONY : work_manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -268,6 +316,9 @@ help:
 	@echo "... action_data_work_message.o"
 	@echo "... action_data_work_message.i"
 	@echo "... action_data_work_message.s"
+	@echo "... action_heart_message.o"
+	@echo "... action_heart_message.i"
+	@echo "... action_heart_message.s"
 	@echo "... data_worker.o"
 	@echo "... data_worker.i"
 	@echo "... data_worker.s"
@@ -283,6 +334,9 @@ help:
 	@echo "... db_service.o"
 	@echo "... db_service.i"
 	@echo "... db_service.s"
+	@echo "... work_manager.o"
+	@echo "... work_manager.i"
+	@echo "... work_manager.s"
 .PHONY : help
 
 

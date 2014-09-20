@@ -6,7 +6,10 @@
 
 void db_connection::on_error(bufferevent* bev)
 {
-
+    if(is_online() == false)
+        LOG(INFO)<<"connect to db failed";
+    else 
+        LOG(INFO)<<"lost connection to db server";
 }
 
 int db_connection::process_msg(packet_info* info)
@@ -27,6 +30,10 @@ int db_connection::process_msg(packet_info* info)
 
 void db_connection::on_timeout()
 {
+    if(is_online() ==false)
+    {
+        return; 
+    }
     if(process_count == 0)
         LOG(INFO)<<"START";
     cs_packet_heart_request request;
@@ -41,7 +48,7 @@ void db_connection::on_timeout()
     int ret = send_packet(&req);
     if(ret < 0)
     {
-        LOG(ERROR)<<"error ";
+         LOG(ERROR)<<"error ";
          return;
     }
 

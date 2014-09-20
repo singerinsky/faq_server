@@ -112,6 +112,30 @@ message_lib/fast:
 	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/build
 .PHONY : message_lib/fast
 
+db_message.pb.o: db_message.pb.cc.o
+.PHONY : db_message.pb.o
+
+# target to build an object file
+db_message.pb.cc.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
+.PHONY : db_message.pb.cc.o
+
+db_message.pb.i: db_message.pb.cc.i
+.PHONY : db_message.pb.i
+
+# target to preprocess a source file
+db_message.pb.cc.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.i
+.PHONY : db_message.pb.cc.i
+
+db_message.pb.s: db_message.pb.cc.s
+.PHONY : db_message.pb.s
+
+# target to generate assembly for a file
+db_message.pb.cc.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.s
+.PHONY : db_message.pb.cc.s
+
 message.pb.o: message.pb.cc.o
 .PHONY : message.pb.o
 
@@ -136,6 +160,54 @@ message.pb.cc.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/message.pb.cc.s
 .PHONY : message.pb.cc.s
 
+role_info.pb.o: role_info.pb.cc.o
+.PHONY : role_info.pb.o
+
+# target to build an object file
+role_info.pb.cc.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/role_info.pb.cc.o
+.PHONY : role_info.pb.cc.o
+
+role_info.pb.i: role_info.pb.cc.i
+.PHONY : role_info.pb.i
+
+# target to preprocess a source file
+role_info.pb.cc.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/role_info.pb.cc.i
+.PHONY : role_info.pb.cc.i
+
+role_info.pb.s: role_info.pb.cc.s
+.PHONY : role_info.pb.s
+
+# target to generate assembly for a file
+role_info.pb.cc.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/role_info.pb.cc.s
+.PHONY : role_info.pb.cc.s
+
+sql_define.o: sql_define.cpp.o
+.PHONY : sql_define.o
+
+# target to build an object file
+sql_define.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+.PHONY : sql_define.cpp.o
+
+sql_define.i: sql_define.cpp.i
+.PHONY : sql_define.i
+
+# target to preprocess a source file
+sql_define.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.i
+.PHONY : sql_define.cpp.i
+
+sql_define.s: sql_define.cpp.s
+.PHONY : sql_define.s
+
+# target to generate assembly for a file
+sql_define.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.s
+.PHONY : sql_define.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -145,9 +217,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... message_lib"
 	@echo "... rebuild_cache"
+	@echo "... db_message.pb.o"
+	@echo "... db_message.pb.i"
+	@echo "... db_message.pb.s"
 	@echo "... message.pb.o"
 	@echo "... message.pb.i"
 	@echo "... message.pb.s"
+	@echo "... role_info.pb.o"
+	@echo "... role_info.pb.i"
+	@echo "... role_info.pb.s"
+	@echo "... sql_define.o"
+	@echo "... sql_define.i"
+	@echo "... sql_define.s"
 .PHONY : help
 
 
