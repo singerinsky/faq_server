@@ -28,7 +28,6 @@ class gate_client: public socket_client
         void init();
         void init_timer();
 
-
     public:
         int process_msg(packet_info* info);
         void on_error(bufferevent* ev);
