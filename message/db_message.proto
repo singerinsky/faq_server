@@ -27,16 +27,18 @@ message DBUserItemList
 
 message DBCommonReq
 {
-    required int32  operate_type = 1;
-    required string operate_string = 2;
+    required int32  seq = 1;
+    required int32  operate_type = 2;
+    required string operate_string = 3;
 }
 
 message DBCommonRep
 {
     required int32 ret = 1;
-    required int32 operate_type = 2;
-    optional DBUserInfo user_info = 3;
-    optional DBUserItemList user_item_list = 4;
+    required int32 seq = 2;
+    required int32 operate_type = 3;
+    optional DBUserInfo user_info = 4;
+    optional DBUserItemList user_item_list = 5;
 }
 
 

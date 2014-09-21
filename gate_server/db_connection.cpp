@@ -104,6 +104,7 @@ int db_connection::build_query(int operate_type,const char* sql_str,...)
     vsnprintf(buffer,2048,sql_str,argp);
     va_end(argp);
     cs_packet_db_common_request request;
+    request.body.set_seq(1);
     request.body.set_operate_type(operate_type);
     request.body.set_operate_string(buffer);
     return send_packet(&request);

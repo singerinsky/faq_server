@@ -20,6 +20,9 @@ class login_message_action: public template_message<ClientLoginRequest,ClientLog
             //client->send_packet(&response);
             gate_client* user_client = (gate_client*)client;
             gate_application::db_conn_->build_query(DbOperateType::MSG_DB_GET_USER_INFO, LOAD_USER_INFO); 
+            rsp_message_packet response;
+            response.body.set_ret(1); 
+            client->send_packet(&response);
             return 1;
         }
 

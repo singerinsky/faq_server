@@ -92,7 +92,8 @@ void protobuf_AssignDesc_db_5fmessage_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DBUserItemList));
   DBCommonReq_descriptor_ = file->message_type(3);
-  static const int DBCommonReq_offsets_[2] = {
+  static const int DBCommonReq_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonReq, seq_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonReq, operate_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonReq, operate_string_),
   };
@@ -108,8 +109,9 @@ void protobuf_AssignDesc_db_5fmessage_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DBCommonReq));
   DBCommonRep_descriptor_ = file->message_type(4);
-  static const int DBCommonRep_offsets_[4] = {
+  static const int DBCommonRep_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, ret_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, seq_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, operate_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, user_info_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, user_item_list_),
@@ -176,14 +178,14 @@ void protobuf_AddDesc_db_5fmessage_2eproto() {
     "_id\030\001 \002(\005\022\021\n\tuser_name\030\002 \002(\t\"/\n\nDBUserIt"
     "em\022\017\n\007item_id\030\001 \002(\005\022\020\n\010item_num\030\002 \002(\005\"0\n"
     "\016DBUserItemList\022\036\n\titem_list\030\001 \003(\0132\013.DBU"
-    "serItem\";\n\013DBCommonReq\022\024\n\014operate_type\030\001"
-    " \002(\005\022\026\n\016operate_string\030\002 \002(\t\"y\n\013DBCommon"
-    "Rep\022\013\n\003ret\030\001 \002(\005\022\024\n\014operate_type\030\002 \002(\005\022\036"
-    "\n\tuser_info\030\003 \001(\0132\013.DBUserInfo\022\'\n\016user_i"
-    "tem_list\030\004 \001(\0132\017.DBUserItemList*]\n\rDbOpe"
-    "rateType\022\026\n\021MSG_DB_WORK_START\020\220N\022\031\n\024MSG_"
-    "DB_GET_USER_INFO\020\221N\022\031\n\024MSG_DB_GET_ITEM_L"
-    "IST\020\222N", 446);
+    "serItem\"H\n\013DBCommonReq\022\013\n\003seq\030\001 \002(\005\022\024\n\014o"
+    "perate_type\030\002 \002(\005\022\026\n\016operate_string\030\003 \002("
+    "\t\"\206\001\n\013DBCommonRep\022\013\n\003ret\030\001 \002(\005\022\013\n\003seq\030\002 "
+    "\002(\005\022\024\n\014operate_type\030\003 \002(\005\022\036\n\tuser_info\030\004"
+    " \001(\0132\013.DBUserInfo\022\'\n\016user_item_list\030\005 \001("
+    "\0132\017.DBUserItemList*]\n\rDbOperateType\022\026\n\021M"
+    "SG_DB_WORK_START\020\220N\022\031\n\024MSG_DB_GET_USER_I"
+    "NFO\020\221N\022\031\n\024MSG_DB_GET_ITEM_LIST\020\222N", 473);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "db_message.proto", &protobuf_RegisterTypes);
   DBUserInfo::default_instance_ = new DBUserInfo();
@@ -945,6 +947,7 @@ void DBUserItemList::Swap(DBUserItemList* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int DBCommonReq::kSeqFieldNumber;
 const int DBCommonReq::kOperateTypeFieldNumber;
 const int DBCommonReq::kOperateStringFieldNumber;
 #endif  // !_MSC_VER
@@ -965,6 +968,7 @@ DBCommonReq::DBCommonReq(const DBCommonReq& from)
 
 void DBCommonReq::SharedCtor() {
   _cached_size_ = 0;
+  seq_ = 0;
   operate_type_ = 0;
   operate_string_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1005,6 +1009,7 @@ DBCommonReq* DBCommonReq::New() const {
 
 void DBCommonReq::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    seq_ = 0;
     operate_type_ = 0;
     if (has_operate_string()) {
       if (operate_string_ != &::google::protobuf::internal::kEmptyString) {
@@ -1022,10 +1027,26 @@ bool DBCommonReq::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 operate_type = 1;
+      // required int32 seq = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &seq_)));
+          set_has_seq();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(16)) goto parse_operate_type;
+        break;
+      }
+
+      // required int32 operate_type = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_operate_type:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &operate_type_)));
@@ -1033,12 +1054,12 @@ bool DBCommonReq::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(18)) goto parse_operate_string;
+        if (input->ExpectTag(26)) goto parse_operate_string;
         break;
       }
 
-      // required string operate_string = 2;
-      case 2: {
+      // required string operate_string = 3;
+      case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_operate_string:
@@ -1072,18 +1093,23 @@ bool DBCommonReq::MergePartialFromCodedStream(
 
 void DBCommonReq::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // required int32 operate_type = 1;
-  if (has_operate_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->operate_type(), output);
+  // required int32 seq = 1;
+  if (has_seq()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->seq(), output);
   }
 
-  // required string operate_string = 2;
+  // required int32 operate_type = 2;
+  if (has_operate_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->operate_type(), output);
+  }
+
+  // required string operate_string = 3;
   if (has_operate_string()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->operate_string().data(), this->operate_string().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->operate_string(), output);
+      3, this->operate_string(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1094,19 +1120,24 @@ void DBCommonReq::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* DBCommonReq::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // required int32 operate_type = 1;
-  if (has_operate_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->operate_type(), target);
+  // required int32 seq = 1;
+  if (has_seq()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->seq(), target);
   }
 
-  // required string operate_string = 2;
+  // required int32 operate_type = 2;
+  if (has_operate_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->operate_type(), target);
+  }
+
+  // required string operate_string = 3;
   if (has_operate_string()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->operate_string().data(), this->operate_string().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->operate_string(), target);
+        3, this->operate_string(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1120,14 +1151,21 @@ int DBCommonReq::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 operate_type = 1;
+    // required int32 seq = 1;
+    if (has_seq()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->seq());
+    }
+
+    // required int32 operate_type = 2;
     if (has_operate_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->operate_type());
     }
 
-    // required string operate_string = 2;
+    // required string operate_string = 3;
     if (has_operate_string()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1161,6 +1199,9 @@ void DBCommonReq::MergeFrom(const ::google::protobuf::Message& from) {
 void DBCommonReq::MergeFrom(const DBCommonReq& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_seq()) {
+      set_seq(from.seq());
+    }
     if (from.has_operate_type()) {
       set_operate_type(from.operate_type());
     }
@@ -1184,13 +1225,14 @@ void DBCommonReq::CopyFrom(const DBCommonReq& from) {
 }
 
 bool DBCommonReq::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   return true;
 }
 
 void DBCommonReq::Swap(DBCommonReq* other) {
   if (other != this) {
+    std::swap(seq_, other->seq_);
     std::swap(operate_type_, other->operate_type_);
     std::swap(operate_string_, other->operate_string_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -1212,6 +1254,7 @@ void DBCommonReq::Swap(DBCommonReq* other) {
 
 #ifndef _MSC_VER
 const int DBCommonRep::kRetFieldNumber;
+const int DBCommonRep::kSeqFieldNumber;
 const int DBCommonRep::kOperateTypeFieldNumber;
 const int DBCommonRep::kUserInfoFieldNumber;
 const int DBCommonRep::kUserItemListFieldNumber;
@@ -1236,6 +1279,7 @@ DBCommonRep::DBCommonRep(const DBCommonRep& from)
 void DBCommonRep::SharedCtor() {
   _cached_size_ = 0;
   ret_ = 0;
+  seq_ = 0;
   operate_type_ = 0;
   user_info_ = NULL;
   user_item_list_ = NULL;
@@ -1277,6 +1321,7 @@ DBCommonRep* DBCommonRep::New() const {
 void DBCommonRep::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     ret_ = 0;
+    seq_ = 0;
     operate_type_ = 0;
     if (has_user_info()) {
       if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
@@ -1306,12 +1351,28 @@ bool DBCommonRep::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(16)) goto parse_operate_type;
+        if (input->ExpectTag(16)) goto parse_seq;
         break;
       }
 
-      // required int32 operate_type = 2;
+      // required int32 seq = 2;
       case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_seq:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &seq_)));
+          set_has_seq();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(24)) goto parse_operate_type;
+        break;
+      }
+
+      // required int32 operate_type = 3;
+      case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_operate_type:
@@ -1322,12 +1383,12 @@ bool DBCommonRep::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(26)) goto parse_user_info;
+        if (input->ExpectTag(34)) goto parse_user_info;
         break;
       }
 
-      // optional .DBUserInfo user_info = 3;
-      case 3: {
+      // optional .DBUserInfo user_info = 4;
+      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_user_info:
@@ -1336,12 +1397,12 @@ bool DBCommonRep::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(34)) goto parse_user_item_list;
+        if (input->ExpectTag(42)) goto parse_user_item_list;
         break;
       }
 
-      // optional .DBUserItemList user_item_list = 4;
-      case 4: {
+      // optional .DBUserItemList user_item_list = 5;
+      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_user_item_list:
@@ -1377,21 +1438,26 @@ void DBCommonRep::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->ret(), output);
   }
 
-  // required int32 operate_type = 2;
-  if (has_operate_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->operate_type(), output);
+  // required int32 seq = 2;
+  if (has_seq()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->seq(), output);
   }
 
-  // optional .DBUserInfo user_info = 3;
+  // required int32 operate_type = 3;
+  if (has_operate_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->operate_type(), output);
+  }
+
+  // optional .DBUserInfo user_info = 4;
   if (has_user_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->user_info(), output);
+      4, this->user_info(), output);
   }
 
-  // optional .DBUserItemList user_item_list = 4;
+  // optional .DBUserItemList user_item_list = 5;
   if (has_user_item_list()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->user_item_list(), output);
+      5, this->user_item_list(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -1407,23 +1473,28 @@ void DBCommonRep::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->ret(), target);
   }
 
-  // required int32 operate_type = 2;
-  if (has_operate_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->operate_type(), target);
+  // required int32 seq = 2;
+  if (has_seq()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->seq(), target);
   }
 
-  // optional .DBUserInfo user_info = 3;
+  // required int32 operate_type = 3;
+  if (has_operate_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->operate_type(), target);
+  }
+
+  // optional .DBUserInfo user_info = 4;
   if (has_user_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, this->user_info(), target);
+        4, this->user_info(), target);
   }
 
-  // optional .DBUserItemList user_item_list = 4;
+  // optional .DBUserItemList user_item_list = 5;
   if (has_user_item_list()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->user_item_list(), target);
+        5, this->user_item_list(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1444,21 +1515,28 @@ int DBCommonRep::ByteSize() const {
           this->ret());
     }
 
-    // required int32 operate_type = 2;
+    // required int32 seq = 2;
+    if (has_seq()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->seq());
+    }
+
+    // required int32 operate_type = 3;
     if (has_operate_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->operate_type());
     }
 
-    // optional .DBUserInfo user_info = 3;
+    // optional .DBUserInfo user_info = 4;
     if (has_user_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->user_info());
     }
 
-    // optional .DBUserItemList user_item_list = 4;
+    // optional .DBUserItemList user_item_list = 5;
     if (has_user_item_list()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1495,6 +1573,9 @@ void DBCommonRep::MergeFrom(const DBCommonRep& from) {
     if (from.has_ret()) {
       set_ret(from.ret());
     }
+    if (from.has_seq()) {
+      set_seq(from.seq());
+    }
     if (from.has_operate_type()) {
       set_operate_type(from.operate_type());
     }
@@ -1521,7 +1602,7 @@ void DBCommonRep::CopyFrom(const DBCommonRep& from) {
 }
 
 bool DBCommonRep::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   if (has_user_info()) {
     if (!this->user_info().IsInitialized()) return false;
@@ -1535,6 +1616,7 @@ bool DBCommonRep::IsInitialized() const {
 void DBCommonRep::Swap(DBCommonRep* other) {
   if (other != this) {
     std::swap(ret_, other->ret_);
+    std::swap(seq_, other->seq_);
     std::swap(operate_type_, other->operate_type_);
     std::swap(user_info_, other->user_info_);
     std::swap(user_item_list_, other->user_item_list_);

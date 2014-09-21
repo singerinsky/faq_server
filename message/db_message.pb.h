@@ -388,17 +388,24 @@ class DBCommonReq : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required int32 operate_type = 1;
+  // required int32 seq = 1;
+  inline bool has_seq() const;
+  inline void clear_seq();
+  static const int kSeqFieldNumber = 1;
+  inline ::google::protobuf::int32 seq() const;
+  inline void set_seq(::google::protobuf::int32 value);
+
+  // required int32 operate_type = 2;
   inline bool has_operate_type() const;
   inline void clear_operate_type();
-  static const int kOperateTypeFieldNumber = 1;
+  static const int kOperateTypeFieldNumber = 2;
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // required string operate_string = 2;
+  // required string operate_string = 3;
   inline bool has_operate_string() const;
   inline void clear_operate_string();
-  static const int kOperateStringFieldNumber = 2;
+  static const int kOperateStringFieldNumber = 3;
   inline const ::std::string& operate_string() const;
   inline void set_operate_string(const ::std::string& value);
   inline void set_operate_string(const char* value);
@@ -409,6 +416,8 @@ class DBCommonReq : public ::google::protobuf::Message {
 
   // @@protoc_insertion_point(class_scope:DBCommonReq)
  private:
+  inline void set_has_seq();
+  inline void clear_has_seq();
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
   inline void set_has_operate_string();
@@ -416,11 +425,12 @@ class DBCommonReq : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::std::string* operate_string_;
+  ::google::protobuf::int32 seq_;
   ::google::protobuf::int32 operate_type_;
+  ::std::string* operate_string_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
 
   friend void  protobuf_AddDesc_db_5fmessage_2eproto();
   friend void protobuf_AssignDesc_db_5fmessage_2eproto();
@@ -492,26 +502,33 @@ class DBCommonRep : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 ret() const;
   inline void set_ret(::google::protobuf::int32 value);
 
-  // required int32 operate_type = 2;
+  // required int32 seq = 2;
+  inline bool has_seq() const;
+  inline void clear_seq();
+  static const int kSeqFieldNumber = 2;
+  inline ::google::protobuf::int32 seq() const;
+  inline void set_seq(::google::protobuf::int32 value);
+
+  // required int32 operate_type = 3;
   inline bool has_operate_type() const;
   inline void clear_operate_type();
-  static const int kOperateTypeFieldNumber = 2;
+  static const int kOperateTypeFieldNumber = 3;
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // optional .DBUserInfo user_info = 3;
+  // optional .DBUserInfo user_info = 4;
   inline bool has_user_info() const;
   inline void clear_user_info();
-  static const int kUserInfoFieldNumber = 3;
+  static const int kUserInfoFieldNumber = 4;
   inline const ::DBUserInfo& user_info() const;
   inline ::DBUserInfo* mutable_user_info();
   inline ::DBUserInfo* release_user_info();
   inline void set_allocated_user_info(::DBUserInfo* user_info);
 
-  // optional .DBUserItemList user_item_list = 4;
+  // optional .DBUserItemList user_item_list = 5;
   inline bool has_user_item_list() const;
   inline void clear_user_item_list();
-  static const int kUserItemListFieldNumber = 4;
+  static const int kUserItemListFieldNumber = 5;
   inline const ::DBUserItemList& user_item_list() const;
   inline ::DBUserItemList* mutable_user_item_list();
   inline ::DBUserItemList* release_user_item_list();
@@ -521,6 +538,8 @@ class DBCommonRep : public ::google::protobuf::Message {
  private:
   inline void set_has_ret();
   inline void clear_has_ret();
+  inline void set_has_seq();
+  inline void clear_has_seq();
   inline void set_has_operate_type();
   inline void clear_has_operate_type();
   inline void set_has_user_info();
@@ -531,12 +550,13 @@ class DBCommonRep : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int32 ret_;
-  ::google::protobuf::int32 operate_type_;
+  ::google::protobuf::int32 seq_;
   ::DBUserInfo* user_info_;
   ::DBUserItemList* user_item_list_;
+  ::google::protobuf::int32 operate_type_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
 
   friend void  protobuf_AddDesc_db_5fmessage_2eproto();
   friend void protobuf_AssignDesc_db_5fmessage_2eproto();
@@ -725,15 +745,37 @@ DBUserItemList::mutable_item_list() {
 
 // DBCommonReq
 
-// required int32 operate_type = 1;
-inline bool DBCommonReq::has_operate_type() const {
+// required int32 seq = 1;
+inline bool DBCommonReq::has_seq() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void DBCommonReq::set_has_operate_type() {
+inline void DBCommonReq::set_has_seq() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void DBCommonReq::clear_has_operate_type() {
+inline void DBCommonReq::clear_has_seq() {
   _has_bits_[0] &= ~0x00000001u;
+}
+inline void DBCommonReq::clear_seq() {
+  seq_ = 0;
+  clear_has_seq();
+}
+inline ::google::protobuf::int32 DBCommonReq::seq() const {
+  return seq_;
+}
+inline void DBCommonReq::set_seq(::google::protobuf::int32 value) {
+  set_has_seq();
+  seq_ = value;
+}
+
+// required int32 operate_type = 2;
+inline bool DBCommonReq::has_operate_type() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void DBCommonReq::set_has_operate_type() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void DBCommonReq::clear_has_operate_type() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void DBCommonReq::clear_operate_type() {
   operate_type_ = 0;
@@ -747,15 +789,15 @@ inline void DBCommonReq::set_operate_type(::google::protobuf::int32 value) {
   operate_type_ = value;
 }
 
-// required string operate_string = 2;
+// required string operate_string = 3;
 inline bool DBCommonReq::has_operate_string() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void DBCommonReq::set_has_operate_string() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void DBCommonReq::clear_has_operate_string() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void DBCommonReq::clear_operate_string() {
   if (operate_string_ != &::google::protobuf::internal::kEmptyString) {
@@ -843,15 +885,37 @@ inline void DBCommonRep::set_ret(::google::protobuf::int32 value) {
   ret_ = value;
 }
 
-// required int32 operate_type = 2;
-inline bool DBCommonRep::has_operate_type() const {
+// required int32 seq = 2;
+inline bool DBCommonRep::has_seq() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void DBCommonRep::set_has_operate_type() {
+inline void DBCommonRep::set_has_seq() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void DBCommonRep::clear_has_operate_type() {
+inline void DBCommonRep::clear_has_seq() {
   _has_bits_[0] &= ~0x00000002u;
+}
+inline void DBCommonRep::clear_seq() {
+  seq_ = 0;
+  clear_has_seq();
+}
+inline ::google::protobuf::int32 DBCommonRep::seq() const {
+  return seq_;
+}
+inline void DBCommonRep::set_seq(::google::protobuf::int32 value) {
+  set_has_seq();
+  seq_ = value;
+}
+
+// required int32 operate_type = 3;
+inline bool DBCommonRep::has_operate_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void DBCommonRep::set_has_operate_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void DBCommonRep::clear_has_operate_type() {
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void DBCommonRep::clear_operate_type() {
   operate_type_ = 0;
@@ -865,15 +929,15 @@ inline void DBCommonRep::set_operate_type(::google::protobuf::int32 value) {
   operate_type_ = value;
 }
 
-// optional .DBUserInfo user_info = 3;
+// optional .DBUserInfo user_info = 4;
 inline bool DBCommonRep::has_user_info() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void DBCommonRep::set_has_user_info() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void DBCommonRep::clear_has_user_info() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void DBCommonRep::clear_user_info() {
   if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
@@ -903,15 +967,15 @@ inline void DBCommonRep::set_allocated_user_info(::DBUserInfo* user_info) {
   }
 }
 
-// optional .DBUserItemList user_item_list = 4;
+// optional .DBUserItemList user_item_list = 5;
 inline bool DBCommonRep::has_user_item_list() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void DBCommonRep::set_has_user_item_list() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void DBCommonRep::clear_has_user_item_list() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void DBCommonRep::clear_user_item_list() {
   if (user_item_list_ != NULL) user_item_list_->::DBUserItemList::Clear();

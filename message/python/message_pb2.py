@@ -9,13 +9,13 @@ from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 
-import role_info_pb2
+import db_message_pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
   package='',
-  serialized_pb='\n\rmessage.proto\x1a\x0frole_info.proto\",\n\x17SoccerPlayerInfoRequest\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\"O\n\x18SoccerPlayerInfoResponse\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\x12\x13\n\x0bplayer_name\x18\x02 \x02(\t\x12\x0b\n\x03\x61ge\x18\x03 \x02(\x05\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"M\n\x12\x43lientLoginRequest\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\x12\x12\n\nplayer_pwd\x18\x02 \x02(\t\x12\x10\n\x08md5_code\x18\x03 \x02(\t\"l\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x11\n\tplayer_id\x18\x02 \x01(\x05\x12\x13\n\x0bplayer_name\x18\x03 \x01(\t\x12 \n\trole_data\x18\x04 \x01(\x0b\x32\r.db_role_info\"1\n\x19GateServerRegisterRequest\x12\x14\n\x0cserver_index\x18\x01 \x02(\x05\")\n\x1aGateServerRegisterResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*q\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04')
+  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*q\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
 
 _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   name='MSG_ACTION_TYPE',
@@ -38,8 +38,8 @@ _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=539,
-  serialized_end=607,
+  serialized_start=220,
+  serialized_end=288,
 )
 
 MSG_ACTION_TYPE = enum_type_wrapper.EnumTypeWrapper(_MSG_ACTION_TYPE)
@@ -68,11 +68,29 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=609,
-  serialized_end=722,
+  serialized_start=290,
+  serialized_end=403,
 )
 
 MessageType = enum_type_wrapper.EnumTypeWrapper(_MESSAGETYPE)
+_DBMESSAGETYPE = _descriptor.EnumDescriptor(
+  name='DbMessageType',
+  full_name='DbMessageType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='MSG_DB_COMMON', index=0, number=10000,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=405,
+  serialized_end=440,
+)
+
+DbMessageType = enum_type_wrapper.EnumTypeWrapper(_DBMESSAGETYPE)
 MSG_REQUEST = 0
 MSG_RESPONSE = 1
 MSG_NOTIFY = 2
@@ -80,77 +98,8 @@ MSG_SOCCER_PLAYER_INFO = 1
 MSG_HEART_BEAT = 2
 MSG_CLIENT_LOGIN = 3
 MSG_GATE_SERVER_REGISTER = 4
+MSG_DB_COMMON = 10000
 
-
-
-_SOCCERPLAYERINFOREQUEST = _descriptor.Descriptor(
-  name='SoccerPlayerInfoRequest',
-  full_name='SoccerPlayerInfoRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='player_id', full_name='SoccerPlayerInfoRequest.player_id', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=34,
-  serialized_end=78,
-)
-
-
-_SOCCERPLAYERINFORESPONSE = _descriptor.Descriptor(
-  name='SoccerPlayerInfoResponse',
-  full_name='SoccerPlayerInfoResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='player_id', full_name='SoccerPlayerInfoResponse.player_id', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='player_name', full_name='SoccerPlayerInfoResponse.player_name', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='age', full_name='SoccerPlayerInfoResponse.age', index=2,
-      number=3, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=80,
-  serialized_end=159,
-)
 
 
 _CLIENTHEARTBEATREQUEST = _descriptor.Descriptor(
@@ -176,8 +125,8 @@ _CLIENTHEARTBEATREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=161,
-  serialized_end=206,
+  serialized_start=35,
+  serialized_end=80,
 )
 
 
@@ -204,8 +153,8 @@ _CLIENTHEARTBEATRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=208,
-  serialized_end=254,
+  serialized_start=82,
+  serialized_end=128,
 )
 
 
@@ -217,22 +166,15 @@ _CLIENTLOGINREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='player_id', full_name='ClientLoginRequest.player_id', index=0,
+      name='role_id', full_name='ClientLoginRequest.role_id', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='player_pwd', full_name='ClientLoginRequest.player_pwd', index=1,
+      name='token', full_name='ClientLoginRequest.token', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='md5_code', full_name='ClientLoginRequest.md5_code', index=2,
-      number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -246,8 +188,8 @@ _CLIENTLOGINREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=256,
-  serialized_end=333,
+  serialized_start=130,
+  serialized_end=182,
 )
 
 
@@ -265,27 +207,6 @@ _CLIENTLOGINRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-    _descriptor.FieldDescriptor(
-      name='player_id', full_name='ClientLoginResponse.player_id', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='player_name', full_name='ClientLoginResponse.player_name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='role_data', full_name='ClientLoginResponse.role_data', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
   ],
   extensions=[
   ],
@@ -295,87 +216,14 @@ _CLIENTLOGINRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=335,
-  serialized_end=443,
+  serialized_start=184,
+  serialized_end=218,
 )
 
-
-_GATESERVERREGISTERREQUEST = _descriptor.Descriptor(
-  name='GateServerRegisterRequest',
-  full_name='GateServerRegisterRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='server_index', full_name='GateServerRegisterRequest.server_index', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=445,
-  serialized_end=494,
-)
-
-
-_GATESERVERREGISTERRESPONSE = _descriptor.Descriptor(
-  name='GateServerRegisterResponse',
-  full_name='GateServerRegisterResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ret', full_name='GateServerRegisterResponse.ret', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=496,
-  serialized_end=537,
-)
-
-_CLIENTLOGINRESPONSE.fields_by_name['role_data'].message_type = role_info_pb2._DB_ROLE_INFO
-DESCRIPTOR.message_types_by_name['SoccerPlayerInfoRequest'] = _SOCCERPLAYERINFOREQUEST
-DESCRIPTOR.message_types_by_name['SoccerPlayerInfoResponse'] = _SOCCERPLAYERINFORESPONSE
 DESCRIPTOR.message_types_by_name['ClientHeartBeatRequest'] = _CLIENTHEARTBEATREQUEST
 DESCRIPTOR.message_types_by_name['ClientHeartBeatResponse'] = _CLIENTHEARTBEATRESPONSE
 DESCRIPTOR.message_types_by_name['ClientLoginRequest'] = _CLIENTLOGINREQUEST
 DESCRIPTOR.message_types_by_name['ClientLoginResponse'] = _CLIENTLOGINRESPONSE
-DESCRIPTOR.message_types_by_name['GateServerRegisterRequest'] = _GATESERVERREGISTERREQUEST
-DESCRIPTOR.message_types_by_name['GateServerRegisterResponse'] = _GATESERVERREGISTERRESPONSE
-
-class SoccerPlayerInfoRequest(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _SOCCERPLAYERINFOREQUEST
-
-  # @@protoc_insertion_point(class_scope:SoccerPlayerInfoRequest)
-
-class SoccerPlayerInfoResponse(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _SOCCERPLAYERINFORESPONSE
-
-  # @@protoc_insertion_point(class_scope:SoccerPlayerInfoResponse)
 
 class ClientHeartBeatRequest(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -400,18 +248,6 @@ class ClientLoginResponse(_message.Message):
   DESCRIPTOR = _CLIENTLOGINRESPONSE
 
   # @@protoc_insertion_point(class_scope:ClientLoginResponse)
-
-class GateServerRegisterRequest(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _GATESERVERREGISTERREQUEST
-
-  # @@protoc_insertion_point(class_scope:GateServerRegisterRequest)
-
-class GateServerRegisterResponse(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _GATESERVERREGISTERRESPONSE
-
-  # @@protoc_insertion_point(class_scope:GateServerRegisterResponse)
 
 
 # @@protoc_insertion_point(module_scope)
