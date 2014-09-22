@@ -7,22 +7,8 @@ import  socket
 from eventlet.green import urllib2
 sys.path.append('../message/python/')
 from message_pb2 import *
+from message_define import *
 
-
-#message define
-CSMSG_CLIENT_LOGIN_REQ  = MSG_CLIENT_LOGIN << 2|MSG_REQUEST  
-CSMSG_CLIENT_LOGIN_ACK  = MSG_CLIENT_LOGIN << 2|MSG_RESPONSE
-
-CSMSG_HEART_REQ =   MSG_HEART_BEAT<< 2|MSG_REQUEST
-CSMSG_HEART_REP =   MSG_HEART_BEAT<< 2|MSG_RESPONSE
-
-response_factory = {
-        CSMSG_CLIENT_LOGIN_ACK:ClientLoginResponse(),
-        CSMSG_HEART_REQ:ClientHeartBeatRequest(),
-        CSMSG_HEART_REP:ClientHeartBeatResponse(),
-}
-cs_head_format = "HH"
-cs_head_len = struct.calcsize(cs_head_format) 
 account_list = [('guanlei','nicebody'),('guanxing','goodjob'),('chongchong','goodkid')]
 #account_list = [('guanlei','nicebody')]
 g_server_ip = "127.0.0.1"
@@ -36,7 +22,7 @@ def pack_head_message(msg_id,body_data):
     head_packet = struct.pack(cs_head_format,msg_len,msg_id)
     return head_packet
 
-class TestClient:
+class CClient:
     def __init__(self,name):
         print "init TestClien"
         self.client_name = name
@@ -111,7 +97,7 @@ class TestAppliaction:
         global g_client_pool
         for client in account_list:
             print client[0]
-            client_ = TestClient(client[0])
+            client_ = CClient(client[0])
             self.client_pool.spawn(client_.run)
             #g_client_pool[client[0]] = client_
         #eventlet.Timeout(10,None)
