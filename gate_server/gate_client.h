@@ -2,6 +2,7 @@
 #define _GATE_CLEINT_H_
 #include "socket.h"
 #include "timer.h"
+#include "logic_player.h"
 
 enum
 {
@@ -32,10 +33,12 @@ class gate_client: public socket_client
         int process_msg(packet_info* info);
         void on_error(bufferevent* ev);
         void on_timeout();
+        void init_player();
     private:
         int  _role_id;
         int  _login_status;
         template_timer<gate_client,&gate_client::on_timeout>    _m_timer;
+        LogicPlayer*  _player_info;
 
 };
 

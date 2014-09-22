@@ -17,13 +17,18 @@ int socket_client::check_packet_info(packet_info* packet,struct evbuffer* read_b
     cs_head head;
     evbuffer_copyout(read_buffer,(void*)&head,sizeof(cs_head));
     if(head.length < 0 || head.msgid < 0)
-        return -1;
-
-    if(head.length > evbuffer_get_length(read_buffer))
     {
-        VLOG(2)<<"data not ready"<<evbuffer_get_length(read_buffer);
+        VLOG(2)<<"receive error mssage"<<head.length<<":"<<head.msgid;
+        return -1;
+    }
+
+    int buffer_len = evbuffer_get_length(read_buffer);
+    if(head.length > buffer_len)
+    {
+        VLOG(2)<<"data not ready"<<evbuffer_get_length(read_buffer)<<" require"<<head.length;
         return 0;
     }
+    LOG(INFO)<<"receive message opcode "<<head.msgid;
 
     char* buffer = new char[head.length];
     int total_size = evbuffer_remove(read_buffer,buffer,head.length);
@@ -59,7 +64,7 @@ int socket_client::connect_to(const char* host_name,int port)
         return -2;
     }else
     {
-        LOG(INFO)<<"connect to"<<host_name<<":"<<port ; 
+        LOG(INFO)<<"connect to "<<host_name<<":"<<port ; 
     }
     _is_online = true;
     init_cb();
@@ -136,14 +141,21 @@ void socket_client::init_cb()
 
 void common_read_cb(struct bufferevent* ev,void *user_data)
 {
-    LOG(INFO)<<"get data";
     ((socket_client*)user_data)->on_read(ev);
 }
 
-void common_event_cb(struct bufferevent* ev,short int,void *user_data)
+void common_event_cb(struct bufferevent* ev,short error_no,void *user_data)
 {
-    VLOG(1)<<"lost connection";
-    ((socket_client*)user_data)->on_disconnection(ev);
+    if(error_no == BEV_EVENT_CONNECTED)
+    {
+        VLOG(1)<<"build connection";
+        ((socket_client*)user_data)->on_connection(ev);
+    }
+    else
+    {
+        VLOG(1)<<"lost connection"<<error_no;
+        ((socket_client*)user_data)->on_disconnection(ev);
+    }
 }
 void common_write_cb(struct bufferevent* ev,void *user_data)
 {

@@ -1,4 +1,5 @@
 import struct
+from message_pb2 import *
 cs_head_format = "HH"
 cs_head_len = struct.calcsize(cs_head_format) 
 

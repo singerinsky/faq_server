@@ -14,7 +14,7 @@ class db_client: public socket_client
         db_client(bufferevent* bev,evutil_socket_t socket,sockaddr_in* addr
                 ):socket_client(bev,socket,addr)
         {
-            LOG(INFO)<<"new socket connect"; 
+            LOG(INFO)<<"new dbclient connect"; 
         }
         virtual ~db_client(){
         };

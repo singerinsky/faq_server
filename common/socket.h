@@ -58,6 +58,7 @@ class socket_client
             _is_online = false;
         }
         virtual void on_error(bufferevent* bev) = 0;
+        virtual void on_connection(bufferevent* bev){}
         virtual int process_msg(packet_info* msg_packet)=0;
 
     private:

@@ -44,7 +44,6 @@ class CClient:
             try:
                 recv_data += self.client_socket.recv(1024)
             except (socket.timeout):
-                print "no data",self.client_name,time.time()
                 pass
 
             if alive_time < time.time() - 1:
@@ -52,8 +51,8 @@ class CClient:
                 request.client_time = int(time.time())
                 body_data = request.SerializeToString()
                 head_data = pack_head_message(CSMSG_HEART_REQ,body_data)
-                self.client_socket.send(head_data)
-                self.client_socket.send(body_data)
+        #        self.client_socket.send(head_data)
+        #        self.client_socket.send(body_data)
 
             
             while len(recv_data) >= cs_head_len:
