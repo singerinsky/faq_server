@@ -14,6 +14,8 @@ socket_client::~socket_client()
 
 int socket_client::check_packet_info(packet_info* packet,struct evbuffer* read_buffer)
 {
+    if(evbuffer_get_length(read_buffer) == 0)
+        return 0;
     cs_head head;
     evbuffer_copyout(read_buffer,(void*)&head,sizeof(cs_head));
     if(head.length < 0 || head.msgid < 0)

@@ -9,8 +9,8 @@ sys.path.append('../message/python/')
 from message_pb2 import *
 from message_define import *
 
-account_list = [('guanlei','nicebody'),('guanxing','goodjob'),('chongchong','goodkid')]
-#account_list = [('guanlei','nicebody')]
+#account_list = [('guanlei','nicebody'),('guanxing','goodjob'),('chongchong','goodkid')]
+account_list = [('guanlei','nicebody')]
 g_server_ip = "127.0.0.1"
 g_server_port = 9998
 g_client_pool = {}
@@ -78,7 +78,7 @@ class CClient:
 
     def do_login(self):
         message_body = ClientLoginRequest();  
-        message_body.role_id = 111
+        message_body.role_id = 1
         message_body.token = "nicebody"
         body_data = message_body.SerializeToString()
         head_packet = pack_head_message(CSMSG_CLIENT_LOGIN_REQ,body_data)

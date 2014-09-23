@@ -67,13 +67,13 @@ void db_client::init(int db_work)
 
 void db_client::on_load_user_data(MysqlResult& result,db_job* job)
 {
-    LOG(INFO)<<"finish data query"<<job->_operate_type;
+    LOG(INFO)<<"finish load user data query"<<job->_operate_type;
     if(result.next())
     {
         MysqlResultRow row = result.get_next_row(); 
-        LOG(INFO)<<row.get_int(0); 
         cs_packet_db_common_response response ;
         response.body.set_ret(0);
+        response.body.set_seq(job->_seq);
         response.body.set_operate_type(job->_operate_type);
         DBUserInfo* user_info = response.body.mutable_user_info();
         user_info->set_user_id(row.get_int(0));
@@ -81,7 +81,6 @@ void db_client::on_load_user_data(MysqlResult& result,db_job* job)
         LOG(INFO)<<response.body.user_info().user_name();
         send_packet(&response);
     }
-
 }
 
 void db_client::on_load_item_list_data(MysqlResult& result,db_job* job)

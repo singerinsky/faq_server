@@ -95,7 +95,7 @@ int db_connection::load_user_item_list(const DBUserItemList& info)
     return 1;
 }
 
-int db_connection::build_query(int operate_type,const char* sql_str,...)
+int db_connection::build_query(int seq,int operate_type,const char* sql_str,...)
 {
     char buffer[2048] = {0};
     va_list argp;
@@ -103,7 +103,7 @@ int db_connection::build_query(int operate_type,const char* sql_str,...)
     vsnprintf(buffer,2048,sql_str,argp);
     va_end(argp);
     cs_packet_db_common_request request;
-    request.body.set_seq(1);
+    request.body.set_seq(seq);
     request.body.set_operate_type(operate_type);
     request.body.set_operate_string(buffer);
     VLOG(2)<<"query  sql:"<<buffer;
