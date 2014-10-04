@@ -3,6 +3,7 @@
 
 #include  "gate_client.h"
 #include "head.h"
+class DBUserInfo;
 
 class gate_client;
 enum
@@ -15,14 +16,6 @@ enum
     PLY_ATTR_END,
 };
 
-struct PlayerInfo
-{
-    int  _level;
-    int  _exp;
-    string _name;
-    int  _attr[PLY_ATTR_END];
-};
-
 class LogicPlayer
 {
     public:
@@ -33,11 +26,17 @@ class LogicPlayer
             _client = client; 
         }
 
+        void InitPlayer(DBUserInfo* user_info);
+
         void LoadPlayerInfo();
 
     private:
         gate_client* _client;
-        PlayerInfo   _info;
+    protected:
+        int  _level;
+        int  _exp;
+        string _name;
+        int  _attr[PLY_ATTR_END];
 };
 
 #endif

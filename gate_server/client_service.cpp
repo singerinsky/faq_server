@@ -1,7 +1,7 @@
 #include "client_service.h"
 #include "session_manager.h"
 
-typedef session_manager<int,gate_client> client_manager;
+//typedef session_manager<int,gate_client> client_manager;
 template<> 
 client_manager* Singleton<client_manager >::_instance = 0;
 
@@ -12,8 +12,8 @@ int client_service::on_accept(struct bufferevent* event,evutil_socket_t fd,struc
     gate_client* client = new gate_client(event,fd,sa);
     client->init_cb();
     LOG(INFO)<<"trigger client accept in fd "<<fd; 
-    Singleton<client_manager>::GetInstance()->add_session(fd,client);
-    client->init_timer();
+    //Singleton<client_manager>::GetInstance()->add_session(fd,client);
+    //client->init_timer();
     return 1;
 }
 

@@ -37,6 +37,7 @@ class ClientHeartBeatRequest;
 class ClientHeartBeatResponse;
 class ClientLoginRequest;
 class ClientLoginResponse;
+class ClientInitNotf;
 
 enum MSG_ACTION_TYPE {
   MSG_REQUEST = 0,
@@ -62,11 +63,12 @@ enum MessageType {
   MSG_SOCCER_PLAYER_INFO = 1,
   MSG_HEART_BEAT = 2,
   MSG_CLIENT_LOGIN = 3,
-  MSG_GATE_SERVER_REGISTER = 4
+  MSG_GATE_SERVER_REGISTER = 4,
+  MSG_INIT_CLIENT = 5
 };
 bool MessageType_IsValid(int value);
 const MessageType MessageType_MIN = MSG_SOCCER_PLAYER_INFO;
-const MessageType MessageType_MAX = MSG_GATE_SERVER_REGISTER;
+const MessageType MessageType_MAX = MSG_INIT_CLIENT;
 const int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor();
@@ -440,6 +442,100 @@ class ClientLoginResponse : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static ClientLoginResponse* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class ClientInitNotf : public ::google::protobuf::Message {
+ public:
+  ClientInitNotf();
+  virtual ~ClientInitNotf();
+
+  ClientInitNotf(const ClientInitNotf& from);
+
+  inline ClientInitNotf& operator=(const ClientInitNotf& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientInitNotf& default_instance();
+
+  void Swap(ClientInitNotf* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientInitNotf* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ClientInitNotf& from);
+  void MergeFrom(const ClientInitNotf& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 ret = 1;
+  inline bool has_ret() const;
+  inline void clear_ret();
+  static const int kRetFieldNumber = 1;
+  inline ::google::protobuf::int32 ret() const;
+  inline void set_ret(::google::protobuf::int32 value);
+
+  // required .DBUserInfo user_info = 2;
+  inline bool has_user_info() const;
+  inline void clear_user_info();
+  static const int kUserInfoFieldNumber = 2;
+  inline const ::DBUserInfo& user_info() const;
+  inline ::DBUserInfo* mutable_user_info();
+  inline ::DBUserInfo* release_user_info();
+  inline void set_allocated_user_info(::DBUserInfo* user_info);
+
+  // @@protoc_insertion_point(class_scope:ClientInitNotf)
+ private:
+  inline void set_has_ret();
+  inline void clear_has_ret();
+  inline void set_has_user_info();
+  inline void clear_has_user_info();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::DBUserInfo* user_info_;
+  ::google::protobuf::int32 ret_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientInitNotf* default_instance_;
+};
 // ===================================================================
 
 
@@ -615,6 +711,70 @@ inline ::google::protobuf::int32 ClientLoginResponse::ret() const {
 inline void ClientLoginResponse::set_ret(::google::protobuf::int32 value) {
   set_has_ret();
   ret_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientInitNotf
+
+// required int32 ret = 1;
+inline bool ClientInitNotf::has_ret() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientInitNotf::set_has_ret() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientInitNotf::clear_has_ret() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientInitNotf::clear_ret() {
+  ret_ = 0;
+  clear_has_ret();
+}
+inline ::google::protobuf::int32 ClientInitNotf::ret() const {
+  return ret_;
+}
+inline void ClientInitNotf::set_ret(::google::protobuf::int32 value) {
+  set_has_ret();
+  ret_ = value;
+}
+
+// required .DBUserInfo user_info = 2;
+inline bool ClientInitNotf::has_user_info() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientInitNotf::set_has_user_info() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientInitNotf::clear_has_user_info() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientInitNotf::clear_user_info() {
+  if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
+  clear_has_user_info();
+}
+inline const ::DBUserInfo& ClientInitNotf::user_info() const {
+  return user_info_ != NULL ? *user_info_ : *default_instance_->user_info_;
+}
+inline ::DBUserInfo* ClientInitNotf::mutable_user_info() {
+  set_has_user_info();
+  if (user_info_ == NULL) user_info_ = new ::DBUserInfo;
+  return user_info_;
+}
+inline ::DBUserInfo* ClientInitNotf::release_user_info() {
+  clear_has_user_info();
+  ::DBUserInfo* temp = user_info_;
+  user_info_ = NULL;
+  return temp;
+}
+inline void ClientInitNotf::set_allocated_user_info(::DBUserInfo* user_info) {
+  delete user_info_;
+  user_info_ = user_info;
+  if (user_info) {
+    set_has_user_info();
+  } else {
+    clear_has_user_info();
+  }
 }
 
 

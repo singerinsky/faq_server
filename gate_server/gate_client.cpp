@@ -6,8 +6,6 @@
 #include "sql_define.h"
 #include "db_connection.h"
 
-
-
 int gate_client::process_msg(packet_info* info)
 {
     VLOG(1)<<"Recive message type "<<info->type;

@@ -8,6 +8,7 @@ enum
 {
     UN_LOGIN,
     HAS_LOGIN, 
+    HAS_LOAD,
 };
 
 class gate_client: public socket_client
@@ -34,12 +35,21 @@ class gate_client: public socket_client
         void on_error(bufferevent* ev);
         void on_timeout();
         void init_player();
+        const LogicPlayer& get_player_info() const
+        {
+            return _player_info; 
+        }
+
+        LogicPlayer& get_player_info()
+        {
+            return _player_info; 
+        }
+
     private:
         int  _role_id;
         int  _login_status;
         template_timer<gate_client,&gate_client::on_timeout>    _m_timer;
-        LogicPlayer*  _player_info;
-
+        LogicPlayer  _player_info;
 };
 
 #endif

@@ -1,0 +1,5 @@
+message db_tb_user 
+{
+required int32 id = 1;
+required string user_name = 2;
+}

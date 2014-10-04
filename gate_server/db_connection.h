@@ -22,7 +22,7 @@ class db_connection:public socket_client
         int  build_query(int seq,int operate_type,const char* sql_str,...);
     protected:
         int process_db_response(packet_info* info);
-        int load_user_info(const DBUserInfo& info);
+        int on_load_user_info(const DBUserInfo& info);
         int load_user_item_list(const DBUserItemList& info);
     private:
         template_timer<db_connection,&db_connection::on_timeout>    _m_timer;

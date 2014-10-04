@@ -74,7 +74,7 @@ int db_connection::process_db_response(packet_info* info)
     switch(response.body.operate_type())
     {
         case DbOperateType::MSG_DB_GET_USER_INFO:
-            return load_user_info(response.body.user_info());
+            return on_load_user_info(response.body.user_info());
         case DbOperateType::MSG_DB_GET_ITEM_LIST:
             return load_user_item_list(response.body.user_item_list());
         default:
@@ -83,10 +83,15 @@ int db_connection::process_db_response(packet_info* info)
     }
 }
 
-int db_connection::load_user_info(const DBUserInfo& info)
+int db_connection::on_load_user_info(const DBUserInfo& info)
 {
     LOG(INFO)<<"load user info "<<info.user_name();
-    //LogicPlayer* player = new LogicPlayer();
+    cs_packet_init_client_notf notf;
+    notf.body.set_ret(1);
+    DBUserInfo* user_info = notf.body.mutable_user_info();
+    *user_info = info;
+
+   // LogicPlayer* player = new LogicPlayer();
     return 1;
 }
 

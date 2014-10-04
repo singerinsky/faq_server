@@ -2,7 +2,9 @@
 #define _CLIENT_SERVICE_H_
 #include "service.h"
 #include "gate_client.h"
+#include "session_manager.h"
 
+typedef session_manager<int,gate_client> client_manager;
 class client_service:public service
 {
     public:

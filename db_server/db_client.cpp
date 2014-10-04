@@ -78,6 +78,7 @@ void db_client::on_load_user_data(MysqlResult& result,db_job* job)
         DBUserInfo* user_info = response.body.mutable_user_info();
         user_info->set_user_id(row.get_int(0));
         user_info->set_user_name(row.get_string(1));
+        user_info->set_level(row.get_int(2));
         LOG(INFO)<<response.body.user_info().user_name();
         send_packet(&response);
     }

@@ -133,20 +133,30 @@ class DBUserInfo : public ::google::protobuf::Message {
   inline ::std::string* release_user_name();
   inline void set_allocated_user_name(::std::string* user_name);
 
+  // required int32 level = 3;
+  inline bool has_level() const;
+  inline void clear_level();
+  static const int kLevelFieldNumber = 3;
+  inline ::google::protobuf::int32 level() const;
+  inline void set_level(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:DBUserInfo)
  private:
   inline void set_has_user_id();
   inline void clear_has_user_id();
   inline void set_has_user_name();
   inline void clear_has_user_name();
+  inline void set_has_level();
+  inline void clear_has_level();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::std::string* user_name_;
   ::google::protobuf::int32 user_id_;
+  ::google::protobuf::int32 level_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
 
   friend void  protobuf_AddDesc_db_5fmessage_2eproto();
   friend void protobuf_AssignDesc_db_5fmessage_2eproto();
@@ -662,6 +672,28 @@ inline void DBUserInfo::set_allocated_user_name(::std::string* user_name) {
     clear_has_user_name();
     user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
+}
+
+// required int32 level = 3;
+inline bool DBUserInfo::has_level() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void DBUserInfo::set_has_level() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void DBUserInfo::clear_has_level() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void DBUserInfo::clear_level() {
+  level_ = 0;
+  clear_has_level();
+}
+inline ::google::protobuf::int32 DBUserInfo::level() const {
+  return level_;
+}
+inline void DBUserInfo::set_level(::google::protobuf::int32 value) {
+  set_has_level();
+  level_ = value;
 }
 
 // -------------------------------------------------------------------

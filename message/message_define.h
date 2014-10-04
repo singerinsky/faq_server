@@ -15,11 +15,18 @@ enum
     DB_MSG_COMMON_REP = MSG_DB_COMMON << 2|MSG_RESPONSE,
 };
 
+//GATE TO CLIENT MESSAGE DEFINE FOR ACTION UN DEFINE
+enum
+{
+    GC_MSG_INIT_CLIENT_NOTF = MSG_INIT_CLIENT << 2|MSG_NOTIFY,
+
+};
+
 
 typedef cs_packet<DB_MSG_COMMON_REQ,DBCommonReq> cs_packet_db_common_request;
 typedef cs_packet<DB_MSG_COMMON_REP,DBCommonRep> cs_packet_db_common_response;
 typedef cs_packet<MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_packet_heart_request;
 typedef cs_packet<MSG_HEART_BEAT_REP,ClientHeartBeatResponse> cs_packet_heart_response;
-// 
+typedef cs_packet<GC_MSG_INIT_CLIENT_NOTF,ClientInitNotf> cs_packet_init_client_notf;
 
 #endif

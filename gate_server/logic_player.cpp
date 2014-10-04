@@ -4,3 +4,9 @@ void LogicPlayer::LoadPlayerInfo()
 {
 
 }
+
+void LogicPlayer::InitPlayer(DBUserInfo* user_info)
+{
+
+
+}

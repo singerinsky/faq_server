@@ -6,12 +6,11 @@ enum DbOperateType
     MSG_DB_GET_ITEM_LIST = 10002;//Get user info
 }
 
-
-
 message DBUserInfo
 {
     required int32 user_id = 1;
     required string user_name = 2;
+    required int32 level = 3;
 }
 
 message DBUserItem

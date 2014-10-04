@@ -54,7 +54,7 @@ class CClient:
         #        self.client_socket.send(head_data)
         #        self.client_socket.send(body_data)
 
-            
+
             while len(recv_data) >= cs_head_len:
                 head_data = recv_data[:cs_head_len]
                 head_packet = struct.unpack(cs_head_format,head_data)
@@ -66,7 +66,7 @@ class CClient:
                 body_data = recv_data[cs_head_len:msg_len] 
                 self.process_msg(msg_id,body_data)
                 recv_data = recv_data[msg_len:]
-                 
+
 
     def process_msg(self,msg_id,msg_content):
         print "process msg code",msg_id>>2
@@ -85,7 +85,7 @@ class CClient:
         self.client_socket.send(head_packet)
         self.client_socket.send(body_data)
         print "send login msg"
-        
+
 
 class TestAppliaction:
     def __init__(self):

@@ -15,6 +15,7 @@ enum MessageType
     MSG_HEART_BEAT          = 2;//心跳
     MSG_CLIENT_LOGIN        = 3;//client login
     MSG_GATE_SERVER_REGISTER = 4;//gate server register
+    MSG_INIT_CLIENT         = 5;
     //data server start......
 }
 
@@ -43,4 +44,10 @@ message ClientLoginRequest
 message ClientLoginResponse
 {
     required int32 ret = 1;
+}
+
+message ClientInitNotf
+{
+    required  int32 ret = 1;
+    required  DBUserInfo user_info = 2;
 }
