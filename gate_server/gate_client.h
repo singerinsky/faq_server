@@ -18,14 +18,10 @@ class gate_client: public socket_client
         gate_client(bufferevent* bev,evutil_socket_t socket,sockaddr_in* addr
                 ):socket_client(bev,socket,addr)
         {
-            LOG(INFO)<<"new socket connect"; 
             init();
             _login_status = UN_LOGIN;
         }
-        virtual ~gate_client()
-        {
-            VLOG(1)<<"delete gate_client";
-        };
+        virtual ~gate_client();
 
         void init();
         void init_timer();
@@ -43,6 +39,11 @@ class gate_client: public socket_client
         LogicPlayer& get_player_info()
         {
             return _player_info; 
+        }
+
+        void set_role_id(int role_id)
+        {
+            _role_id = role_id;
         }
 
     private:

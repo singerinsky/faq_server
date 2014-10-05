@@ -5,6 +5,14 @@
 #include "db_message.pb.h"
 #include "sql_define.h"
 #include "db_connection.h"
+#include "client_service.h"
+
+gate_client::~gate_client()
+{
+    VLOG(1)<<"delete gate_client";
+//    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
+};
+
 
 int gate_client::process_msg(packet_info* info)
 {
@@ -15,9 +23,8 @@ int gate_client::process_msg(packet_info* info)
 
 void gate_client::on_error(bufferevent* ev)
 {
-    LOG(INFO)<<"gate client disconnection "<<get_socket_fd();
-    //Singleton<client_manager>::GetInstance()->remove_session(get_socket_fd());
-    delete this;
+    LOG(INFO)<<"gate client disconnection "<<_role_id;
+    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 }
 
 void gate_client::init_timer()
@@ -28,7 +35,7 @@ void gate_client::init_timer()
 
 void gate_client::on_timeout()
 {
-    LOG(INFO)<<"without login virfy,kick out";
+    //LOG(INFO)<<"without login virfy,kick out";
     //on_error(NULL);
 }
 

@@ -27,7 +27,6 @@ void actions_mananger::do_action(int action_id,packet_info* packet,socket_client
     }
     else
     {
-        //TODO
         LOG(ERROR)<<"recive unregister code unkown "<<action_id; 
     }
 

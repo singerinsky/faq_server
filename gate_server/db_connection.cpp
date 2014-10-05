@@ -3,6 +3,7 @@
 #include "message_define.h"
 #include "db_message.pb.h"
 #include "logic_player.h"
+#include "client_service.h"
 
 void db_connection::on_error(bufferevent* bev)
 {
@@ -90,6 +91,18 @@ int db_connection::on_load_user_info(const DBUserInfo& info)
     notf.body.set_ret(1);
     DBUserInfo* user_info = notf.body.mutable_user_info();
     *user_info = info;
+    gate_client* client = Singleton<client_manager>::GetInstance()->get_session(info.user_id());
+    if(client != NULL)
+    {
+        LogicPlayer& player = client->get_player_info();
+        player.InitPlayer(info);
+        client->send_packet(&notf);
+    }
+    else
+    {
+        LOG(INFO)<<"user init info ,connection disconnection"; 
+    }
+
 
    // LogicPlayer* player = new LogicPlayer();
     return 1;

@@ -25,6 +25,7 @@ class login_message_action: public template_message<ClientLoginRequest,ClientLog
             }
             //client->send_packet(&response);
             user_client = (gate_client*)client;
+            user_client->set_role_id(request->role_id());
             Singleton<client_manager>::GetInstance()->add_session(request->role_id(),user_client);
             user_client->init_timer();
  

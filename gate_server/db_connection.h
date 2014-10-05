@@ -3,6 +3,7 @@
 #include "socket.h"
 #include "timer.h"
 #include "db_message.pb.h"
+#include "gate_client.h"
 
 
 class db_connection:public socket_client

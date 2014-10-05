@@ -51,8 +51,9 @@ class CClient:
                 request.client_time = int(time.time())
                 body_data = request.SerializeToString()
                 head_data = pack_head_message(CSMSG_HEART_REQ,body_data)
-        #        self.client_socket.send(head_data)
-        #        self.client_socket.send(body_data)
+                self.client_socket.send(head_data)
+                self.client_socket.send(body_data)
+                alive_time = time.time()
 
 
             while len(recv_data) >= cs_head_len:
@@ -67,6 +68,9 @@ class CClient:
                 self.process_msg(msg_id,body_data)
                 recv_data = recv_data[msg_len:]
 
+    def do_init_client(self,message):
+        print "init client from message name %s id %d"%(message.user_info.user_name,message.user_info.user_id)
+        self.user_info = message.user_info
 
     def process_msg(self,msg_id,msg_content):
         print "process msg code",msg_id>>2
@@ -74,6 +78,10 @@ class CClient:
             message = response_factory[msg_id]
             message.ParseFromString(msg_content)
             print "login message",message.ret
+        if msg_id == CSMSG_INIT_PLAYER_NOTF:
+            message = response_factory[msg_id]
+            message.ParseFromString(msg_content)
+            self.do_init_client(message)
 
 
     def do_login(self):
@@ -85,7 +93,6 @@ class CClient:
         self.client_socket.send(head_packet)
         self.client_socket.send(body_data)
         print "send login msg"
-
 
 class TestAppliaction:
     def __init__(self):
@@ -108,3 +115,4 @@ if  __name__ == "__main__":
         appliaction.Start(account_list)
     except (SystemExit,KeyboardInterrupt):
         pass
+

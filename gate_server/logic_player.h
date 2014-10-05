@@ -16,6 +16,45 @@ enum
     PLY_ATTR_END,
 };
 
+class Position
+{
+    public:
+        Position()
+        {
+            _x = 0;
+            _y = 0;
+        }
+        Position(int x,int y)
+        {
+            _x = x;
+            _y = y;
+        }
+
+        bool operator==(const Position& pos)
+        {
+            return ((pos.pos_x() == pos_x()) && (pos.pos_y()== pos_y()); 
+        }
+
+        bool operator!=(const Position& pos)
+        {
+            return ((pos.pos_x() != pos_x()) || (pos.pos_y()!= pos_y()); 
+        }
+
+        int square_distance_to(const Position& pos)
+        {
+            int delt_x = pos.pos_x() - pos_x(); 
+            int delt_y = pos.pos_y() - pos_y();
+            return delt_y*delt_y + delt_x*delt_x;
+        }
+
+
+        int pos_x(){return _x;}
+        int pos_y(){return _y;}
+    private:
+        int _x;
+        int _y;
+};
+
 class LogicPlayer
 {
     public:
@@ -26,7 +65,7 @@ class LogicPlayer
             _client = client; 
         }
 
-        void InitPlayer(DBUserInfo* user_info);
+        void InitPlayer(const DBUserInfo& user_info);
 
         void LoadPlayerInfo();
 
@@ -37,6 +76,7 @@ class LogicPlayer
         int  _exp;
         string _name;
         int  _attr[PLY_ATTR_END];
+        Position _pos;
 };
 
 #endif
