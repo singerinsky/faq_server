@@ -32,12 +32,12 @@ class Position
 
         bool operator==(const Position& pos)
         {
-            return ((pos.pos_x() == pos_x()) && (pos.pos_y()== pos_y()); 
+            return ((pos.pos_x() == pos_x()) && (pos.pos_y()== pos_y())); 
         }
 
         bool operator!=(const Position& pos)
         {
-            return ((pos.pos_x() != pos_x()) || (pos.pos_y()!= pos_y()); 
+            return ((pos.pos_x() != pos_x()) || (pos.pos_y()!= pos_y())); 
         }
 
         int square_distance_to(const Position& pos)
@@ -48,8 +48,8 @@ class Position
         }
 
 
-        int pos_x(){return _x;}
-        int pos_y(){return _y;}
+        int pos_x()const {return _x;}
+        int pos_y()const {return _y;}
     private:
         int _x;
         int _y;

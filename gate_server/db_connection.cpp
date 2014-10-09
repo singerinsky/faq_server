@@ -94,8 +94,8 @@ int db_connection::on_load_user_info(const DBUserInfo& info)
     gate_client* client = Singleton<client_manager>::GetInstance()->get_session(info.user_id());
     if(client != NULL)
     {
-        LogicPlayer& player = client->get_player_info();
-        player.InitPlayer(info);
+        LogicPlayer* player = client->get_player_info();
+        player->InitPlayer(info);
         client->send_packet(&notf);
     }
     else
