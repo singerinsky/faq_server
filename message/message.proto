@@ -16,7 +16,7 @@ enum MessageType
     MSG_CLIENT_LOGIN        = 3;//client login
     MSG_GATE_SERVER_REGISTER = 4;//gate server register
     MSG_INIT_CLIENT         = 5;
-    //data server start......
+    MSG_CLIENT_MOVE     = 6;
 }
 
 enum DbMessageType
@@ -50,4 +50,19 @@ message ClientInitNotf
 {
     required  int32 ret = 1;
     required  DBUserInfo user_info = 2;
+}
+
+message ClientMoveRequest
+{
+    required int32 map_id = 1;
+    required int32 pos_x = 2;
+    required int32 pos_y = 3;
+}
+
+message ClientMoveResponse
+{
+    required int32 ret = 1;
+    required int32 map_id = 2;
+    required int32 pos_x = 3;
+    required int32 pos_y = 4;
 }

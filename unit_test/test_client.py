@@ -3,6 +3,7 @@ import  time
 import  struct
 import  sys
 import  socket
+import  random
 #import  urllib2
 from eventlet.green import urllib2
 sys.path.append('../message/python/')
@@ -38,23 +39,14 @@ class CClient:
         self.client_socket.settimeout(0.1)
         self.do_login()
         recv_data = ""
-        alive_time = time.time()
-        print "run client",alive_time
+        self.alive_time = time.time()
+        print "run client",self.alive_time
         while True:
             try:
                 recv_data += self.client_socket.recv(1024)
             except (socket.timeout):
+                self.action_game()
                 pass
-
-            if alive_time < time.time() - 1:
-                request = ClientHeartBeatRequest()
-                request.client_time = int(time.time())
-                body_data = request.SerializeToString()
-                head_data = pack_head_message(CSMSG_HEART_REQ,body_data)
-                self.client_socket.send(head_data)
-                self.client_socket.send(body_data)
-                alive_time = time.time()
-
 
             while len(recv_data) >= cs_head_len:
                 head_data = recv_data[:cs_head_len]
@@ -93,6 +85,33 @@ class CClient:
         self.client_socket.send(head_packet)
         self.client_socket.send(body_data)
         print "send login msg"
+
+    def action_game(self):
+        if self.alive_time < time.time() - 1:
+            request = ClientHeartBeatRequest()
+            request.client_time = int(time.time())
+            body_data = request.SerializeToString()
+            head_data = pack_head_message(CSMSG_HEART_REQ,body_data)
+            self.client_socket.send(head_data)
+            self.client_socket.send(body_data)
+            self.alive_time = time.time()
+
+        rand_value = random.randint(0,99);
+        if rand_value <= 10:
+            self.do_move()
+
+    def do_move(self):
+        move_x = random.randint(0,10);
+        move_y = random.randint(0,10);
+        message_body = ClientMoveRequest();
+        message_body.pos_x = move_x;
+        message_body.pos_y = move_y;
+        message_body.map_id = 1;
+        body_data = message_body.SerializeToString();
+        head_packet = pack_head_message(CSMSG_CLIENT_MOVE_REP,body_data)
+        self.client_socket.send(head_packet)
+        self.client_socket.send(body_data)
+    
 
 class TestAppliaction:
     def __init__(self):
