@@ -140,6 +140,27 @@ class DBUserInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level() const;
   inline void set_level(::google::protobuf::int32 value);
 
+  // required int32 map_id = 4;
+  inline bool has_map_id() const;
+  inline void clear_map_id();
+  static const int kMapIdFieldNumber = 4;
+  inline ::google::protobuf::int32 map_id() const;
+  inline void set_map_id(::google::protobuf::int32 value);
+
+  // required int32 pos_x = 5;
+  inline bool has_pos_x() const;
+  inline void clear_pos_x();
+  static const int kPosXFieldNumber = 5;
+  inline ::google::protobuf::int32 pos_x() const;
+  inline void set_pos_x(::google::protobuf::int32 value);
+
+  // required int32 pos_y = 6;
+  inline bool has_pos_y() const;
+  inline void clear_pos_y();
+  static const int kPosYFieldNumber = 6;
+  inline ::google::protobuf::int32 pos_y() const;
+  inline void set_pos_y(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:DBUserInfo)
  private:
   inline void set_has_user_id();
@@ -148,15 +169,24 @@ class DBUserInfo : public ::google::protobuf::Message {
   inline void clear_has_user_name();
   inline void set_has_level();
   inline void clear_has_level();
+  inline void set_has_map_id();
+  inline void clear_has_map_id();
+  inline void set_has_pos_x();
+  inline void clear_has_pos_x();
+  inline void set_has_pos_y();
+  inline void clear_has_pos_y();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::std::string* user_name_;
   ::google::protobuf::int32 user_id_;
   ::google::protobuf::int32 level_;
+  ::google::protobuf::int32 map_id_;
+  ::google::protobuf::int32 pos_x_;
+  ::google::protobuf::int32 pos_y_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
 
   friend void  protobuf_AddDesc_db_5fmessage_2eproto();
   friend void protobuf_AssignDesc_db_5fmessage_2eproto();
@@ -694,6 +724,72 @@ inline ::google::protobuf::int32 DBUserInfo::level() const {
 inline void DBUserInfo::set_level(::google::protobuf::int32 value) {
   set_has_level();
   level_ = value;
+}
+
+// required int32 map_id = 4;
+inline bool DBUserInfo::has_map_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void DBUserInfo::set_has_map_id() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void DBUserInfo::clear_has_map_id() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void DBUserInfo::clear_map_id() {
+  map_id_ = 0;
+  clear_has_map_id();
+}
+inline ::google::protobuf::int32 DBUserInfo::map_id() const {
+  return map_id_;
+}
+inline void DBUserInfo::set_map_id(::google::protobuf::int32 value) {
+  set_has_map_id();
+  map_id_ = value;
+}
+
+// required int32 pos_x = 5;
+inline bool DBUserInfo::has_pos_x() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void DBUserInfo::set_has_pos_x() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void DBUserInfo::clear_has_pos_x() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void DBUserInfo::clear_pos_x() {
+  pos_x_ = 0;
+  clear_has_pos_x();
+}
+inline ::google::protobuf::int32 DBUserInfo::pos_x() const {
+  return pos_x_;
+}
+inline void DBUserInfo::set_pos_x(::google::protobuf::int32 value) {
+  set_has_pos_x();
+  pos_x_ = value;
+}
+
+// required int32 pos_y = 6;
+inline bool DBUserInfo::has_pos_y() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void DBUserInfo::set_has_pos_y() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void DBUserInfo::clear_has_pos_y() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void DBUserInfo::clear_pos_y() {
+  pos_y_ = 0;
+  clear_has_pos_y();
+}
+inline ::google::protobuf::int32 DBUserInfo::pos_y() const {
+  return pos_y_;
+}
+inline void DBUserInfo::set_pos_y(::google::protobuf::int32 value) {
+  set_has_pos_y();
+  pos_y_ = value;
 }
 
 // -------------------------------------------------------------------

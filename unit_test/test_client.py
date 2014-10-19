@@ -108,7 +108,7 @@ class CClient:
         message_body.pos_y = move_y;
         message_body.map_id = 1;
         body_data = message_body.SerializeToString();
-        head_packet = pack_head_message(CSMSG_CLIENT_MOVE_REP,body_data)
+        head_packet = pack_head_message(CSMSG_CLIENT_MOVE_REQ,body_data)
         self.client_socket.send(head_packet)
         self.client_socket.send(body_data)
     

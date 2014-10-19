@@ -11,6 +11,9 @@ message DBUserInfo
     required int32 user_id = 1;
     required string user_name = 2;
     required int32 level = 3;
+    required int32 map_id = 4;
+    required int32 pos_x = 5;
+    required int32 pos_y = 6;
 }
 
 message DBUserItem

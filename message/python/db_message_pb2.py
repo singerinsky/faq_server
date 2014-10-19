@@ -14,7 +14,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='db_message.proto',
   package='',
-  serialized_pb='\n\x10\x64\x62_message.proto\"?\n\nDBUserInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\x05\x12\x11\n\tuser_name\x18\x02 \x02(\t\x12\r\n\x05level\x18\x03 \x02(\x05\"/\n\nDBUserItem\x12\x0f\n\x07item_id\x18\x01 \x02(\x05\x12\x10\n\x08item_num\x18\x02 \x02(\x05\"0\n\x0e\x44\x42UserItemList\x12\x1e\n\titem_list\x18\x01 \x03(\x0b\x32\x0b.DBUserItem\"H\n\x0b\x44\x42\x43ommonReq\x12\x0b\n\x03seq\x18\x01 \x02(\x05\x12\x14\n\x0coperate_type\x18\x02 \x02(\x05\x12\x16\n\x0eoperate_string\x18\x03 \x02(\t\"\x86\x01\n\x0b\x44\x42\x43ommonRep\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0b\n\x03seq\x18\x02 \x02(\x05\x12\x14\n\x0coperate_type\x18\x03 \x02(\x05\x12\x1e\n\tuser_info\x18\x04 \x01(\x0b\x32\x0b.DBUserInfo\x12\'\n\x0euser_item_list\x18\x05 \x01(\x0b\x32\x0f.DBUserItemList*]\n\rDbOperateType\x12\x16\n\x11MSG_DB_WORK_START\x10\x90N\x12\x19\n\x14MSG_DB_GET_USER_INFO\x10\x91N\x12\x19\n\x14MSG_DB_GET_ITEM_LIST\x10\x92N')
+  serialized_pb='\n\x10\x64\x62_message.proto\"m\n\nDBUserInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\x05\x12\x11\n\tuser_name\x18\x02 \x02(\t\x12\r\n\x05level\x18\x03 \x02(\x05\x12\x0e\n\x06map_id\x18\x04 \x02(\x05\x12\r\n\x05pos_x\x18\x05 \x02(\x05\x12\r\n\x05pos_y\x18\x06 \x02(\x05\"/\n\nDBUserItem\x12\x0f\n\x07item_id\x18\x01 \x02(\x05\x12\x10\n\x08item_num\x18\x02 \x02(\x05\"0\n\x0e\x44\x42UserItemList\x12\x1e\n\titem_list\x18\x01 \x03(\x0b\x32\x0b.DBUserItem\"H\n\x0b\x44\x42\x43ommonReq\x12\x0b\n\x03seq\x18\x01 \x02(\x05\x12\x14\n\x0coperate_type\x18\x02 \x02(\x05\x12\x16\n\x0eoperate_string\x18\x03 \x02(\t\"\x86\x01\n\x0b\x44\x42\x43ommonRep\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0b\n\x03seq\x18\x02 \x02(\x05\x12\x14\n\x0coperate_type\x18\x03 \x02(\x05\x12\x1e\n\tuser_info\x18\x04 \x01(\x0b\x32\x0b.DBUserInfo\x12\'\n\x0euser_item_list\x18\x05 \x01(\x0b\x32\x0f.DBUserItemList*]\n\rDbOperateType\x12\x16\n\x11MSG_DB_WORK_START\x10\x90N\x12\x19\n\x14MSG_DB_GET_USER_INFO\x10\x91N\x12\x19\n\x14MSG_DB_GET_ITEM_LIST\x10\x92N')
 
 _DBOPERATETYPE = _descriptor.EnumDescriptor(
   name='DbOperateType',
@@ -37,8 +37,8 @@ _DBOPERATETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=395,
-  serialized_end=488,
+  serialized_start=441,
+  serialized_end=534,
 )
 
 DbOperateType = enum_type_wrapper.EnumTypeWrapper(_DBOPERATETYPE)
@@ -76,6 +76,27 @@ _DBUSERINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='map_id', full_name='DBUserInfo.map_id', index=3,
+      number=4, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_x', full_name='DBUserInfo.pos_x', index=4,
+      number=5, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_y', full_name='DBUserInfo.pos_y', index=5,
+      number=6, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -86,7 +107,7 @@ _DBUSERINFO = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=20,
-  serialized_end=83,
+  serialized_end=129,
 )
 
 
@@ -120,8 +141,8 @@ _DBUSERITEM = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=85,
-  serialized_end=132,
+  serialized_start=131,
+  serialized_end=178,
 )
 
 
@@ -148,8 +169,8 @@ _DBUSERITEMLIST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=134,
-  serialized_end=182,
+  serialized_start=180,
+  serialized_end=228,
 )
 
 
@@ -190,8 +211,8 @@ _DBCOMMONREQ = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=184,
-  serialized_end=256,
+  serialized_start=230,
+  serialized_end=302,
 )
 
 
@@ -246,8 +267,8 @@ _DBCOMMONREP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=259,
-  serialized_end=393,
+  serialized_start=305,
+  serialized_end=439,
 )
 
 _DBUSERITEMLIST.fields_by_name['item_list'].message_type = _DBUSERITEM
