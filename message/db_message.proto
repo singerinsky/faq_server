@@ -1,19 +1,10 @@
+import "tb_user.proto";
 
 enum DbOperateType 
 {
     MSG_DB_WORK_START = 10000;//common update
     MSG_DB_GET_USER_INFO = 10001;//Get user info
     MSG_DB_GET_ITEM_LIST = 10002;//Get user info
-}
-
-message DBUserInfo
-{
-    required int32 user_id = 1;
-    required string user_name = 2;
-    required int32 level = 3;
-    required int32 map_id = 4;
-    required int32 pos_x = 5;
-    required int32 pos_y = 6;
 }
 
 message DBUserItem
@@ -39,7 +30,7 @@ message DBCommonRep
     required int32 ret = 1;
     required int32 seq = 2;
     required int32 operate_type = 3;
-    optional DBUserInfo user_info = 4;
+    optional db_tb_user user_info = 4;
     optional DBUserItemList user_item_list = 5;
 }
 

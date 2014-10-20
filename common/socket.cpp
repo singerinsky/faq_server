@@ -45,10 +45,11 @@ int socket_client::check_packet_info(packet_info* packet,struct evbuffer* read_b
 
 int socket_client::connect_to(const char* host_name,int port)
 {
+    _ip = host_name;
+    _port = port;
     if(_bev == NULL)
     {
-        LOG(ERROR)<<"bufferevent not init!!!";
-        return -1;
+        _bev = Singleton<ReactorCore>::GetInstance()->GetNewSocketEvent();
     }
 
     sockaddr_in addr_in;
@@ -62,6 +63,7 @@ int socket_client::connect_to(const char* host_name,int port)
     if(bufferevent_socket_connect(_bev,(struct sockaddr*)&addr_in,sizeof(addr_in)) < 0 )
     {
         bufferevent_free(_bev);
+        _bev = NULL;
         LOG(ERROR)<<"connect failed";
         return -2;
     }else
@@ -162,4 +164,9 @@ void common_event_cb(struct bufferevent* ev,short error_no,void *user_data)
 void common_write_cb(struct bufferevent* ev,void *user_data)
 {
 
+}
+
+void socket_client::re_connect()
+{
+    connect_to(_ip.c_str(),_port);
 }

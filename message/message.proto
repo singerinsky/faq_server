@@ -1,4 +1,5 @@
 import "db_message.proto";
+import "tb_user.proto";
 
 enum MSG_ACTION_TYPE
 {
@@ -49,7 +50,7 @@ message ClientLoginResponse
 message ClientInitNotf
 {
     required  int32 ret = 1;
-    required  DBUserInfo user_info = 2;
+    required  db_tb_user user_info = 2;
 }
 
 message ClientMoveRequest

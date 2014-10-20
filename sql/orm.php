@@ -18,7 +18,7 @@ class orm_generator
         $this->file_h = fopen("${output_dir}/${tbname}.h",'w') ;
         $this->file_cpp = fopen("${output_dir}/${tbname}.cpp",'w') ;
         $this->comm_file_h = fopen("${output_dir}/sql_binder.h",'w') ;
-        $this->file_proto = fopen("../message/${tbname}.proto",'w');
+        $this->file_proto = fopen("${output_dir}/${tbname}.proto",'w');
 
     } 
 
@@ -64,8 +64,7 @@ class orm_generator
     {
         fwrite($this->file_h,"#ifndef _generate_h_$this->name \n") ;
         fwrite($this->file_h,"#define _generate_h_$this->name \n") ;
-        fwrite($this->file_h,"#include <mysql++/mysql++.h>\n");
-        fwrite($this->file_h,"#include \"../message/$this->name.pb.h\"\n");
+        fwrite($this->file_h,"#include \"$this->name.pb.h\"\n");
         //fwrite($this->file_h,"#include <stdint.h>\n") ;
         //fwrite($this->file_h,"#include <string>\n") ;
         //fwrite($this->file_h,"#include <vector>\n") ;
@@ -81,7 +80,7 @@ class orm_generator
         fwrite($this->file_h,"    bool is_dirty() const\n    {\n");
         fwrite($this->file_h,"        for(int i=0;i<FIELD_COUNT;++i) {if(dirty[i]) return true;} ;\n") ;
         fwrite($this->file_h,"        return false ;\n    } ;\n") ;
-        fwrite($this->file_h,"    void load(mysqlpp::Row&);\n") ;
+        //fwrite($this->file_h,"    void load(mysqlpp::Row&);\n") ;
         fwrite($this->file_h,"    int sql_insert(char* buf,int size) const;\n") ;
         fwrite($this->file_h,"    int sql_replace(char* buf,int size) const;\n") ;
         fwrite($this->file_h,"    int sql_update(char* buf,int size) const;\n") ;
@@ -133,7 +132,7 @@ class orm_generator
     function generate_cpp_load()
     {
 
-        fwrite($this->file_cpp, "void $this->name::load(mysqlpp::Row& row)\n{\n" );
+        /*fwrite($this->file_cpp, "void $this->name::load(mysqlpp::Row& row)\n{\n" );
         foreach($this->fields as $k=>$field)
         {   
             
@@ -153,7 +152,7 @@ class orm_generator
 
         fwrite($this->file_cpp, "    memset(dirty,0,sizeof(dirty));\n" );
         fwrite($this->file_cpp, "}\n" );
-
+        */
     }
 
     function generate_cpp_key()

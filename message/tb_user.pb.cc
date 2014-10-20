@@ -32,9 +32,13 @@ void protobuf_AssignDesc_tb_5fuser_2eproto() {
       "tb_user.proto");
   GOOGLE_CHECK(file != NULL);
   db_tb_user_descriptor_ = file->message_type(0);
-  static const int db_tb_user_offsets_[2] = {
+  static const int db_tb_user_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, user_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, level_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, map_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, pos_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, pos_y_),
   };
   db_tb_user_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -77,8 +81,10 @@ void protobuf_AddDesc_tb_5fuser_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rtb_user.proto\"+\n\ndb_tb_user\022\n\n\002id\030\001 \002("
-    "\005\022\021\n\tuser_name\030\002 \002(\t", 60);
+    "\n\rtb_user.proto\"h\n\ndb_tb_user\022\n\n\002id\030\001 \002("
+    "\005\022\021\n\tuser_name\030\002 \002(\t\022\r\n\005level\030\003 \002(\005\022\016\n\006m"
+    "ap_id\030\004 \002(\005\022\r\n\005pos_x\030\005 \002(\005\022\r\n\005pos_y\030\006 \002("
+    "\005", 121);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "tb_user.proto", &protobuf_RegisterTypes);
   db_tb_user::default_instance_ = new db_tb_user();
@@ -98,6 +104,10 @@ struct StaticDescriptorInitializer_tb_5fuser_2eproto {
 #ifndef _MSC_VER
 const int db_tb_user::kIdFieldNumber;
 const int db_tb_user::kUserNameFieldNumber;
+const int db_tb_user::kLevelFieldNumber;
+const int db_tb_user::kMapIdFieldNumber;
+const int db_tb_user::kPosXFieldNumber;
+const int db_tb_user::kPosYFieldNumber;
 #endif  // !_MSC_VER
 
 db_tb_user::db_tb_user()
@@ -118,6 +128,10 @@ void db_tb_user::SharedCtor() {
   _cached_size_ = 0;
   id_ = 0;
   user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  level_ = 0;
+  map_id_ = 0;
+  pos_x_ = 0;
+  pos_y_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -162,6 +176,10 @@ void db_tb_user::Clear() {
         user_name_->clear();
       }
     }
+    level_ = 0;
+    map_id_ = 0;
+    pos_x_ = 0;
+    pos_y_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -201,6 +219,70 @@ bool db_tb_user::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(24)) goto parse_level;
+        break;
+      }
+
+      // required int32 level = 3;
+      case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_level:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &level_)));
+          set_has_level();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(32)) goto parse_map_id;
+        break;
+      }
+
+      // required int32 map_id = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_map_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &map_id_)));
+          set_has_map_id();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(40)) goto parse_pos_x;
+        break;
+      }
+
+      // required int32 pos_x = 5;
+      case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_pos_x:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &pos_x_)));
+          set_has_pos_x();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(48)) goto parse_pos_y;
+        break;
+      }
+
+      // required int32 pos_y = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_pos_y:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &pos_y_)));
+          set_has_pos_y();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -237,6 +319,26 @@ void db_tb_user::SerializeWithCachedSizes(
       2, this->user_name(), output);
   }
 
+  // required int32 level = 3;
+  if (has_level()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->level(), output);
+  }
+
+  // required int32 map_id = 4;
+  if (has_map_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->map_id(), output);
+  }
+
+  // required int32 pos_x = 5;
+  if (has_pos_x()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->pos_x(), output);
+  }
+
+  // required int32 pos_y = 6;
+  if (has_pos_y()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->pos_y(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -258,6 +360,26 @@ void db_tb_user::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->user_name(), target);
+  }
+
+  // required int32 level = 3;
+  if (has_level()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->level(), target);
+  }
+
+  // required int32 map_id = 4;
+  if (has_map_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->map_id(), target);
+  }
+
+  // required int32 pos_x = 5;
+  if (has_pos_x()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->pos_x(), target);
+  }
+
+  // required int32 pos_y = 6;
+  if (has_pos_y()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->pos_y(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -283,6 +405,34 @@ int db_tb_user::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->user_name());
+    }
+
+    // required int32 level = 3;
+    if (has_level()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->level());
+    }
+
+    // required int32 map_id = 4;
+    if (has_map_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->map_id());
+    }
+
+    // required int32 pos_x = 5;
+    if (has_pos_x()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->pos_x());
+    }
+
+    // required int32 pos_y = 6;
+    if (has_pos_y()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->pos_y());
     }
 
   }
@@ -318,6 +468,18 @@ void db_tb_user::MergeFrom(const db_tb_user& from) {
     if (from.has_user_name()) {
       set_user_name(from.user_name());
     }
+    if (from.has_level()) {
+      set_level(from.level());
+    }
+    if (from.has_map_id()) {
+      set_map_id(from.map_id());
+    }
+    if (from.has_pos_x()) {
+      set_pos_x(from.pos_x());
+    }
+    if (from.has_pos_y()) {
+      set_pos_y(from.pos_y());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -335,7 +497,7 @@ void db_tb_user::CopyFrom(const db_tb_user& from) {
 }
 
 bool db_tb_user::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
 
   return true;
 }
@@ -344,6 +506,10 @@ void db_tb_user::Swap(db_tb_user* other) {
   if (other != this) {
     std::swap(id_, other->id_);
     std::swap(user_name_, other->user_name_);
+    std::swap(level_, other->level_);
+    std::swap(map_id_, other->map_id_);
+    std::swap(pos_x_, other->pos_x_);
+    std::swap(pos_y_, other->pos_y_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

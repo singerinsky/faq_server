@@ -4,7 +4,9 @@
 CMakeFiles/message_lib.dir/db_message.pb.o
  /home/gl/faq_server/message/db_message.pb.cc
  /home/gl/faq_server/message/db_message.pb.h
+ /home/gl/faq_server/message/tb_user.pb.h
 CMakeFiles/message_lib.dir/message.pb.o
  /home/gl/faq_server/message/db_message.pb.h
  /home/gl/faq_server/message/message.pb.cc
  /home/gl/faq_server/message/message.pb.h
+ /home/gl/faq_server/message/tb_user.pb.h

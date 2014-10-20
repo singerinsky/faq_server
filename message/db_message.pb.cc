@@ -18,9 +18,6 @@
 
 namespace {
 
-const ::google::protobuf::Descriptor* DBUserInfo_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  DBUserInfo_reflection_ = NULL;
 const ::google::protobuf::Descriptor* DBUserItem_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   DBUserItem_reflection_ = NULL;
@@ -44,27 +41,7 @@ void protobuf_AssignDesc_db_5fmessage_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "db_message.proto");
   GOOGLE_CHECK(file != NULL);
-  DBUserInfo_descriptor_ = file->message_type(0);
-  static const int DBUserInfo_offsets_[6] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, user_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, user_name_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, level_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, map_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, pos_x_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, pos_y_),
-  };
-  DBUserInfo_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      DBUserInfo_descriptor_,
-      DBUserInfo::default_instance_,
-      DBUserInfo_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserInfo, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(DBUserInfo));
-  DBUserItem_descriptor_ = file->message_type(1);
+  DBUserItem_descriptor_ = file->message_type(0);
   static const int DBUserItem_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserItem, item_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserItem, item_num_),
@@ -80,7 +57,7 @@ void protobuf_AssignDesc_db_5fmessage_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DBUserItem));
-  DBUserItemList_descriptor_ = file->message_type(2);
+  DBUserItemList_descriptor_ = file->message_type(1);
   static const int DBUserItemList_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBUserItemList, item_list_),
   };
@@ -95,7 +72,7 @@ void protobuf_AssignDesc_db_5fmessage_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DBUserItemList));
-  DBCommonReq_descriptor_ = file->message_type(3);
+  DBCommonReq_descriptor_ = file->message_type(2);
   static const int DBCommonReq_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonReq, seq_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonReq, operate_type_),
@@ -112,7 +89,7 @@ void protobuf_AssignDesc_db_5fmessage_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(DBCommonReq));
-  DBCommonRep_descriptor_ = file->message_type(4);
+  DBCommonRep_descriptor_ = file->message_type(3);
   static const int DBCommonRep_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, ret_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DBCommonRep, seq_),
@@ -145,8 +122,6 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    DBUserInfo_descriptor_, &DBUserInfo::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     DBUserItem_descriptor_, &DBUserItem::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     DBUserItemList_descriptor_, &DBUserItemList::default_instance());
@@ -159,8 +134,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
 }  // namespace
 
 void protobuf_ShutdownFile_db_5fmessage_2eproto() {
-  delete DBUserInfo::default_instance_;
-  delete DBUserInfo_reflection_;
   delete DBUserItem::default_instance_;
   delete DBUserItem_reflection_;
   delete DBUserItemList::default_instance_;
@@ -177,29 +150,25 @@ void protobuf_AddDesc_db_5fmessage_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::protobuf_AddDesc_tb_5fuser_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\020db_message.proto\"m\n\nDBUserInfo\022\017\n\007user"
-    "_id\030\001 \002(\005\022\021\n\tuser_name\030\002 \002(\t\022\r\n\005level\030\003 "
-    "\002(\005\022\016\n\006map_id\030\004 \002(\005\022\r\n\005pos_x\030\005 \002(\005\022\r\n\005po"
-    "s_y\030\006 \002(\005\"/\n\nDBUserItem\022\017\n\007item_id\030\001 \002(\005"
-    "\022\020\n\010item_num\030\002 \002(\005\"0\n\016DBUserItemList\022\036\n\t"
-    "item_list\030\001 \003(\0132\013.DBUserItem\"H\n\013DBCommon"
-    "Req\022\013\n\003seq\030\001 \002(\005\022\024\n\014operate_type\030\002 \002(\005\022\026"
-    "\n\016operate_string\030\003 \002(\t\"\206\001\n\013DBCommonRep\022\013"
-    "\n\003ret\030\001 \002(\005\022\013\n\003seq\030\002 \002(\005\022\024\n\014operate_type"
-    "\030\003 \002(\005\022\036\n\tuser_info\030\004 \001(\0132\013.DBUserInfo\022\'"
-    "\n\016user_item_list\030\005 \001(\0132\017.DBUserItemList*"
-    "]\n\rDbOperateType\022\026\n\021MSG_DB_WORK_START\020\220N"
-    "\022\031\n\024MSG_DB_GET_USER_INFO\020\221N\022\031\n\024MSG_DB_GE"
-    "T_ITEM_LIST\020\222N", 534);
+    "\n\020db_message.proto\032\rtb_user.proto\"/\n\nDBU"
+    "serItem\022\017\n\007item_id\030\001 \002(\005\022\020\n\010item_num\030\002 \002"
+    "(\005\"0\n\016DBUserItemList\022\036\n\titem_list\030\001 \003(\0132"
+    "\013.DBUserItem\"H\n\013DBCommonReq\022\013\n\003seq\030\001 \002(\005"
+    "\022\024\n\014operate_type\030\002 \002(\005\022\026\n\016operate_string"
+    "\030\003 \002(\t\"\206\001\n\013DBCommonRep\022\013\n\003ret\030\001 \002(\005\022\013\n\003s"
+    "eq\030\002 \002(\005\022\024\n\014operate_type\030\003 \002(\005\022\036\n\tuser_i"
+    "nfo\030\004 \001(\0132\013.db_tb_user\022\'\n\016user_item_list"
+    "\030\005 \001(\0132\017.DBUserItemList*]\n\rDbOperateType"
+    "\022\026\n\021MSG_DB_WORK_START\020\220N\022\031\n\024MSG_DB_GET_U"
+    "SER_INFO\020\221N\022\031\n\024MSG_DB_GET_ITEM_LIST\020\222N", 438);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "db_message.proto", &protobuf_RegisterTypes);
-  DBUserInfo::default_instance_ = new DBUserInfo();
   DBUserItem::default_instance_ = new DBUserItem();
   DBUserItemList::default_instance_ = new DBUserItemList();
   DBCommonReq::default_instance_ = new DBCommonReq();
   DBCommonRep::default_instance_ = new DBCommonRep();
-  DBUserInfo::default_instance_->InitAsDefaultInstance();
   DBUserItem::default_instance_->InitAsDefaultInstance();
   DBUserItemList::default_instance_->InitAsDefaultInstance();
   DBCommonReq::default_instance_->InitAsDefaultInstance();
@@ -226,432 +195,6 @@ bool DbOperateType_IsValid(int value) {
     default:
       return false;
   }
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int DBUserInfo::kUserIdFieldNumber;
-const int DBUserInfo::kUserNameFieldNumber;
-const int DBUserInfo::kLevelFieldNumber;
-const int DBUserInfo::kMapIdFieldNumber;
-const int DBUserInfo::kPosXFieldNumber;
-const int DBUserInfo::kPosYFieldNumber;
-#endif  // !_MSC_VER
-
-DBUserInfo::DBUserInfo()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-}
-
-void DBUserInfo::InitAsDefaultInstance() {
-}
-
-DBUserInfo::DBUserInfo(const DBUserInfo& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-}
-
-void DBUserInfo::SharedCtor() {
-  _cached_size_ = 0;
-  user_id_ = 0;
-  user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  level_ = 0;
-  map_id_ = 0;
-  pos_x_ = 0;
-  pos_y_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-DBUserInfo::~DBUserInfo() {
-  SharedDtor();
-}
-
-void DBUserInfo::SharedDtor() {
-  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
-    delete user_name_;
-  }
-  if (this != default_instance_) {
-  }
-}
-
-void DBUserInfo::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* DBUserInfo::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return DBUserInfo_descriptor_;
-}
-
-const DBUserInfo& DBUserInfo::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_db_5fmessage_2eproto();
-  return *default_instance_;
-}
-
-DBUserInfo* DBUserInfo::default_instance_ = NULL;
-
-DBUserInfo* DBUserInfo::New() const {
-  return new DBUserInfo;
-}
-
-void DBUserInfo::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    user_id_ = 0;
-    if (has_user_name()) {
-      if (user_name_ != &::google::protobuf::internal::kEmptyString) {
-        user_name_->clear();
-      }
-    }
-    level_ = 0;
-    map_id_ = 0;
-    pos_x_ = 0;
-    pos_y_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool DBUserInfo::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
-  ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 user_id = 1;
-      case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &user_id_)));
-          set_has_user_id();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(18)) goto parse_user_name;
-        break;
-      }
-
-      // required string user_name = 2;
-      case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_user_name:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_user_name()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->user_name().data(), this->user_name().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(24)) goto parse_level;
-        break;
-      }
-
-      // required int32 level = 3;
-      case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_level:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &level_)));
-          set_has_level();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(32)) goto parse_map_id;
-        break;
-      }
-
-      // required int32 map_id = 4;
-      case 4: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_map_id:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &map_id_)));
-          set_has_map_id();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(40)) goto parse_pos_x;
-        break;
-      }
-
-      // required int32 pos_x = 5;
-      case 5: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_pos_x:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &pos_x_)));
-          set_has_pos_x();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(48)) goto parse_pos_y;
-        break;
-      }
-
-      // required int32 pos_y = 6;
-      case 6: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_pos_y:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &pos_y_)));
-          set_has_pos_y();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectAtEnd()) return true;
-        break;
-      }
-
-      default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-  return true;
-#undef DO_
-}
-
-void DBUserInfo::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // required int32 user_id = 1;
-  if (has_user_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->user_id(), output);
-  }
-
-  // required string user_name = 2;
-  if (has_user_name()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->user_name().data(), this->user_name().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->user_name(), output);
-  }
-
-  // required int32 level = 3;
-  if (has_level()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->level(), output);
-  }
-
-  // required int32 map_id = 4;
-  if (has_map_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->map_id(), output);
-  }
-
-  // required int32 pos_x = 5;
-  if (has_pos_x()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->pos_x(), output);
-  }
-
-  // required int32 pos_y = 6;
-  if (has_pos_y()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->pos_y(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-}
-
-::google::protobuf::uint8* DBUserInfo::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // required int32 user_id = 1;
-  if (has_user_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->user_id(), target);
-  }
-
-  // required string user_name = 2;
-  if (has_user_name()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->user_name().data(), this->user_name().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->user_name(), target);
-  }
-
-  // required int32 level = 3;
-  if (has_level()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->level(), target);
-  }
-
-  // required int32 map_id = 4;
-  if (has_map_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->map_id(), target);
-  }
-
-  // required int32 pos_x = 5;
-  if (has_pos_x()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->pos_x(), target);
-  }
-
-  // required int32 pos_y = 6;
-  if (has_pos_y()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->pos_y(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  return target;
-}
-
-int DBUserInfo::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 user_id = 1;
-    if (has_user_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->user_id());
-    }
-
-    // required string user_name = 2;
-    if (has_user_name()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->user_name());
-    }
-
-    // required int32 level = 3;
-    if (has_level()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->level());
-    }
-
-    // required int32 map_id = 4;
-    if (has_map_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->map_id());
-    }
-
-    // required int32 pos_x = 5;
-    if (has_pos_x()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->pos_x());
-    }
-
-    // required int32 pos_y = 6;
-    if (has_pos_y()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->pos_y());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void DBUserInfo::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const DBUserInfo* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const DBUserInfo*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void DBUserInfo::MergeFrom(const DBUserInfo& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_user_id()) {
-      set_user_id(from.user_id());
-    }
-    if (from.has_user_name()) {
-      set_user_name(from.user_name());
-    }
-    if (from.has_level()) {
-      set_level(from.level());
-    }
-    if (from.has_map_id()) {
-      set_map_id(from.map_id());
-    }
-    if (from.has_pos_x()) {
-      set_pos_x(from.pos_x());
-    }
-    if (from.has_pos_y()) {
-      set_pos_y(from.pos_y());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void DBUserInfo::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void DBUserInfo::CopyFrom(const DBUserInfo& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool DBUserInfo::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
-
-  return true;
-}
-
-void DBUserInfo::Swap(DBUserInfo* other) {
-  if (other != this) {
-    std::swap(user_id_, other->user_id_);
-    std::swap(user_name_, other->user_name_);
-    std::swap(level_, other->level_);
-    std::swap(map_id_, other->map_id_);
-    std::swap(pos_x_, other->pos_x_);
-    std::swap(pos_y_, other->pos_y_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata DBUserInfo::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = DBUserInfo_descriptor_;
-  metadata.reflection = DBUserInfo_reflection_;
-  return metadata;
 }
 
 
@@ -1432,7 +975,7 @@ DBCommonRep::DBCommonRep()
 }
 
 void DBCommonRep::InitAsDefaultInstance() {
-  user_info_ = const_cast< ::DBUserInfo*>(&::DBUserInfo::default_instance());
+  user_info_ = const_cast< ::db_tb_user*>(&::db_tb_user::default_instance());
   user_item_list_ = const_cast< ::DBUserItemList*>(&::DBUserItemList::default_instance());
 }
 
@@ -1490,7 +1033,7 @@ void DBCommonRep::Clear() {
     seq_ = 0;
     operate_type_ = 0;
     if (has_user_info()) {
-      if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
+      if (user_info_ != NULL) user_info_->::db_tb_user::Clear();
     }
     if (has_user_item_list()) {
       if (user_item_list_ != NULL) user_item_list_->::DBUserItemList::Clear();
@@ -1553,7 +1096,7 @@ bool DBCommonRep::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .DBUserInfo user_info = 4;
+      // optional .db_tb_user user_info = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1614,7 +1157,7 @@ void DBCommonRep::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->operate_type(), output);
   }
 
-  // optional .DBUserInfo user_info = 4;
+  // optional .db_tb_user user_info = 4;
   if (has_user_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->user_info(), output);
@@ -1649,7 +1192,7 @@ void DBCommonRep::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->operate_type(), target);
   }
 
-  // optional .DBUserInfo user_info = 4;
+  // optional .db_tb_user user_info = 4;
   if (has_user_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1695,7 +1238,7 @@ int DBCommonRep::ByteSize() const {
           this->operate_type());
     }
 
-    // optional .DBUserInfo user_info = 4;
+    // optional .db_tb_user user_info = 4;
     if (has_user_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1746,7 +1289,7 @@ void DBCommonRep::MergeFrom(const DBCommonRep& from) {
       set_operate_type(from.operate_type());
     }
     if (from.has_user_info()) {
-      mutable_user_info()->::DBUserInfo::MergeFrom(from.user_info());
+      mutable_user_info()->::db_tb_user::MergeFrom(from.user_info());
     }
     if (from.has_user_item_list()) {
       mutable_user_item_list()->::DBUserItemList::MergeFrom(from.user_item_list());

@@ -26,6 +26,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "db_message.pb.h"
+#include "tb_user.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -508,14 +509,14 @@ class ClientInitNotf : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 ret() const;
   inline void set_ret(::google::protobuf::int32 value);
 
-  // required .DBUserInfo user_info = 2;
+  // required .db_tb_user user_info = 2;
   inline bool has_user_info() const;
   inline void clear_user_info();
   static const int kUserInfoFieldNumber = 2;
-  inline const ::DBUserInfo& user_info() const;
-  inline ::DBUserInfo* mutable_user_info();
-  inline ::DBUserInfo* release_user_info();
-  inline void set_allocated_user_info(::DBUserInfo* user_info);
+  inline const ::db_tb_user& user_info() const;
+  inline ::db_tb_user* mutable_user_info();
+  inline ::db_tb_user* release_user_info();
+  inline void set_allocated_user_info(::db_tb_user* user_info);
 
   // @@protoc_insertion_point(class_scope:ClientInitNotf)
  private:
@@ -526,7 +527,7 @@ class ClientInitNotf : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::DBUserInfo* user_info_;
+  ::db_tb_user* user_info_;
   ::google::protobuf::int32 ret_;
 
   mutable int _cached_size_;
@@ -956,7 +957,7 @@ inline void ClientInitNotf::set_ret(::google::protobuf::int32 value) {
   ret_ = value;
 }
 
-// required .DBUserInfo user_info = 2;
+// required .db_tb_user user_info = 2;
 inline bool ClientInitNotf::has_user_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -967,24 +968,24 @@ inline void ClientInitNotf::clear_has_user_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ClientInitNotf::clear_user_info() {
-  if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
+  if (user_info_ != NULL) user_info_->::db_tb_user::Clear();
   clear_has_user_info();
 }
-inline const ::DBUserInfo& ClientInitNotf::user_info() const {
+inline const ::db_tb_user& ClientInitNotf::user_info() const {
   return user_info_ != NULL ? *user_info_ : *default_instance_->user_info_;
 }
-inline ::DBUserInfo* ClientInitNotf::mutable_user_info() {
+inline ::db_tb_user* ClientInitNotf::mutable_user_info() {
   set_has_user_info();
-  if (user_info_ == NULL) user_info_ = new ::DBUserInfo;
+  if (user_info_ == NULL) user_info_ = new ::db_tb_user;
   return user_info_;
 }
-inline ::DBUserInfo* ClientInitNotf::release_user_info() {
+inline ::db_tb_user* ClientInitNotf::release_user_info() {
   clear_has_user_info();
-  ::DBUserInfo* temp = user_info_;
+  ::db_tb_user* temp = user_info_;
   user_info_ = NULL;
   return temp;
 }
-inline void ClientInitNotf::set_allocated_user_info(::DBUserInfo* user_info) {
+inline void ClientInitNotf::set_allocated_user_info(::db_tb_user* user_info) {
   delete user_info_;
   user_info_ = user_info;
   if (user_info) {

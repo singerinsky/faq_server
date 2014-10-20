@@ -3,8 +3,10 @@
 
 CMakeFiles/message_lib.dir/db_message.pb.o: db_message.pb.cc
 CMakeFiles/message_lib.dir/db_message.pb.o: db_message.pb.h
+CMakeFiles/message_lib.dir/db_message.pb.o: tb_user.pb.h
 
 CMakeFiles/message_lib.dir/message.pb.o: db_message.pb.h
 CMakeFiles/message_lib.dir/message.pb.o: message.pb.cc
 CMakeFiles/message_lib.dir/message.pb.o: message.pb.h
+CMakeFiles/message_lib.dir/message.pb.o: tb_user.pb.h
 

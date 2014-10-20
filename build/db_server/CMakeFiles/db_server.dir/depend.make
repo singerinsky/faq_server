@@ -35,6 +35,7 @@ db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/db_message.pb.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/message.pb.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/message_define.h
+db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/action_data_work_message.cpp
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/work_manager.h
@@ -49,6 +50,8 @@ db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/gfla
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/log_severity.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/logging.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/vlog_is_on.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/../include/tinystr.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/actions_mananger.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/aliased_buf.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/game_packet.h
@@ -59,11 +62,10 @@ db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../c
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/socket.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/template_message.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/tinyxml.h
-db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../include/tinystr.h
-db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/db_message.pb.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/message.pb.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/message_define.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/action_heart_message.cpp
 
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: .././include/event2/buffer.h
@@ -114,6 +116,8 @@ db_server/CMakeFiles/db_server.dir/db_application.cpp.o: .././include/mysql/mysq
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: .././include/mysql/mysql_time.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: .././include/mysql/mysql_version.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: .././include/mysql/typelib.h
+db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/../include/tinystr.h
+db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/daemon.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/head.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/lock.h
@@ -130,8 +134,6 @@ db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/timer.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../common/worker.h
-db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../include/tinystr.h
-db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/db_application.cpp
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: ../db_server/db_application.h
@@ -157,6 +159,8 @@ db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/mysql_com
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/mysql_time.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/mysql_version.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/typelib.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/../include/tinystr.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/actions_mananger.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/aliased_buf.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/game_packet.h
@@ -171,11 +175,10 @@ db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/threa
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/timer.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/worker.h
-db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../include/tinystr.h
-db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/db_message.pb.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/message.pb.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/message_define.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/db_client.cpp
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/db_client.h
@@ -224,6 +227,8 @@ db_server/CMakeFiles/db_server.dir/db_service.cpp.o: .././include/mysql/mysql_co
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: .././include/mysql/mysql_time.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: .././include/mysql/mysql_version.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: .././include/mysql/typelib.h
+db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/../include/tinystr.h
+db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/head.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/mysql_connection.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/packet.h
@@ -234,8 +239,6 @@ db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/sing
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/socket.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/timer.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../common/tinyxml.h
-db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../include/tinystr.h
-db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/db_client.h
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/db_service.cpp
 db_server/CMakeFiles/db_server.dir/db_service.cpp.o: ../db_server/db_service.h
@@ -257,6 +260,8 @@ db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: .././include/mysql/mysql_
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: .././include/mysql/mysql_time.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: .././include/mysql/mysql_version.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: .././include/mysql/typelib.h
+db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/../include/tinystr.h
+db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/head.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/lock.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/mysql_connection.h
@@ -268,8 +273,6 @@ db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/th
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/timer.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/tinyxml.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/worker.h
-db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../include/tinystr.h
-db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/db_client.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/work_manager.cpp

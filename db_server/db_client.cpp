@@ -75,10 +75,13 @@ void db_client::on_load_user_data(MysqlResult& result,db_job* job)
         response.body.set_ret(0);
         response.body.set_seq(job->_seq);
         response.body.set_operate_type(job->_operate_type);
-        DBUserInfo* user_info = response.body.mutable_user_info();
-        user_info->set_user_id(row.get_int(0));
+        db_tb_user * user_info = response.body.mutable_user_info();
+        user_info->set_id(row.get_int(0));
         user_info->set_user_name(row.get_string(1));
         user_info->set_level(row.get_int(2));
+        user_info->set_map_id(row.get_int(3));
+        user_info->set_pos_x(row.get_int(4));
+        user_info->set_pos_y(row.get_int(5));
         LOG(INFO)<<response.body.user_info().user_name();
         send_packet(&response);
     }

@@ -221,25 +221,26 @@ void protobuf_AddDesc_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::protobuf_AddDesc_db_5fmessage_2eproto();
+  ::protobuf_AddDesc_tb_5fuser_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rmessage.proto\032\020db_message.proto\"-\n\026Cli"
-    "entHeartBeatRequest\022\023\n\013client_time\030\001 \002(\005"
-    "\".\n\027ClientHeartBeatResponse\022\023\n\013server_ti"
-    "me\030\001 \002(\005\"4\n\022ClientLoginRequest\022\017\n\007role_i"
-    "d\030\001 \002(\005\022\r\n\005token\030\002 \002(\t\"\"\n\023ClientLoginRes"
-    "ponse\022\013\n\003ret\030\001 \002(\005\"=\n\016ClientInitNotf\022\013\n\003"
-    "ret\030\001 \002(\005\022\036\n\tuser_info\030\002 \002(\0132\013.DBUserInf"
-    "o\"A\n\021ClientMoveRequest\022\016\n\006map_id\030\001 \002(\005\022\r"
-    "\n\005pos_x\030\002 \002(\005\022\r\n\005pos_y\030\003 \002(\005\"O\n\022ClientMo"
-    "veResponse\022\013\n\003ret\030\001 \002(\005\022\016\n\006map_id\030\002 \002(\005\022"
-    "\r\n\005pos_x\030\003 \002(\005\022\r\n\005pos_y\030\004 \002(\005*D\n\017MSG_ACT"
-    "ION_TYPE\022\017\n\013MSG_REQUEST\020\000\022\020\n\014MSG_RESPONS"
-    "E\020\001\022\016\n\nMSG_NOTIFY\020\002*\233\001\n\013MessageType\022\032\n\026M"
-    "SG_SOCCER_PLAYER_INFO\020\001\022\022\n\016MSG_HEART_BEA"
-    "T\020\002\022\024\n\020MSG_CLIENT_LOGIN\020\003\022\034\n\030MSG_GATE_SE"
-    "RVER_REGISTER\020\004\022\023\n\017MSG_INIT_CLIENT\020\005\022\023\n\017"
-    "MSG_CLIENT_MOVE\020\006*#\n\rDbMessageType\022\022\n\rMS"
-    "G_DB_COMMON\020\220N", 694);
+    "\n\rmessage.proto\032\020db_message.proto\032\rtb_us"
+    "er.proto\"-\n\026ClientHeartBeatRequest\022\023\n\013cl"
+    "ient_time\030\001 \002(\005\".\n\027ClientHeartBeatRespon"
+    "se\022\023\n\013server_time\030\001 \002(\005\"4\n\022ClientLoginRe"
+    "quest\022\017\n\007role_id\030\001 \002(\005\022\r\n\005token\030\002 \002(\t\"\"\n"
+    "\023ClientLoginResponse\022\013\n\003ret\030\001 \002(\005\"=\n\016Cli"
+    "entInitNotf\022\013\n\003ret\030\001 \002(\005\022\036\n\tuser_info\030\002 "
+    "\002(\0132\013.db_tb_user\"A\n\021ClientMoveRequest\022\016\n"
+    "\006map_id\030\001 \002(\005\022\r\n\005pos_x\030\002 \002(\005\022\r\n\005pos_y\030\003 "
+    "\002(\005\"O\n\022ClientMoveResponse\022\013\n\003ret\030\001 \002(\005\022\016"
+    "\n\006map_id\030\002 \002(\005\022\r\n\005pos_x\030\003 \002(\005\022\r\n\005pos_y\030\004"
+    " \002(\005*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQUEST\020\000"
+    "\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*\233\001\n\013M"
+    "essageType\022\032\n\026MSG_SOCCER_PLAYER_INFO\020\001\022\022"
+    "\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOGIN\020\003"
+    "\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017MSG_IN"
+    "IT_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006*#\n\rDbMe"
+    "ssageType\022\022\n\rMSG_DB_COMMON\020\220N", 709);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   ClientHeartBeatRequest::default_instance_ = new ClientHeartBeatRequest();
@@ -1218,7 +1219,7 @@ ClientInitNotf::ClientInitNotf()
 }
 
 void ClientInitNotf::InitAsDefaultInstance() {
-  user_info_ = const_cast< ::DBUserInfo*>(&::DBUserInfo::default_instance());
+  user_info_ = const_cast< ::db_tb_user*>(&::db_tb_user::default_instance());
 }
 
 ClientInitNotf::ClientInitNotf(const ClientInitNotf& from)
@@ -1269,7 +1270,7 @@ void ClientInitNotf::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     ret_ = 0;
     if (has_user_info()) {
-      if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
+      if (user_info_ != NULL) user_info_->::db_tb_user::Clear();
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1297,7 +1298,7 @@ bool ClientInitNotf::MergePartialFromCodedStream(
         break;
       }
 
-      // required .DBUserInfo user_info = 2;
+      // required .db_tb_user user_info = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1334,7 +1335,7 @@ void ClientInitNotf::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->ret(), output);
   }
 
-  // required .DBUserInfo user_info = 2;
+  // required .db_tb_user user_info = 2;
   if (has_user_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->user_info(), output);
@@ -1353,7 +1354,7 @@ void ClientInitNotf::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->ret(), target);
   }
 
-  // required .DBUserInfo user_info = 2;
+  // required .db_tb_user user_info = 2;
   if (has_user_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1378,7 +1379,7 @@ int ClientInitNotf::ByteSize() const {
           this->ret());
     }
 
-    // required .DBUserInfo user_info = 2;
+    // required .db_tb_user user_info = 2;
     if (has_user_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1416,7 +1417,7 @@ void ClientInitNotf::MergeFrom(const ClientInitNotf& from) {
       set_ret(from.ret());
     }
     if (from.has_user_info()) {
-      mutable_user_info()->::DBUserInfo::MergeFrom(from.user_info());
+      mutable_user_info()->::db_tb_user::MergeFrom(from.user_info());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());

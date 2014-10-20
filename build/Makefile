@@ -138,17 +138,17 @@ gate_server/fast:
 .PHONY : gate_server/fast
 
 #=============================================================================
-# Target rules for targets named unit_test
+# Target rules for targets named db_server
 
 # Build rule for target.
-unit_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 unit_test
-.PHONY : unit_test
+db_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 db_server
+.PHONY : db_server
 
 # fast build rule for target.
-unit_test/fast:
-	$(MAKE) -f unit_test/CMakeFiles/unit_test.dir/build.make unit_test/CMakeFiles/unit_test.dir/build
-.PHONY : unit_test/fast
+db_server/fast:
+	$(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/build
+.PHONY : db_server/fast
 
 # Help Target
 help:
@@ -161,7 +161,7 @@ help:
 	@echo "... message_lib"
 	@echo "... common"
 	@echo "... gate_server"
-	@echo "... unit_test"
+	@echo "... db_server"
 .PHONY : help
 
 

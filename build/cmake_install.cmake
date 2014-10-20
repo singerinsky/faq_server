@@ -37,7 +37,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/gl/faq_server/build/message/cmake_install.cmake")
   INCLUDE("/home/gl/faq_server/build/common/cmake_install.cmake")
   INCLUDE("/home/gl/faq_server/build/gate_server/cmake_install.cmake")
-  INCLUDE("/home/gl/faq_server/build/unit_test/cmake_install.cmake")
+  INCLUDE("/home/gl/faq_server/build/db_server/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

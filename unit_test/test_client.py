@@ -61,7 +61,7 @@ class CClient:
                 recv_data = recv_data[msg_len:]
 
     def do_init_client(self,message):
-        print "init client from message name %s id %d"%(message.user_info.user_name,message.user_info.user_id)
+        print "init client from message name %s id %d"%(message.user_info.user_name,message.user_info.id)
         self.user_info = message.user_info
 
     def process_msg(self,msg_id,msg_content):
