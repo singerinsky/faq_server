@@ -26,6 +26,7 @@ unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../common/singleton.
 unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../common/tinyxml.h
 unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../include/tinystr.h
 unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../include/tinyxml.h
+unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../message/db_message.pb.h
 unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../message/message.pb.h
 unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/../message/message_define.h
 unit_test/CMakeFiles/unit_test.dir/main.cpp.o: ../unit_test/main.cpp

@@ -8,6 +8,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/message/message.pb.cc" "/home/gl/faq_server/build/message/CMakeFiles/message_lib.dir/message.pb.cc.o"
   "/home/gl/faq_server/message/role_info.pb.cc" "/home/gl/faq_server/build/message/CMakeFiles/message_lib.dir/role_info.pb.cc.o"
   "/home/gl/faq_server/message/sql_define.cpp" "/home/gl/faq_server/build/message/CMakeFiles/message_lib.dir/sql_define.cpp.o"
+  "/home/gl/faq_server/message/tb_user.pb.cc" "/home/gl/faq_server/build/message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

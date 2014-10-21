@@ -306,7 +306,7 @@ sstream
 tinystr.h
 ../unit_test/../include/tinystr.h
 
-../unit_test/../message/message.pb.h
+../unit_test/../message/db_message.pb.h
 string
 -
 google/protobuf/stubs/common.h
@@ -324,13 +324,35 @@ google/protobuf/generated_enum_reflection.h
 google/protobuf/unknown_field_set.h
 -
 
+../unit_test/../message/message.pb.h
+string
+-
+google/protobuf/stubs/common.h
+-
+google/protobuf/generated_message_util.h
+-
+google/protobuf/message.h
+-
+google/protobuf/repeated_field.h
+-
+google/protobuf/extension_set.h
+-
+google/protobuf/generated_enum_reflection.h
+-
+google/protobuf/unknown_field_set.h
+-
+db_message.pb.h
+../unit_test/../message/db_message.pb.h
+
 ../unit_test/../message/message_define.h
-../common/packet.h
-../unit_test/../common/packet.h
-../common/game_packet.h
-../unit_test/../common/game_packet.h
+packet.h
+../unit_test/../message/packet.h
+game_packet.h
+../unit_test/../message/game_packet.h
 message.pb.h
 ../unit_test/../message/message.pb.h
+db_message.pb.h
+../unit_test/../message/db_message.pb.h
 
 /home/gl/faq_server/unit_test/main.cpp
 sys/socket.h

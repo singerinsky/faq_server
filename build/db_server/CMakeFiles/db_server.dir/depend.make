@@ -96,6 +96,7 @@ db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../include/ti
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/data_worker.cpp
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/db_connection_pool.h
+db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/work_manager.h
 
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: .././include/event2/buffer.h
 db_server/CMakeFiles/db_server.dir/db_application.cpp.o: .././include/event2/bufferevent.h

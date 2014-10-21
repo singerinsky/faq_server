@@ -208,6 +208,30 @@ sql_define.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.s
 .PHONY : sql_define.cpp.s
 
+tb_user.pb.o: tb_user.pb.cc.o
+.PHONY : tb_user.pb.o
+
+# target to build an object file
+tb_user.pb.cc.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o
+.PHONY : tb_user.pb.cc.o
+
+tb_user.pb.i: tb_user.pb.cc.i
+.PHONY : tb_user.pb.i
+
+# target to preprocess a source file
+tb_user.pb.cc.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.i
+.PHONY : tb_user.pb.cc.i
+
+tb_user.pb.s: tb_user.pb.cc.s
+.PHONY : tb_user.pb.s
+
+# target to generate assembly for a file
+tb_user.pb.cc.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.s
+.PHONY : tb_user.pb.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -229,6 +253,9 @@ help:
 	@echo "... sql_define.o"
 	@echo "... sql_define.i"
 	@echo "... sql_define.s"
+	@echo "... tb_user.pb.o"
+	@echo "... tb_user.pb.i"
+	@echo "... tb_user.pb.s"
 .PHONY : help
 
 
