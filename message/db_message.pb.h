@@ -25,6 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "tb_user.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -32,20 +33,19 @@ void  protobuf_AddDesc_db_5fmessage_2eproto();
 void protobuf_AssignDesc_db_5fmessage_2eproto();
 void protobuf_ShutdownFile_db_5fmessage_2eproto();
 
-class DBUserInfo;
 class DBUserItem;
 class DBUserItemList;
 class DBCommonReq;
 class DBCommonRep;
 
 enum DbOperateType {
-  MSG_DB_WORK_START = 10000,
-  MSG_DB_GET_USER_INFO = 10001,
-  MSG_DB_GET_ITEM_LIST = 10002
+  DB_WORK_UPDATE = 10000,
+  DB_GET_USER_INFO = 10001,
+  DB_GET_ITEM_LIST = 10002
 };
 bool DbOperateType_IsValid(int value);
-const DbOperateType DbOperateType_MIN = MSG_DB_WORK_START;
-const DbOperateType DbOperateType_MAX = MSG_DB_GET_ITEM_LIST;
+const DbOperateType DbOperateType_MIN = DB_WORK_UPDATE;
+const DbOperateType DbOperateType_MAX = DB_GET_ITEM_LIST;
 const int DbOperateType_ARRAYSIZE = DbOperateType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* DbOperateType_descriptor();
@@ -59,113 +59,6 @@ inline bool DbOperateType_Parse(
     DbOperateType_descriptor(), name, value);
 }
 // ===================================================================
-
-class DBUserInfo : public ::google::protobuf::Message {
- public:
-  DBUserInfo();
-  virtual ~DBUserInfo();
-
-  DBUserInfo(const DBUserInfo& from);
-
-  inline DBUserInfo& operator=(const DBUserInfo& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const DBUserInfo& default_instance();
-
-  void Swap(DBUserInfo* other);
-
-  // implements Message ----------------------------------------------
-
-  DBUserInfo* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const DBUserInfo& from);
-  void MergeFrom(const DBUserInfo& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required int32 user_id = 1;
-  inline bool has_user_id() const;
-  inline void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  inline ::google::protobuf::int32 user_id() const;
-  inline void set_user_id(::google::protobuf::int32 value);
-
-  // required string user_name = 2;
-  inline bool has_user_name() const;
-  inline void clear_user_name();
-  static const int kUserNameFieldNumber = 2;
-  inline const ::std::string& user_name() const;
-  inline void set_user_name(const ::std::string& value);
-  inline void set_user_name(const char* value);
-  inline void set_user_name(const char* value, size_t size);
-  inline ::std::string* mutable_user_name();
-  inline ::std::string* release_user_name();
-  inline void set_allocated_user_name(::std::string* user_name);
-
-  // required int32 level = 3;
-  inline bool has_level() const;
-  inline void clear_level();
-  static const int kLevelFieldNumber = 3;
-  inline ::google::protobuf::int32 level() const;
-  inline void set_level(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:DBUserInfo)
- private:
-  inline void set_has_user_id();
-  inline void clear_has_user_id();
-  inline void set_has_user_name();
-  inline void clear_has_user_name();
-  inline void set_has_level();
-  inline void clear_has_level();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::std::string* user_name_;
-  ::google::protobuf::int32 user_id_;
-  ::google::protobuf::int32 level_;
-
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
-
-  friend void  protobuf_AddDesc_db_5fmessage_2eproto();
-  friend void protobuf_AssignDesc_db_5fmessage_2eproto();
-  friend void protobuf_ShutdownFile_db_5fmessage_2eproto();
-
-  void InitAsDefaultInstance();
-  static DBUserInfo* default_instance_;
-};
-// -------------------------------------------------------------------
 
 class DBUserItem : public ::google::protobuf::Message {
  public:
@@ -526,14 +419,14 @@ class DBCommonRep : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 operate_type() const;
   inline void set_operate_type(::google::protobuf::int32 value);
 
-  // optional .DBUserInfo user_info = 4;
+  // optional .db_tb_user user_info = 4;
   inline bool has_user_info() const;
   inline void clear_user_info();
   static const int kUserInfoFieldNumber = 4;
-  inline const ::DBUserInfo& user_info() const;
-  inline ::DBUserInfo* mutable_user_info();
-  inline ::DBUserInfo* release_user_info();
-  inline void set_allocated_user_info(::DBUserInfo* user_info);
+  inline const ::db_tb_user& user_info() const;
+  inline ::db_tb_user* mutable_user_info();
+  inline ::db_tb_user* release_user_info();
+  inline void set_allocated_user_info(::db_tb_user* user_info);
 
   // optional .DBUserItemList user_item_list = 5;
   inline bool has_user_item_list() const;
@@ -561,7 +454,7 @@ class DBCommonRep : public ::google::protobuf::Message {
 
   ::google::protobuf::int32 ret_;
   ::google::protobuf::int32 seq_;
-  ::DBUserInfo* user_info_;
+  ::db_tb_user* user_info_;
   ::DBUserItemList* user_item_list_;
   ::google::protobuf::int32 operate_type_;
 
@@ -579,124 +472,6 @@ class DBCommonRep : public ::google::protobuf::Message {
 
 
 // ===================================================================
-
-// DBUserInfo
-
-// required int32 user_id = 1;
-inline bool DBUserInfo::has_user_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void DBUserInfo::set_has_user_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void DBUserInfo::clear_has_user_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void DBUserInfo::clear_user_id() {
-  user_id_ = 0;
-  clear_has_user_id();
-}
-inline ::google::protobuf::int32 DBUserInfo::user_id() const {
-  return user_id_;
-}
-inline void DBUserInfo::set_user_id(::google::protobuf::int32 value) {
-  set_has_user_id();
-  user_id_ = value;
-}
-
-// required string user_name = 2;
-inline bool DBUserInfo::has_user_name() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void DBUserInfo::set_has_user_name() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void DBUserInfo::clear_has_user_name() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void DBUserInfo::clear_user_name() {
-  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
-    user_name_->clear();
-  }
-  clear_has_user_name();
-}
-inline const ::std::string& DBUserInfo::user_name() const {
-  return *user_name_;
-}
-inline void DBUserInfo::set_user_name(const ::std::string& value) {
-  set_has_user_name();
-  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
-    user_name_ = new ::std::string;
-  }
-  user_name_->assign(value);
-}
-inline void DBUserInfo::set_user_name(const char* value) {
-  set_has_user_name();
-  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
-    user_name_ = new ::std::string;
-  }
-  user_name_->assign(value);
-}
-inline void DBUserInfo::set_user_name(const char* value, size_t size) {
-  set_has_user_name();
-  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
-    user_name_ = new ::std::string;
-  }
-  user_name_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* DBUserInfo::mutable_user_name() {
-  set_has_user_name();
-  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
-    user_name_ = new ::std::string;
-  }
-  return user_name_;
-}
-inline ::std::string* DBUserInfo::release_user_name() {
-  clear_has_user_name();
-  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = user_name_;
-    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void DBUserInfo::set_allocated_user_name(::std::string* user_name) {
-  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
-    delete user_name_;
-  }
-  if (user_name) {
-    set_has_user_name();
-    user_name_ = user_name;
-  } else {
-    clear_has_user_name();
-    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
-}
-
-// required int32 level = 3;
-inline bool DBUserInfo::has_level() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void DBUserInfo::set_has_level() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void DBUserInfo::clear_has_level() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void DBUserInfo::clear_level() {
-  level_ = 0;
-  clear_has_level();
-}
-inline ::google::protobuf::int32 DBUserInfo::level() const {
-  return level_;
-}
-inline void DBUserInfo::set_level(::google::protobuf::int32 value) {
-  set_has_level();
-  level_ = value;
-}
-
-// -------------------------------------------------------------------
 
 // DBUserItem
 
@@ -961,7 +736,7 @@ inline void DBCommonRep::set_operate_type(::google::protobuf::int32 value) {
   operate_type_ = value;
 }
 
-// optional .DBUserInfo user_info = 4;
+// optional .db_tb_user user_info = 4;
 inline bool DBCommonRep::has_user_info() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -972,24 +747,24 @@ inline void DBCommonRep::clear_has_user_info() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void DBCommonRep::clear_user_info() {
-  if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
+  if (user_info_ != NULL) user_info_->::db_tb_user::Clear();
   clear_has_user_info();
 }
-inline const ::DBUserInfo& DBCommonRep::user_info() const {
+inline const ::db_tb_user& DBCommonRep::user_info() const {
   return user_info_ != NULL ? *user_info_ : *default_instance_->user_info_;
 }
-inline ::DBUserInfo* DBCommonRep::mutable_user_info() {
+inline ::db_tb_user* DBCommonRep::mutable_user_info() {
   set_has_user_info();
-  if (user_info_ == NULL) user_info_ = new ::DBUserInfo;
+  if (user_info_ == NULL) user_info_ = new ::db_tb_user;
   return user_info_;
 }
-inline ::DBUserInfo* DBCommonRep::release_user_info() {
+inline ::db_tb_user* DBCommonRep::release_user_info() {
   clear_has_user_info();
-  ::DBUserInfo* temp = user_info_;
+  ::db_tb_user* temp = user_info_;
   user_info_ = NULL;
   return temp;
 }
-inline void DBCommonRep::set_allocated_user_info(::DBUserInfo* user_info) {
+inline void DBCommonRep::set_allocated_user_info(::db_tb_user* user_info) {
   delete user_info_;
   user_info_ = user_info;
   if (user_info) {

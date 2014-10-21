@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/message_lib.dir/role_info.pb.cc.o"
   "CMakeFiles/message_lib.dir/db_message.pb.cc.o"
+  "CMakeFiles/message_lib.dir/tb_user.cpp.o"
   "CMakeFiles/message_lib.dir/sql_define.cpp.o"
   "CMakeFiles/message_lib.dir/message.pb.cc.o"
   "CMakeFiles/message_lib.dir/tb_user.pb.cc.o"

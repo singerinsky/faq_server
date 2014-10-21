@@ -7,11 +7,11 @@
 
 void db_connection::on_error(bufferevent* bev)
 {
-    if(is_online() == false)
-        LOG(INFO)<<"connect to db failed";
-    else 
-        LOG(INFO)<<"lost connection to db server";
+    LOG(INFO)<<"lost connection!";
+    _m_timer.set_owner(this);
+    _m_timer.set_expire(2000); 
 }
+
 
 int db_connection::process_msg(packet_info* info)
 {
@@ -31,12 +31,13 @@ int db_connection::process_msg(packet_info* info)
 
 void db_connection::on_timeout()
 {
+    LOG(INFO)<<"do reconnect!";
     if(is_online() ==false)
     {
+        re_connect();
         return; 
     }
-    if(process_count == 0)
-        LOG(INFO)<<"START";
+      
 //     cs_packet_heart_request request;
 //     process_count++;
 //     request.body.set_client_time(process_count);
@@ -74,9 +75,9 @@ int db_connection::process_db_response(packet_info* info)
     }
     switch(response.body.operate_type())
     {
-        case DbOperateType::MSG_DB_GET_USER_INFO:
+        case DbOperateType::DB_GET_USER_INFO:
             return on_load_user_info(response.body.user_info());
-        case DbOperateType::MSG_DB_GET_ITEM_LIST:
+        case DbOperateType::DB_GET_ITEM_LIST:
             return load_user_item_list(response.body.user_item_list());
         default:
             LOG(INFO)<<"unregister db operate "<<response.body.operate_type();
@@ -84,14 +85,14 @@ int db_connection::process_db_response(packet_info* info)
     }
 }
 
-int db_connection::on_load_user_info(const DBUserInfo& info)
+int db_connection::on_load_user_info(const db_tb_user& info)
 {
     LOG(INFO)<<"load user info "<<info.user_name();
     cs_packet_init_client_notf notf;
     notf.body.set_ret(1);
-    DBUserInfo* user_info = notf.body.mutable_user_info();
+    db_tb_user * user_info = notf.body.mutable_user_info();
     *user_info = info;
-    gate_client* client = Singleton<client_manager>::GetInstance()->get_session(info.user_id());
+    gate_client* client = Singleton<client_manager>::GetInstance()->get_session(info.id());
     if(client != NULL)
     {
         LogicPlayer* player = client->get_player_info();
@@ -127,6 +128,32 @@ int db_connection::build_query(int seq,int operate_type,const char* sql_str,...)
     VLOG(2)<<"query  sql:"<<buffer;
     return send_packet(&request);
 }
+
+void db_connection::update_binder(sql_binder* binder)
+{
+    if(!(binder->is_dirty()))
+    {
+        return ; 
+    }
+    char buffer[2048] = {0};
+    int update_size = binder->sql_update(buffer,2048);
+    LOG(INFO)<<"update size "<<update_size;
+    cs_packet_db_common_request request;
+    request.body.set_seq(1);
+    request.body.set_operate_type(DbOperateType::DB_WORK_UPDATE);
+    request.body.set_operate_string(buffer);
+    send_packet(&request);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

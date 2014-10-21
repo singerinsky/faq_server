@@ -14,6 +14,7 @@ class work_manager:public Singleton<work_manager>
         void    register_client(db_client*);
         void    remove_client(db_client*);
         void    process_query(MysqlResult& result,db_job* job);
+        void    process_update(db_job* job);
         bool    check_client(db_job* job);
         void    add_work_job(db_job* job);
 

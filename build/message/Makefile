@@ -160,30 +160,6 @@ message.pb.cc.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/message.pb.cc.s
 .PHONY : message.pb.cc.s
 
-role_info.pb.o: role_info.pb.cc.o
-.PHONY : role_info.pb.o
-
-# target to build an object file
-role_info.pb.cc.o:
-	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/role_info.pb.cc.o
-.PHONY : role_info.pb.cc.o
-
-role_info.pb.i: role_info.pb.cc.i
-.PHONY : role_info.pb.i
-
-# target to preprocess a source file
-role_info.pb.cc.i:
-	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/role_info.pb.cc.i
-.PHONY : role_info.pb.cc.i
-
-role_info.pb.s: role_info.pb.cc.s
-.PHONY : role_info.pb.s
-
-# target to generate assembly for a file
-role_info.pb.cc.s:
-	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/role_info.pb.cc.s
-.PHONY : role_info.pb.cc.s
-
 sql_define.o: sql_define.cpp.o
 .PHONY : sql_define.o
 
@@ -207,6 +183,30 @@ sql_define.s: sql_define.cpp.s
 sql_define.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.s
 .PHONY : sql_define.cpp.s
+
+tb_user.o: tb_user.cpp.o
+.PHONY : tb_user.o
+
+# target to build an object file
+tb_user.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.o
+.PHONY : tb_user.cpp.o
+
+tb_user.i: tb_user.cpp.i
+.PHONY : tb_user.i
+
+# target to preprocess a source file
+tb_user.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.i
+.PHONY : tb_user.cpp.i
+
+tb_user.s: tb_user.cpp.s
+.PHONY : tb_user.s
+
+# target to generate assembly for a file
+tb_user.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.s
+.PHONY : tb_user.cpp.s
 
 tb_user.pb.o: tb_user.pb.cc.o
 .PHONY : tb_user.pb.o
@@ -247,12 +247,12 @@ help:
 	@echo "... message.pb.o"
 	@echo "... message.pb.i"
 	@echo "... message.pb.s"
-	@echo "... role_info.pb.o"
-	@echo "... role_info.pb.i"
-	@echo "... role_info.pb.s"
 	@echo "... sql_define.o"
 	@echo "... sql_define.i"
 	@echo "... sql_define.s"
+	@echo "... tb_user.o"
+	@echo "... tb_user.i"
+	@echo "... tb_user.s"
 	@echo "... tb_user.pb.o"
 	@echo "... tb_user.pb.i"
 	@echo "... tb_user.pb.s"

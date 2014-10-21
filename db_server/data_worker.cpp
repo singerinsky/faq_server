@@ -1,6 +1,7 @@
 #include "data_worker.h"
 #include "db_connection_pool.h"
 #include "work_manager.h"
+#include "message.pb.h"
 
 data_worker::~data_worker()
 {
@@ -17,9 +18,14 @@ void data_worker::do_job(db_job* event)
         return;
     }
 
-    MysqlResult result = _db_conn->get_data_result();
-
-    Singleton<work_manager>::GetInstance()->process_query(result,event); 
+    if(event->_operate_type == DbOperateType::DB_WORK_UPDATE)
+    {
+        Singleton<work_manager>::GetInstance()->process_update(event); 
+    }else
+    {
+        MysqlResult result = _db_conn->get_data_result();
+        Singleton<work_manager>::GetInstance()->process_query(result,event); 
+    }
     /*
     while(result.next())
     {

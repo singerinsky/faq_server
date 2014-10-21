@@ -26,6 +26,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "db_message.pb.h"
+#include "tb_user.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -38,6 +39,8 @@ class ClientHeartBeatResponse;
 class ClientLoginRequest;
 class ClientLoginResponse;
 class ClientInitNotf;
+class ClientMoveRequest;
+class ClientMoveResponse;
 
 enum MSG_ACTION_TYPE {
   MSG_REQUEST = 0,
@@ -64,11 +67,12 @@ enum MessageType {
   MSG_HEART_BEAT = 2,
   MSG_CLIENT_LOGIN = 3,
   MSG_GATE_SERVER_REGISTER = 4,
-  MSG_INIT_CLIENT = 5
+  MSG_INIT_CLIENT = 5,
+  MSG_CLIENT_MOVE = 6
 };
 bool MessageType_IsValid(int value);
 const MessageType MessageType_MIN = MSG_SOCCER_PLAYER_INFO;
-const MessageType MessageType_MAX = MSG_INIT_CLIENT;
+const MessageType MessageType_MAX = MSG_CLIENT_MOVE;
 const int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor();
@@ -505,14 +509,14 @@ class ClientInitNotf : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 ret() const;
   inline void set_ret(::google::protobuf::int32 value);
 
-  // required .DBUserInfo user_info = 2;
+  // required .db_tb_user user_info = 2;
   inline bool has_user_info() const;
   inline void clear_user_info();
   static const int kUserInfoFieldNumber = 2;
-  inline const ::DBUserInfo& user_info() const;
-  inline ::DBUserInfo* mutable_user_info();
-  inline ::DBUserInfo* release_user_info();
-  inline void set_allocated_user_info(::DBUserInfo* user_info);
+  inline const ::db_tb_user& user_info() const;
+  inline ::db_tb_user* mutable_user_info();
+  inline ::db_tb_user* release_user_info();
+  inline void set_allocated_user_info(::db_tb_user* user_info);
 
   // @@protoc_insertion_point(class_scope:ClientInitNotf)
  private:
@@ -523,7 +527,7 @@ class ClientInitNotf : public ::google::protobuf::Message {
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::DBUserInfo* user_info_;
+  ::db_tb_user* user_info_;
   ::google::protobuf::int32 ret_;
 
   mutable int _cached_size_;
@@ -535,6 +539,220 @@ class ClientInitNotf : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static ClientInitNotf* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientMoveRequest : public ::google::protobuf::Message {
+ public:
+  ClientMoveRequest();
+  virtual ~ClientMoveRequest();
+
+  ClientMoveRequest(const ClientMoveRequest& from);
+
+  inline ClientMoveRequest& operator=(const ClientMoveRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientMoveRequest& default_instance();
+
+  void Swap(ClientMoveRequest* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientMoveRequest* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ClientMoveRequest& from);
+  void MergeFrom(const ClientMoveRequest& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 map_id = 1;
+  inline bool has_map_id() const;
+  inline void clear_map_id();
+  static const int kMapIdFieldNumber = 1;
+  inline ::google::protobuf::int32 map_id() const;
+  inline void set_map_id(::google::protobuf::int32 value);
+
+  // required int32 pos_x = 2;
+  inline bool has_pos_x() const;
+  inline void clear_pos_x();
+  static const int kPosXFieldNumber = 2;
+  inline ::google::protobuf::int32 pos_x() const;
+  inline void set_pos_x(::google::protobuf::int32 value);
+
+  // required int32 pos_y = 3;
+  inline bool has_pos_y() const;
+  inline void clear_pos_y();
+  static const int kPosYFieldNumber = 3;
+  inline ::google::protobuf::int32 pos_y() const;
+  inline void set_pos_y(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:ClientMoveRequest)
+ private:
+  inline void set_has_map_id();
+  inline void clear_has_map_id();
+  inline void set_has_pos_x();
+  inline void clear_has_pos_x();
+  inline void set_has_pos_y();
+  inline void clear_has_pos_y();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 map_id_;
+  ::google::protobuf::int32 pos_x_;
+  ::google::protobuf::int32 pos_y_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientMoveRequest* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ClientMoveResponse : public ::google::protobuf::Message {
+ public:
+  ClientMoveResponse();
+  virtual ~ClientMoveResponse();
+
+  ClientMoveResponse(const ClientMoveResponse& from);
+
+  inline ClientMoveResponse& operator=(const ClientMoveResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientMoveResponse& default_instance();
+
+  void Swap(ClientMoveResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  ClientMoveResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ClientMoveResponse& from);
+  void MergeFrom(const ClientMoveResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 ret = 1;
+  inline bool has_ret() const;
+  inline void clear_ret();
+  static const int kRetFieldNumber = 1;
+  inline ::google::protobuf::int32 ret() const;
+  inline void set_ret(::google::protobuf::int32 value);
+
+  // required int32 map_id = 2;
+  inline bool has_map_id() const;
+  inline void clear_map_id();
+  static const int kMapIdFieldNumber = 2;
+  inline ::google::protobuf::int32 map_id() const;
+  inline void set_map_id(::google::protobuf::int32 value);
+
+  // required int32 pos_x = 3;
+  inline bool has_pos_x() const;
+  inline void clear_pos_x();
+  static const int kPosXFieldNumber = 3;
+  inline ::google::protobuf::int32 pos_x() const;
+  inline void set_pos_x(::google::protobuf::int32 value);
+
+  // required int32 pos_y = 4;
+  inline bool has_pos_y() const;
+  inline void clear_pos_y();
+  static const int kPosYFieldNumber = 4;
+  inline ::google::protobuf::int32 pos_y() const;
+  inline void set_pos_y(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:ClientMoveResponse)
+ private:
+  inline void set_has_ret();
+  inline void clear_has_ret();
+  inline void set_has_map_id();
+  inline void clear_has_map_id();
+  inline void set_has_pos_x();
+  inline void clear_has_pos_x();
+  inline void set_has_pos_y();
+  inline void clear_has_pos_y();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 ret_;
+  ::google::protobuf::int32 map_id_;
+  ::google::protobuf::int32 pos_x_;
+  ::google::protobuf::int32 pos_y_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static ClientMoveResponse* default_instance_;
 };
 // ===================================================================
 
@@ -739,7 +957,7 @@ inline void ClientInitNotf::set_ret(::google::protobuf::int32 value) {
   ret_ = value;
 }
 
-// required .DBUserInfo user_info = 2;
+// required .db_tb_user user_info = 2;
 inline bool ClientInitNotf::has_user_info() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -750,24 +968,24 @@ inline void ClientInitNotf::clear_has_user_info() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void ClientInitNotf::clear_user_info() {
-  if (user_info_ != NULL) user_info_->::DBUserInfo::Clear();
+  if (user_info_ != NULL) user_info_->::db_tb_user::Clear();
   clear_has_user_info();
 }
-inline const ::DBUserInfo& ClientInitNotf::user_info() const {
+inline const ::db_tb_user& ClientInitNotf::user_info() const {
   return user_info_ != NULL ? *user_info_ : *default_instance_->user_info_;
 }
-inline ::DBUserInfo* ClientInitNotf::mutable_user_info() {
+inline ::db_tb_user* ClientInitNotf::mutable_user_info() {
   set_has_user_info();
-  if (user_info_ == NULL) user_info_ = new ::DBUserInfo;
+  if (user_info_ == NULL) user_info_ = new ::db_tb_user;
   return user_info_;
 }
-inline ::DBUserInfo* ClientInitNotf::release_user_info() {
+inline ::db_tb_user* ClientInitNotf::release_user_info() {
   clear_has_user_info();
-  ::DBUserInfo* temp = user_info_;
+  ::db_tb_user* temp = user_info_;
   user_info_ = NULL;
   return temp;
 }
-inline void ClientInitNotf::set_allocated_user_info(::DBUserInfo* user_info) {
+inline void ClientInitNotf::set_allocated_user_info(::db_tb_user* user_info) {
   delete user_info_;
   user_info_ = user_info;
   if (user_info) {
@@ -775,6 +993,168 @@ inline void ClientInitNotf::set_allocated_user_info(::DBUserInfo* user_info) {
   } else {
     clear_has_user_info();
   }
+}
+
+// -------------------------------------------------------------------
+
+// ClientMoveRequest
+
+// required int32 map_id = 1;
+inline bool ClientMoveRequest::has_map_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientMoveRequest::set_has_map_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientMoveRequest::clear_has_map_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientMoveRequest::clear_map_id() {
+  map_id_ = 0;
+  clear_has_map_id();
+}
+inline ::google::protobuf::int32 ClientMoveRequest::map_id() const {
+  return map_id_;
+}
+inline void ClientMoveRequest::set_map_id(::google::protobuf::int32 value) {
+  set_has_map_id();
+  map_id_ = value;
+}
+
+// required int32 pos_x = 2;
+inline bool ClientMoveRequest::has_pos_x() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientMoveRequest::set_has_pos_x() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientMoveRequest::clear_has_pos_x() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientMoveRequest::clear_pos_x() {
+  pos_x_ = 0;
+  clear_has_pos_x();
+}
+inline ::google::protobuf::int32 ClientMoveRequest::pos_x() const {
+  return pos_x_;
+}
+inline void ClientMoveRequest::set_pos_x(::google::protobuf::int32 value) {
+  set_has_pos_x();
+  pos_x_ = value;
+}
+
+// required int32 pos_y = 3;
+inline bool ClientMoveRequest::has_pos_y() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ClientMoveRequest::set_has_pos_y() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ClientMoveRequest::clear_has_pos_y() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ClientMoveRequest::clear_pos_y() {
+  pos_y_ = 0;
+  clear_has_pos_y();
+}
+inline ::google::protobuf::int32 ClientMoveRequest::pos_y() const {
+  return pos_y_;
+}
+inline void ClientMoveRequest::set_pos_y(::google::protobuf::int32 value) {
+  set_has_pos_y();
+  pos_y_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClientMoveResponse
+
+// required int32 ret = 1;
+inline bool ClientMoveResponse::has_ret() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ClientMoveResponse::set_has_ret() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ClientMoveResponse::clear_has_ret() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ClientMoveResponse::clear_ret() {
+  ret_ = 0;
+  clear_has_ret();
+}
+inline ::google::protobuf::int32 ClientMoveResponse::ret() const {
+  return ret_;
+}
+inline void ClientMoveResponse::set_ret(::google::protobuf::int32 value) {
+  set_has_ret();
+  ret_ = value;
+}
+
+// required int32 map_id = 2;
+inline bool ClientMoveResponse::has_map_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ClientMoveResponse::set_has_map_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ClientMoveResponse::clear_has_map_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ClientMoveResponse::clear_map_id() {
+  map_id_ = 0;
+  clear_has_map_id();
+}
+inline ::google::protobuf::int32 ClientMoveResponse::map_id() const {
+  return map_id_;
+}
+inline void ClientMoveResponse::set_map_id(::google::protobuf::int32 value) {
+  set_has_map_id();
+  map_id_ = value;
+}
+
+// required int32 pos_x = 3;
+inline bool ClientMoveResponse::has_pos_x() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ClientMoveResponse::set_has_pos_x() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ClientMoveResponse::clear_has_pos_x() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ClientMoveResponse::clear_pos_x() {
+  pos_x_ = 0;
+  clear_has_pos_x();
+}
+inline ::google::protobuf::int32 ClientMoveResponse::pos_x() const {
+  return pos_x_;
+}
+inline void ClientMoveResponse::set_pos_x(::google::protobuf::int32 value) {
+  set_has_pos_x();
+  pos_x_ = value;
+}
+
+// required int32 pos_y = 4;
+inline bool ClientMoveResponse::has_pos_y() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void ClientMoveResponse::set_has_pos_y() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void ClientMoveResponse::clear_has_pos_y() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void ClientMoveResponse::clear_pos_y() {
+  pos_y_ = 0;
+  clear_has_pos_y();
+}
+inline ::google::protobuf::int32 ClientMoveResponse::pos_y() const {
+  return pos_y_;
+}
+inline void ClientMoveResponse::set_pos_y(::google::protobuf::int32 value) {
+  set_has_pos_y();
+  pos_y_ = value;
 }
 
 

@@ -45,6 +45,8 @@ google/protobuf/generated_enum_reflection.h
 -
 google/protobuf/unknown_field_set.h
 -
+tb_user.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
 
 /home/gl/faq_server/message/message.pb.cc
 message.pb.h
@@ -87,4 +89,22 @@ google/protobuf/unknown_field_set.h
 -
 db_message.pb.h
 /home/gl/faq_server/message/db_message.pb.h
+tb_user.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
+
+/home/gl/faq_server/message/tb_user.pb.h
+string
+-
+google/protobuf/stubs/common.h
+-
+google/protobuf/generated_message_util.h
+-
+google/protobuf/message.h
+-
+google/protobuf/repeated_field.h
+-
+google/protobuf/extension_set.h
+-
+google/protobuf/unknown_field_set.h
+-
 

@@ -9,12 +9,13 @@ from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 
+import tb_user_pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='db_message.proto',
   package='',
-  serialized_pb='\n\x10\x64\x62_message.proto\"?\n\nDBUserInfo\x12\x0f\n\x07user_id\x18\x01 \x02(\x05\x12\x11\n\tuser_name\x18\x02 \x02(\t\x12\r\n\x05level\x18\x03 \x02(\x05\"/\n\nDBUserItem\x12\x0f\n\x07item_id\x18\x01 \x02(\x05\x12\x10\n\x08item_num\x18\x02 \x02(\x05\"0\n\x0e\x44\x42UserItemList\x12\x1e\n\titem_list\x18\x01 \x03(\x0b\x32\x0b.DBUserItem\"H\n\x0b\x44\x42\x43ommonReq\x12\x0b\n\x03seq\x18\x01 \x02(\x05\x12\x14\n\x0coperate_type\x18\x02 \x02(\x05\x12\x16\n\x0eoperate_string\x18\x03 \x02(\t\"\x86\x01\n\x0b\x44\x42\x43ommonRep\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0b\n\x03seq\x18\x02 \x02(\x05\x12\x14\n\x0coperate_type\x18\x03 \x02(\x05\x12\x1e\n\tuser_info\x18\x04 \x01(\x0b\x32\x0b.DBUserInfo\x12\'\n\x0euser_item_list\x18\x05 \x01(\x0b\x32\x0f.DBUserItemList*]\n\rDbOperateType\x12\x16\n\x11MSG_DB_WORK_START\x10\x90N\x12\x19\n\x14MSG_DB_GET_USER_INFO\x10\x91N\x12\x19\n\x14MSG_DB_GET_ITEM_LIST\x10\x92N')
+  serialized_pb='\n\x10\x64\x62_message.proto\x1a\rtb_user.proto\"/\n\nDBUserItem\x12\x0f\n\x07item_id\x18\x01 \x02(\x05\x12\x10\n\x08item_num\x18\x02 \x02(\x05\"0\n\x0e\x44\x42UserItemList\x12\x1e\n\titem_list\x18\x01 \x03(\x0b\x32\x0b.DBUserItem\"H\n\x0b\x44\x42\x43ommonReq\x12\x0b\n\x03seq\x18\x01 \x02(\x05\x12\x14\n\x0coperate_type\x18\x02 \x02(\x05\x12\x16\n\x0eoperate_string\x18\x03 \x02(\t\"\x86\x01\n\x0b\x44\x42\x43ommonRep\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0b\n\x03seq\x18\x02 \x02(\x05\x12\x14\n\x0coperate_type\x18\x03 \x02(\x05\x12\x1e\n\tuser_info\x18\x04 \x01(\x0b\x32\x0b.db_tb_user\x12\'\n\x0euser_item_list\x18\x05 \x01(\x0b\x32\x0f.DBUserItemList*R\n\rDbOperateType\x12\x13\n\x0e\x44\x42_WORK_UPDATE\x10\x90N\x12\x15\n\x10\x44\x42_GET_USER_INFO\x10\x91N\x12\x15\n\x10\x44\x42_GET_ITEM_LIST\x10\x92N')
 
 _DBOPERATETYPE = _descriptor.EnumDescriptor(
   name='DbOperateType',
@@ -23,71 +24,29 @@ _DBOPERATETYPE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='MSG_DB_WORK_START', index=0, number=10000,
+      name='DB_WORK_UPDATE', index=0, number=10000,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='MSG_DB_GET_USER_INFO', index=1, number=10001,
+      name='DB_GET_USER_INFO', index=1, number=10001,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='MSG_DB_GET_ITEM_LIST', index=2, number=10002,
+      name='DB_GET_ITEM_LIST', index=2, number=10002,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=395,
-  serialized_end=488,
+  serialized_start=345,
+  serialized_end=427,
 )
 
 DbOperateType = enum_type_wrapper.EnumTypeWrapper(_DBOPERATETYPE)
-MSG_DB_WORK_START = 10000
-MSG_DB_GET_USER_INFO = 10001
-MSG_DB_GET_ITEM_LIST = 10002
+DB_WORK_UPDATE = 10000
+DB_GET_USER_INFO = 10001
+DB_GET_ITEM_LIST = 10002
 
-
-
-_DBUSERINFO = _descriptor.Descriptor(
-  name='DBUserInfo',
-  full_name='DBUserInfo',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='user_id', full_name='DBUserInfo.user_id', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='user_name', full_name='DBUserInfo.user_name', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='level', full_name='DBUserInfo.level', index=2,
-      number=3, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=20,
-  serialized_end=83,
-)
 
 
 _DBUSERITEM = _descriptor.Descriptor(
@@ -120,8 +79,8 @@ _DBUSERITEM = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=85,
-  serialized_end=132,
+  serialized_start=35,
+  serialized_end=82,
 )
 
 
@@ -148,8 +107,8 @@ _DBUSERITEMLIST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=134,
-  serialized_end=182,
+  serialized_start=84,
+  serialized_end=132,
 )
 
 
@@ -190,8 +149,8 @@ _DBCOMMONREQ = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=184,
-  serialized_end=256,
+  serialized_start=134,
+  serialized_end=206,
 )
 
 
@@ -246,24 +205,17 @@ _DBCOMMONREP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=259,
-  serialized_end=393,
+  serialized_start=209,
+  serialized_end=343,
 )
 
 _DBUSERITEMLIST.fields_by_name['item_list'].message_type = _DBUSERITEM
-_DBCOMMONREP.fields_by_name['user_info'].message_type = _DBUSERINFO
+_DBCOMMONREP.fields_by_name['user_info'].message_type = tb_user_pb2._DB_TB_USER
 _DBCOMMONREP.fields_by_name['user_item_list'].message_type = _DBUSERITEMLIST
-DESCRIPTOR.message_types_by_name['DBUserInfo'] = _DBUSERINFO
 DESCRIPTOR.message_types_by_name['DBUserItem'] = _DBUSERITEM
 DESCRIPTOR.message_types_by_name['DBUserItemList'] = _DBUSERITEMLIST
 DESCRIPTOR.message_types_by_name['DBCommonReq'] = _DBCOMMONREQ
 DESCRIPTOR.message_types_by_name['DBCommonRep'] = _DBCOMMONREP
-
-class DBUserInfo(_message.Message):
-  __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _DBUSERINFO
-
-  # @@protoc_insertion_point(class_scope:DBUserInfo)
 
 class DBUserItem(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType

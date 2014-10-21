@@ -10,12 +10,13 @@ from google.protobuf import descriptor_pb2
 
 
 import db_message_pb2
+import tb_user_pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
   package='',
-  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\"=\n\x0e\x43lientInitNotf\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x1e\n\tuser_info\x18\x02 \x02(\x0b\x32\x0b.DBUserInfo*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*\x86\x01\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04\x12\x13\n\x0fMSG_INIT_CLIENT\x10\x05*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
+  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\x1a\rtb_user.proto\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\"=\n\x0e\x43lientInitNotf\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x1e\n\tuser_info\x18\x02 \x02(\x0b\x32\x0b.db_tb_user\"A\n\x11\x43lientMoveRequest\x12\x0e\n\x06map_id\x18\x01 \x02(\x05\x12\r\n\x05pos_x\x18\x02 \x02(\x05\x12\r\n\x05pos_y\x18\x03 \x02(\x05\"O\n\x12\x43lientMoveResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0e\n\x06map_id\x18\x02 \x02(\x05\x12\r\n\x05pos_x\x18\x03 \x02(\x05\x12\r\n\x05pos_y\x18\x04 \x02(\x05*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*\x9b\x01\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04\x12\x13\n\x0fMSG_INIT_CLIENT\x10\x05\x12\x13\n\x0fMSG_CLIENT_MOVE\x10\x06*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
 
 _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   name='MSG_ACTION_TYPE',
@@ -38,8 +39,8 @@ _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=283,
-  serialized_end=351,
+  serialized_start=446,
+  serialized_end=514,
 )
 
 MSG_ACTION_TYPE = enum_type_wrapper.EnumTypeWrapper(_MSG_ACTION_TYPE)
@@ -69,11 +70,15 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       name='MSG_INIT_CLIENT', index=4, number=5,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='MSG_CLIENT_MOVE', index=5, number=6,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=354,
-  serialized_end=488,
+  serialized_start=517,
+  serialized_end=672,
 )
 
 MessageType = enum_type_wrapper.EnumTypeWrapper(_MESSAGETYPE)
@@ -90,8 +95,8 @@ _DBMESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=490,
-  serialized_end=525,
+  serialized_start=674,
+  serialized_end=709,
 )
 
 DbMessageType = enum_type_wrapper.EnumTypeWrapper(_DBMESSAGETYPE)
@@ -103,6 +108,7 @@ MSG_HEART_BEAT = 2
 MSG_CLIENT_LOGIN = 3
 MSG_GATE_SERVER_REGISTER = 4
 MSG_INIT_CLIENT = 5
+MSG_CLIENT_MOVE = 6
 MSG_DB_COMMON = 10000
 
 
@@ -130,8 +136,8 @@ _CLIENTHEARTBEATREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=35,
-  serialized_end=80,
+  serialized_start=50,
+  serialized_end=95,
 )
 
 
@@ -158,8 +164,8 @@ _CLIENTHEARTBEATRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=82,
-  serialized_end=128,
+  serialized_start=97,
+  serialized_end=143,
 )
 
 
@@ -193,8 +199,8 @@ _CLIENTLOGINREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=130,
-  serialized_end=182,
+  serialized_start=145,
+  serialized_end=197,
 )
 
 
@@ -221,8 +227,8 @@ _CLIENTLOGINRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=184,
-  serialized_end=218,
+  serialized_start=199,
+  serialized_end=233,
 )
 
 
@@ -256,16 +262,109 @@ _CLIENTINITNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=220,
-  serialized_end=281,
+  serialized_start=235,
+  serialized_end=296,
 )
 
-_CLIENTINITNOTF.fields_by_name['user_info'].message_type = db_message_pb2._DBUSERINFO
+
+_CLIENTMOVEREQUEST = _descriptor.Descriptor(
+  name='ClientMoveRequest',
+  full_name='ClientMoveRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='map_id', full_name='ClientMoveRequest.map_id', index=0,
+      number=1, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_x', full_name='ClientMoveRequest.pos_x', index=1,
+      number=2, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_y', full_name='ClientMoveRequest.pos_y', index=2,
+      number=3, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=298,
+  serialized_end=363,
+)
+
+
+_CLIENTMOVERESPONSE = _descriptor.Descriptor(
+  name='ClientMoveResponse',
+  full_name='ClientMoveResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ret', full_name='ClientMoveResponse.ret', index=0,
+      number=1, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='map_id', full_name='ClientMoveResponse.map_id', index=1,
+      number=2, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_x', full_name='ClientMoveResponse.pos_x', index=2,
+      number=3, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pos_y', full_name='ClientMoveResponse.pos_y', index=3,
+      number=4, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=365,
+  serialized_end=444,
+)
+
+_CLIENTINITNOTF.fields_by_name['user_info'].message_type = tb_user_pb2._DB_TB_USER
 DESCRIPTOR.message_types_by_name['ClientHeartBeatRequest'] = _CLIENTHEARTBEATREQUEST
 DESCRIPTOR.message_types_by_name['ClientHeartBeatResponse'] = _CLIENTHEARTBEATRESPONSE
 DESCRIPTOR.message_types_by_name['ClientLoginRequest'] = _CLIENTLOGINREQUEST
 DESCRIPTOR.message_types_by_name['ClientLoginResponse'] = _CLIENTLOGINRESPONSE
 DESCRIPTOR.message_types_by_name['ClientInitNotf'] = _CLIENTINITNOTF
+DESCRIPTOR.message_types_by_name['ClientMoveRequest'] = _CLIENTMOVEREQUEST
+DESCRIPTOR.message_types_by_name['ClientMoveResponse'] = _CLIENTMOVERESPONSE
 
 class ClientHeartBeatRequest(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -296,6 +395,18 @@ class ClientInitNotf(_message.Message):
   DESCRIPTOR = _CLIENTINITNOTF
 
   # @@protoc_insertion_point(class_scope:ClientInitNotf)
+
+class ClientMoveRequest(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _CLIENTMOVEREQUEST
+
+  # @@protoc_insertion_point(class_scope:ClientMoveRequest)
+
+class ClientMoveResponse(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _CLIENTMOVERESPONSE
+
+  # @@protoc_insertion_point(class_scope:ClientMoveResponse)
 
 
 # @@protoc_insertion_point(module_scope)

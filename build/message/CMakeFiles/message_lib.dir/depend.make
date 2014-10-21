@@ -3,16 +3,20 @@
 
 message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: ../message/db_message.pb.cc
 message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: ../message/db_message.pb.h
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: ../message/tb_user.pb.h
 
 message/CMakeFiles/message_lib.dir/message.pb.cc.o: ../message/db_message.pb.h
 message/CMakeFiles/message_lib.dir/message.pb.cc.o: ../message/message.pb.cc
 message/CMakeFiles/message_lib.dir/message.pb.cc.o: ../message/message.pb.h
-
-message/CMakeFiles/message_lib.dir/role_info.pb.cc.o: ../message/role_info.pb.cc
-message/CMakeFiles/message_lib.dir/role_info.pb.cc.o: ../message/role_info.pb.h
+message/CMakeFiles/message_lib.dir/message.pb.cc.o: ../message/tb_user.pb.h
 
 message/CMakeFiles/message_lib.dir/sql_define.cpp.o: ../message/sql_define.cpp
 message/CMakeFiles/message_lib.dir/sql_define.cpp.o: ../message/sql_define.h
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o: ../message/sql_binder.h
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o: ../message/tb_user.cpp
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o: ../message/tb_user.h
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o: ../message/tb_user.pb.h
 
 message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o: ../message/tb_user.pb.cc
 message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o: ../message/tb_user.pb.h

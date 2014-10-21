@@ -4,6 +4,7 @@
 #include "timer.h"
 #include "db_message.pb.h"
 #include "gate_client.h"
+#include "sql_binder.h"
 
 
 class db_connection:public socket_client
@@ -11,8 +12,6 @@ class db_connection:public socket_client
     public:
         db_connection()
         {
-            _m_timer.set_owner(this); 
-            _m_timer.set_expire(2000); 
             process_count = 0;
         }
 
@@ -21,9 +20,14 @@ class db_connection:public socket_client
         int process_msg(packet_info* msg_packet);
         void on_timeout();
         int  build_query(int seq,int operate_type,const char* sql_str,...);
+        void update_binder(sql_binder* binder);
+        void on_connection(bufferevent* bev)
+        {
+            LOG(INFO)<<"on connection build!"; 
+        }
     protected:
         int process_db_response(packet_info* info);
-        int on_load_user_info(const DBUserInfo& info);
+        int on_load_user_info(const db_tb_user& info);
         int load_user_item_list(const DBUserItemList& info);
     private:
         template_timer<db_connection,&db_connection::on_timeout>    _m_timer;

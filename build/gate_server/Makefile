@@ -160,6 +160,30 @@ action_login_message.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.s
 .PHONY : action_login_message.cpp.s
 
+action_move_message.o: action_move_message.cpp.o
+.PHONY : action_move_message.o
+
+# target to build an object file
+action_move_message.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o
+.PHONY : action_move_message.cpp.o
+
+action_move_message.i: action_move_message.cpp.i
+.PHONY : action_move_message.i
+
+# target to preprocess a source file
+action_move_message.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.i
+.PHONY : action_move_message.cpp.i
+
+action_move_message.s: action_move_message.cpp.s
+.PHONY : action_move_message.s
+
+# target to generate assembly for a file
+action_move_message.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.s
+.PHONY : action_move_message.cpp.s
+
 client_service.o: client_service.cpp.o
 .PHONY : client_service.o
 
@@ -295,6 +319,9 @@ help:
 	@echo "... action_login_message.o"
 	@echo "... action_login_message.i"
 	@echo "... action_login_message.s"
+	@echo "... action_move_message.o"
+	@echo "... action_move_message.i"
+	@echo "... action_move_message.s"
 	@echo "... client_service.o"
 	@echo "... client_service.i"
 	@echo "... client_service.s"

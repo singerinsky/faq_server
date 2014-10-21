@@ -80,3 +80,8 @@ void    work_manager::process_query(MysqlResult& result,db_job* job)
     }
     
 }
+
+void    work_manager::process_update(db_job* job)
+{
+    LOG(INFO)<<"update success!";
+}

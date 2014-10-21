@@ -130,10 +130,6 @@ packet.h
 streambuf
 -
 
-../gate_server/../common/daemon.h
-head.h
-../gate_server/../common/head.h
-
 ../gate_server/../common/game_packet.h
 sstream
 -
@@ -238,12 +234,6 @@ singleton.h
 head.h
 ../gate_server/../common/head.h
 
-../gate_server/../common/server_application.h
-head.h
-../gate_server/../common/head.h
-reactor_core.h
-../gate_server/../common/reactor_core.h
-
 ../gate_server/../common/service.h
 head.h
 ../gate_server/../common/head.h
@@ -263,14 +253,6 @@ head.h
 ../gate_server/../common/head.h
 reactor_core.h
 ../gate_server/../common/reactor_core.h
-
-../gate_server/../common/template_message.h
-packet.h
-../gate_server/../common/packet.h
-game_packet.h
-../gate_server/../common/game_packet.h
-actions_mananger.h
-../gate_server/../common/actions_mananger.h
 
 ../gate_server/../common/timer.h
 head.h
@@ -341,6 +323,8 @@ google/protobuf/generated_enum_reflection.h
 -
 google/protobuf/unknown_field_set.h
 -
+tb_user.pb.h
+../gate_server/../message/tb_user.pb.h
 
 ../gate_server/../message/message.pb.h
 string
@@ -361,6 +345,8 @@ google/protobuf/unknown_field_set.h
 -
 db_message.pb.h
 ../gate_server/../message/db_message.pb.h
+tb_user.pb.h
+../gate_server/../message/tb_user.pb.h
 
 ../gate_server/../message/message_define.h
 packet.h
@@ -372,41 +358,39 @@ message.pb.h
 db_message.pb.h
 ../gate_server/../message/db_message.pb.h
 
-../gate_server/../message/sql_define.h
+../gate_server/../message/sql_binder.h
+stdint.h
+-
+string.h
+-
+stdio.h
+-
+string
+-
+vector
+-
 
-/home/gl/faq_server/gate_server/action_login_message.cpp
-packet.h
-/home/gl/faq_server/gate_server/packet.h
-game_packet.h
-/home/gl/faq_server/gate_server/game_packet.h
-actions_mananger.h
-/home/gl/faq_server/gate_server/actions_mananger.h
-template_message.h
-/home/gl/faq_server/gate_server/template_message.h
-message.pb.h
-/home/gl/faq_server/gate_server/message.pb.h
-message_define.h
-/home/gl/faq_server/gate_server/message_define.h
-head.h
-/home/gl/faq_server/gate_server/head.h
-socket.h
-/home/gl/faq_server/gate_server/socket.h
-gate_client.h
-/home/gl/faq_server/gate_server/gate_client.h
-gate_application.h
-/home/gl/faq_server/gate_server/gate_application.h
-db_connection.h
-/home/gl/faq_server/gate_server/db_connection.h
-sql_define.h
-/home/gl/faq_server/gate_server/sql_define.h
-client_service.h
-/home/gl/faq_server/gate_server/client_service.h
+../gate_server/../message/tb_user.h
+tb_user.pb.h
+../gate_server/../message/tb_user.pb.h
+sql_binder.h
+../gate_server/../message/sql_binder.h
 
-/home/gl/faq_server/gate_server/client_service.cpp
-client_service.h
-/home/gl/faq_server/gate_server/client_service.h
-session_manager.h
-/home/gl/faq_server/gate_server/session_manager.h
+../gate_server/../message/tb_user.pb.h
+string
+-
+google/protobuf/stubs/common.h
+-
+google/protobuf/generated_message_util.h
+-
+google/protobuf/message.h
+-
+google/protobuf/repeated_field.h
+-
+google/protobuf/extension_set.h
+-
+google/protobuf/unknown_field_set.h
+-
 
 /home/gl/faq_server/gate_server/client_service.h
 service.h
@@ -439,42 +423,8 @@ db_message.pb.h
 /home/gl/faq_server/gate_server/db_message.pb.h
 gate_client.h
 /home/gl/faq_server/gate_server/gate_client.h
-
-/home/gl/faq_server/gate_server/gate_application.cpp
-gate_application.h
-/home/gl/faq_server/gate_server/gate_application.h
-client_service.h
-/home/gl/faq_server/gate_server/client_service.h
-daemon.h
-/home/gl/faq_server/gate_server/daemon.h
-session_manager.h
-/home/gl/faq_server/gate_server/session_manager.h
-db_connection.h
-/home/gl/faq_server/gate_server/db_connection.h
-
-/home/gl/faq_server/gate_server/gate_application.h
-head.h
-/home/gl/faq_server/gate_server/head.h
-server_application.h
-/home/gl/faq_server/gate_server/server_application.h
-
-/home/gl/faq_server/gate_server/gate_client.cpp
-gate_client.h
-/home/gl/faq_server/gate_server/gate_client.h
-actions_mananger.h
-/home/gl/faq_server/gate_server/actions_mananger.h
-gate_application.h
-/home/gl/faq_server/gate_server/gate_application.h
-message_define.h
-/home/gl/faq_server/gate_server/message_define.h
-db_message.pb.h
-/home/gl/faq_server/gate_server/db_message.pb.h
-sql_define.h
-/home/gl/faq_server/gate_server/sql_define.h
-db_connection.h
-/home/gl/faq_server/gate_server/db_connection.h
-client_service.h
-/home/gl/faq_server/gate_server/client_service.h
+sql_binder.h
+/home/gl/faq_server/gate_server/sql_binder.h
 
 /home/gl/faq_server/gate_server/gate_client.h
 socket.h
@@ -484,15 +434,13 @@ timer.h
 logic_player.h
 /home/gl/faq_server/gate_server/logic_player.h
 
-/home/gl/faq_server/gate_server/logic_player.cpp
-logic_player.h
-/home/gl/faq_server/gate_server/logic_player.h
-db_message.pb.h
-/home/gl/faq_server/gate_server/db_message.pb.h
-
 /home/gl/faq_server/gate_server/logic_player.h
 gate_client.h
 /home/gl/faq_server/gate_server/gate_client.h
 head.h
 /home/gl/faq_server/gate_server/head.h
+tb_user.pb.h
+/home/gl/faq_server/gate_server/tb_user.pb.h
+tb_user.h
+/home/gl/faq_server/gate_server/tb_user.h
 

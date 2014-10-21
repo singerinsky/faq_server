@@ -3,7 +3,8 @@
 
 #include  "gate_client.h"
 #include "head.h"
-class DBUserInfo;
+#include "tb_user.pb.h"
+#include "tb_user.h"
 
 class gate_client;
 enum
@@ -65,7 +66,7 @@ class LogicPlayer
             _client = client; 
         }
 
-        void InitPlayer(const DBUserInfo& user_info);
+        void InitPlayer(const db_tb_user& user_info);
 
         void LoadPlayerInfo();
 
@@ -77,6 +78,7 @@ class LogicPlayer
         string _name;
         int  _attr[PLY_ATTR_END];
         Position _pos;
+        tb_user _user_info;
 };
 
 #endif
