@@ -12,7 +12,6 @@ void db_connection::on_error(bufferevent* bev)
     _m_timer.set_expire(2000); 
 }
 
-
 int db_connection::process_msg(packet_info* info)
 {
     VLOG(1)<<"db_connection Recive message type "<<info->type;
@@ -24,7 +23,6 @@ int db_connection::process_msg(packet_info* info)
             break;
         default:
             LOG(ERROR)<<"message type unregister"<<message_type;
-    
     }
     return 1;
 }
@@ -133,7 +131,7 @@ void db_connection::update_binder(sql_binder* binder)
 {
     if(!(binder->is_dirty()))
     {
-        return ; 
+        return; 
     }
     char buffer[2048] = {0};
     int update_size = binder->sql_update(buffer,2048);

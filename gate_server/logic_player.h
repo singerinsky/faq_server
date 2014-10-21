@@ -30,6 +30,15 @@ class Position
             _x = x;
             _y = y;
         }
+        void set_pos_x(int x)
+        {
+            _x = x; 
+        }
+
+        void set_pos_y(int y)
+        {
+            _y = y; 
+        }
 
         bool operator==(const Position& pos)
         {
@@ -59,8 +68,12 @@ class Position
 class LogicPlayer
 {
     public:
-        LogicPlayer(){};
-        ~LogicPlayer(){};
+        LogicPlayer(){
+
+        };
+        ~LogicPlayer(){
+
+        };
         void BindPlayer(gate_client* client)
         {
             _client = client; 
@@ -70,6 +83,10 @@ class LogicPlayer
 
         void LoadPlayerInfo();
 
+        void Move(int x,int y);
+        bool CheckCanMove(int x,int y);
+
+        void SavePlayer();
     private:
         gate_client* _client;
     protected:
