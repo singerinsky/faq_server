@@ -69,6 +69,7 @@ gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o
  /home/gl/faq_server/gate_server/gate_application.h
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h
@@ -109,6 +110,7 @@ gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o
  /home/gl/faq_server/gate_server/gate_application.h
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h
@@ -138,6 +140,7 @@ gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o
  /home/gl/faq_server/gate_server/client_service.h
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h
@@ -174,6 +177,7 @@ gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o
  /home/gl/faq_server/gate_server/db_connection.h
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h
@@ -208,6 +212,7 @@ gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o
  /home/gl/faq_server/gate_server/gate_application.h
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h
@@ -247,6 +252,7 @@ gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o
  /home/gl/faq_server/gate_server/gate_client.cpp
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h
@@ -277,3 +283,23 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
  /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.cpp
  /home/gl/faq_server/gate_server/logic_player.h
+ /home/gl/faq_server/gate_server/map_manager.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o
+ .././include/event2/buffer.h
+ .././include/event2/bufferevent.h
+ .././include/event2/event-config.h
+ .././include/event2/event.h
+ .././include/event2/listener.h
+ .././include/event2/util.h
+ .././include/gflags/gflags.h
+ .././include/glog/log_severity.h
+ .././include/glog/logging.h
+ .././include/glog/vlog_is_on.h
+ ../gate_server/../common/head.h
+ ../gate_server/../common/singleton.h
+ ../gate_server/../common/tinyxml.h
+ ../gate_server/../common/util_file.h
+ ../gate_server/../include/tinystr.h
+ ../gate_server/../include/tinyxml.h
+ /home/gl/faq_server/gate_server/map_manager.cpp
+ /home/gl/faq_server/gate_server/map_manager.h

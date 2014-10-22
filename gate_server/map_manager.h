@@ -1,7 +1,10 @@
 #ifndef _map_manager_h_
 #define _map_manager_h_
 #include "singleton.h"
-
+#include <set>
+#include <string>
+#include <vector>
+using namespace std;
 class Position
 {
     public:
@@ -50,7 +53,7 @@ class Position
         int _y;
 };
 
-
+class LogicPlayer;
 struct map_cell
 {
     Position _pos; 
@@ -58,10 +61,11 @@ struct map_cell
 };
 
 class npc_object;
+
 class map_object
 {
     public:
-        bool init(const char* map_file);
+        bool init(std::string);
 
     private:
         vector<map_cell>    _all_cell;

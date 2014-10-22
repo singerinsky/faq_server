@@ -304,6 +304,30 @@ logic_player.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.s
 .PHONY : logic_player.cpp.s
 
+map_manager.o: map_manager.cpp.o
+.PHONY : map_manager.o
+
+# target to build an object file
+map_manager.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o
+.PHONY : map_manager.cpp.o
+
+map_manager.i: map_manager.cpp.i
+.PHONY : map_manager.i
+
+# target to preprocess a source file
+map_manager.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.i
+.PHONY : map_manager.cpp.i
+
+map_manager.s: map_manager.cpp.s
+.PHONY : map_manager.s
+
+# target to generate assembly for a file
+map_manager.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.s
+.PHONY : map_manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -337,6 +361,9 @@ help:
 	@echo "... logic_player.o"
 	@echo "... logic_player.i"
 	@echo "... logic_player.s"
+	@echo "... map_manager.o"
+	@echo "... map_manager.i"
+	@echo "... map_manager.s"
 .PHONY : help
 
 

@@ -10,7 +10,10 @@ void get_file_in_dir(const char* dir,vector<string>& all_file)
     struct dirent* ent = NULL;
     while(NULL != (ent = readdir(pdir)))
     {
-        string fullpath = 
+        if(ent->d_type == 8)
+        {
+            all_file.push_back(ent->d_name);    
+        }
     }
-
+    closedir(pdir);
 }

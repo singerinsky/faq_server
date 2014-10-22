@@ -568,6 +568,12 @@ timer.h
 mysql_connection.h
 /home/gl/faq_server/db_server/mysql_connection.h
 
+/home/gl/faq_server/db_server/db_connection_pool.cpp
+db_connection_pool.h
+/home/gl/faq_server/db_server/db_connection_pool.h
+head.h
+/home/gl/faq_server/db_server/head.h
+
 /home/gl/faq_server/db_server/db_connection_pool.h
 mysql/mysql.h
 /home/gl/faq_server/db_server/mysql/mysql.h
@@ -575,6 +581,12 @@ object_pool.h
 /home/gl/faq_server/db_server/object_pool.h
 mysql_connection.h
 /home/gl/faq_server/db_server/mysql_connection.h
+
+/home/gl/faq_server/db_server/db_service.cpp
+db_service.h
+/home/gl/faq_server/db_server/db_service.h
+session_manager.h
+/home/gl/faq_server/db_server/session_manager.h
 
 /home/gl/faq_server/db_server/db_service.h
 service.h

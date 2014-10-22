@@ -6,6 +6,7 @@
 #include "tb_user.pb.h"
 #include "tb_user.h"
 #include "timer.h"
+#include "map_manager.h"
 
 class gate_client;
 enum

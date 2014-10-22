@@ -36,6 +36,7 @@ int main(int argc,char** argv)
 
     gate_application app("gate");
     app.init();
+    Singleton<map_manager>::GetInstance()->init();
     client_service* cs = new client_service("127.0.0.1",9998);
     app.add_service(cs);
 

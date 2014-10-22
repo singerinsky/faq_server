@@ -68,6 +68,7 @@ gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: ../gate_serve
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: ../gate_server/gate_application.h
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: ../gate_server/map_manager.h
 
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: .././include/event2/bufferevent.h
@@ -108,6 +109,7 @@ gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/gate_application.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/map_manager.h
 
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: .././include/event2/bufferevent.h
@@ -137,6 +139,7 @@ gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: ../gate_server/clie
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: ../gate_server/client_service.h
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: ../gate_server/map_manager.h
 
 gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: .././include/event2/bufferevent.h
@@ -173,6 +176,7 @@ gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: ../gate_server/db_co
 gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: ../gate_server/db_connection.h
 gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o: ../gate_server/map_manager.h
 
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: .././include/event2/bufferevent.h
@@ -207,6 +211,7 @@ gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/ga
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/gate_application.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/map_manager.h
 
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: .././include/event2/bufferevent.h
@@ -246,6 +251,7 @@ gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: ../gate_server/gate_ap
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: ../gate_server/gate_client.cpp
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: ../gate_server/map_manager.h
 
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: .././include/event2/bufferevent.h
@@ -276,4 +282,24 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/gate_a
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/logic_player.cpp
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/logic_player.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/map_manager.h
+
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/event2/buffer.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/event2/bufferevent.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/event2/event-config.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/event2/event.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/event2/listener.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/event2/util.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/gflags/gflags.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/log_severity.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/logging.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/vlog_is_on.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/head.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/singleton.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/tinyxml.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/util_file.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../include/tinystr.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../include/tinyxml.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/map_manager.cpp
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/map_manager.h
 
