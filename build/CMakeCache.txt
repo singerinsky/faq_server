@@ -7,7 +7,7 @@
 # The syntax for the file is as follows:
 # KEY:TYPE=VALUE
 # KEY is the name of a variable in the cache.
-# TYPE is a hint to GUIs for the type of VALUE, DO NOT EDIT TYPE!.
+# TYPE is a hint to GUI's for the type of VALUE, DO NOT EDIT TYPE!.
 # VALUE is the current value for the KEY.
 
 ########################
@@ -212,7 +212,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=12
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=11
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.

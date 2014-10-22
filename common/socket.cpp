@@ -30,7 +30,7 @@ int socket_client::check_packet_info(packet_info* packet,struct evbuffer* read_b
         VLOG(2)<<"data not ready"<<evbuffer_get_length(read_buffer)<<" require"<<head.length;
         return 0;
     }
-    LOG(INFO)<<"receive message opcode "<<head.msgid;
+    VLOG(2)<<"receive message opcode "<<head.msgid;
 
     char* buffer = new char[head.length];
     int total_size = evbuffer_remove(read_buffer,buffer,head.length);
