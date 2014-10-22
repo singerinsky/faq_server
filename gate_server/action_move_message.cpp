@@ -28,7 +28,8 @@ class move_message_action: public template_message<ClientMoveRequest,ClientMoveR
             int pos_y = request->pos_y();
             int map_id = request->map_id();
             LOG(INFO)<<"role move to"<<pos_x<<":"<<pos_y<<":"<<map_id; 
-            rsp_message_packet response;
+            logic_player->Move(pos_x,pos_y);
+            //rsp_message_packet response;
             //response.body.set_ret(1); 
             //client->send_packet(&response);
             return 1;

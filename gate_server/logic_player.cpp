@@ -1,4 +1,5 @@
 #include "logic_player.h"
+#include "timer.h"
 #include "db_message.pb.h"
 #include "tb_user.pb.h"
 #include "tb_user.h"
@@ -16,6 +17,8 @@ void LogicPlayer::InitPlayer(const db_tb_user& user_info)
     LOG(INFO)<<_user_info.get_user_name();
     _pos.set_pos_x(_user_info.get_pos_x());
     _pos.set_pos_y(_user_info.get_pos_y());
+    _save_timer.set_owner(this);
+    _save_timer.set_expire(10000);
 //    gate_application::db_conn_->update_binder(&_user_info);
 }
 
@@ -39,4 +42,11 @@ void LogicPlayer::Move(int x,int y)
 void LogicPlayer::SavePlayer()
 {
     gate_application::db_conn_->update_binder(&_user_info);
+}
+
+void LogicPlayer::on_savetime()
+{
+    SavePlayer();
+    _save_timer.set_owner(this);
+    _save_timer.set_expire(10000);
 }

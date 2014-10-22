@@ -5,6 +5,7 @@
 #include "head.h"
 #include "tb_user.pb.h"
 #include "tb_user.h"
+#include "timer.h"
 
 class gate_client;
 enum
@@ -87,6 +88,7 @@ class LogicPlayer
         bool CheckCanMove(int x,int y);
 
         void SavePlayer();
+        void on_savetime();
     private:
         gate_client* _client;
     protected:
@@ -96,6 +98,7 @@ class LogicPlayer
         int  _attr[PLY_ATTR_END];
         Position _pos;
         tb_user _user_info;
+        template_timer<LogicPlayer,&LogicPlayer::on_savetime>    _save_timer;
 };
 
 #endif
