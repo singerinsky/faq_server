@@ -71,10 +71,18 @@ bool map_object::init_map_data(std::string data,int h,int w)
 
     if(data_split.size() != h*w)
         return false;
-    // for(auto itr:data_split)
-    // {
-    //     LOG(INFO)<<atoi((itr).c_str()); 
-    // }
+
+    int index = 0;
+    for(auto itr:data_split)
+    {
+        LOG(INFO)<<atoi((itr).c_str()); 
+        map_cell cell;
+        int x = index%w; 
+        int y = index/h;
+        cell._pos.set_pos_x(x);
+        cell._pos.set_pos_y(y);
+        _all_cell.push_back(cell);
+    }
 // 
 //     auto test_itr = data_split.begin();
 //     for(;test_itr != data_split.end();test_itr++)
