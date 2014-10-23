@@ -49,9 +49,32 @@ include message/CMakeFiles/message_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include message/CMakeFiles/message_lib.dir/flags.make
 
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o: ../message/sql_define.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/sql_define.cpp.o"
+	cd /home/gl/faq_server/build/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/sql_define.cpp.o -c /home/gl/faq_server/message/sql_define.cpp
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/sql_define.cpp.i"
+	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/sql_define.cpp > CMakeFiles/message_lib.dir/sql_define.cpp.i
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/sql_define.cpp.s"
+	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/sql_define.cpp -o CMakeFiles/message_lib.dir/sql_define.cpp.s
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides: message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides.build: message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+
 message/CMakeFiles/message_lib.dir/message.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
 message/CMakeFiles/message_lib.dir/message.pb.cc.o: ../message/message.pb.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/message.pb.cc.o"
 	cd /home/gl/faq_server/build/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/message.pb.cc.o -c /home/gl/faq_server/message/message.pb.cc
 
@@ -74,7 +97,7 @@ message/CMakeFiles/message_lib.dir/message.pb.cc.o.provides.build: message/CMake
 
 message/CMakeFiles/message_lib.dir/tb_user.cpp.o: message/CMakeFiles/message_lib.dir/flags.make
 message/CMakeFiles/message_lib.dir/tb_user.cpp.o: ../message/tb_user.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/tb_user.cpp.o"
 	cd /home/gl/faq_server/build/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/tb_user.cpp.o -c /home/gl/faq_server/message/tb_user.cpp
 
@@ -94,29 +117,6 @@ message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides: message/CMakeFiles/me
 .PHONY : message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides
 
 message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides.build: message/CMakeFiles/message_lib.dir/tb_user.cpp.o
-
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: ../message/db_message.pb.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/db_message.pb.cc.o"
-	cd /home/gl/faq_server/build/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/db_message.pb.cc.o -c /home/gl/faq_server/message/db_message.pb.cc
-
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/db_message.pb.cc.i"
-	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/db_message.pb.cc > CMakeFiles/message_lib.dir/db_message.pb.cc.i
-
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/db_message.pb.cc.s"
-	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/db_message.pb.cc -o CMakeFiles/message_lib.dir/db_message.pb.cc.s
-
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires:
-.PHONY : message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
-
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
-	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides.build
-.PHONY : message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides
-
-message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides.build: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
 
 message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
 message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o: ../message/tb_user.pb.cc
@@ -141,45 +141,45 @@ message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.provides: message/CMakeFiles/
 
 message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.provides.build: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o
 
-message/CMakeFiles/message_lib.dir/sql_define.cpp.o: message/CMakeFiles/message_lib.dir/flags.make
-message/CMakeFiles/message_lib.dir/sql_define.cpp.o: ../message/sql_define.cpp
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: ../message/db_message.pb.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/sql_define.cpp.o"
-	cd /home/gl/faq_server/build/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/sql_define.cpp.o -c /home/gl/faq_server/message/sql_define.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/db_message.pb.cc.o"
+	cd /home/gl/faq_server/build/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/db_message.pb.cc.o -c /home/gl/faq_server/message/db_message.pb.cc
 
-message/CMakeFiles/message_lib.dir/sql_define.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/sql_define.cpp.i"
-	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/sql_define.cpp > CMakeFiles/message_lib.dir/sql_define.cpp.i
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/db_message.pb.cc.i"
+	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/db_message.pb.cc > CMakeFiles/message_lib.dir/db_message.pb.cc.i
 
-message/CMakeFiles/message_lib.dir/sql_define.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/sql_define.cpp.s"
-	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/sql_define.cpp -o CMakeFiles/message_lib.dir/sql_define.cpp.s
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/db_message.pb.cc.s"
+	cd /home/gl/faq_server/build/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/db_message.pb.cc -o CMakeFiles/message_lib.dir/db_message.pb.cc.s
 
-message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires:
-.PHONY : message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
 
-message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides: message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
-	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides.build
-.PHONY : message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides
 
-message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides.build: message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides.build: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
 
 # Object files for target message_lib
 message_lib_OBJECTS = \
+"CMakeFiles/message_lib.dir/sql_define.cpp.o" \
 "CMakeFiles/message_lib.dir/message.pb.cc.o" \
 "CMakeFiles/message_lib.dir/tb_user.cpp.o" \
-"CMakeFiles/message_lib.dir/db_message.pb.cc.o" \
 "CMakeFiles/message_lib.dir/tb_user.pb.cc.o" \
-"CMakeFiles/message_lib.dir/sql_define.cpp.o"
+"CMakeFiles/message_lib.dir/db_message.pb.cc.o"
 
 # External object files for target message_lib
 message_lib_EXTERNAL_OBJECTS =
 
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/sql_define.cpp.o
 game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/message.pb.cc.o
 game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/tb_user.cpp.o
-game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
 game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o
-game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
 game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/build.make
 game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../game_lib/libmessage_lib.a"
@@ -190,11 +190,11 @@ game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/link.txt
 message/CMakeFiles/message_lib.dir/build: game_lib/libmessage_lib.a
 .PHONY : message/CMakeFiles/message_lib.dir/build
 
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
 message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/message.pb.cc.o.requires
 message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/tb_user.cpp.o.requires
-message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
 message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.requires
-message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
 .PHONY : message/CMakeFiles/message_lib.dir/requires
 
 message/CMakeFiles/message_lib.dir/clean:

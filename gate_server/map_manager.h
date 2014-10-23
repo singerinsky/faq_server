@@ -4,6 +4,8 @@
 #include <set>
 #include <string>
 #include <vector>
+#include "npc_object.h"
+
 using namespace std;
 class Position
 {
@@ -60,13 +62,12 @@ struct map_cell
     set<LogicPlayer*>   _player_set;
 };
 
-class npc_object;
 
 class map_object
 {
     public:
-        bool init(std::string);
-
+        void init(std::string);
+        bool init_map_data(std::string,int,int);
     private:
         vector<map_cell>    _all_cell;
         int                 _map_id;

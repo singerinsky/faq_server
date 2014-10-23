@@ -231,6 +231,8 @@ string
 -
 vector
 -
+sstream
+-
 
 ../gate_server/../include/tinystr.h
 assert.h
@@ -279,4 +281,12 @@ string
 -
 vector
 -
+npc_object.h
+/home/gl/faq_server/gate_server/npc_object.h
+
+/home/gl/faq_server/gate_server/npc_object.h
+head.h
+/home/gl/faq_server/gate_server/head.h
+singleton.h
+/home/gl/faq_server/gate_server/singleton.h
 
