@@ -44,7 +44,7 @@ void LogicPlayer::SavePlayer()
     gate_application::db_conn_->update_binder(&_user_info);
 }
 
-void LogicPlayer::on_savetime()
+void LogicPlayer::OnSaveTime()
 {
     SavePlayer();
     _save_timer.set_owner(this);

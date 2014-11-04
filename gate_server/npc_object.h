@@ -15,6 +15,8 @@ class npc_object
     private:
         Position pos_; 
         int  _attr[PLY_ATTR_END];
+        int  _hp;
+        int  _mp;
 };
 
 

@@ -33,11 +33,15 @@ class LogicPlayer
         bool CheckCanMove(int x,int y);
 
         void SavePlayer();
-        void on_savetime();
-        tb_user& get_db_user_info()
+        void OnSaveTime();
+        tb_user& GetDbUserInfo()
         {
             return _user_info; 
         }
+
+        void Attack(npc_object*);
+        void Attack(LogicPlayer*);
+
 
     private:
         gate_client* _client;
@@ -48,7 +52,7 @@ class LogicPlayer
         int  _attr[PLY_ATTR_END];
         Position _pos;
         tb_user _user_info;
-        template_timer<LogicPlayer,&LogicPlayer::on_savetime>    _save_timer;
+        template_timer<LogicPlayer,&LogicPlayer::OnSaveTime>    _save_timer;
 };
 
 #endif
