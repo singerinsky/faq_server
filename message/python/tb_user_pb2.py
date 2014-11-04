@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='tb_user.proto',
   package='',
-  serialized_pb='\n\rtb_user.proto\"h\n\ndb_tb_user\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x11\n\tuser_name\x18\x02 \x02(\t\x12\r\n\x05level\x18\x03 \x02(\x05\x12\x0e\n\x06map_id\x18\x04 \x02(\x05\x12\r\n\x05pos_x\x18\x05 \x02(\x05\x12\r\n\x05pos_y\x18\x06 \x02(\x05')
+  serialized_pb='\n\rtb_user.proto\"\x80\x01\n\ndb_tb_user\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x11\n\tuser_name\x18\x02 \x02(\t\x12\r\n\x05level\x18\x03 \x02(\x05\x12\x0e\n\x06map_id\x18\x04 \x02(\x05\x12\r\n\x05pos_x\x18\x05 \x02(\x05\x12\r\n\x05pos_y\x18\x06 \x02(\x05\x12\n\n\x02hp\x18\x07 \x02(\x05\x12\n\n\x02mp\x18\x08 \x02(\x05')
 
 
 
@@ -67,6 +67,20 @@ _DB_TB_USER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='hp', full_name='db_tb_user.hp', index=6,
+      number=7, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mp', full_name='db_tb_user.mp', index=7,
+      number=8, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -76,8 +90,8 @@ _DB_TB_USER = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17,
-  serialized_end=121,
+  serialized_start=18,
+  serialized_end=146,
 )
 
 DESCRIPTOR.message_types_by_name['db_tb_user'] = _DB_TB_USER

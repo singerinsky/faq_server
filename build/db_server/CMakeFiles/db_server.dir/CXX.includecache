@@ -166,10 +166,6 @@ packet.h
 streambuf
 -
 
-../db_server/../common/daemon.h
-head.h
-../db_server/../common/head.h
-
 ../db_server/../common/game_packet.h
 sstream
 -
@@ -297,20 +293,6 @@ singleton.h
 ../db_server/../common/singleton.h
 head.h
 ../db_server/../common/head.h
-
-../db_server/../common/server_application.h
-head.h
-../db_server/../common/head.h
-reactor_core.h
-../db_server/../common/reactor_core.h
-
-../db_server/../common/service.h
-head.h
-../db_server/../common/head.h
-
-../db_server/../common/session_manager.h
-singleton.h
-../db_server/../common/singleton.h
 
 ../db_server/../common/singleton.h
 cstdlib
@@ -522,28 +504,6 @@ worker.h
 mysql_connection.h
 /home/gl/faq_server/db_server/mysql_connection.h
 
-/home/gl/faq_server/db_server/db_application.cpp
-db_application.h
-/home/gl/faq_server/db_server/db_application.h
-db_service.h
-/home/gl/faq_server/db_server/db_service.h
-daemon.h
-/home/gl/faq_server/db_server/daemon.h
-session_manager.h
-/home/gl/faq_server/db_server/session_manager.h
-db_connection_pool.h
-/home/gl/faq_server/db_server/db_connection_pool.h
-data_worker.h
-/home/gl/faq_server/db_server/data_worker.h
-work_manager.h
-/home/gl/faq_server/db_server/work_manager.h
-
-/home/gl/faq_server/db_server/db_application.h
-head.h
-/home/gl/faq_server/db_server/head.h
-server_application.h
-/home/gl/faq_server/db_server/server_application.h
-
 /home/gl/faq_server/db_server/db_client.cpp
 db_client.h
 /home/gl/faq_server/db_server/db_client.h
@@ -568,12 +528,6 @@ timer.h
 mysql_connection.h
 /home/gl/faq_server/db_server/mysql_connection.h
 
-/home/gl/faq_server/db_server/db_connection_pool.cpp
-db_connection_pool.h
-/home/gl/faq_server/db_server/db_connection_pool.h
-head.h
-/home/gl/faq_server/db_server/head.h
-
 /home/gl/faq_server/db_server/db_connection_pool.h
 mysql/mysql.h
 /home/gl/faq_server/db_server/mysql/mysql.h
@@ -581,28 +535,6 @@ object_pool.h
 /home/gl/faq_server/db_server/object_pool.h
 mysql_connection.h
 /home/gl/faq_server/db_server/mysql_connection.h
-
-/home/gl/faq_server/db_server/db_service.cpp
-db_service.h
-/home/gl/faq_server/db_server/db_service.h
-session_manager.h
-/home/gl/faq_server/db_server/session_manager.h
-
-/home/gl/faq_server/db_server/db_service.h
-service.h
-/home/gl/faq_server/db_server/service.h
-db_client.h
-/home/gl/faq_server/db_server/db_client.h
-
-/home/gl/faq_server/db_server/work_manager.cpp
-work_manager.h
-/home/gl/faq_server/db_server/work_manager.h
-db_client.h
-/home/gl/faq_server/db_server/db_client.h
-head.h
-/home/gl/faq_server/db_server/head.h
-algorithm
--
 
 /home/gl/faq_server/db_server/work_manager.h
 head.h

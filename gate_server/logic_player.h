@@ -1,23 +1,16 @@
 #ifndef _GATE_CLIENT_H_
 #define _GATE_CLIENT_H_
 
-#include  "gate_client.h"
+#include "gate_client.h"
 #include "head.h"
 #include "tb_user.pb.h"
 #include "tb_user.h"
 #include "timer.h"
 #include "map_manager.h"
+#include "game_define.h"
 
 class gate_client;
-enum
-{
-    PLY_ATTR_STR,//强壮
-    PLY_ATTR_ING,//智力
-    PLY_ATTR_AGC,//敏捷
-    PLY_ATTR_HP,//生命值
-    PLY_ATTR_MP,//魔法值
-    PLY_ATTR_END,
-};
+
 class LogicPlayer
 {
     public:
@@ -41,6 +34,11 @@ class LogicPlayer
 
         void SavePlayer();
         void on_savetime();
+        tb_user& get_db_user_info()
+        {
+            return _user_info; 
+        }
+
     private:
         gate_client* _client;
     protected:

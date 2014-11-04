@@ -52,6 +52,8 @@ CREATE TABLE `tb_user` (
   `map_id` int(11) DEFAULT NULL,
   `pos_x` int(11) NOT NULL DEFAULT '0',
   `pos_y` int(11) NOT NULL DEFAULT '0',
+  `hp` int(11) DEFAULT NULL,
+  `mp` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -62,7 +64,7 @@ CREATE TABLE `tb_user` (
 
 LOCK TABLES `tb_user` WRITE;
 /*!40000 ALTER TABLE `tb_user` DISABLE KEYS */;
-INSERT INTO `tb_user` VALUES (1,'guanlei',10,1,0,0),(2,'guanxing',10,1,0,0);
+INSERT INTO `tb_user` VALUES (1,'guanlei',10,1,100,0,100,100),(2,'guanxing',10,1,23,0,100,100);
 /*!40000 ALTER TABLE `tb_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-19 20:13:03
+-- Dump completed on 2014-11-04 16:52:36

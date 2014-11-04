@@ -3,6 +3,7 @@
 #include <dirent.h>
 #include "util_file.h"
 #include "head.h"
+#include "npc_object.h"
 
 template<> 
 map_manager* Singleton<map_manager>::_instance = 0;

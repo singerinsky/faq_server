@@ -46,6 +46,14 @@ public:
     void set_pos_y(int32_t value) { if(pos_y!= value){dirty[5] = 1; pos_y = value;} } ; 
     int sql_pos_y(char* buf,int size) const{return snprintf(buf,size,"pos_y='%ld'",(int64_t)pos_y);}
 
+    int32_t get_hp() const { return hp;} ; 
+    void set_hp(int32_t value) { if(hp!= value){dirty[6] = 1; hp = value;} } ; 
+    int sql_hp(char* buf,int size) const{return snprintf(buf,size,"hp='%ld'",(int64_t)hp);}
+
+    int32_t get_mp() const { return mp;} ; 
+    void set_mp(int32_t value) { if(mp!= value){dirty[7] = 1; mp = value;} } ; 
+    int sql_mp(char* buf,int size) const{return snprintf(buf,size,"mp='%ld'",(int64_t)mp);}
+
     void load_from_pb(const db_tb_user&);
     void copy_to_pb(db_tb_user&);
 private:
@@ -56,9 +64,11 @@ private:
     int32_t map_id ; 
     int32_t pos_x ; 
     int32_t pos_y ; 
+    int32_t hp ; 
+    int32_t mp ; 
 private:
     //dirty flag for update
-    enum { FIELD_COUNT = 6 } ; 
+    enum { FIELD_COUNT = 8 } ; 
     int8_t dirty[FIELD_COUNT] ; 
 };
 #endif

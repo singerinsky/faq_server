@@ -7,6 +7,8 @@ tb_user::tb_user()
     map_id = 0;
     pos_x = 0;
     pos_y = 0;
+    hp = 0;
+    mp = 0;
     memset(dirty,0,sizeof(dirty));
 }
 int tb_user::sql_key(char* buf,int size) const
@@ -54,6 +56,18 @@ int tb_user::sql_data(char* buf,int size,bool check_dirty) const
     {
         if(first_flag==0) {memcpy(buf,",",1); buf+= 1 ; size-= 1 ;}
         len =sql_pos_y(buf,size);
+        buf += len ; size -= len ;first_flag=0;
+    }
+    if((!check_dirty) || dirty[6])
+    {
+        if(first_flag==0) {memcpy(buf,",",1); buf+= 1 ; size-= 1 ;}
+        len =sql_hp(buf,size);
+        buf += len ; size -= len ;first_flag=0;
+    }
+    if((!check_dirty) || dirty[7])
+    {
+        if(first_flag==0) {memcpy(buf,",",1); buf+= 1 ; size-= 1 ;}
+        len =sql_mp(buf,size);
         buf += len ; size -= len ;first_flag=0;
     }
     return origin_size - size ; 
@@ -114,6 +128,8 @@ void tb_user::load_from_pb(const db_tb_user& pb)
     map_id = pb.map_id();
     pos_x = pb.pos_x();
     pos_y = pb.pos_y();
+    hp = pb.hp();
+    mp = pb.mp();
 }
 void tb_user::copy_to_pb(db_tb_user& pb)
 {
@@ -123,4 +139,6 @@ void tb_user::copy_to_pb(db_tb_user& pb)
     pb.set_map_id(map_id);
     pb.set_pos_x(pos_x);
     pb.set_pos_y(pos_y);
+    pb.set_hp(hp);
+    pb.set_mp(mp);
 }

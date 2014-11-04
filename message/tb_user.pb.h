@@ -136,6 +136,20 @@ class db_tb_user : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 pos_y() const;
   inline void set_pos_y(::google::protobuf::int32 value);
 
+  // required int32 hp = 7;
+  inline bool has_hp() const;
+  inline void clear_hp();
+  static const int kHpFieldNumber = 7;
+  inline ::google::protobuf::int32 hp() const;
+  inline void set_hp(::google::protobuf::int32 value);
+
+  // required int32 mp = 8;
+  inline bool has_mp() const;
+  inline void clear_mp();
+  static const int kMpFieldNumber = 8;
+  inline ::google::protobuf::int32 mp() const;
+  inline void set_mp(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:db_tb_user)
  private:
   inline void set_has_id();
@@ -150,6 +164,10 @@ class db_tb_user : public ::google::protobuf::Message {
   inline void clear_has_pos_x();
   inline void set_has_pos_y();
   inline void clear_has_pos_y();
+  inline void set_has_hp();
+  inline void clear_has_hp();
+  inline void set_has_mp();
+  inline void clear_has_mp();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -159,9 +177,11 @@ class db_tb_user : public ::google::protobuf::Message {
   ::google::protobuf::int32 map_id_;
   ::google::protobuf::int32 pos_x_;
   ::google::protobuf::int32 pos_y_;
+  ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 mp_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(8 + 31) / 32];
 
   friend void  protobuf_AddDesc_tb_5fuser_2eproto();
   friend void protobuf_AssignDesc_tb_5fuser_2eproto();
@@ -355,6 +375,50 @@ inline ::google::protobuf::int32 db_tb_user::pos_y() const {
 inline void db_tb_user::set_pos_y(::google::protobuf::int32 value) {
   set_has_pos_y();
   pos_y_ = value;
+}
+
+// required int32 hp = 7;
+inline bool db_tb_user::has_hp() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void db_tb_user::set_has_hp() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void db_tb_user::clear_has_hp() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void db_tb_user::clear_hp() {
+  hp_ = 0;
+  clear_has_hp();
+}
+inline ::google::protobuf::int32 db_tb_user::hp() const {
+  return hp_;
+}
+inline void db_tb_user::set_hp(::google::protobuf::int32 value) {
+  set_has_hp();
+  hp_ = value;
+}
+
+// required int32 mp = 8;
+inline bool db_tb_user::has_mp() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void db_tb_user::set_has_mp() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void db_tb_user::clear_has_mp() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void db_tb_user::clear_mp() {
+  mp_ = 0;
+  clear_has_mp();
+}
+inline ::google::protobuf::int32 db_tb_user::mp() const {
+  return mp_;
+}
+inline void db_tb_user::set_mp(::google::protobuf::int32 value) {
+  set_has_mp();
+  mp_ = value;
 }
 
 

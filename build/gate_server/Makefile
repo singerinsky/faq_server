@@ -328,6 +328,30 @@ map_manager.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.s
 .PHONY : map_manager.cpp.s
 
+npc_object.o: npc_object.cpp.o
+.PHONY : npc_object.o
+
+# target to build an object file
+npc_object.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o
+.PHONY : npc_object.cpp.o
+
+npc_object.i: npc_object.cpp.i
+.PHONY : npc_object.i
+
+# target to preprocess a source file
+npc_object.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.i
+.PHONY : npc_object.cpp.i
+
+npc_object.s: npc_object.cpp.s
+.PHONY : npc_object.s
+
+# target to generate assembly for a file
+npc_object.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.s
+.PHONY : npc_object.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -364,6 +388,9 @@ help:
 	@echo "... map_manager.o"
 	@echo "... map_manager.i"
 	@echo "... map_manager.s"
+	@echo "... npc_object.o"
+	@echo "... npc_object.i"
+	@echo "... npc_object.s"
 .PHONY : help
 
 

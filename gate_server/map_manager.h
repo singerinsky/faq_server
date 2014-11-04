@@ -4,9 +4,10 @@
 #include <set>
 #include <string>
 #include <vector>
-#include "npc_object.h"
 
+class npc_object;
 using namespace std;
+
 class Position
 {
     public:
