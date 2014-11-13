@@ -56,7 +56,7 @@ void map_object::init(std::string map_file)
             TiXmlElement* ele = child_node->ToElement();
             int npc_id = 0;
             ele->Attribute("npc_id",&npc_id);
-            npc_object* object = new npc_object(npc_id);
+            NpcObject* object = new NpcObject(npc_id);
             _all_npc.push_back(object);
             LOG(INFO)<<npc_id;
         }

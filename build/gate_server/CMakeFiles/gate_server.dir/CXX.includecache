@@ -424,24 +424,6 @@ google/protobuf/extension_set.h
 google/protobuf/unknown_field_set.h
 -
 
-/home/gl/faq_server/gate_server/action_heart_message.cpp
-packet.h
-/home/gl/faq_server/gate_server/packet.h
-game_packet.h
-/home/gl/faq_server/gate_server/game_packet.h
-actions_mananger.h
-/home/gl/faq_server/gate_server/actions_mananger.h
-template_message.h
-/home/gl/faq_server/gate_server/template_message.h
-message.pb.h
-/home/gl/faq_server/gate_server/message.pb.h
-message_define.h
-/home/gl/faq_server/gate_server/message_define.h
-head.h
-/home/gl/faq_server/gate_server/head.h
-socket.h
-/home/gl/faq_server/gate_server/socket.h
-
 /home/gl/faq_server/gate_server/action_login_message.cpp
 packet.h
 /home/gl/faq_server/gate_server/packet.h

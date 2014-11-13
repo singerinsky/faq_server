@@ -9,6 +9,7 @@
 #include "map_manager.h"
 #include "game_define.h"
 
+class NpcObject;
 class gate_client;
 
 class LogicPlayer
@@ -39,7 +40,7 @@ class LogicPlayer
             return _user_info; 
         }
 
-        void Attack(npc_object*);
+        void Attack(NpcObject*);
         void Attack(LogicPlayer*);
 
 

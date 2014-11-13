@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-class npc_object;
+class NpcObject;
 using namespace std;
 
 class Position
@@ -72,7 +72,7 @@ class map_object
     private:
         vector<map_cell>    _all_cell;
         int                 _map_id;
-        vector<npc_object*> _all_npc;
+        vector<NpcObject*> _all_npc;
 };
 
 class map_manager:public Singleton<map_manager>

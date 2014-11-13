@@ -4,8 +4,7 @@
 class fighter
 {
     public:
-
-
+        fighter(){}
     
 };
 

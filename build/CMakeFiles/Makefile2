@@ -171,8 +171,8 @@ gate_server/preinstall:
 # Target rules for target gate_server/CMakeFiles/gate_server.dir
 
 # All Build rule for target.
-gate_server/CMakeFiles/gate_server.dir/all: message/CMakeFiles/message_lib.dir/all
 gate_server/CMakeFiles/gate_server.dir/all: common/CMakeFiles/common.dir/all
+gate_server/CMakeFiles/gate_server.dir/all: message/CMakeFiles/message_lib.dir/all
 	$(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/depend
 	$(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles  23 24 25 26 27 28 29 30 31 32
@@ -222,8 +222,8 @@ db_server/preinstall:
 # Target rules for target db_server/CMakeFiles/db_server.dir
 
 # All Build rule for target.
-db_server/CMakeFiles/db_server.dir/all: message/CMakeFiles/message_lib.dir/all
 db_server/CMakeFiles/db_server.dir/all: common/CMakeFiles/common.dir/all
+db_server/CMakeFiles/db_server.dir/all: message/CMakeFiles/message_lib.dir/all
 	$(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/depend
 	$(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles  15 16 17 18 19 20 21 22
