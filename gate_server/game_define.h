@@ -12,5 +12,12 @@ enum
 };
 
 
+enum CARRER_TYPE
+{
+    Soldider,
+    Archer,
+    Wizard
+};
+
 
 #endif

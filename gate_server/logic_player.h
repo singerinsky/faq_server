@@ -8,11 +8,12 @@
 #include "timer.h"
 #include "map_manager.h"
 #include "game_define.h"
+#include "fighter.h"
 
 class NpcObject;
 class gate_client;
 
-class LogicPlayer
+class LogicPlayer:public Fighter
 {
     public:
         LogicPlayer(){
@@ -40,9 +41,7 @@ class LogicPlayer
             return _user_info; 
         }
 
-        void Attack(NpcObject*);
-        void Attack(LogicPlayer*);
-
+        void Attack(Fighter*);
 
     private:
         gate_client* _client;
