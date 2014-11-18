@@ -9,6 +9,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/gate_server/action_move_message.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o"
   "/home/gl/faq_server/gate_server/client_service.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o"
   "/home/gl/faq_server/gate_server/db_connection.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o"
+  "/home/gl/faq_server/gate_server/fighter.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/fighter.cpp.o"
   "/home/gl/faq_server/gate_server/gate_application.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o"
   "/home/gl/faq_server/gate_server/gate_client.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o"
   "/home/gl/faq_server/gate_server/logic_player.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o"

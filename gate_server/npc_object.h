@@ -3,15 +3,18 @@
 
 #include "game_define.h"
 #include "map_manager.h"
+#include "fighter.h"
 
-class NpcObject
+class NpcObject:public Fighter
 {
     public:
         NpcObject(int npc_id)
         {
+            _hp = 0;
+            _mp = 0;
         }
 
-        void init();
+        void  init();
         int   get_hp(){return _hp;} 
         void  set_hp(int new_hp){_hp = new_hp;} 
 

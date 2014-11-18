@@ -40,8 +40,26 @@ class LogicPlayer:public Fighter
         {
             return _user_info; 
         }
+    public:
+        void set_hp(int hp) 
+        {
+            _user_info.set_hp(hp); 
+        }
+        void set_mp(int mp) 
+        {
+            _user_info.set_mp(mp); 
+        }
+       
+        int get_hp() 
+        {
+            return _user_info.get_hp(); 
+        }
 
-        void Attack(Fighter*);
+        int get_mp() 
+        {
+            return _user_info.get_mp(); 
+        }
+ 
 
     private:
         gate_client* _client;

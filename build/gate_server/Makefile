@@ -232,6 +232,30 @@ db_connection.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.s
 .PHONY : db_connection.cpp.s
 
+fighter.o: fighter.cpp.o
+.PHONY : fighter.o
+
+# target to build an object file
+fighter.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/fighter.cpp.o
+.PHONY : fighter.cpp.o
+
+fighter.i: fighter.cpp.i
+.PHONY : fighter.i
+
+# target to preprocess a source file
+fighter.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/fighter.cpp.i
+.PHONY : fighter.cpp.i
+
+fighter.s: fighter.cpp.s
+.PHONY : fighter.s
+
+# target to generate assembly for a file
+fighter.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/fighter.cpp.s
+.PHONY : fighter.cpp.s
+
 gate_application.o: gate_application.cpp.o
 .PHONY : gate_application.o
 
@@ -376,6 +400,9 @@ help:
 	@echo "... db_connection.o"
 	@echo "... db_connection.i"
 	@echo "... db_connection.s"
+	@echo "... fighter.o"
+	@echo "... fighter.i"
+	@echo "... fighter.s"
 	@echo "... gate_application.o"
 	@echo "... gate_application.i"
 	@echo "... gate_application.s"

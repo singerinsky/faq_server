@@ -1,4 +1,5 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/gate_server.dir/fighter.cpp.o"
   "CMakeFiles/gate_server.dir/npc_object.cpp.o"
   "CMakeFiles/gate_server.dir/action_move_message.cpp.o"
   "CMakeFiles/gate_server.dir/action_heart_message.cpp.o"

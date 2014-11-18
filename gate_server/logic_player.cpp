@@ -51,9 +51,3 @@ void LogicPlayer::OnSaveTime()
     _save_timer.set_expire(10000);
 }
 
-void LogicPlayer::Attack(Fighter* fPlayer)
-{
-
-}
-
-
