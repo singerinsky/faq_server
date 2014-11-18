@@ -61,6 +61,7 @@ struct map_cell
 {
     Position _pos; 
     set<LogicPlayer*>   _player_set;
+    set<NpcObject*>     _npc_set;
 };
 
 
@@ -70,9 +71,9 @@ class map_object
         void init(std::string);
         bool init_map_data(std::string,int,int);
     private:
-        vector<map_cell>    _all_cell;
         int                 _map_id;
-        vector<NpcObject*> _all_npc;
+        vector<map_cell>    _all_cell;
+        vector<NpcObject*>  _all_npc;
 };
 
 class map_manager:public Singleton<map_manager>

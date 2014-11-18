@@ -1,6 +1,9 @@
 #ifndef _game_define_h_
 #define _game_define_h_
 
+#define MAP_CELL_WIDTH  30
+#define MAP_CELL_HEIGHT 30
+
 enum
 {
     PLY_ATTR_STR,//强壮

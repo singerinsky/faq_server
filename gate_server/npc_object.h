@@ -20,12 +20,12 @@ class NpcObject:public Fighter
 
         int   get_mp(){return _mp;} 
         void  set_mp(int new_mp){_mp = new_mp;} 
+        bool  is_alive(){return _alive;}
     private:
         Position pos_; 
         int  _attr[PLY_ATTR_END];
         int  _hp;
         int  _mp;
+        bool _alive;
 };
-
-
 #endif

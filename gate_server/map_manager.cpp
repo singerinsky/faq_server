@@ -80,8 +80,8 @@ bool map_object::init_map_data(std::string data,int h,int w)
         map_cell cell;
         int x = index%w; 
         int y = index/h;
-        cell._pos.set_pos_x(x);
-        cell._pos.set_pos_y(y);
+        cell._pos.set_pos_x(x*MAP_CELL_WIDTH);
+        cell._pos.set_pos_y(y*MAP_CELL_HEIGHT);
         _all_cell.push_back(cell);
     }
 // 
