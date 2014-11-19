@@ -6,6 +6,7 @@
 #include <vector>
 
 class NpcObject;
+class packet;
 using namespace std;
 
 class Position
@@ -57,11 +58,16 @@ class Position
 };
 
 class LogicPlayer;
-struct map_cell
+class map_cells
 {
-    Position _pos; 
-    set<LogicPlayer*>   _player_set;
-    set<NpcObject*>     _npc_set;
+    public:
+        int                 _cell_index;
+        set<LogicPlayer*>   _player_set;
+        set<NpcObject*>     _npc_set;
+    public:
+        void                broadcast_region(packet* p);
+        void                enter(LogicPlayer*);
+        void                leave(LogicPlayer*);
 };
 
 
@@ -70,11 +76,31 @@ class map_object
     public:
         void init(std::string);
         bool init_map_data(std::string,int,int);
+        void init_map_region();
+        bool is_vaild(Position& pos)
+        {
+            return (pos.pos_x() >= 0) && (pos.pos_x() <= _map_width) &&  (pos.pos_y() >= 0) && (pos.pos_y() < = _map_height())
+        }
+        bool map2cell(Position& src_pos,Position& rst_pos);
+        int  pos2off(Position& pos)
+        {
+            return pos.pos_y()*_map_width + _map_height 
+        }
+        bool is_set(Position& pos)
+        {
+            int index = pos2off(pos); 
+            return _map_pos.test(index);
+        }
+        map_cells*   get_cells(Position& pos,int cell_offset);
     private:
         int                 _map_id;
-        vector<map_cell>    _all_cell;
+        int                 _map_width;
+        int                 _map_height;
         vector<NpcObject*>  _all_npc;
+        std::bitset<MAP_MAX_POS>    _map_pos;
+        map_cells*          _cells_vec;
 };
+
 
 class map_manager:public Singleton<map_manager>
 {

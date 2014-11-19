@@ -1,9 +1,9 @@
 <map id="1" length="10" width="10">
     <map_data   data="1,2,3,4,5,7,63"/>
     <npc_list>
-        <npc npc_id="" name="" img=""/> 
-        <npc npc_id="" name="" img=""/> 
-        <npc npc_id="" name="" img=""/> 
-        <npc npc_id="" name="" img=""/> 
+        <npc npc_id="" name="" img="" pos_x="" pos_y=""/> 
+        <npc npc_id="" name="" img="" pos_x="" pos_y=""/> 
+        <npc npc_id="" name="" img="" pos_x="" pos_y=""/> 
+        <npc npc_id="" name="" img="" pos_x="" pos_y=""/> 
     </npc_list>
 </map>

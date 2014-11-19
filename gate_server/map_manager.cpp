@@ -4,10 +4,28 @@
 #include "util_file.h"
 #include "head.h"
 #include "npc_object.h"
+#include "packet.h"
 
 template<> 
 map_manager* Singleton<map_manager>::_instance = 0;
 
+//TODO 
+void map_cell::broadcast_region(packet* p)
+{
+
+}
+
+//TODO
+void map_cell::enter(LogicPlayer* player)
+{
+    _player_set.insert(player);
+}
+
+//TODO
+void map_cell::leave(LogicPlayer* player)
+{
+   _player_set.erase(player); 
+}
 
 bool map_manager::init()
 {
@@ -46,7 +64,11 @@ void map_object::init(std::string map_file)
     TiXmlElement* ele_map_data = map_data->ToElement();
     std::string map_data_str = ele_map_data->Attribute("data");
     LOG(INFO)<<"load map "<<map_file<<" success!";
-
+    if(init_map_data(mpa_data_str,width,length) == false)
+    {
+        LOG(ERROR)<<"init map data "<<map_file<<" error";
+        assert(false);
+    }
     TiXmlNode* npc_node = node->FirstChild("npc_list");
     if(npc_node)
     {
@@ -65,8 +87,18 @@ void map_object::init(std::string map_file)
     delete doc;
 }
 
-bool map_object::init_map_data(std::string data,int h,int w)
+bool map_object::map2cell(Position& src_pos,Position& rst_pos)
 {
+    if(!is_vaild(src_pos))return false;
+    rst_pos.set_pos_x(src_pos.pos_x()/MAP_CELL_WIDTH);
+    rst_pos.set_pos_y(src_pos.pos_y()/MAP_CELL_HEIGHT);
+    return true;
+}
+
+bool map_object::init_map_data(std::string data,int w,int h)
+{
+    _map_width = w;
+    _map_height = h;
     std::vector<std::string> data_split;
     split(data,',',data_split);
 
@@ -76,14 +108,14 @@ bool map_object::init_map_data(std::string data,int h,int w)
     int index = 0;
     for(auto itr:data_split)
     {
-        LOG(INFO)<<atoi((itr).c_str()); 
-        map_cell cell;
-        int x = index%w; 
-        int y = index/h;
-        cell._pos.set_pos_x(x*MAP_CELL_WIDTH);
-        cell._pos.set_pos_y(y*MAP_CELL_HEIGHT);
-        _all_cell.push_back(cell);
+        int map_type = atoi((itr).c_str()); 
+        if(map_type == 1)
+        {
+            _map_pos.set(index);
+        }
     }
+    
+    _cells_vec = new map_cells[((_map_height+ MAP_CELL_HEIGHT - 1)/MAP_CELL_HEIGHT)*((_map_width + MAP_CELL_WIDTH - 1)/MAP_CELL_WIDTH)];    
 // 
 //     auto test_itr = data_split.begin();
 //     for(;test_itr != data_split.end();test_itr++)
@@ -92,6 +124,33 @@ bool map_object::init_map_data(std::string data,int h,int w)
 //     }
     return true;
 }
+
+map_cells* map_object::get_player_in_cells(Position pos,int cell_offset)
+{
+    if(CELL_EAST&cell_offset)
+    {
+        pos.set_pos_x(pos.pos_x()+1);
+    }
+    if(CELL_WEST&cell_offset)
+    {
+        pos.set_pos_x(pos.pos_x()-1); 
+    }
+    if(CELL_NORTH&cell_offset)
+    {
+        pos.set_pos_y(pos.pos_y() - 1); 
+    }
+    if(CELL_SOUTH&cell_offset)
+    {
+        pos.set_pos_y(pos.pos_y() + 1); 
+    }
+
+    if(pos.pos_x()< 0 || pos.pos_y() < 0)return NULL;
+    if(pos.pos_x() > _map_width)return NULL;
+    if(pos.pos_y() > _map_height) return NULL;
+    return _cells_vec + pos.pos_y()*_map_width + pos.pos_x();
+}
+
+
 
 
 

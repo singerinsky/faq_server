@@ -1,8 +1,25 @@
 #ifndef _game_define_h_
 #define _game_define_h_
 
-#define MAP_CELL_WIDTH  30
-#define MAP_CELL_HEIGHT 30
+#define MAP_CELL_WIDTH  10
+#define MAP_CELL_HEIGHT 10
+
+#define MOVE_SPEED  10
+
+#define MAP_MAX_POS 40000
+
+enum
+{
+    CELL_SLEF  = 0,
+    CELL_EAST  = 0x1<<1,
+    CELL_SOUTH = 0x1<<2,
+    CELL_WEST  = 0x1<<3,
+    CELL_NORTH = 0x1<<4,
+    CELL_SOUTH_EAST = CELL_EAST|CELL_SOUTH,
+    CELL_SOUTH_WEST = CELL_WEST|CELL_SOUTH,
+    CELL_NORTH_EAST = CELL_NORTH|CELL_EAST,
+    CELL_NORTH_WEST = CELL_NORTH|CELL_WEST,
+};
 
 enum
 {
