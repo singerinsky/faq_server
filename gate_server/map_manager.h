@@ -4,6 +4,8 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <bitset>
+#include "game_define.h"
 
 class NpcObject;
 class packet;
@@ -70,6 +72,8 @@ class map_cells
         void                leave(LogicPlayer*);
 };
 
+typedef std::set<LogicPlayer*> player_set_t;
+typedef std::vector<player_set_t*> player_set_vec_t;
 
 class map_object
 {
@@ -79,19 +83,20 @@ class map_object
         void init_map_region();
         bool is_vaild(Position& pos)
         {
-            return (pos.pos_x() >= 0) && (pos.pos_x() <= _map_width) &&  (pos.pos_y() >= 0) && (pos.pos_y() < = _map_height())
+            return (pos.pos_x() >= 0) && (pos.pos_x() <= _map_width) &&  (pos.pos_y() >= 0) && (pos.pos_y() <= _map_height);
         }
         bool map2cell(Position& src_pos,Position& rst_pos);
         int  pos2off(Position& pos)
         {
-            return pos.pos_y()*_map_width + _map_height 
+            return pos.pos_y()*_map_width + _map_height ;
         }
         bool is_set(Position& pos)
         {
             int index = pos2off(pos); 
             return _map_pos.test(index);
         }
-        map_cells*   get_cells(Position& pos,int cell_offset);
+        map_cells*   get_cells(Position pos,int cell_offset);
+        void         fill_all_player_cells(Position& pos, player_set_vec_t*);
     private:
         int                 _map_id;
         int                 _map_width;

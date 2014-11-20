@@ -313,6 +313,7 @@ gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/log_
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/logging.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/vlog_is_on.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/head.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/packet.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/tinyxml.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/util_file.h

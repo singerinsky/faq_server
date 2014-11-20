@@ -198,6 +198,14 @@ singleton.h
 tinyxml.h
 ../gate_server/../common/tinyxml.h
 
+../gate_server/../common/packet.h
+stdint.h
+-
+endian.h
+-
+byteswap.h
+-
+
 ../gate_server/../common/singleton.h
 cstdlib
 -
@@ -279,6 +287,8 @@ head.h
 /home/gl/faq_server/gate_server/head.h
 npc_object.h
 /home/gl/faq_server/gate_server/npc_object.h
+packet.h
+/home/gl/faq_server/gate_server/packet.h
 
 /home/gl/faq_server/gate_server/map_manager.h
 singleton.h
@@ -289,10 +299,10 @@ string
 -
 vector
 -
-
-/home/gl/faq_server/gate_server/npc_object.cpp
-npc_object.h
-/home/gl/faq_server/gate_server/npc_object.h
+bitset
+-
+game_define.h
+/home/gl/faq_server/gate_server/game_define.h
 
 /home/gl/faq_server/gate_server/npc_object.h
 game_define.h

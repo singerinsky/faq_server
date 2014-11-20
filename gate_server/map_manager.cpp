@@ -10,19 +10,19 @@ template<>
 map_manager* Singleton<map_manager>::_instance = 0;
 
 //TODO 
-void map_cell::broadcast_region(packet* p)
+void map_cells::broadcast_region(packet* p)
 {
 
 }
 
 //TODO
-void map_cell::enter(LogicPlayer* player)
+void map_cells::enter(LogicPlayer* player)
 {
     _player_set.insert(player);
 }
 
 //TODO
-void map_cell::leave(LogicPlayer* player)
+void map_cells::leave(LogicPlayer* player)
 {
    _player_set.erase(player); 
 }
@@ -64,7 +64,7 @@ void map_object::init(std::string map_file)
     TiXmlElement* ele_map_data = map_data->ToElement();
     std::string map_data_str = ele_map_data->Attribute("data");
     LOG(INFO)<<"load map "<<map_file<<" success!";
-    if(init_map_data(mpa_data_str,width,length) == false)
+    if(init_map_data(map_data_str,width,length) == false)
     {
         LOG(ERROR)<<"init map data "<<map_file<<" error";
         assert(false);
@@ -125,21 +125,37 @@ bool map_object::init_map_data(std::string data,int w,int h)
     return true;
 }
 
-map_cells* map_object::get_player_in_cells(Position pos,int cell_offset)
+map_cells* map_object::get_cells(Position pos,int cell_offset)
 {
-    if(CELL_EAST&cell_offset)
+    assert(cell_offset<=8);
+    assert(cell_offset>=0);
+    static char cell_seq[] ={
+        CELL_SLEF  ,
+        CELL_EAST  ,
+        CELL_SOUTH ,
+        CELL_WEST  ,
+        CELL_NORTH ,
+        CELL_SOUTH_EAST,
+        CELL_SOUTH_WEST,
+        CELL_NORTH_EAST,
+        CELL_NORTH_WEST
+    };
+
+    char cell_offset_value = cell_seq[cell_offset];
+
+    if(CELL_EAST&cell_offset_value)
     {
         pos.set_pos_x(pos.pos_x()+1);
     }
-    if(CELL_WEST&cell_offset)
+    if(CELL_WEST&cell_offset_value)
     {
         pos.set_pos_x(pos.pos_x()-1); 
     }
-    if(CELL_NORTH&cell_offset)
+    if(CELL_NORTH&cell_offset_value)
     {
         pos.set_pos_y(pos.pos_y() - 1); 
     }
-    if(CELL_SOUTH&cell_offset)
+    if(CELL_SOUTH&cell_offset_value)
     {
         pos.set_pos_y(pos.pos_y() + 1); 
     }
@@ -151,6 +167,15 @@ map_cells* map_object::get_player_in_cells(Position pos,int cell_offset)
 }
 
 
+void map_object::fill_all_player_cells(Position& pos,player_set_vec_t* ply_vec)
+{
+    for(int i=0;i<=8;i++)
+    {
+        map_cells* cell = get_cells(pos,i); 
+        if(cell == NULL)continue;
+        ply_vec->push_back(&(cell->_player_set));
+    }
+}
 
 
 

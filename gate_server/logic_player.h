@@ -71,6 +71,8 @@ class LogicPlayer:public Fighter
         Position _pos;
         tb_user _user_info;
         template_timer<LogicPlayer,&LogicPlayer::OnSaveTime>    _save_timer;
+
+        player_set_vec_t    _player_round_set;
 };
 
 #endif
