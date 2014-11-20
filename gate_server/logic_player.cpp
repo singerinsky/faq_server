@@ -51,3 +51,17 @@ void LogicPlayer::OnSaveTime()
     _save_timer.set_expire(10000);
 }
 
+void LogicPlayer::broad_round_player(packet* data)
+{
+    std::vector<player_set_t*>::iterator itr = _player_round_set.begin();
+    while(itr != _player_round_set.end())
+    {
+        player_set_t::iterator cell_itr = (*itr)->begin(); 
+        while(cell_itr != (*itr)->end())
+        {
+            cell_itr++; 
+            LOG(INFO)<<"player in round";
+        }
+        itr++;
+    }
+}

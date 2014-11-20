@@ -60,6 +60,7 @@ class LogicPlayer:public Fighter
             return _user_info.get_mp(); 
         }
  
+        void broad_round_player(packet*);
 
     private:
         gate_client* _client;

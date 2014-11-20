@@ -78,6 +78,10 @@ typedef std::vector<player_set_t*> player_set_vec_t;
 class map_object
 {
     public:
+        ~map_object()
+        {
+            delete[] _cells_vec;
+        }
         void init(std::string);
         bool init_map_data(std::string,int,int);
         void init_map_region();
