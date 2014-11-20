@@ -117,6 +117,9 @@ class map_manager:public Singleton<map_manager>
         friend Singleton<map_manager>;
     public:
         bool init();
+        map_object* get_map(int id);
+    private:
+        std::map<int ,map_object*> _all_map;
 };
 
 

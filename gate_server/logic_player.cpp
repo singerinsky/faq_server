@@ -5,6 +5,7 @@
 #include "tb_user.h"
 #include "gate_application.h"
 #include "db_connection.h"
+#include "map_object.h"
 
 void LogicPlayer::LoadPlayerInfo()
 {
@@ -64,4 +65,20 @@ void LogicPlayer::broad_round_player(packet* data)
         }
         itr++;
     }
+}
+
+void LogicPlayer::enter_map(int map_id,int x,int y)
+{
+    if(_user_info.get_map_id() == map_id)
+        return;
+    map_object map_enter= Singleton<map_manager>::GetInstance()->get_map(map_id);    
+    if(map_enter == NULL)
+    {
+        LOG(ERROR)<<"require enter a unexist map";
+        return; 
+    }
+
+    LOG(INFO)<<"player "<< _user_info.get_id()<<" require enter map "<<map_id <<" x:"<<x<<"  y:"<<y;
+    _map =  map_enter; 
+    _user_info.set_map_id(map_id);
 }

@@ -12,6 +12,7 @@
 
 class NpcObject;
 class gate_client;
+class map_object;
 
 class LogicPlayer:public Fighter
 {
@@ -45,6 +46,7 @@ class LogicPlayer:public Fighter
         {
             _user_info.set_hp(hp); 
         }
+
         void set_mp(int mp) 
         {
             _user_info.set_mp(mp); 
@@ -61,6 +63,7 @@ class LogicPlayer:public Fighter
         }
  
         void broad_round_player(packet*);
+        void enter_map(int map_id,int x,int y);
 
     private:
         gate_client* _client;
@@ -68,7 +71,8 @@ class LogicPlayer:public Fighter
         int  _level;
         int  _exp;
         string _name;
-        int  _attr[PLY_ATTR_END];
+
+        map_object* _map;
         Position _pos;
         tb_user _user_info;
         template_timer<LogicPlayer,&LogicPlayer::OnSaveTime>    _save_timer;

@@ -177,6 +177,14 @@ void map_object::fill_all_player_cells(Position& pos,player_set_vec_t* ply_vec)
     }
 }
 
-
+map_object* map_manager::get_map(int map_id)
+{
+    auto itr = _all_map.find(map_id);
+    if(itr != _all_map.end())
+    {
+        return itr->second;    
+    }
+    return NULL;
+}
 
 
