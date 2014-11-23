@@ -301,6 +301,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
  /home/gl/faq_server/gate_server/logic_player.cpp
  /home/gl/faq_server/gate_server/logic_player.h
  /home/gl/faq_server/gate_server/map_manager.h
+ /home/gl/faq_server/gate_server/npc_object.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o
  .././include/event2/buffer.h
  .././include/event2/bufferevent.h

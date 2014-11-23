@@ -217,9 +217,19 @@ int map_object::step(Position src_pos,Position rst_pos,Position* delt_pos)
 
     for(int i=0;i<step_count;i++)
     {
-        src.set_pos_x(src_pos.pos_x() + delt_pos->pos_x()); 
-        src.set_pos_y(src_pos.pos_y() + delt_pos->pos_y()); 
-        is(!is_set(src))return -1;
+        src_pos.set_pos_x(src_pos.pos_x() + delt_pos->pos_x()); 
+        src_pos.set_pos_y(src_pos.pos_y() + delt_pos->pos_y()); 
+        if(!is_set(src_pos))return -1;
     }
-    return 0;
+    return step_count;
+}
+
+void map_object::get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set)
+{
+    for(int i=0;i<=8;i++)
+    {
+        map_cells* cell = get_cells(pos,i); 
+        if(cell == NULL)continue;
+        npc_set.insert(cell->_npc_set.begin(),cell->_npc_set.end());
+    }
 }

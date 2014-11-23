@@ -6,6 +6,7 @@
 #include "gate_application.h"
 #include "db_connection.h"
 #include "map_manager.h"
+#include "npc_object.h"
 
 void LogicPlayer::LoadPlayerInfo()
 {
@@ -37,6 +38,14 @@ void LogicPlayer::Move(int x,int y)
         _user_info.set_pos_x(x);
         _user_info.set_pos_y(y);
         LOG(INFO)<<"player "<<_user_info.get_id()<<" move to "<<x<<":"<<y;
+
+        //show all new npc
+        set<NpcObject*> all_npc;
+        _map->get_all_npc_round(_pos,all_npc);
+        for(auto itr = all_npc.begin();itr!= all_npc.end();itr++)
+        {
+            LOG(INFO)<<"NPC "<<(*itr)->get_id()<<" around you"; 
+        }
     }
 }
 
@@ -81,4 +90,6 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
     LOG(INFO)<<"player "<< _user_info.get_id()<<" require enter map "<<map_id <<" x:"<<x<<"  y:"<<y;
     _map =  map_enter; 
     _user_info.set_map_id(map_id);
+    _user_info.set_pos_x(x);
+    _user_info.set_pos_y(y);
 }

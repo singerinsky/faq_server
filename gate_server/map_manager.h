@@ -102,6 +102,7 @@ class map_object
         }
         map_cells*   get_cells(Position pos,int cell_offset);
         void         fill_all_player_cells(Position& pos, player_set_vec_t*);
+        void         get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set);
         int          step(Position src_pos,Position rst_pos,Position* delt_pos);
     private:
         int                 _map_id;
