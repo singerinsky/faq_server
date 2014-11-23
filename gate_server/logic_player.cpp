@@ -5,7 +5,7 @@
 #include "tb_user.h"
 #include "gate_application.h"
 #include "db_connection.h"
-#include "map_object.h"
+#include "map_manager.h"
 
 void LogicPlayer::LoadPlayerInfo()
 {
@@ -71,7 +71,7 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
 {
     if(_user_info.get_map_id() == map_id)
         return;
-    map_object map_enter= Singleton<map_manager>::GetInstance()->get_map(map_id);    
+    map_object* map_enter= Singleton<map_manager>::GetInstance()->get_map(map_id);    
     if(map_enter == NULL)
     {
         LOG(ERROR)<<"require enter a unexist map";

@@ -208,6 +208,30 @@ client_service.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/client_service.cpp.s
 .PHONY : client_service.cpp.s
 
+config_manager.o: config_manager.cpp.o
+.PHONY : config_manager.o
+
+# target to build an object file
+config_manager.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.o
+.PHONY : config_manager.cpp.o
+
+config_manager.i: config_manager.cpp.i
+.PHONY : config_manager.i
+
+# target to preprocess a source file
+config_manager.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.i
+.PHONY : config_manager.cpp.i
+
+config_manager.s: config_manager.cpp.s
+.PHONY : config_manager.s
+
+# target to generate assembly for a file
+config_manager.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.s
+.PHONY : config_manager.cpp.s
+
 db_connection.o: db_connection.cpp.o
 .PHONY : db_connection.o
 
@@ -376,6 +400,30 @@ npc_object.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.s
 .PHONY : npc_object.cpp.s
 
+player_manager.o: player_manager.cpp.o
+.PHONY : player_manager.o
+
+# target to build an object file
+player_manager.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.o
+.PHONY : player_manager.cpp.o
+
+player_manager.i: player_manager.cpp.i
+.PHONY : player_manager.i
+
+# target to preprocess a source file
+player_manager.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.i
+.PHONY : player_manager.cpp.i
+
+player_manager.s: player_manager.cpp.s
+.PHONY : player_manager.s
+
+# target to generate assembly for a file
+player_manager.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.s
+.PHONY : player_manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -397,6 +445,9 @@ help:
 	@echo "... client_service.o"
 	@echo "... client_service.i"
 	@echo "... client_service.s"
+	@echo "... config_manager.o"
+	@echo "... config_manager.i"
+	@echo "... config_manager.s"
 	@echo "... db_connection.o"
 	@echo "... db_connection.i"
 	@echo "... db_connection.s"
@@ -418,6 +469,9 @@ help:
 	@echo "... npc_object.o"
 	@echo "... npc_object.i"
 	@echo "... npc_object.s"
+	@echo "... player_manager.o"
+	@echo "... player_manager.i"
+	@echo "... player_manager.s"
 .PHONY : help
 
 

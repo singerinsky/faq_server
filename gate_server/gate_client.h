@@ -1,10 +1,10 @@
 #ifndef _GATE_CLIENT_H_
-#define _GATE_CLEINT_H_
+#define _GATE_CLIENT_H_
 #include "socket.h"
 #include "timer.h"
-#include "logic_player.h"
 
-enum
+class LogicPlayer;
+enum CLIENT_STATUS
 {
     UN_LOGIN,
     HAS_LOGIN, 

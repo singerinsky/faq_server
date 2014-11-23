@@ -5,14 +5,14 @@
 #include <dirent.h>
 
 
-int main()
+int check_process()
 {
     pid_t pid = getpid();
     printf("%d",pid);
     FILE* file = fopen("pid.data","w+b"); 
     if(file == NULL)
     {
-        perror("error open pid file"); 
+        perror("error open pid lock file!"); 
         return 0;
     }
 
@@ -22,7 +22,7 @@ int main()
     {
         printf("process is not running"); 
         fprintf(file,"%d",pid);
-        return 1;
+        return 0;
     }
 
     char process_buffer[100];
@@ -36,6 +36,7 @@ int main()
     }else
     {
         closedir(dir); 
+        return last_pid;
     }
 
     fclose(file);
@@ -43,5 +44,19 @@ int main()
     //memset(write_str,0,100);
     
 
+    return 0;
+}
+
+int main()
+{
+    int pid = check_process();
+    if(pid == 0)
+    {
+        printf("process is not running ,you can run this process");
+    }
+    else
+    {
+        printf("process is running ,can't run this process"); 
+    }
     return 1;
 }

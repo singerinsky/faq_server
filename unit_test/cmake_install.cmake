@@ -36,7 +36,8 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/gl/faq_server/unit_test/message/cmake_install.cmake")
   INCLUDE("/home/gl/faq_server/unit_test/common/cmake_install.cmake")
-  INCLUDE("/home/gl/faq_server/unit_test/unit_test/cmake_install.cmake")
+  INCLUDE("/home/gl/faq_server/unit_test/gate_server/cmake_install.cmake")
+  INCLUDE("/home/gl/faq_server/unit_test/db_server/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

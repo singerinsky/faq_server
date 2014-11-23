@@ -9,11 +9,12 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
   "../common/CMakeLists.txt"
+  "../db_server/CMakeLists.txt"
+  "../gate_server/CMakeLists.txt"
   "../message/CMakeLists.txt"
   "CMakeFiles/2.8.12.2/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
-  "CMakeLists.txt"
   "/usr/share/cmake-2.8/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCommonLanguageInclude.cmake"
@@ -40,12 +41,14 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "message/CMakeFiles/CMakeDirectoryInformation.cmake"
   "common/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "unit_test/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "gate_server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "db_server/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "message/CMakeFiles/message_lib.dir/DependInfo.cmake"
   "common/CMakeFiles/common.dir/DependInfo.cmake"
-  "unit_test/CMakeFiles/unit_test.dir/DependInfo.cmake"
+  "gate_server/CMakeFiles/gate_server.dir/DependInfo.cmake"
+  "db_server/CMakeFiles/db_server.dir/DependInfo.cmake"
   )

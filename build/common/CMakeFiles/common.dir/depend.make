@@ -49,6 +49,9 @@ common/CMakeFiles/common.dir/job_factory.cpp.o: ../common/worker.h
 common/CMakeFiles/common.dir/job_factory.cpp.o: ../include/tinystr.h
 common/CMakeFiles/common.dir/job_factory.cpp.o: ../include/tinyxml.h
 
+common/CMakeFiles/common.dir/md5.cpp.o: ../common/md5.cpp
+common/CMakeFiles/common.dir/md5.cpp.o: ../common/md5.h
+
 common/CMakeFiles/common.dir/mysql_connection.cpp.o: .././include/mysql/my_alloc.h
 common/CMakeFiles/common.dir/mysql_connection.cpp.o: .././include/mysql/my_list.h
 common/CMakeFiles/common.dir/mysql_connection.cpp.o: .././include/mysql/mysql.h

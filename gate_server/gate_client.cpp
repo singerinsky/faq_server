@@ -6,6 +6,7 @@
 #include "sql_define.h"
 #include "db_connection.h"
 #include "client_service.h"
+#include "logic_player.h"
 
 gate_client::~gate_client()
 {

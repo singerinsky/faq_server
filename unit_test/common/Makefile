@@ -184,6 +184,30 @@ job_factory.cpp.s:
 	cd /home/gl/faq_server/unit_test && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.s
 .PHONY : job_factory.cpp.s
 
+md5.o: md5.cpp.o
+.PHONY : md5.o
+
+# target to build an object file
+md5.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/md5.cpp.o
+.PHONY : md5.cpp.o
+
+md5.i: md5.cpp.i
+.PHONY : md5.i
+
+# target to preprocess a source file
+md5.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/md5.cpp.i
+.PHONY : md5.cpp.i
+
+md5.s: md5.cpp.s
+.PHONY : md5.s
+
+# target to generate assembly for a file
+md5.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/md5.cpp.s
+.PHONY : md5.cpp.s
+
 mysql_connection.o: mysql_connection.cpp.o
 .PHONY : mysql_connection.o
 
@@ -466,6 +490,9 @@ help:
 	@echo "... job_factory.o"
 	@echo "... job_factory.i"
 	@echo "... job_factory.s"
+	@echo "... md5.o"
+	@echo "... md5.i"
+	@echo "... md5.s"
 	@echo "... mysql_connection.o"
 	@echo "... mysql_connection.i"
 	@echo "... mysql_connection.s"

@@ -136,6 +136,54 @@ action_heart_message.cpp.s:
 	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.s
 .PHONY : action_heart_message.cpp.s
 
+action_login_message.o: action_login_message.cpp.o
+.PHONY : action_login_message.o
+
+# target to build an object file
+action_login_message.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o
+.PHONY : action_login_message.cpp.o
+
+action_login_message.i: action_login_message.cpp.i
+.PHONY : action_login_message.i
+
+# target to preprocess a source file
+action_login_message.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.i
+.PHONY : action_login_message.cpp.i
+
+action_login_message.s: action_login_message.cpp.s
+.PHONY : action_login_message.s
+
+# target to generate assembly for a file
+action_login_message.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.s
+.PHONY : action_login_message.cpp.s
+
+action_move_message.o: action_move_message.cpp.o
+.PHONY : action_move_message.o
+
+# target to build an object file
+action_move_message.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o
+.PHONY : action_move_message.cpp.o
+
+action_move_message.i: action_move_message.cpp.i
+.PHONY : action_move_message.i
+
+# target to preprocess a source file
+action_move_message.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.i
+.PHONY : action_move_message.cpp.i
+
+action_move_message.s: action_move_message.cpp.s
+.PHONY : action_move_message.s
+
+# target to generate assembly for a file
+action_move_message.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.s
+.PHONY : action_move_message.cpp.s
+
 client_service.o: client_service.cpp.o
 .PHONY : client_service.o
 
@@ -160,6 +208,30 @@ client_service.cpp.s:
 	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/client_service.cpp.s
 .PHONY : client_service.cpp.s
 
+config_manager.o: config_manager.cpp.o
+.PHONY : config_manager.o
+
+# target to build an object file
+config_manager.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.o
+.PHONY : config_manager.cpp.o
+
+config_manager.i: config_manager.cpp.i
+.PHONY : config_manager.i
+
+# target to preprocess a source file
+config_manager.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.i
+.PHONY : config_manager.cpp.i
+
+config_manager.s: config_manager.cpp.s
+.PHONY : config_manager.s
+
+# target to generate assembly for a file
+config_manager.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.s
+.PHONY : config_manager.cpp.s
+
 db_connection.o: db_connection.cpp.o
 .PHONY : db_connection.o
 
@@ -183,6 +255,30 @@ db_connection.s: db_connection.cpp.s
 db_connection.cpp.s:
 	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.s
 .PHONY : db_connection.cpp.s
+
+fighter.o: fighter.cpp.o
+.PHONY : fighter.o
+
+# target to build an object file
+fighter.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/fighter.cpp.o
+.PHONY : fighter.cpp.o
+
+fighter.i: fighter.cpp.i
+.PHONY : fighter.i
+
+# target to preprocess a source file
+fighter.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/fighter.cpp.i
+.PHONY : fighter.cpp.i
+
+fighter.s: fighter.cpp.s
+.PHONY : fighter.s
+
+# target to generate assembly for a file
+fighter.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/fighter.cpp.s
+.PHONY : fighter.cpp.s
 
 gate_application.o: gate_application.cpp.o
 .PHONY : gate_application.o
@@ -232,6 +328,102 @@ gate_client.cpp.s:
 	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.s
 .PHONY : gate_client.cpp.s
 
+logic_player.o: logic_player.cpp.o
+.PHONY : logic_player.o
+
+# target to build an object file
+logic_player.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
+.PHONY : logic_player.cpp.o
+
+logic_player.i: logic_player.cpp.i
+.PHONY : logic_player.i
+
+# target to preprocess a source file
+logic_player.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.i
+.PHONY : logic_player.cpp.i
+
+logic_player.s: logic_player.cpp.s
+.PHONY : logic_player.s
+
+# target to generate assembly for a file
+logic_player.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.s
+.PHONY : logic_player.cpp.s
+
+map_manager.o: map_manager.cpp.o
+.PHONY : map_manager.o
+
+# target to build an object file
+map_manager.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o
+.PHONY : map_manager.cpp.o
+
+map_manager.i: map_manager.cpp.i
+.PHONY : map_manager.i
+
+# target to preprocess a source file
+map_manager.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.i
+.PHONY : map_manager.cpp.i
+
+map_manager.s: map_manager.cpp.s
+.PHONY : map_manager.s
+
+# target to generate assembly for a file
+map_manager.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.s
+.PHONY : map_manager.cpp.s
+
+npc_object.o: npc_object.cpp.o
+.PHONY : npc_object.o
+
+# target to build an object file
+npc_object.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o
+.PHONY : npc_object.cpp.o
+
+npc_object.i: npc_object.cpp.i
+.PHONY : npc_object.i
+
+# target to preprocess a source file
+npc_object.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.i
+.PHONY : npc_object.cpp.i
+
+npc_object.s: npc_object.cpp.s
+.PHONY : npc_object.s
+
+# target to generate assembly for a file
+npc_object.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.s
+.PHONY : npc_object.cpp.s
+
+player_manager.o: player_manager.cpp.o
+.PHONY : player_manager.o
+
+# target to build an object file
+player_manager.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.o
+.PHONY : player_manager.cpp.o
+
+player_manager.i: player_manager.cpp.i
+.PHONY : player_manager.i
+
+# target to preprocess a source file
+player_manager.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.i
+.PHONY : player_manager.cpp.i
+
+player_manager.s: player_manager.cpp.s
+.PHONY : player_manager.s
+
+# target to generate assembly for a file
+player_manager.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.s
+.PHONY : player_manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -244,18 +436,42 @@ help:
 	@echo "... action_heart_message.o"
 	@echo "... action_heart_message.i"
 	@echo "... action_heart_message.s"
+	@echo "... action_login_message.o"
+	@echo "... action_login_message.i"
+	@echo "... action_login_message.s"
+	@echo "... action_move_message.o"
+	@echo "... action_move_message.i"
+	@echo "... action_move_message.s"
 	@echo "... client_service.o"
 	@echo "... client_service.i"
 	@echo "... client_service.s"
+	@echo "... config_manager.o"
+	@echo "... config_manager.i"
+	@echo "... config_manager.s"
 	@echo "... db_connection.o"
 	@echo "... db_connection.i"
 	@echo "... db_connection.s"
+	@echo "... fighter.o"
+	@echo "... fighter.i"
+	@echo "... fighter.s"
 	@echo "... gate_application.o"
 	@echo "... gate_application.i"
 	@echo "... gate_application.s"
 	@echo "... gate_client.o"
 	@echo "... gate_client.i"
 	@echo "... gate_client.s"
+	@echo "... logic_player.o"
+	@echo "... logic_player.i"
+	@echo "... logic_player.s"
+	@echo "... map_manager.o"
+	@echo "... map_manager.i"
+	@echo "... map_manager.s"
+	@echo "... npc_object.o"
+	@echo "... npc_object.i"
+	@echo "... npc_object.s"
+	@echo "... player_manager.o"
+	@echo "... player_manager.i"
+	@echo "... player_manager.s"
 .PHONY : help
 
 

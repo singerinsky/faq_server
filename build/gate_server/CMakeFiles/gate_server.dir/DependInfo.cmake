@@ -8,6 +8,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/gate_server/action_login_message.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o"
   "/home/gl/faq_server/gate_server/action_move_message.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o"
   "/home/gl/faq_server/gate_server/client_service.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o"
+  "/home/gl/faq_server/gate_server/config_manager.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.o"
   "/home/gl/faq_server/gate_server/db_connection.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/db_connection.cpp.o"
   "/home/gl/faq_server/gate_server/fighter.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/fighter.cpp.o"
   "/home/gl/faq_server/gate_server/gate_application.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o"
@@ -15,6 +16,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/gate_server/logic_player.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o"
   "/home/gl/faq_server/gate_server/map_manager.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o"
   "/home/gl/faq_server/gate_server/npc_object.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o"
+  "/home/gl/faq_server/gate_server/player_manager.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

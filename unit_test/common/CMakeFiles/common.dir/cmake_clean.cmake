@@ -8,6 +8,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/common.dir/tinyxml.cpp.o"
   "CMakeFiles/common.dir/reactor_core.cpp.o"
   "CMakeFiles/common.dir/timer.cpp.o"
+  "CMakeFiles/common.dir/md5.cpp.o"
   "CMakeFiles/common.dir/thread.cpp.o"
   "CMakeFiles/common.dir/mysql_connection.cpp.o"
   "CMakeFiles/common.dir/server_application.cpp.o"

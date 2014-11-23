@@ -45,6 +45,8 @@ google/protobuf/generated_enum_reflection.h
 -
 google/protobuf/unknown_field_set.h
 -
+tb_user.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
 
 /home/gl/faq_server/message/message.pb.cc
 message.pb.h
@@ -87,10 +89,40 @@ google/protobuf/unknown_field_set.h
 -
 db_message.pb.h
 /home/gl/faq_server/message/db_message.pb.h
+tb_user.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
 
-/home/gl/faq_server/message/role_info.pb.cc
-role_info.pb.h
-/home/gl/faq_server/message/role_info.pb.h
+/home/gl/faq_server/message/sql_binder.h
+stdint.h
+-
+string.h
+-
+stdio.h
+-
+string
+-
+vector
+-
+
+/home/gl/faq_server/message/sql_define.cpp
+sql_define.h
+/home/gl/faq_server/message/sql_define.h
+
+/home/gl/faq_server/message/sql_define.h
+
+/home/gl/faq_server/message/tb_user.cpp
+tb_user.h
+/home/gl/faq_server/message/tb_user.h
+
+/home/gl/faq_server/message/tb_user.h
+tb_user.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
+sql_binder.h
+/home/gl/faq_server/message/sql_binder.h
+
+/home/gl/faq_server/message/tb_user.pb.cc
+tb_user.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
 algorithm
 -
 google/protobuf/stubs/common.h
@@ -110,7 +142,7 @@ google/protobuf/reflection_ops.h
 google/protobuf/wire_format.h
 -
 
-/home/gl/faq_server/message/role_info.pb.h
+/home/gl/faq_server/message/tb_user.pb.h
 string
 -
 google/protobuf/stubs/common.h

@@ -1,7 +1,6 @@
-#ifndef _GATE_CLIENT_H_
-#define _GATE_CLIENT_H_
+#ifndef _LOGIC_PLAYER_H_
+#define _LOGIC_PLAYER_H_
 
-#include "gate_client.h"
 #include "head.h"
 #include "tb_user.pb.h"
 #include "tb_user.h"

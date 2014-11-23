@@ -10,7 +10,8 @@
 #include "gate_application.h"
 #include "db_connection.h"
 #include "sql_define.h"
-#include "client_service.h"
+//#include "client_service.h"
+#include "logic_player.h"
 
 class move_message_action: public template_message<ClientMoveRequest,ClientMoveResponse,MSG_CLIENT_MOVE>
 {

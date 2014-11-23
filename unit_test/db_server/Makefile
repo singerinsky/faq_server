@@ -136,6 +136,30 @@ action_data_work_message.cpp.s:
 	cd /home/gl/faq_server/unit_test && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.s
 .PHONY : action_data_work_message.cpp.s
 
+action_heart_message.o: action_heart_message.cpp.o
+.PHONY : action_heart_message.o
+
+# target to build an object file
+action_heart_message.cpp.o:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o
+.PHONY : action_heart_message.cpp.o
+
+action_heart_message.i: action_heart_message.cpp.i
+.PHONY : action_heart_message.i
+
+# target to preprocess a source file
+action_heart_message.cpp.i:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.i
+.PHONY : action_heart_message.cpp.i
+
+action_heart_message.s: action_heart_message.cpp.s
+.PHONY : action_heart_message.s
+
+# target to generate assembly for a file
+action_heart_message.cpp.s:
+	cd /home/gl/faq_server/unit_test && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.s
+.PHONY : action_heart_message.cpp.s
+
 data_worker.o: data_worker.cpp.o
 .PHONY : data_worker.o
 
@@ -292,6 +316,9 @@ help:
 	@echo "... action_data_work_message.o"
 	@echo "... action_data_work_message.i"
 	@echo "... action_data_work_message.s"
+	@echo "... action_heart_message.o"
+	@echo "... action_heart_message.i"
+	@echo "... action_heart_message.s"
 	@echo "... data_worker.o"
 	@echo "... data_worker.i"
 	@echo "... data_worker.s"

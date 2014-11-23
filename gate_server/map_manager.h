@@ -6,6 +6,7 @@
 #include <vector>
 #include <bitset>
 #include "game_define.h"
+#include <map>
 
 class NpcObject;
 class packet;
