@@ -187,4 +187,39 @@ map_object* map_manager::get_map(int map_id)
     return NULL;
 }
 
+int map_object::step(Position src_pos,Position rst_pos,Position* delt_pos)
+{
+    delt_pos->set_pos_x(rst_pos.pos_x() - src_pos.pos_y());
+    delt_pos->set_pos_y(rst_pos.pos_y() - src_pos.pos_y());
+    int step_count = 0;
+    if(delt_pos->pos_x() == delt_pos->pos_y() || delt_pos->pos_x() == -delt_pos->pos_y())
+    {
+        step_count = abs(delt_pos->pos_x()); 
+    }
+    else if(delt_pos->pos_x() == 0)
+    {
+        step_count = abs(delt_pos->pos_y()); 
+    }
+    else if(delt_pos->pos_y() == 0)
+    {
+        step_count = abs(delt_pos->pos_x()); 
+    }
+    else
+    {
+        return -1; 
+    }
 
+    if(step_count != 0)
+    {
+        delt_pos->set_pos_x(delt_pos->pos_x()/step_count); 
+        delt_pos->set_pos_y(delt_pos->pos_y()/step_count); 
+    }
+
+    for(int i=0;i<step_count;i++)
+    {
+        src.set_pos_x(src_pos.pos_x() + delt_pos->pos_x()); 
+        src.set_pos_y(src_pos.pos_y() + delt_pos->pos_y()); 
+        is(!is_set(src))return -1;
+    }
+    return 0;
+}
