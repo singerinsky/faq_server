@@ -64,6 +64,8 @@ class LogicPlayer:public Fighter
         void broad_round_player(packet*);
         void enter_map(int map_id,int x,int y);
 
+        void send_leave_view_notf(player_set_vec_t& leave_set);
+
     private:
         gate_client* _client;
     protected:

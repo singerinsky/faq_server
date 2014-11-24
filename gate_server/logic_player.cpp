@@ -44,11 +44,22 @@ void LogicPlayer::Move(int x,int y)
         if(new_cell_pos != _cell_pos)
         {
            //TODO ... 
+           _map->get_player_incell(_cell_pos)->erase(this);
+           _map->get_player_incell(new_cell_pos)->insert(this);
+           player_set_vec_t new_set,enter_set,leave_set; 
+           _map->fill_all_player_cells(new_cell_pos,&new_set);
+           set_difference(new_set.begin(),new_set.end(),_player_round_set.begin(),_player_round_set.end(),inserter(enter_set));
+           set_difference(_player_round_set.begin(),_player_round_set.end(),new_set.begin(),new_set.end(),inserter(leave_set));
+           _player_round_set.clear();
+           _map.fill_all_player_cells(_player_round_set);
 
-
-
-
-
+           //send 离开自己视野的玩家列表
+           
+           //send 玩家自己在他们视野里的列表
+           ////send enter view
+           //
+           //
+           //
         }
 
         LOG(INFO)<<"player "<<_user_info.get_id()<<" move to "<<x<<":"<<y;
@@ -109,4 +120,9 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
     _pos.set_pos_y(y);
     map_enter->map2cell(_pos,_cell_pos);
  
+}
+
+void LogicPlayer::send_leave_view_notf(player_set_vec_t& leave_set)
+{
+
 }
