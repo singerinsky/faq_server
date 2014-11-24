@@ -101,6 +101,7 @@ class map_object
             return _map_pos.test(index);
         }
         map_cells*   get_cells(Position pos,int cell_offset);
+        player_set_t* get_player_incell(Position pos,int cell_offset);
         void         fill_all_player_cells(Position& pos, player_set_vec_t*);
         void         get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set);
         int          step(Position src_pos,Position rst_pos,Position* delt_pos);
