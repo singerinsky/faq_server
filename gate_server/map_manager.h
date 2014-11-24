@@ -35,6 +35,12 @@ class Position
             _y = y; 
         }
 
+        void modify_pos(Position& pos)
+        {
+            _x += pos.pos_x(); 
+            _y += pos.pos_y(); 
+        }
+
         bool operator==(const Position& pos)
         {
             return ((pos.pos_x() == pos_x()) && (pos.pos_y()== pos_y())); 

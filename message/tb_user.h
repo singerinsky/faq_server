@@ -54,6 +54,10 @@ public:
     void set_mp(int32_t value) { if(mp!= value){dirty[7] = 1; mp = value;} } ; 
     int sql_mp(char* buf,int size) const{return snprintf(buf,size,"mp='%ld'",(int64_t)mp);}
 
+    int32_t get_direct() const { return direct;} ; 
+    void set_direct(int32_t value) { if(direct!= value){dirty[8] = 1; direct = value;} } ; 
+    int sql_direct(char* buf,int size) const{return snprintf(buf,size,"direct='%ld'",(int64_t)direct);}
+
     void load_from_pb(const db_tb_user&);
     void copy_to_pb(db_tb_user&);
 private:
@@ -66,9 +70,10 @@ private:
     int32_t pos_y ; 
     int32_t hp ; 
     int32_t mp ; 
+    int32_t direct ; 
 private:
     //dirty flag for update
-    enum { FIELD_COUNT = 8 } ; 
+    enum { FIELD_COUNT = 9 } ; 
     int8_t dirty[FIELD_COUNT] ; 
 };
 #endif

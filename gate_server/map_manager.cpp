@@ -237,4 +237,5 @@ void map_object::get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set)
         if(cell == NULL)continue;
         npc_set.insert(cell->_npc_set.begin(),cell->_npc_set.end());
     }
+
 }

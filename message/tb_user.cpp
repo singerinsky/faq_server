@@ -9,6 +9,7 @@ tb_user::tb_user()
     pos_y = 0;
     hp = 0;
     mp = 0;
+    direct = 0;
     memset(dirty,0,sizeof(dirty));
 }
 int tb_user::sql_key(char* buf,int size) const
@@ -68,6 +69,12 @@ int tb_user::sql_data(char* buf,int size,bool check_dirty) const
     {
         if(first_flag==0) {memcpy(buf,",",1); buf+= 1 ; size-= 1 ;}
         len =sql_mp(buf,size);
+        buf += len ; size -= len ;first_flag=0;
+    }
+    if((!check_dirty) || dirty[8])
+    {
+        if(first_flag==0) {memcpy(buf,",",1); buf+= 1 ; size-= 1 ;}
+        len =sql_direct(buf,size);
         buf += len ; size -= len ;first_flag=0;
     }
     return origin_size - size ; 
@@ -130,6 +137,7 @@ void tb_user::load_from_pb(const db_tb_user& pb)
     pos_y = pb.pos_y();
     hp = pb.hp();
     mp = pb.mp();
+    direct = pb.direct();
 }
 void tb_user::copy_to_pb(db_tb_user& pb)
 {
@@ -141,4 +149,5 @@ void tb_user::copy_to_pb(db_tb_user& pb)
     pb.set_pos_y(pos_y);
     pb.set_hp(hp);
     pb.set_mp(mp);
+    pb.set_direct(direct);
 }

@@ -73,6 +73,7 @@ class LogicPlayer:public Fighter
 
         map_object* _map;
         Position _pos;
+        Position _cell_pos;
         tb_user _user_info;
         template_timer<LogicPlayer,&LogicPlayer::OnSaveTime>    _save_timer;
 
