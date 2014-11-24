@@ -33,12 +33,25 @@ void LogicPlayer::Move(int x,int y)
 {
     if(CheckCanMove(x,y))
     {
-        _pos.set_pos_x(x);
-        _pos.set_pos_y(y);
-        _user_info.set_pos_x(x);
-        _user_info.set_pos_y(y);
-        LOG(INFO)<<"player "<<_user_info.get_id()<<" move to "<<x<<":"<<y;
+        Position rst(x,y),delt;
+        int step_count = _map.step(_pos,rst,&delt);
+        _pos.modify_pos(delt);
+        _user_info.set_pos_x(delt.pos_x());
+        _user_info.set_pos_y(delt.pos_y());
 
+        Position new_cell_pos;
+        _map->map2cell(_pos,new_cell_pos);
+        if(new_cell_pos != _cell_pos)
+        {
+           //TODO ... 
+
+
+
+
+
+        }
+
+        LOG(INFO)<<"player "<<_user_info.get_id()<<" move to "<<x<<":"<<y;
         //show all new npc
         set<NpcObject*> all_npc;
         _map->get_all_npc_round(_pos,all_npc);
@@ -92,4 +105,8 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
     _user_info.set_map_id(map_id);
     _user_info.set_pos_x(x);
     _user_info.set_pos_y(y);
+    _pos.set_pos_x(x);
+    _pos.set_pos_y(y);
+    map_enter->map2cell(_pos,_cell_pos);
+ 
 }
