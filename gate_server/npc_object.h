@@ -10,6 +10,7 @@ class NpcObject:public Fighter
     public:
         NpcObject(int npc_id)
         {
+            _npc_id = npc_id;
             _hp = 0;
             _mp = 0;
         }

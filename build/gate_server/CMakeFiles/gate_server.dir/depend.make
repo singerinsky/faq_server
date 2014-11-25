@@ -325,7 +325,21 @@ gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/map_man
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/npc_object.h
 
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/event2/buffer.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/event2/bufferevent.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/event2/event-config.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/event2/event.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/event2/listener.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/event2/util.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/gflags/gflags.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/glog/log_severity.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/glog/logging.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/glog/vlog_is_on.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/head.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/singleton.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/tinyxml.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../include/tinystr.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../include/tinyxml.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/fighter.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/game_define.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/map_manager.h
