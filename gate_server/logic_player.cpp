@@ -7,6 +7,8 @@
 #include "db_connection.h"
 #include "map_manager.h"
 #include "npc_object.h"
+#include <iterator>
+#include <algorithm>
 
 void LogicPlayer::LoadPlayerInfo()
 {
@@ -34,7 +36,7 @@ void LogicPlayer::Move(int x,int y)
     if(CheckCanMove(x,y))
     {
         Position rst(x,y),delt;
-        int step_count = _map.step(_pos,rst,&delt);
+        int step_count = _map->step(_pos,rst,&delt);
         _pos.modify_pos(delt);
         _user_info.set_pos_x(delt.pos_x());
         _user_info.set_pos_y(delt.pos_y());
@@ -48,10 +50,10 @@ void LogicPlayer::Move(int x,int y)
            _map->get_player_incell(new_cell_pos)->insert(this);
            player_set_vec_t new_set,enter_set,leave_set; 
            _map->fill_all_player_cells(new_cell_pos,&new_set);
-           set_difference(new_set.begin(),new_set.end(),_player_round_set.begin(),_player_round_set.end(),inserter(enter_set));
-           set_difference(_player_round_set.begin(),_player_round_set.end(),new_set.begin(),new_set.end(),inserter(leave_set));
+           set_difference(new_set.begin(),new_set.end(),_player_round_set.begin(),_player_round_set.end(),std::inserter(enter_set,enter_set.begin()));
+           set_difference(_player_round_set.begin(),_player_round_set.end(),new_set.begin(),new_set.end(),std::inserter(leave_set,leave_set.begin()));
            _player_round_set.clear();
-           _map.fill_all_player_cells(_player_round_set);
+           _map->fill_all_player_cells(new_cell_pos,&_player_round_set);
 
            //send 离开自己视野的玩家列表
            

@@ -166,9 +166,9 @@ map_cells* map_object::get_cells(Position pos,int cell_offset)
     return _cells_vec + pos.pos_y()*_map_width + pos.pos_x();
 }
 
-player_set_t* map_object::get_player_incell(Position pos,int cell_offset)
+player_set_t* map_object::get_player_incell(Position pos)
 {
-    map_cells* cell = get_cells(pos,cell_offset);
+    map_cells* cell = get_cells(pos,0);
     if(cell == NULL)return NULL;
     return &(cell->_player_set);
 }

@@ -34,6 +34,9 @@ void  protobuf_AddDesc_message_2eproto();
 void protobuf_AssignDesc_message_2eproto();
 void protobuf_ShutdownFile_message_2eproto();
 
+class PosInfo;
+class PlayerInfo;
+class NpcInfo;
 class ClientHeartBeatRequest;
 class ClientHeartBeatResponse;
 class ClientLoginRequest;
@@ -104,6 +107,364 @@ inline bool DbMessageType_Parse(
     DbMessageType_descriptor(), name, value);
 }
 // ===================================================================
+
+class PosInfo : public ::google::protobuf::Message {
+ public:
+  PosInfo();
+  virtual ~PosInfo();
+
+  PosInfo(const PosInfo& from);
+
+  inline PosInfo& operator=(const PosInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PosInfo& default_instance();
+
+  void Swap(PosInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  PosInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const PosInfo& from);
+  void MergeFrom(const PosInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 x = 1;
+  inline bool has_x() const;
+  inline void clear_x();
+  static const int kXFieldNumber = 1;
+  inline ::google::protobuf::int32 x() const;
+  inline void set_x(::google::protobuf::int32 value);
+
+  // required int32 y = 2;
+  inline bool has_y() const;
+  inline void clear_y();
+  static const int kYFieldNumber = 2;
+  inline ::google::protobuf::int32 y() const;
+  inline void set_y(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:PosInfo)
+ private:
+  inline void set_has_x();
+  inline void clear_has_x();
+  inline void set_has_y();
+  inline void clear_has_y();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 x_;
+  ::google::protobuf::int32 y_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static PosInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class PlayerInfo : public ::google::protobuf::Message {
+ public:
+  PlayerInfo();
+  virtual ~PlayerInfo();
+
+  PlayerInfo(const PlayerInfo& from);
+
+  inline PlayerInfo& operator=(const PlayerInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PlayerInfo& default_instance();
+
+  void Swap(PlayerInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  PlayerInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const PlayerInfo& from);
+  void MergeFrom(const PlayerInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 player_id = 1;
+  inline bool has_player_id() const;
+  inline void clear_player_id();
+  static const int kPlayerIdFieldNumber = 1;
+  inline ::google::protobuf::int32 player_id() const;
+  inline void set_player_id(::google::protobuf::int32 value);
+
+  // required string player_nickname = 2;
+  inline bool has_player_nickname() const;
+  inline void clear_player_nickname();
+  static const int kPlayerNicknameFieldNumber = 2;
+  inline const ::std::string& player_nickname() const;
+  inline void set_player_nickname(const ::std::string& value);
+  inline void set_player_nickname(const char* value);
+  inline void set_player_nickname(const char* value, size_t size);
+  inline ::std::string* mutable_player_nickname();
+  inline ::std::string* release_player_nickname();
+  inline void set_allocated_player_nickname(::std::string* player_nickname);
+
+  // required int32 player_level = 3;
+  inline bool has_player_level() const;
+  inline void clear_player_level();
+  static const int kPlayerLevelFieldNumber = 3;
+  inline ::google::protobuf::int32 player_level() const;
+  inline void set_player_level(::google::protobuf::int32 value);
+
+  // required int32 career_id = 4;
+  inline bool has_career_id() const;
+  inline void clear_career_id();
+  static const int kCareerIdFieldNumber = 4;
+  inline ::google::protobuf::int32 career_id() const;
+  inline void set_career_id(::google::protobuf::int32 value);
+
+  // required int32 player_status = 5;
+  inline bool has_player_status() const;
+  inline void clear_player_status();
+  static const int kPlayerStatusFieldNumber = 5;
+  inline ::google::protobuf::int32 player_status() const;
+  inline void set_player_status(::google::protobuf::int32 value);
+
+  // required .PosInfo pos = 6;
+  inline bool has_pos() const;
+  inline void clear_pos();
+  static const int kPosFieldNumber = 6;
+  inline const ::PosInfo& pos() const;
+  inline ::PosInfo* mutable_pos();
+  inline ::PosInfo* release_pos();
+  inline void set_allocated_pos(::PosInfo* pos);
+
+  // @@protoc_insertion_point(class_scope:PlayerInfo)
+ private:
+  inline void set_has_player_id();
+  inline void clear_has_player_id();
+  inline void set_has_player_nickname();
+  inline void clear_has_player_nickname();
+  inline void set_has_player_level();
+  inline void clear_has_player_level();
+  inline void set_has_career_id();
+  inline void clear_has_career_id();
+  inline void set_has_player_status();
+  inline void clear_has_player_status();
+  inline void set_has_pos();
+  inline void clear_has_pos();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* player_nickname_;
+  ::google::protobuf::int32 player_id_;
+  ::google::protobuf::int32 player_level_;
+  ::google::protobuf::int32 career_id_;
+  ::google::protobuf::int32 player_status_;
+  ::PosInfo* pos_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static PlayerInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class NpcInfo : public ::google::protobuf::Message {
+ public:
+  NpcInfo();
+  virtual ~NpcInfo();
+
+  NpcInfo(const NpcInfo& from);
+
+  inline NpcInfo& operator=(const NpcInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const NpcInfo& default_instance();
+
+  void Swap(NpcInfo* other);
+
+  // implements Message ----------------------------------------------
+
+  NpcInfo* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const NpcInfo& from);
+  void MergeFrom(const NpcInfo& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 npc_id = 1;
+  inline bool has_npc_id() const;
+  inline void clear_npc_id();
+  static const int kNpcIdFieldNumber = 1;
+  inline ::google::protobuf::int32 npc_id() const;
+  inline void set_npc_id(::google::protobuf::int32 value);
+
+  // required string npc_nickname = 2;
+  inline bool has_npc_nickname() const;
+  inline void clear_npc_nickname();
+  static const int kNpcNicknameFieldNumber = 2;
+  inline const ::std::string& npc_nickname() const;
+  inline void set_npc_nickname(const ::std::string& value);
+  inline void set_npc_nickname(const char* value);
+  inline void set_npc_nickname(const char* value, size_t size);
+  inline ::std::string* mutable_npc_nickname();
+  inline ::std::string* release_npc_nickname();
+  inline void set_allocated_npc_nickname(::std::string* npc_nickname);
+
+  // required int32 npc_level = 3;
+  inline bool has_npc_level() const;
+  inline void clear_npc_level();
+  static const int kNpcLevelFieldNumber = 3;
+  inline ::google::protobuf::int32 npc_level() const;
+  inline void set_npc_level(::google::protobuf::int32 value);
+
+  // required int32 totoal_hp = 4;
+  inline bool has_totoal_hp() const;
+  inline void clear_totoal_hp();
+  static const int kTotoalHpFieldNumber = 4;
+  inline ::google::protobuf::int32 totoal_hp() const;
+  inline void set_totoal_hp(::google::protobuf::int32 value);
+
+  // required int32 current_hp = 5;
+  inline bool has_current_hp() const;
+  inline void clear_current_hp();
+  static const int kCurrentHpFieldNumber = 5;
+  inline ::google::protobuf::int32 current_hp() const;
+  inline void set_current_hp(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:NpcInfo)
+ private:
+  inline void set_has_npc_id();
+  inline void clear_has_npc_id();
+  inline void set_has_npc_nickname();
+  inline void clear_has_npc_nickname();
+  inline void set_has_npc_level();
+  inline void clear_has_npc_level();
+  inline void set_has_totoal_hp();
+  inline void clear_has_totoal_hp();
+  inline void set_has_current_hp();
+  inline void clear_has_current_hp();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* npc_nickname_;
+  ::google::protobuf::int32 npc_id_;
+  ::google::protobuf::int32 npc_level_;
+  ::google::protobuf::int32 totoal_hp_;
+  ::google::protobuf::int32 current_hp_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static NpcInfo* default_instance_;
+};
+// -------------------------------------------------------------------
 
 class ClientHeartBeatRequest : public ::google::protobuf::Message {
  public:
@@ -758,6 +1119,416 @@ class ClientMoveResponse : public ::google::protobuf::Message {
 
 
 // ===================================================================
+
+// PosInfo
+
+// required int32 x = 1;
+inline bool PosInfo::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void PosInfo::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void PosInfo::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void PosInfo::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+inline ::google::protobuf::int32 PosInfo::x() const {
+  return x_;
+}
+inline void PosInfo::set_x(::google::protobuf::int32 value) {
+  set_has_x();
+  x_ = value;
+}
+
+// required int32 y = 2;
+inline bool PosInfo::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void PosInfo::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void PosInfo::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void PosInfo::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+inline ::google::protobuf::int32 PosInfo::y() const {
+  return y_;
+}
+inline void PosInfo::set_y(::google::protobuf::int32 value) {
+  set_has_y();
+  y_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// PlayerInfo
+
+// required int32 player_id = 1;
+inline bool PlayerInfo::has_player_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void PlayerInfo::set_has_player_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void PlayerInfo::clear_has_player_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void PlayerInfo::clear_player_id() {
+  player_id_ = 0;
+  clear_has_player_id();
+}
+inline ::google::protobuf::int32 PlayerInfo::player_id() const {
+  return player_id_;
+}
+inline void PlayerInfo::set_player_id(::google::protobuf::int32 value) {
+  set_has_player_id();
+  player_id_ = value;
+}
+
+// required string player_nickname = 2;
+inline bool PlayerInfo::has_player_nickname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void PlayerInfo::set_has_player_nickname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void PlayerInfo::clear_has_player_nickname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void PlayerInfo::clear_player_nickname() {
+  if (player_nickname_ != &::google::protobuf::internal::kEmptyString) {
+    player_nickname_->clear();
+  }
+  clear_has_player_nickname();
+}
+inline const ::std::string& PlayerInfo::player_nickname() const {
+  return *player_nickname_;
+}
+inline void PlayerInfo::set_player_nickname(const ::std::string& value) {
+  set_has_player_nickname();
+  if (player_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    player_nickname_ = new ::std::string;
+  }
+  player_nickname_->assign(value);
+}
+inline void PlayerInfo::set_player_nickname(const char* value) {
+  set_has_player_nickname();
+  if (player_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    player_nickname_ = new ::std::string;
+  }
+  player_nickname_->assign(value);
+}
+inline void PlayerInfo::set_player_nickname(const char* value, size_t size) {
+  set_has_player_nickname();
+  if (player_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    player_nickname_ = new ::std::string;
+  }
+  player_nickname_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* PlayerInfo::mutable_player_nickname() {
+  set_has_player_nickname();
+  if (player_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    player_nickname_ = new ::std::string;
+  }
+  return player_nickname_;
+}
+inline ::std::string* PlayerInfo::release_player_nickname() {
+  clear_has_player_nickname();
+  if (player_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = player_nickname_;
+    player_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void PlayerInfo::set_allocated_player_nickname(::std::string* player_nickname) {
+  if (player_nickname_ != &::google::protobuf::internal::kEmptyString) {
+    delete player_nickname_;
+  }
+  if (player_nickname) {
+    set_has_player_nickname();
+    player_nickname_ = player_nickname;
+  } else {
+    clear_has_player_nickname();
+    player_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// required int32 player_level = 3;
+inline bool PlayerInfo::has_player_level() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void PlayerInfo::set_has_player_level() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void PlayerInfo::clear_has_player_level() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void PlayerInfo::clear_player_level() {
+  player_level_ = 0;
+  clear_has_player_level();
+}
+inline ::google::protobuf::int32 PlayerInfo::player_level() const {
+  return player_level_;
+}
+inline void PlayerInfo::set_player_level(::google::protobuf::int32 value) {
+  set_has_player_level();
+  player_level_ = value;
+}
+
+// required int32 career_id = 4;
+inline bool PlayerInfo::has_career_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void PlayerInfo::set_has_career_id() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void PlayerInfo::clear_has_career_id() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void PlayerInfo::clear_career_id() {
+  career_id_ = 0;
+  clear_has_career_id();
+}
+inline ::google::protobuf::int32 PlayerInfo::career_id() const {
+  return career_id_;
+}
+inline void PlayerInfo::set_career_id(::google::protobuf::int32 value) {
+  set_has_career_id();
+  career_id_ = value;
+}
+
+// required int32 player_status = 5;
+inline bool PlayerInfo::has_player_status() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void PlayerInfo::set_has_player_status() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void PlayerInfo::clear_has_player_status() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void PlayerInfo::clear_player_status() {
+  player_status_ = 0;
+  clear_has_player_status();
+}
+inline ::google::protobuf::int32 PlayerInfo::player_status() const {
+  return player_status_;
+}
+inline void PlayerInfo::set_player_status(::google::protobuf::int32 value) {
+  set_has_player_status();
+  player_status_ = value;
+}
+
+// required .PosInfo pos = 6;
+inline bool PlayerInfo::has_pos() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void PlayerInfo::set_has_pos() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void PlayerInfo::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void PlayerInfo::clear_pos() {
+  if (pos_ != NULL) pos_->::PosInfo::Clear();
+  clear_has_pos();
+}
+inline const ::PosInfo& PlayerInfo::pos() const {
+  return pos_ != NULL ? *pos_ : *default_instance_->pos_;
+}
+inline ::PosInfo* PlayerInfo::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) pos_ = new ::PosInfo;
+  return pos_;
+}
+inline ::PosInfo* PlayerInfo::release_pos() {
+  clear_has_pos();
+  ::PosInfo* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+inline void PlayerInfo::set_allocated_pos(::PosInfo* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
+}
+
+// -------------------------------------------------------------------
+
+// NpcInfo
+
+// required int32 npc_id = 1;
+inline bool NpcInfo::has_npc_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void NpcInfo::set_has_npc_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void NpcInfo::clear_has_npc_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void NpcInfo::clear_npc_id() {
+  npc_id_ = 0;
+  clear_has_npc_id();
+}
+inline ::google::protobuf::int32 NpcInfo::npc_id() const {
+  return npc_id_;
+}
+inline void NpcInfo::set_npc_id(::google::protobuf::int32 value) {
+  set_has_npc_id();
+  npc_id_ = value;
+}
+
+// required string npc_nickname = 2;
+inline bool NpcInfo::has_npc_nickname() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void NpcInfo::set_has_npc_nickname() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void NpcInfo::clear_has_npc_nickname() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void NpcInfo::clear_npc_nickname() {
+  if (npc_nickname_ != &::google::protobuf::internal::kEmptyString) {
+    npc_nickname_->clear();
+  }
+  clear_has_npc_nickname();
+}
+inline const ::std::string& NpcInfo::npc_nickname() const {
+  return *npc_nickname_;
+}
+inline void NpcInfo::set_npc_nickname(const ::std::string& value) {
+  set_has_npc_nickname();
+  if (npc_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    npc_nickname_ = new ::std::string;
+  }
+  npc_nickname_->assign(value);
+}
+inline void NpcInfo::set_npc_nickname(const char* value) {
+  set_has_npc_nickname();
+  if (npc_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    npc_nickname_ = new ::std::string;
+  }
+  npc_nickname_->assign(value);
+}
+inline void NpcInfo::set_npc_nickname(const char* value, size_t size) {
+  set_has_npc_nickname();
+  if (npc_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    npc_nickname_ = new ::std::string;
+  }
+  npc_nickname_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* NpcInfo::mutable_npc_nickname() {
+  set_has_npc_nickname();
+  if (npc_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    npc_nickname_ = new ::std::string;
+  }
+  return npc_nickname_;
+}
+inline ::std::string* NpcInfo::release_npc_nickname() {
+  clear_has_npc_nickname();
+  if (npc_nickname_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = npc_nickname_;
+    npc_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void NpcInfo::set_allocated_npc_nickname(::std::string* npc_nickname) {
+  if (npc_nickname_ != &::google::protobuf::internal::kEmptyString) {
+    delete npc_nickname_;
+  }
+  if (npc_nickname) {
+    set_has_npc_nickname();
+    npc_nickname_ = npc_nickname;
+  } else {
+    clear_has_npc_nickname();
+    npc_nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// required int32 npc_level = 3;
+inline bool NpcInfo::has_npc_level() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void NpcInfo::set_has_npc_level() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void NpcInfo::clear_has_npc_level() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void NpcInfo::clear_npc_level() {
+  npc_level_ = 0;
+  clear_has_npc_level();
+}
+inline ::google::protobuf::int32 NpcInfo::npc_level() const {
+  return npc_level_;
+}
+inline void NpcInfo::set_npc_level(::google::protobuf::int32 value) {
+  set_has_npc_level();
+  npc_level_ = value;
+}
+
+// required int32 totoal_hp = 4;
+inline bool NpcInfo::has_totoal_hp() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void NpcInfo::set_has_totoal_hp() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void NpcInfo::clear_has_totoal_hp() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void NpcInfo::clear_totoal_hp() {
+  totoal_hp_ = 0;
+  clear_has_totoal_hp();
+}
+inline ::google::protobuf::int32 NpcInfo::totoal_hp() const {
+  return totoal_hp_;
+}
+inline void NpcInfo::set_totoal_hp(::google::protobuf::int32 value) {
+  set_has_totoal_hp();
+  totoal_hp_ = value;
+}
+
+// required int32 current_hp = 5;
+inline bool NpcInfo::has_current_hp() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void NpcInfo::set_has_current_hp() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void NpcInfo::clear_has_current_hp() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void NpcInfo::clear_current_hp() {
+  current_hp_ = 0;
+  clear_has_current_hp();
+}
+inline ::google::protobuf::int32 NpcInfo::current_hp() const {
+  return current_hp_;
+}
+inline void NpcInfo::set_current_hp(::google::protobuf::int32 value) {
+  set_has_current_hp();
+  current_hp_ = value;
+}
+
+// -------------------------------------------------------------------
 
 // ClientHeartBeatRequest
 

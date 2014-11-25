@@ -32,7 +32,7 @@ void protobuf_AssignDesc_tb_5fuser_2eproto() {
       "tb_user.proto");
   GOOGLE_CHECK(file != NULL);
   db_tb_user_descriptor_ = file->message_type(0);
-  static const int db_tb_user_offsets_[8] = {
+  static const int db_tb_user_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, user_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, level_),
@@ -41,6 +41,7 @@ void protobuf_AssignDesc_tb_5fuser_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, pos_y_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, hp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, mp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(db_tb_user, direct_),
   };
   db_tb_user_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -83,10 +84,11 @@ void protobuf_AddDesc_tb_5fuser_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rtb_user.proto\"\200\001\n\ndb_tb_user\022\n\n\002id\030\001 \002"
+    "\n\rtb_user.proto\"\220\001\n\ndb_tb_user\022\n\n\002id\030\001 \002"
     "(\005\022\021\n\tuser_name\030\002 \002(\t\022\r\n\005level\030\003 \002(\005\022\016\n\006"
     "map_id\030\004 \002(\005\022\r\n\005pos_x\030\005 \002(\005\022\r\n\005pos_y\030\006 \002"
-    "(\005\022\n\n\002hp\030\007 \002(\005\022\n\n\002mp\030\010 \002(\005", 146);
+    "(\005\022\n\n\002hp\030\007 \002(\005\022\n\n\002mp\030\010 \002(\005\022\016\n\006direct\030\t \002"
+    "(\005", 162);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "tb_user.proto", &protobuf_RegisterTypes);
   db_tb_user::default_instance_ = new db_tb_user();
@@ -112,6 +114,7 @@ const int db_tb_user::kPosXFieldNumber;
 const int db_tb_user::kPosYFieldNumber;
 const int db_tb_user::kHpFieldNumber;
 const int db_tb_user::kMpFieldNumber;
+const int db_tb_user::kDirectFieldNumber;
 #endif  // !_MSC_VER
 
 db_tb_user::db_tb_user()
@@ -138,6 +141,7 @@ void db_tb_user::SharedCtor() {
   pos_y_ = 0;
   hp_ = 0;
   mp_ = 0;
+  direct_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -188,6 +192,9 @@ void db_tb_user::Clear() {
     pos_y_ = 0;
     hp_ = 0;
     mp_ = 0;
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    direct_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -323,6 +330,22 @@ bool db_tb_user::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(72)) goto parse_direct;
+        break;
+      }
+
+      // required int32 direct = 9;
+      case 9: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_direct:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &direct_)));
+          set_has_direct();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -389,6 +412,11 @@ void db_tb_user::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->mp(), output);
   }
 
+  // required int32 direct = 9;
+  if (has_direct()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->direct(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -440,6 +468,11 @@ void db_tb_user::SerializeWithCachedSizes(
   // required int32 mp = 8;
   if (has_mp()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->mp(), target);
+  }
+
+  // required int32 direct = 9;
+  if (has_direct()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->direct(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -510,6 +543,15 @@ int db_tb_user::ByteSize() const {
     }
 
   }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // required int32 direct = 9;
+    if (has_direct()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->direct());
+    }
+
+  }
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -561,6 +603,11 @@ void db_tb_user::MergeFrom(const db_tb_user& from) {
       set_mp(from.mp());
     }
   }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_direct()) {
+      set_direct(from.direct());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -577,7 +624,7 @@ void db_tb_user::CopyFrom(const db_tb_user& from) {
 }
 
 bool db_tb_user::IsInitialized() const {
-  if ((_has_bits_[0] & 0x000000ff) != 0x000000ff) return false;
+  if ((_has_bits_[0] & 0x000001ff) != 0x000001ff) return false;
 
   return true;
 }
@@ -592,6 +639,7 @@ void db_tb_user::Swap(db_tb_user* other) {
     std::swap(pos_y_, other->pos_y_);
     std::swap(hp_, other->hp_);
     std::swap(mp_, other->mp_);
+    std::swap(direct_, other->direct_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

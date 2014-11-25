@@ -150,6 +150,13 @@ class db_tb_user : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 mp() const;
   inline void set_mp(::google::protobuf::int32 value);
 
+  // required int32 direct = 9;
+  inline bool has_direct() const;
+  inline void clear_direct();
+  static const int kDirectFieldNumber = 9;
+  inline ::google::protobuf::int32 direct() const;
+  inline void set_direct(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:db_tb_user)
  private:
   inline void set_has_id();
@@ -168,6 +175,8 @@ class db_tb_user : public ::google::protobuf::Message {
   inline void clear_has_hp();
   inline void set_has_mp();
   inline void clear_has_mp();
+  inline void set_has_direct();
+  inline void clear_has_direct();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -179,9 +188,10 @@ class db_tb_user : public ::google::protobuf::Message {
   ::google::protobuf::int32 pos_y_;
   ::google::protobuf::int32 hp_;
   ::google::protobuf::int32 mp_;
+  ::google::protobuf::int32 direct_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(8 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(9 + 31) / 32];
 
   friend void  protobuf_AddDesc_tb_5fuser_2eproto();
   friend void protobuf_AssignDesc_tb_5fuser_2eproto();
@@ -419,6 +429,28 @@ inline ::google::protobuf::int32 db_tb_user::mp() const {
 inline void db_tb_user::set_mp(::google::protobuf::int32 value) {
   set_has_mp();
   mp_ = value;
+}
+
+// required int32 direct = 9;
+inline bool db_tb_user::has_direct() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void db_tb_user::set_has_direct() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void db_tb_user::clear_has_direct() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void db_tb_user::clear_direct() {
+  direct_ = 0;
+  clear_has_direct();
+}
+inline ::google::protobuf::int32 db_tb_user::direct() const {
+  return direct_;
+}
+inline void db_tb_user::set_direct(::google::protobuf::int32 value) {
+  set_has_direct();
+  direct_ = value;
 }
 
 
