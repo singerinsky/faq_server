@@ -22,6 +22,7 @@ enum MessageType
     MSG_LEAVE_PLAYERS_VIEW_NOTF = 8;
     MSG_PLAYER_ENTER_VIEW_NOTF = 9;
     MSG_ENTER_PLAYERS_VIEW_NOTF = 10;
+    MSG_ENTER_NPCS_VIEW_NOTF = 11;
 }
 
 message PosInfo 
@@ -117,3 +118,7 @@ message EnterPlayersViewNotf
     repeated PlayerInfo player_info = 1;
 }
 
+message EnterNpcsViewNotf
+{
+    repeated NpcInfo npc_info = 1;
+}

@@ -29,7 +29,7 @@ enum
     GC_MSG_LEAVE_PLAYERS_NOTF = MSG_LEAVE_PLAYERS_VIEW_NOTF << 2|MSG_NOTIFY,
     GC_MSG_PLAYER_ENTER_NOTF = MSG_PLAYER_ENTER_VIEW_NOTF << 2|MSG_NOTIFY,
     GC_MSG_ENTER_PLAYERS_NOTF = MSG_ENTER_PLAYERS_VIEW_NOTF << 2|MSG_NOTIFY,
-
+    GC_MSG_ENTER_NPCS_NOTF  = MSG_ENTER_NPCS_VIEW_NOTF<<2|MSG_NOTIFY,
 };
 
 typedef cs_packet<GC_MSG_INIT_CLIENT_NOTF,ClientInitNotf> cs_packet_init_client_notf;
@@ -37,5 +37,6 @@ typedef cs_packet<GC_MSG_PLAYER_LEAVE_NOTF,PlayerLeaveViewNotf> cs_packet_player
 typedef cs_packet<GC_MSG_LEAVE_PLAYERS_NOTF,LeavePlayersViewNotf> cs_packet_leave_players_notf;
 typedef cs_packet<GC_MSG_PLAYER_ENTER_NOTF,PlayerEnterViewNotf> cs_packet_player_enter_notf;
 typedef cs_packet<GC_MSG_ENTER_PLAYERS_NOTF,EnterPlayersViewNotf> cs_packet_enter_players_notf;
+typedef cs_packet<GC_MSG_ENTER_NPCS_NOTF,EnterNpcsViewNotf> cs_packet_enter_npcs_notf;
 
 #endif

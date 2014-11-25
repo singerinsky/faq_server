@@ -59,7 +59,7 @@ void LogicPlayer::Move(int x,int y)
             send_leave_view_notf(leave_set);           
            //send 玩家自己在他们视野里的列表
            ////send enter view
-            send_enter_view_notf(enter_set); 
+            send_player_enter_view_notf(enter_set); 
            //
            //
         }
@@ -120,8 +120,15 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
     _user_info.set_pos_y(y);
     _pos.set_pos_x(x);
     _pos.set_pos_y(y);
-    map_enter->map2cell(_pos,_cell_pos);
- 
+    _map->map2cell(_pos,_cell_pos);
+    _player_round_set.clear();
+    _map->fill_all_player_cells(_cell_pos,&_player_round_set);
+    _npc_round_set.clear();
+    _map->fill_all_npc_cells(_cell_pos,&_npc_round_set);
+    _map->get_player_incell(_cell_pos)->insert(this);
+
+    send_player_enter_view_notf(_player_round_set);
+    send_npc_enter_view_notf(_npc_round_set);
 }
 
 void LogicPlayer::send_leave_view_notf(player_set_vec_t& leave_set)
@@ -129,9 +136,32 @@ void LogicPlayer::send_leave_view_notf(player_set_vec_t& leave_set)
     LOG(INFO)<<"send player leave";
 }
 
-void LogicPlayer::send_enter_view_notf(player_set_vec_t& enter_set)
+void LogicPlayer::send_player_enter_view_notf(player_set_vec_t& enter_set)
 {
+    cs_packet_enter_players_notf player_notf;
+    auto itr = enter_set.begin();
+    for(;itr != enter_set.end();itr++)
+    {
+        auto ply_itr = (*itr)->begin();
+        for(;ply_itr != (*itr)->end(); ply_itr++)
+        {
+            LogicPlayer* player = *ply_itr;
+            PlayerInfo* info = player_notf.body.add_player_info();          
+            info->set_player_id(player->GetDbUserInfo().get_id());
+            info->set_player_nickname(player->GetDbUserInfo().get_user_name());
+            info->set_player_level(player->GetDbUserInfo().get_level());
+            info->set_career_id(1);
+            info->set_player_status(1);
+            PosInfo* pos = info->mutable_pos();
+            pos.set_x(player->GetDbUserInfo().get_pos_x());
+            pos.set_y(player->GetDbUserInfo().get_pos_y());
+        }
+         
+    }
     LOG(INFO)<<"send player enter";
 }
 
+void LogicPlayer::copy_to(PlayerInfo& info)
+{
 
+}

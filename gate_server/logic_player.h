@@ -8,6 +8,7 @@
 #include "map_manager.h"
 #include "game_define.h"
 #include "fighter.h"
+#include "message.pb.h"
 
 class NpcObject;
 class gate_client;
@@ -65,7 +66,9 @@ class LogicPlayer:public Fighter
         void enter_map(int map_id,int x,int y);
 
         void send_leave_view_notf(player_set_vec_t& leave_set);
-        void send_enter_view_notf(player_set_vec_t& enter_set);
+        void send_player_enter_view_notf(player_set_vec_t& enter_set);
+        void send_npc_enter_view_notf(npc_set_vec_t&);
+        void copy_to(PlayerInfo& info);
 
     private:
         gate_client* _client;
@@ -81,6 +84,7 @@ class LogicPlayer:public Fighter
         template_timer<LogicPlayer,&LogicPlayer::OnSaveTime>    _save_timer;
 
         player_set_vec_t    _player_round_set;
+        npc_set_vec_t       _npc_round_set;
 };
 
 #endif

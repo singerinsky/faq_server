@@ -60,6 +60,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* EnterPlayersViewNotf_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   EnterPlayersViewNotf_reflection_ = NULL;
+const ::google::protobuf::Descriptor* EnterNpcsViewNotf_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  EnterNpcsViewNotf_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* MSG_ACTION_TYPE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor_ = NULL;
@@ -300,6 +303,21 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EnterPlayersViewNotf));
+  EnterNpcsViewNotf_descriptor_ = file->message_type(14);
+  static const int EnterNpcsViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterNpcsViewNotf, npc_info_),
+  };
+  EnterNpcsViewNotf_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      EnterNpcsViewNotf_descriptor_,
+      EnterNpcsViewNotf::default_instance_,
+      EnterNpcsViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterNpcsViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterNpcsViewNotf, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(EnterNpcsViewNotf));
   MSG_ACTION_TYPE_descriptor_ = file->enum_type(0);
   MessageType_descriptor_ = file->enum_type(1);
   DbMessageType_descriptor_ = file->enum_type(2);
@@ -343,6 +361,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     PlayerEnterViewNotf_descriptor_, &PlayerEnterViewNotf::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     EnterPlayersViewNotf_descriptor_, &EnterPlayersViewNotf::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    EnterNpcsViewNotf_descriptor_, &EnterNpcsViewNotf::default_instance());
 }
 
 }  // namespace
@@ -376,6 +396,8 @@ void protobuf_ShutdownFile_message_2eproto() {
   delete PlayerEnterViewNotf_reflection_;
   delete EnterPlayersViewNotf::default_instance_;
   delete EnterPlayersViewNotf_reflection_;
+  delete EnterNpcsViewNotf::default_instance_;
+  delete EnterNpcsViewNotf_reflection_;
 }
 
 void protobuf_AddDesc_message_2eproto() {
@@ -410,17 +432,19 @@ void protobuf_AddDesc_message_2eproto() {
     "player_id\030\001 \003(\005\"7\n\023PlayerEnterViewNotf\022 "
     "\n\013player_info\030\001 \002(\0132\013.PlayerInfo\"8\n\024Ente"
     "rPlayersViewNotf\022 \n\013player_info\030\001 \003(\0132\013."
-    "PlayerInfo*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQ"
-    "UEST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002"
-    "*\235\002\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_IN"
-    "FO\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_L"
-    "OGIN\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017"
-    "MSG_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006\022\036"
-    "\n\032MSG_PLAYER_LEAVE_VIEW_NOTF\020\007\022\037\n\033MSG_LE"
-    "AVE_PLAYERS_VIEW_NOTF\020\010\022\036\n\032MSG_PLAYER_EN"
-    "TER_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER_PLAYERS_VIE"
-    "W_NOTF\020\n*#\n\rDbMessageType\022\022\n\rMSG_DB_COMM"
-    "ON\020\220N", 1325);
+    "PlayerInfo\"/\n\021EnterNpcsViewNotf\022\032\n\010npc_i"
+    "nfo\030\001 \003(\0132\010.NpcInfo*D\n\017MSG_ACTION_TYPE\022\017"
+    "\n\013MSG_REQUEST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG"
+    "_NOTIFY\020\002*\273\002\n\013MessageType\022\032\n\026MSG_SOCCER_"
+    "PLAYER_INFO\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG"
+    "_CLIENT_LOGIN\020\003\022\034\n\030MSG_GATE_SERVER_REGIS"
+    "TER\020\004\022\023\n\017MSG_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT"
+    "_MOVE\020\006\022\036\n\032MSG_PLAYER_LEAVE_VIEW_NOTF\020\007\022"
+    "\037\n\033MSG_LEAVE_PLAYERS_VIEW_NOTF\020\010\022\036\n\032MSG_"
+    "PLAYER_ENTER_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER_PL"
+    "AYERS_VIEW_NOTF\020\n\022\034\n\030MSG_ENTER_NPCS_VIEW"
+    "_NOTF\020\013*#\n\rDbMessageType\022\022\n\rMSG_DB_COMMO"
+    "N\020\220N", 1404);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   PosInfo::default_instance_ = new PosInfo();
@@ -437,6 +461,7 @@ void protobuf_AddDesc_message_2eproto() {
   LeavePlayersViewNotf::default_instance_ = new LeavePlayersViewNotf();
   PlayerEnterViewNotf::default_instance_ = new PlayerEnterViewNotf();
   EnterPlayersViewNotf::default_instance_ = new EnterPlayersViewNotf();
+  EnterNpcsViewNotf::default_instance_ = new EnterNpcsViewNotf();
   PosInfo::default_instance_->InitAsDefaultInstance();
   PlayerInfo::default_instance_->InitAsDefaultInstance();
   NpcInfo::default_instance_->InitAsDefaultInstance();
@@ -451,6 +476,7 @@ void protobuf_AddDesc_message_2eproto() {
   LeavePlayersViewNotf::default_instance_->InitAsDefaultInstance();
   PlayerEnterViewNotf::default_instance_->InitAsDefaultInstance();
   EnterPlayersViewNotf::default_instance_->InitAsDefaultInstance();
+  EnterNpcsViewNotf::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_message_2eproto);
 }
 
@@ -491,6 +517,7 @@ bool MessageType_IsValid(int value) {
     case 8:
     case 9:
     case 10:
+    case 11:
       return true;
     default:
       return false;
@@ -4187,6 +4214,212 @@ void EnterPlayersViewNotf::Swap(EnterPlayersViewNotf* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = EnterPlayersViewNotf_descriptor_;
   metadata.reflection = EnterPlayersViewNotf_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int EnterNpcsViewNotf::kNpcInfoFieldNumber;
+#endif  // !_MSC_VER
+
+EnterNpcsViewNotf::EnterNpcsViewNotf()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void EnterNpcsViewNotf::InitAsDefaultInstance() {
+}
+
+EnterNpcsViewNotf::EnterNpcsViewNotf(const EnterNpcsViewNotf& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void EnterNpcsViewNotf::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+EnterNpcsViewNotf::~EnterNpcsViewNotf() {
+  SharedDtor();
+}
+
+void EnterNpcsViewNotf::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void EnterNpcsViewNotf::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* EnterNpcsViewNotf::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return EnterNpcsViewNotf_descriptor_;
+}
+
+const EnterNpcsViewNotf& EnterNpcsViewNotf::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+EnterNpcsViewNotf* EnterNpcsViewNotf::default_instance_ = NULL;
+
+EnterNpcsViewNotf* EnterNpcsViewNotf::New() const {
+  return new EnterNpcsViewNotf;
+}
+
+void EnterNpcsViewNotf::Clear() {
+  npc_info_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool EnterNpcsViewNotf::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .NpcInfo npc_info = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_npc_info:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_npc_info()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(10)) goto parse_npc_info;
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void EnterNpcsViewNotf::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // repeated .NpcInfo npc_info = 1;
+  for (int i = 0; i < this->npc_info_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->npc_info(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* EnterNpcsViewNotf::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // repeated .NpcInfo npc_info = 1;
+  for (int i = 0; i < this->npc_info_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->npc_info(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int EnterNpcsViewNotf::ByteSize() const {
+  int total_size = 0;
+
+  // repeated .NpcInfo npc_info = 1;
+  total_size += 1 * this->npc_info_size();
+  for (int i = 0; i < this->npc_info_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->npc_info(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void EnterNpcsViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const EnterNpcsViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const EnterNpcsViewNotf*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void EnterNpcsViewNotf::MergeFrom(const EnterNpcsViewNotf& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  npc_info_.MergeFrom(from.npc_info_);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void EnterNpcsViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EnterNpcsViewNotf::CopyFrom(const EnterNpcsViewNotf& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EnterNpcsViewNotf::IsInitialized() const {
+
+  for (int i = 0; i < npc_info_size(); i++) {
+    if (!this->npc_info(i).IsInitialized()) return false;
+  }
+  return true;
+}
+
+void EnterNpcsViewNotf::Swap(EnterNpcsViewNotf* other) {
+  if (other != this) {
+    npc_info_.Swap(&other->npc_info_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata EnterNpcsViewNotf::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = EnterNpcsViewNotf_descriptor_;
+  metadata.reflection = EnterNpcsViewNotf_reflection_;
   return metadata;
 }
 

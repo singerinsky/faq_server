@@ -290,6 +290,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../com
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../include/tinystr.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../include/tinyxml.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/db_message.pb.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/message.pb.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/sql_binder.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/tb_user.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/tb_user.pb.h
