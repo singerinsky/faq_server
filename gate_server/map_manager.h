@@ -82,6 +82,10 @@ class map_cells
 typedef std::set<LogicPlayer*> player_set_t;
 typedef std::vector<player_set_t*> player_set_vec_t;
 
+typedef std::set<NpcObject*> npc_set_t;
+typedef std::vector<npc_set_t*> npc_set_vec_t;
+
+
 class map_object
 {
     public:
@@ -94,25 +98,30 @@ class map_object
         void init_map_region();
         bool is_vaild(Position& pos)
         {
-            return (pos.pos_x() >= 0) && (pos.pos_x() <= _map_width) &&  (pos.pos_y() >= 0) && (pos.pos_y() <= _map_height);
+            return (pos.pos_x() >= 0) && (pos.pos_x() <= _map_x) &&  (pos.pos_y() >= 0) && (pos.pos_y() <= _map_y);
         }
         bool map2cell(Position& src_pos,Position& rst_pos);
         int  pos2off(Position& pos)
         {
-            return pos.pos_y()*_map_width + _map_height ;
+            return pos.pos_y()*_map_x+ _map_y;
         }
         bool is_set(Position& pos)
         {
             int index = pos2off(pos); 
             return _map_pos.test(index);
         }
-        map_cells*   get_cells(Position pos,int cell_offset = 0);
+        map_cells*    get_cells(Position pos,int cell_offset = 0);
         player_set_t* get_player_incell(Position pos);
-        void         fill_all_player_cells(Position& pos, player_set_vec_t*);
-        void         get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set);
-        int          step(Position src_pos,Position rst_pos,Position* delt_pos);
+        void          fill_all_player_cells(Position& pos, player_set_vec_t*);
+        npc_set_t*    get_npc_incell(Position pos);
+        void          fill_all_npc_cells(Position& pos, npc_set_vec_t*);
+        void          get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set);
+        int           step(Position src_pos,Position rst_pos,Position* delt_pos);
     private:
         int                 _map_id;
+        int                 _map_x;
+        int                 _map_y;
+
         int                 _map_width;
         int                 _map_height;
         vector<NpcObject*>  _all_npc;

@@ -22,12 +22,20 @@ class NpcObject:public Fighter
         void  set_mp(int new_mp){_mp = new_mp;} 
         bool  is_alive(){return _alive;}
         int   get_id(){return _npc_id;}
+        void  set_player_round(player_set_vec_t& ply_vec)
+        {
+            _player_round = ply_vec; 
+        }
+
+        bool  enter_map(map_object*,Position& pos);
     private:
-        Position pos_; 
+        Position _pos; 
         int  _attr[PLY_ATTR_END];
         int  _hp;
         int  _mp;
         bool _alive;
         int  _npc_id;
+        player_set_vec_t    _player_round;
+        map_object*         _map_in;
 };
 #endif

@@ -16,7 +16,7 @@ import tb_user_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
   package='',
-  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\x1a\rtb_user.proto\"\x1f\n\x07PosInfo\x12\t\n\x01x\x18\x01 \x02(\x05\x12\t\n\x01y\x18\x02 \x02(\x05\"\x8f\x01\n\nPlayerInfo\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\x12\x17\n\x0fplayer_nickname\x18\x02 \x02(\t\x12\x14\n\x0cplayer_level\x18\x03 \x02(\x05\x12\x11\n\tcareer_id\x18\x04 \x02(\x05\x12\x15\n\rplayer_status\x18\x05 \x02(\x05\x12\x15\n\x03pos\x18\x06 \x02(\x0b\x32\x08.PosInfo\"i\n\x07NpcInfo\x12\x0e\n\x06npc_id\x18\x01 \x02(\x05\x12\x14\n\x0cnpc_nickname\x18\x02 \x02(\t\x12\x11\n\tnpc_level\x18\x03 \x02(\x05\x12\x11\n\ttotoal_hp\x18\x04 \x02(\x05\x12\x12\n\ncurrent_hp\x18\x05 \x02(\x05\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\"=\n\x0e\x43lientInitNotf\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x1e\n\tuser_info\x18\x02 \x02(\x0b\x32\x0b.db_tb_user\"A\n\x11\x43lientMoveRequest\x12\x0e\n\x06map_id\x18\x01 \x02(\x05\x12\r\n\x05pos_x\x18\x02 \x02(\x05\x12\r\n\x05pos_y\x18\x03 \x02(\x05\"O\n\x12\x43lientMoveResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0e\n\x06map_id\x18\x02 \x02(\x05\x12\r\n\x05pos_x\x18\x03 \x02(\x05\x12\r\n\x05pos_y\x18\x04 \x02(\x05\"(\n\x13PlayerLeaveViewNotf\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\"(\n\x13LeavePlayerViewNotf\x12\x11\n\tplayer_id\x18\x01 \x03(\x05\"7\n\x13PlayerEnterViewNotf\x12 \n\x0bplayer_info\x18\x01 \x02(\x0b\x32\x0b.PlayerInfo\"7\n\x13\x45nterPlayerViewNotf\x12 \n\x0bplayer_info\x18\x01 \x03(\x0b\x32\x0b.PlayerInfo*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*\x9d\x02\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04\x12\x13\n\x0fMSG_INIT_CLIENT\x10\x05\x12\x13\n\x0fMSG_CLIENT_MOVE\x10\x06\x12\x1e\n\x1aMSG_PLAYER_LEAVE_VIEW_NOTF\x10\x07\x12\x1f\n\x1bMSG_LEAVE_PLAYERS_VIEW_NOTF\x10\x08\x12\x1e\n\x1aMSG_PLAYER_ENTER_VIEW_NOTF\x10\t\x12\x1f\n\x1bMSG_ENTER_PLAYERS_VIEW_NOTF\x10\n*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
+  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\x1a\rtb_user.proto\"\x1f\n\x07PosInfo\x12\t\n\x01x\x18\x01 \x02(\x05\x12\t\n\x01y\x18\x02 \x02(\x05\"\x8f\x01\n\nPlayerInfo\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\x12\x17\n\x0fplayer_nickname\x18\x02 \x02(\t\x12\x14\n\x0cplayer_level\x18\x03 \x02(\x05\x12\x11\n\tcareer_id\x18\x04 \x02(\x05\x12\x15\n\rplayer_status\x18\x05 \x02(\x05\x12\x15\n\x03pos\x18\x06 \x02(\x0b\x32\x08.PosInfo\"i\n\x07NpcInfo\x12\x0e\n\x06npc_id\x18\x01 \x02(\x05\x12\x14\n\x0cnpc_nickname\x18\x02 \x02(\t\x12\x11\n\tnpc_level\x18\x03 \x02(\x05\x12\x11\n\ttotoal_hp\x18\x04 \x02(\x05\x12\x12\n\ncurrent_hp\x18\x05 \x02(\x05\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\"=\n\x0e\x43lientInitNotf\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x1e\n\tuser_info\x18\x02 \x02(\x0b\x32\x0b.db_tb_user\"A\n\x11\x43lientMoveRequest\x12\x0e\n\x06map_id\x18\x01 \x02(\x05\x12\r\n\x05pos_x\x18\x02 \x02(\x05\x12\r\n\x05pos_y\x18\x03 \x02(\x05\"O\n\x12\x43lientMoveResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0e\n\x06map_id\x18\x02 \x02(\x05\x12\r\n\x05pos_x\x18\x03 \x02(\x05\x12\r\n\x05pos_y\x18\x04 \x02(\x05\"(\n\x13PlayerLeaveViewNotf\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\")\n\x14LeavePlayersViewNotf\x12\x11\n\tplayer_id\x18\x01 \x03(\x05\"7\n\x13PlayerEnterViewNotf\x12 \n\x0bplayer_info\x18\x01 \x02(\x0b\x32\x0b.PlayerInfo\"8\n\x14\x45nterPlayersViewNotf\x12 \n\x0bplayer_info\x18\x01 \x03(\x0b\x32\x0b.PlayerInfo*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*\x9d\x02\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04\x12\x13\n\x0fMSG_INIT_CLIENT\x10\x05\x12\x13\n\x0fMSG_CLIENT_MOVE\x10\x06\x12\x1e\n\x1aMSG_PLAYER_LEAVE_VIEW_NOTF\x10\x07\x12\x1f\n\x1bMSG_LEAVE_PLAYERS_VIEW_NOTF\x10\x08\x12\x1e\n\x1aMSG_PLAYER_ENTER_VIEW_NOTF\x10\t\x12\x1f\n\x1bMSG_ENTER_PLAYERS_VIEW_NOTF\x10\n*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
 
 _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   name='MSG_ACTION_TYPE',
@@ -39,8 +39,8 @@ _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=930,
-  serialized_end=998,
+  serialized_start=932,
+  serialized_end=1000,
 )
 
 MSG_ACTION_TYPE = enum_type_wrapper.EnumTypeWrapper(_MSG_ACTION_TYPE)
@@ -93,8 +93,8 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1001,
-  serialized_end=1286,
+  serialized_start=1003,
+  serialized_end=1288,
 )
 
 MessageType = enum_type_wrapper.EnumTypeWrapper(_MESSAGETYPE)
@@ -111,8 +111,8 @@ _DBMESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1288,
-  serialized_end=1323,
+  serialized_start=1290,
+  serialized_end=1325,
 )
 
 DbMessageType = enum_type_wrapper.EnumTypeWrapper(_DBMESSAGETYPE)
@@ -560,15 +560,15 @@ _PLAYERLEAVEVIEWNOTF = _descriptor.Descriptor(
 )
 
 
-_LEAVEPLAYERVIEWNOTF = _descriptor.Descriptor(
-  name='LeavePlayerViewNotf',
-  full_name='LeavePlayerViewNotf',
+_LEAVEPLAYERSVIEWNOTF = _descriptor.Descriptor(
+  name='LeavePlayersViewNotf',
+  full_name='LeavePlayersViewNotf',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='player_id', full_name='LeavePlayerViewNotf.player_id', index=0,
+      name='player_id', full_name='LeavePlayersViewNotf.player_id', index=0,
       number=1, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -584,7 +584,7 @@ _LEAVEPLAYERVIEWNOTF = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=774,
-  serialized_end=814,
+  serialized_end=815,
 )
 
 
@@ -611,20 +611,20 @@ _PLAYERENTERVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=816,
-  serialized_end=871,
+  serialized_start=817,
+  serialized_end=872,
 )
 
 
-_ENTERPLAYERVIEWNOTF = _descriptor.Descriptor(
-  name='EnterPlayerViewNotf',
-  full_name='EnterPlayerViewNotf',
+_ENTERPLAYERSVIEWNOTF = _descriptor.Descriptor(
+  name='EnterPlayersViewNotf',
+  full_name='EnterPlayersViewNotf',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='player_info', full_name='EnterPlayerViewNotf.player_info', index=0,
+      name='player_info', full_name='EnterPlayersViewNotf.player_info', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -639,14 +639,14 @@ _ENTERPLAYERVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=873,
-  serialized_end=928,
+  serialized_start=874,
+  serialized_end=930,
 )
 
 _PLAYERINFO.fields_by_name['pos'].message_type = _POSINFO
 _CLIENTINITNOTF.fields_by_name['user_info'].message_type = tb_user_pb2._DB_TB_USER
 _PLAYERENTERVIEWNOTF.fields_by_name['player_info'].message_type = _PLAYERINFO
-_ENTERPLAYERVIEWNOTF.fields_by_name['player_info'].message_type = _PLAYERINFO
+_ENTERPLAYERSVIEWNOTF.fields_by_name['player_info'].message_type = _PLAYERINFO
 DESCRIPTOR.message_types_by_name['PosInfo'] = _POSINFO
 DESCRIPTOR.message_types_by_name['PlayerInfo'] = _PLAYERINFO
 DESCRIPTOR.message_types_by_name['NpcInfo'] = _NPCINFO
@@ -658,9 +658,9 @@ DESCRIPTOR.message_types_by_name['ClientInitNotf'] = _CLIENTINITNOTF
 DESCRIPTOR.message_types_by_name['ClientMoveRequest'] = _CLIENTMOVEREQUEST
 DESCRIPTOR.message_types_by_name['ClientMoveResponse'] = _CLIENTMOVERESPONSE
 DESCRIPTOR.message_types_by_name['PlayerLeaveViewNotf'] = _PLAYERLEAVEVIEWNOTF
-DESCRIPTOR.message_types_by_name['LeavePlayerViewNotf'] = _LEAVEPLAYERVIEWNOTF
+DESCRIPTOR.message_types_by_name['LeavePlayersViewNotf'] = _LEAVEPLAYERSVIEWNOTF
 DESCRIPTOR.message_types_by_name['PlayerEnterViewNotf'] = _PLAYERENTERVIEWNOTF
-DESCRIPTOR.message_types_by_name['EnterPlayerViewNotf'] = _ENTERPLAYERVIEWNOTF
+DESCRIPTOR.message_types_by_name['EnterPlayersViewNotf'] = _ENTERPLAYERSVIEWNOTF
 
 class PosInfo(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -728,11 +728,11 @@ class PlayerLeaveViewNotf(_message.Message):
 
   # @@protoc_insertion_point(class_scope:PlayerLeaveViewNotf)
 
-class LeavePlayerViewNotf(_message.Message):
+class LeavePlayersViewNotf(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _LEAVEPLAYERVIEWNOTF
+  DESCRIPTOR = _LEAVEPLAYERSVIEWNOTF
 
-  # @@protoc_insertion_point(class_scope:LeavePlayerViewNotf)
+  # @@protoc_insertion_point(class_scope:LeavePlayersViewNotf)
 
 class PlayerEnterViewNotf(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -740,11 +740,11 @@ class PlayerEnterViewNotf(_message.Message):
 
   # @@protoc_insertion_point(class_scope:PlayerEnterViewNotf)
 
-class EnterPlayerViewNotf(_message.Message):
+class EnterPlayersViewNotf(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _ENTERPLAYERVIEWNOTF
+  DESCRIPTOR = _ENTERPLAYERSVIEWNOTF
 
-  # @@protoc_insertion_point(class_scope:EnterPlayerViewNotf)
+  # @@protoc_insertion_point(class_scope:EnterPlayersViewNotf)
 
 
 # @@protoc_insertion_point(module_scope)

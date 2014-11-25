@@ -1,10 +1,10 @@
 #ifndef _game_define_h_
 #define _game_define_h_
 
-#define MAP_CELL_WIDTH  10
-#define MAP_CELL_HEIGHT 10
+#define MAP_CELL_WIDTH  5
+#define MAP_CELL_HEIGHT 5 
 
-#define MOVE_SPEED  10
+#define MOVE_SPEED 5 
 
 #define MAP_MAX_POS 40000
 

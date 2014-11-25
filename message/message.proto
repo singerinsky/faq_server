@@ -102,7 +102,7 @@ message PlayerLeaveViewNotf
     required int32 player_id = 1;
 }
 
-message LeavePlayerViewNotf
+message LeavePlayersViewNotf
 {
     repeated int32 player_id = 1;
 }
@@ -112,7 +112,7 @@ message PlayerEnterViewNotf
     required PlayerInfo player_info = 1;
 }
 
-message EnterPlayerViewNotf
+message EnterPlayersViewNotf
 {
     repeated PlayerInfo player_info = 1;
 }

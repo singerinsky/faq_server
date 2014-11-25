@@ -51,15 +51,15 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* PlayerLeaveViewNotf_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   PlayerLeaveViewNotf_reflection_ = NULL;
-const ::google::protobuf::Descriptor* LeavePlayerViewNotf_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* LeavePlayersViewNotf_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  LeavePlayerViewNotf_reflection_ = NULL;
+  LeavePlayersViewNotf_reflection_ = NULL;
 const ::google::protobuf::Descriptor* PlayerEnterViewNotf_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   PlayerEnterViewNotf_reflection_ = NULL;
-const ::google::protobuf::Descriptor* EnterPlayerViewNotf_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* EnterPlayersViewNotf_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  EnterPlayerViewNotf_reflection_ = NULL;
+  EnterPlayersViewNotf_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* MSG_ACTION_TYPE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor_ = NULL;
@@ -255,21 +255,21 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PlayerLeaveViewNotf));
-  LeavePlayerViewNotf_descriptor_ = file->message_type(11);
-  static const int LeavePlayerViewNotf_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayerViewNotf, player_id_),
+  LeavePlayersViewNotf_descriptor_ = file->message_type(11);
+  static const int LeavePlayersViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayersViewNotf, player_id_),
   };
-  LeavePlayerViewNotf_reflection_ =
+  LeavePlayersViewNotf_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      LeavePlayerViewNotf_descriptor_,
-      LeavePlayerViewNotf::default_instance_,
-      LeavePlayerViewNotf_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayerViewNotf, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayerViewNotf, _unknown_fields_),
+      LeavePlayersViewNotf_descriptor_,
+      LeavePlayersViewNotf::default_instance_,
+      LeavePlayersViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayersViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayersViewNotf, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(LeavePlayerViewNotf));
+      sizeof(LeavePlayersViewNotf));
   PlayerEnterViewNotf_descriptor_ = file->message_type(12);
   static const int PlayerEnterViewNotf_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerEnterViewNotf, player_info_),
@@ -285,21 +285,21 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PlayerEnterViewNotf));
-  EnterPlayerViewNotf_descriptor_ = file->message_type(13);
-  static const int EnterPlayerViewNotf_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayerViewNotf, player_info_),
+  EnterPlayersViewNotf_descriptor_ = file->message_type(13);
+  static const int EnterPlayersViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayersViewNotf, player_info_),
   };
-  EnterPlayerViewNotf_reflection_ =
+  EnterPlayersViewNotf_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      EnterPlayerViewNotf_descriptor_,
-      EnterPlayerViewNotf::default_instance_,
-      EnterPlayerViewNotf_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayerViewNotf, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayerViewNotf, _unknown_fields_),
+      EnterPlayersViewNotf_descriptor_,
+      EnterPlayersViewNotf::default_instance_,
+      EnterPlayersViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayersViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayersViewNotf, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(EnterPlayerViewNotf));
+      sizeof(EnterPlayersViewNotf));
   MSG_ACTION_TYPE_descriptor_ = file->enum_type(0);
   MessageType_descriptor_ = file->enum_type(1);
   DbMessageType_descriptor_ = file->enum_type(2);
@@ -338,11 +338,11 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     PlayerLeaveViewNotf_descriptor_, &PlayerLeaveViewNotf::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    LeavePlayerViewNotf_descriptor_, &LeavePlayerViewNotf::default_instance());
+    LeavePlayersViewNotf_descriptor_, &LeavePlayersViewNotf::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     PlayerEnterViewNotf_descriptor_, &PlayerEnterViewNotf::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    EnterPlayerViewNotf_descriptor_, &EnterPlayerViewNotf::default_instance());
+    EnterPlayersViewNotf_descriptor_, &EnterPlayersViewNotf::default_instance());
 }
 
 }  // namespace
@@ -370,12 +370,12 @@ void protobuf_ShutdownFile_message_2eproto() {
   delete ClientMoveResponse_reflection_;
   delete PlayerLeaveViewNotf::default_instance_;
   delete PlayerLeaveViewNotf_reflection_;
-  delete LeavePlayerViewNotf::default_instance_;
-  delete LeavePlayerViewNotf_reflection_;
+  delete LeavePlayersViewNotf::default_instance_;
+  delete LeavePlayersViewNotf_reflection_;
   delete PlayerEnterViewNotf::default_instance_;
   delete PlayerEnterViewNotf_reflection_;
-  delete EnterPlayerViewNotf::default_instance_;
-  delete EnterPlayerViewNotf_reflection_;
+  delete EnterPlayersViewNotf::default_instance_;
+  delete EnterPlayersViewNotf_reflection_;
 }
 
 void protobuf_AddDesc_message_2eproto() {
@@ -406,21 +406,21 @@ void protobuf_AddDesc_message_2eproto() {
     "s_y\030\003 \002(\005\"O\n\022ClientMoveResponse\022\013\n\003ret\030\001"
     " \002(\005\022\016\n\006map_id\030\002 \002(\005\022\r\n\005pos_x\030\003 \002(\005\022\r\n\005p"
     "os_y\030\004 \002(\005\"(\n\023PlayerLeaveViewNotf\022\021\n\tpla"
-    "yer_id\030\001 \002(\005\"(\n\023LeavePlayerViewNotf\022\021\n\tp"
-    "layer_id\030\001 \003(\005\"7\n\023PlayerEnterViewNotf\022 \n"
-    "\013player_info\030\001 \002(\0132\013.PlayerInfo\"7\n\023Enter"
-    "PlayerViewNotf\022 \n\013player_info\030\001 \003(\0132\013.Pl"
-    "ayerInfo*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQUE"
-    "ST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*\235"
-    "\002\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_INFO"
-    "\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOG"
-    "IN\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017MS"
-    "G_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006\022\036\n\032"
-    "MSG_PLAYER_LEAVE_VIEW_NOTF\020\007\022\037\n\033MSG_LEAV"
-    "E_PLAYERS_VIEW_NOTF\020\010\022\036\n\032MSG_PLAYER_ENTE"
-    "R_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER_PLAYERS_VIEW_"
-    "NOTF\020\n*#\n\rDbMessageType\022\022\n\rMSG_DB_COMMON"
-    "\020\220N", 1323);
+    "yer_id\030\001 \002(\005\")\n\024LeavePlayersViewNotf\022\021\n\t"
+    "player_id\030\001 \003(\005\"7\n\023PlayerEnterViewNotf\022 "
+    "\n\013player_info\030\001 \002(\0132\013.PlayerInfo\"8\n\024Ente"
+    "rPlayersViewNotf\022 \n\013player_info\030\001 \003(\0132\013."
+    "PlayerInfo*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQ"
+    "UEST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002"
+    "*\235\002\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_IN"
+    "FO\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_L"
+    "OGIN\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017"
+    "MSG_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006\022\036"
+    "\n\032MSG_PLAYER_LEAVE_VIEW_NOTF\020\007\022\037\n\033MSG_LE"
+    "AVE_PLAYERS_VIEW_NOTF\020\010\022\036\n\032MSG_PLAYER_EN"
+    "TER_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER_PLAYERS_VIE"
+    "W_NOTF\020\n*#\n\rDbMessageType\022\022\n\rMSG_DB_COMM"
+    "ON\020\220N", 1325);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   PosInfo::default_instance_ = new PosInfo();
@@ -434,9 +434,9 @@ void protobuf_AddDesc_message_2eproto() {
   ClientMoveRequest::default_instance_ = new ClientMoveRequest();
   ClientMoveResponse::default_instance_ = new ClientMoveResponse();
   PlayerLeaveViewNotf::default_instance_ = new PlayerLeaveViewNotf();
-  LeavePlayerViewNotf::default_instance_ = new LeavePlayerViewNotf();
+  LeavePlayersViewNotf::default_instance_ = new LeavePlayersViewNotf();
   PlayerEnterViewNotf::default_instance_ = new PlayerEnterViewNotf();
-  EnterPlayerViewNotf::default_instance_ = new EnterPlayerViewNotf();
+  EnterPlayersViewNotf::default_instance_ = new EnterPlayersViewNotf();
   PosInfo::default_instance_->InitAsDefaultInstance();
   PlayerInfo::default_instance_->InitAsDefaultInstance();
   NpcInfo::default_instance_->InitAsDefaultInstance();
@@ -448,9 +448,9 @@ void protobuf_AddDesc_message_2eproto() {
   ClientMoveRequest::default_instance_->InitAsDefaultInstance();
   ClientMoveResponse::default_instance_->InitAsDefaultInstance();
   PlayerLeaveViewNotf::default_instance_->InitAsDefaultInstance();
-  LeavePlayerViewNotf::default_instance_->InitAsDefaultInstance();
+  LeavePlayersViewNotf::default_instance_->InitAsDefaultInstance();
   PlayerEnterViewNotf::default_instance_->InitAsDefaultInstance();
-  EnterPlayerViewNotf::default_instance_->InitAsDefaultInstance();
+  EnterPlayersViewNotf::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_message_2eproto);
 }
 
@@ -3560,65 +3560,65 @@ void PlayerLeaveViewNotf::Swap(PlayerLeaveViewNotf* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int LeavePlayerViewNotf::kPlayerIdFieldNumber;
+const int LeavePlayersViewNotf::kPlayerIdFieldNumber;
 #endif  // !_MSC_VER
 
-LeavePlayerViewNotf::LeavePlayerViewNotf()
+LeavePlayersViewNotf::LeavePlayersViewNotf()
   : ::google::protobuf::Message() {
   SharedCtor();
 }
 
-void LeavePlayerViewNotf::InitAsDefaultInstance() {
+void LeavePlayersViewNotf::InitAsDefaultInstance() {
 }
 
-LeavePlayerViewNotf::LeavePlayerViewNotf(const LeavePlayerViewNotf& from)
+LeavePlayersViewNotf::LeavePlayersViewNotf(const LeavePlayersViewNotf& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
 }
 
-void LeavePlayerViewNotf::SharedCtor() {
+void LeavePlayersViewNotf::SharedCtor() {
   _cached_size_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-LeavePlayerViewNotf::~LeavePlayerViewNotf() {
+LeavePlayersViewNotf::~LeavePlayersViewNotf() {
   SharedDtor();
 }
 
-void LeavePlayerViewNotf::SharedDtor() {
+void LeavePlayersViewNotf::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void LeavePlayerViewNotf::SetCachedSize(int size) const {
+void LeavePlayersViewNotf::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* LeavePlayerViewNotf::descriptor() {
+const ::google::protobuf::Descriptor* LeavePlayersViewNotf::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return LeavePlayerViewNotf_descriptor_;
+  return LeavePlayersViewNotf_descriptor_;
 }
 
-const LeavePlayerViewNotf& LeavePlayerViewNotf::default_instance() {
+const LeavePlayersViewNotf& LeavePlayersViewNotf::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
   return *default_instance_;
 }
 
-LeavePlayerViewNotf* LeavePlayerViewNotf::default_instance_ = NULL;
+LeavePlayersViewNotf* LeavePlayersViewNotf::default_instance_ = NULL;
 
-LeavePlayerViewNotf* LeavePlayerViewNotf::New() const {
-  return new LeavePlayerViewNotf;
+LeavePlayersViewNotf* LeavePlayersViewNotf::New() const {
+  return new LeavePlayersViewNotf;
 }
 
-void LeavePlayerViewNotf::Clear() {
+void LeavePlayersViewNotf::Clear() {
   player_id_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
 
-bool LeavePlayerViewNotf::MergePartialFromCodedStream(
+bool LeavePlayersViewNotf::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) return false
   ::google::protobuf::uint32 tag;
@@ -3662,7 +3662,7 @@ bool LeavePlayerViewNotf::MergePartialFromCodedStream(
 #undef DO_
 }
 
-void LeavePlayerViewNotf::SerializeWithCachedSizes(
+void LeavePlayersViewNotf::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // repeated int32 player_id = 1;
   for (int i = 0; i < this->player_id_size(); i++) {
@@ -3676,7 +3676,7 @@ void LeavePlayerViewNotf::SerializeWithCachedSizes(
   }
 }
 
-::google::protobuf::uint8* LeavePlayerViewNotf::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* LeavePlayersViewNotf::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // repeated int32 player_id = 1;
   for (int i = 0; i < this->player_id_size(); i++) {
@@ -3691,7 +3691,7 @@ void LeavePlayerViewNotf::SerializeWithCachedSizes(
   return target;
 }
 
-int LeavePlayerViewNotf::ByteSize() const {
+int LeavePlayersViewNotf::ByteSize() const {
   int total_size = 0;
 
   // repeated int32 player_id = 1;
@@ -3715,10 +3715,10 @@ int LeavePlayerViewNotf::ByteSize() const {
   return total_size;
 }
 
-void LeavePlayerViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+void LeavePlayersViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const LeavePlayerViewNotf* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const LeavePlayerViewNotf*>(
+  const LeavePlayersViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const LeavePlayersViewNotf*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -3727,30 +3727,30 @@ void LeavePlayerViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void LeavePlayerViewNotf::MergeFrom(const LeavePlayerViewNotf& from) {
+void LeavePlayersViewNotf::MergeFrom(const LeavePlayersViewNotf& from) {
   GOOGLE_CHECK_NE(&from, this);
   player_id_.MergeFrom(from.player_id_);
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void LeavePlayerViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+void LeavePlayersViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void LeavePlayerViewNotf::CopyFrom(const LeavePlayerViewNotf& from) {
+void LeavePlayersViewNotf::CopyFrom(const LeavePlayersViewNotf& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool LeavePlayerViewNotf::IsInitialized() const {
+bool LeavePlayersViewNotf::IsInitialized() const {
 
   return true;
 }
 
-void LeavePlayerViewNotf::Swap(LeavePlayerViewNotf* other) {
+void LeavePlayersViewNotf::Swap(LeavePlayersViewNotf* other) {
   if (other != this) {
     player_id_.Swap(&other->player_id_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -3759,11 +3759,11 @@ void LeavePlayerViewNotf::Swap(LeavePlayerViewNotf* other) {
   }
 }
 
-::google::protobuf::Metadata LeavePlayerViewNotf::GetMetadata() const {
+::google::protobuf::Metadata LeavePlayersViewNotf::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = LeavePlayerViewNotf_descriptor_;
-  metadata.reflection = LeavePlayerViewNotf_reflection_;
+  metadata.descriptor = LeavePlayersViewNotf_descriptor_;
+  metadata.reflection = LeavePlayersViewNotf_reflection_;
   return metadata;
 }
 
@@ -3988,65 +3988,65 @@ void PlayerEnterViewNotf::Swap(PlayerEnterViewNotf* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int EnterPlayerViewNotf::kPlayerInfoFieldNumber;
+const int EnterPlayersViewNotf::kPlayerInfoFieldNumber;
 #endif  // !_MSC_VER
 
-EnterPlayerViewNotf::EnterPlayerViewNotf()
+EnterPlayersViewNotf::EnterPlayersViewNotf()
   : ::google::protobuf::Message() {
   SharedCtor();
 }
 
-void EnterPlayerViewNotf::InitAsDefaultInstance() {
+void EnterPlayersViewNotf::InitAsDefaultInstance() {
 }
 
-EnterPlayerViewNotf::EnterPlayerViewNotf(const EnterPlayerViewNotf& from)
+EnterPlayersViewNotf::EnterPlayersViewNotf(const EnterPlayersViewNotf& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
 }
 
-void EnterPlayerViewNotf::SharedCtor() {
+void EnterPlayersViewNotf::SharedCtor() {
   _cached_size_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-EnterPlayerViewNotf::~EnterPlayerViewNotf() {
+EnterPlayersViewNotf::~EnterPlayersViewNotf() {
   SharedDtor();
 }
 
-void EnterPlayerViewNotf::SharedDtor() {
+void EnterPlayersViewNotf::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void EnterPlayerViewNotf::SetCachedSize(int size) const {
+void EnterPlayersViewNotf::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* EnterPlayerViewNotf::descriptor() {
+const ::google::protobuf::Descriptor* EnterPlayersViewNotf::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return EnterPlayerViewNotf_descriptor_;
+  return EnterPlayersViewNotf_descriptor_;
 }
 
-const EnterPlayerViewNotf& EnterPlayerViewNotf::default_instance() {
+const EnterPlayersViewNotf& EnterPlayersViewNotf::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
   return *default_instance_;
 }
 
-EnterPlayerViewNotf* EnterPlayerViewNotf::default_instance_ = NULL;
+EnterPlayersViewNotf* EnterPlayersViewNotf::default_instance_ = NULL;
 
-EnterPlayerViewNotf* EnterPlayerViewNotf::New() const {
-  return new EnterPlayerViewNotf;
+EnterPlayersViewNotf* EnterPlayersViewNotf::New() const {
+  return new EnterPlayersViewNotf;
 }
 
-void EnterPlayerViewNotf::Clear() {
+void EnterPlayersViewNotf::Clear() {
   player_info_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
 
-bool EnterPlayerViewNotf::MergePartialFromCodedStream(
+bool EnterPlayersViewNotf::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) return false
   ::google::protobuf::uint32 tag;
@@ -4083,7 +4083,7 @@ bool EnterPlayerViewNotf::MergePartialFromCodedStream(
 #undef DO_
 }
 
-void EnterPlayerViewNotf::SerializeWithCachedSizes(
+void EnterPlayersViewNotf::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // repeated .PlayerInfo player_info = 1;
   for (int i = 0; i < this->player_info_size(); i++) {
@@ -4097,7 +4097,7 @@ void EnterPlayerViewNotf::SerializeWithCachedSizes(
   }
 }
 
-::google::protobuf::uint8* EnterPlayerViewNotf::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* EnterPlayersViewNotf::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // repeated .PlayerInfo player_info = 1;
   for (int i = 0; i < this->player_info_size(); i++) {
@@ -4113,7 +4113,7 @@ void EnterPlayerViewNotf::SerializeWithCachedSizes(
   return target;
 }
 
-int EnterPlayerViewNotf::ByteSize() const {
+int EnterPlayersViewNotf::ByteSize() const {
   int total_size = 0;
 
   // repeated .PlayerInfo player_info = 1;
@@ -4135,10 +4135,10 @@ int EnterPlayerViewNotf::ByteSize() const {
   return total_size;
 }
 
-void EnterPlayerViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+void EnterPlayersViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const EnterPlayerViewNotf* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const EnterPlayerViewNotf*>(
+  const EnterPlayersViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const EnterPlayersViewNotf*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -4147,25 +4147,25 @@ void EnterPlayerViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void EnterPlayerViewNotf::MergeFrom(const EnterPlayerViewNotf& from) {
+void EnterPlayersViewNotf::MergeFrom(const EnterPlayersViewNotf& from) {
   GOOGLE_CHECK_NE(&from, this);
   player_info_.MergeFrom(from.player_info_);
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void EnterPlayerViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+void EnterPlayersViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EnterPlayerViewNotf::CopyFrom(const EnterPlayerViewNotf& from) {
+void EnterPlayersViewNotf::CopyFrom(const EnterPlayersViewNotf& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EnterPlayerViewNotf::IsInitialized() const {
+bool EnterPlayersViewNotf::IsInitialized() const {
 
   for (int i = 0; i < player_info_size(); i++) {
     if (!this->player_info(i).IsInitialized()) return false;
@@ -4173,7 +4173,7 @@ bool EnterPlayerViewNotf::IsInitialized() const {
   return true;
 }
 
-void EnterPlayerViewNotf::Swap(EnterPlayerViewNotf* other) {
+void EnterPlayersViewNotf::Swap(EnterPlayersViewNotf* other) {
   if (other != this) {
     player_info_.Swap(&other->player_info_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -4182,11 +4182,11 @@ void EnterPlayerViewNotf::Swap(EnterPlayerViewNotf* other) {
   }
 }
 
-::google::protobuf::Metadata EnterPlayerViewNotf::GetMetadata() const {
+::google::protobuf::Metadata EnterPlayersViewNotf::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = EnterPlayerViewNotf_descriptor_;
-  metadata.reflection = EnterPlayerViewNotf_reflection_;
+  metadata.descriptor = EnterPlayersViewNotf_descriptor_;
+  metadata.reflection = EnterPlayersViewNotf_reflection_;
   return metadata;
 }
 

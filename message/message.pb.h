@@ -45,9 +45,9 @@ class ClientInitNotf;
 class ClientMoveRequest;
 class ClientMoveResponse;
 class PlayerLeaveViewNotf;
-class LeavePlayerViewNotf;
+class LeavePlayersViewNotf;
 class PlayerEnterViewNotf;
-class EnterPlayerViewNotf;
+class EnterPlayersViewNotf;
 
 enum MSG_ACTION_TYPE {
   MSG_REQUEST = 0,
@@ -1207,14 +1207,14 @@ class PlayerLeaveViewNotf : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class LeavePlayerViewNotf : public ::google::protobuf::Message {
+class LeavePlayersViewNotf : public ::google::protobuf::Message {
  public:
-  LeavePlayerViewNotf();
-  virtual ~LeavePlayerViewNotf();
+  LeavePlayersViewNotf();
+  virtual ~LeavePlayersViewNotf();
 
-  LeavePlayerViewNotf(const LeavePlayerViewNotf& from);
+  LeavePlayersViewNotf(const LeavePlayersViewNotf& from);
 
-  inline LeavePlayerViewNotf& operator=(const LeavePlayerViewNotf& from) {
+  inline LeavePlayersViewNotf& operator=(const LeavePlayersViewNotf& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1228,17 +1228,17 @@ class LeavePlayerViewNotf : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const LeavePlayerViewNotf& default_instance();
+  static const LeavePlayersViewNotf& default_instance();
 
-  void Swap(LeavePlayerViewNotf* other);
+  void Swap(LeavePlayersViewNotf* other);
 
   // implements Message ----------------------------------------------
 
-  LeavePlayerViewNotf* New() const;
+  LeavePlayersViewNotf* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const LeavePlayerViewNotf& from);
-  void MergeFrom(const LeavePlayerViewNotf& from);
+  void CopyFrom(const LeavePlayersViewNotf& from);
+  void MergeFrom(const LeavePlayersViewNotf& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -1273,7 +1273,7 @@ class LeavePlayerViewNotf : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_player_id();
 
-  // @@protoc_insertion_point(class_scope:LeavePlayerViewNotf)
+  // @@protoc_insertion_point(class_scope:LeavePlayersViewNotf)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1288,7 +1288,7 @@ class LeavePlayerViewNotf : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_message_2eproto();
 
   void InitAsDefaultInstance();
-  static LeavePlayerViewNotf* default_instance_;
+  static LeavePlayersViewNotf* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -1376,14 +1376,14 @@ class PlayerEnterViewNotf : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class EnterPlayerViewNotf : public ::google::protobuf::Message {
+class EnterPlayersViewNotf : public ::google::protobuf::Message {
  public:
-  EnterPlayerViewNotf();
-  virtual ~EnterPlayerViewNotf();
+  EnterPlayersViewNotf();
+  virtual ~EnterPlayersViewNotf();
 
-  EnterPlayerViewNotf(const EnterPlayerViewNotf& from);
+  EnterPlayersViewNotf(const EnterPlayersViewNotf& from);
 
-  inline EnterPlayerViewNotf& operator=(const EnterPlayerViewNotf& from) {
+  inline EnterPlayersViewNotf& operator=(const EnterPlayersViewNotf& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1397,17 +1397,17 @@ class EnterPlayerViewNotf : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const EnterPlayerViewNotf& default_instance();
+  static const EnterPlayersViewNotf& default_instance();
 
-  void Swap(EnterPlayerViewNotf* other);
+  void Swap(EnterPlayersViewNotf* other);
 
   // implements Message ----------------------------------------------
 
-  EnterPlayerViewNotf* New() const;
+  EnterPlayersViewNotf* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const EnterPlayerViewNotf& from);
-  void MergeFrom(const EnterPlayerViewNotf& from);
+  void CopyFrom(const EnterPlayersViewNotf& from);
+  void MergeFrom(const EnterPlayersViewNotf& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -1442,7 +1442,7 @@ class EnterPlayerViewNotf : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::PlayerInfo >*
       mutable_player_info();
 
-  // @@protoc_insertion_point(class_scope:EnterPlayerViewNotf)
+  // @@protoc_insertion_point(class_scope:EnterPlayersViewNotf)
  private:
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -1457,7 +1457,7 @@ class EnterPlayerViewNotf : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_message_2eproto();
 
   void InitAsDefaultInstance();
-  static EnterPlayerViewNotf* default_instance_;
+  static EnterPlayersViewNotf* default_instance_;
 };
 // ===================================================================
 
@@ -2300,30 +2300,30 @@ inline void PlayerLeaveViewNotf::set_player_id(::google::protobuf::int32 value) 
 
 // -------------------------------------------------------------------
 
-// LeavePlayerViewNotf
+// LeavePlayersViewNotf
 
 // repeated int32 player_id = 1;
-inline int LeavePlayerViewNotf::player_id_size() const {
+inline int LeavePlayersViewNotf::player_id_size() const {
   return player_id_.size();
 }
-inline void LeavePlayerViewNotf::clear_player_id() {
+inline void LeavePlayersViewNotf::clear_player_id() {
   player_id_.Clear();
 }
-inline ::google::protobuf::int32 LeavePlayerViewNotf::player_id(int index) const {
+inline ::google::protobuf::int32 LeavePlayersViewNotf::player_id(int index) const {
   return player_id_.Get(index);
 }
-inline void LeavePlayerViewNotf::set_player_id(int index, ::google::protobuf::int32 value) {
+inline void LeavePlayersViewNotf::set_player_id(int index, ::google::protobuf::int32 value) {
   player_id_.Set(index, value);
 }
-inline void LeavePlayerViewNotf::add_player_id(::google::protobuf::int32 value) {
+inline void LeavePlayersViewNotf::add_player_id(::google::protobuf::int32 value) {
   player_id_.Add(value);
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-LeavePlayerViewNotf::player_id() const {
+LeavePlayersViewNotf::player_id() const {
   return player_id_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-LeavePlayerViewNotf::mutable_player_id() {
+LeavePlayersViewNotf::mutable_player_id() {
   return &player_id_;
 }
 
@@ -2371,30 +2371,30 @@ inline void PlayerEnterViewNotf::set_allocated_player_info(::PlayerInfo* player_
 
 // -------------------------------------------------------------------
 
-// EnterPlayerViewNotf
+// EnterPlayersViewNotf
 
 // repeated .PlayerInfo player_info = 1;
-inline int EnterPlayerViewNotf::player_info_size() const {
+inline int EnterPlayersViewNotf::player_info_size() const {
   return player_info_.size();
 }
-inline void EnterPlayerViewNotf::clear_player_info() {
+inline void EnterPlayersViewNotf::clear_player_info() {
   player_info_.Clear();
 }
-inline const ::PlayerInfo& EnterPlayerViewNotf::player_info(int index) const {
+inline const ::PlayerInfo& EnterPlayersViewNotf::player_info(int index) const {
   return player_info_.Get(index);
 }
-inline ::PlayerInfo* EnterPlayerViewNotf::mutable_player_info(int index) {
+inline ::PlayerInfo* EnterPlayersViewNotf::mutable_player_info(int index) {
   return player_info_.Mutable(index);
 }
-inline ::PlayerInfo* EnterPlayerViewNotf::add_player_info() {
+inline ::PlayerInfo* EnterPlayersViewNotf::add_player_info() {
   return player_info_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::PlayerInfo >&
-EnterPlayerViewNotf::player_info() const {
+EnterPlayersViewNotf::player_info() const {
   return player_info_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::PlayerInfo >*
-EnterPlayerViewNotf::mutable_player_info() {
+EnterPlayersViewNotf::mutable_player_info() {
   return &player_info_;
 }
 
