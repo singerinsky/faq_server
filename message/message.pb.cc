@@ -48,6 +48,18 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* ClientMoveResponse_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ClientMoveResponse_reflection_ = NULL;
+const ::google::protobuf::Descriptor* PlayerLeaveViewNotf_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  PlayerLeaveViewNotf_reflection_ = NULL;
+const ::google::protobuf::Descriptor* LeavePlayerViewNotf_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  LeavePlayerViewNotf_reflection_ = NULL;
+const ::google::protobuf::Descriptor* PlayerEnterViewNotf_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  PlayerEnterViewNotf_reflection_ = NULL;
+const ::google::protobuf::Descriptor* EnterPlayerViewNotf_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  EnterPlayerViewNotf_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* MSG_ACTION_TYPE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor_ = NULL;
@@ -228,6 +240,66 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ClientMoveResponse));
+  PlayerLeaveViewNotf_descriptor_ = file->message_type(10);
+  static const int PlayerLeaveViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerLeaveViewNotf, player_id_),
+  };
+  PlayerLeaveViewNotf_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      PlayerLeaveViewNotf_descriptor_,
+      PlayerLeaveViewNotf::default_instance_,
+      PlayerLeaveViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerLeaveViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerLeaveViewNotf, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(PlayerLeaveViewNotf));
+  LeavePlayerViewNotf_descriptor_ = file->message_type(11);
+  static const int LeavePlayerViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayerViewNotf, player_id_),
+  };
+  LeavePlayerViewNotf_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      LeavePlayerViewNotf_descriptor_,
+      LeavePlayerViewNotf::default_instance_,
+      LeavePlayerViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayerViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LeavePlayerViewNotf, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(LeavePlayerViewNotf));
+  PlayerEnterViewNotf_descriptor_ = file->message_type(12);
+  static const int PlayerEnterViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerEnterViewNotf, player_info_),
+  };
+  PlayerEnterViewNotf_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      PlayerEnterViewNotf_descriptor_,
+      PlayerEnterViewNotf::default_instance_,
+      PlayerEnterViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerEnterViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerEnterViewNotf, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(PlayerEnterViewNotf));
+  EnterPlayerViewNotf_descriptor_ = file->message_type(13);
+  static const int EnterPlayerViewNotf_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayerViewNotf, player_info_),
+  };
+  EnterPlayerViewNotf_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      EnterPlayerViewNotf_descriptor_,
+      EnterPlayerViewNotf::default_instance_,
+      EnterPlayerViewNotf_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayerViewNotf, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EnterPlayerViewNotf, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(EnterPlayerViewNotf));
   MSG_ACTION_TYPE_descriptor_ = file->enum_type(0);
   MessageType_descriptor_ = file->enum_type(1);
   DbMessageType_descriptor_ = file->enum_type(2);
@@ -263,6 +335,14 @@ void protobuf_RegisterTypes(const ::std::string&) {
     ClientMoveRequest_descriptor_, &ClientMoveRequest::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     ClientMoveResponse_descriptor_, &ClientMoveResponse::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    PlayerLeaveViewNotf_descriptor_, &PlayerLeaveViewNotf::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    LeavePlayerViewNotf_descriptor_, &LeavePlayerViewNotf::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    PlayerEnterViewNotf_descriptor_, &PlayerEnterViewNotf::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    EnterPlayerViewNotf_descriptor_, &EnterPlayerViewNotf::default_instance());
 }
 
 }  // namespace
@@ -288,6 +368,14 @@ void protobuf_ShutdownFile_message_2eproto() {
   delete ClientMoveRequest_reflection_;
   delete ClientMoveResponse::default_instance_;
   delete ClientMoveResponse_reflection_;
+  delete PlayerLeaveViewNotf::default_instance_;
+  delete PlayerLeaveViewNotf_reflection_;
+  delete LeavePlayerViewNotf::default_instance_;
+  delete LeavePlayerViewNotf_reflection_;
+  delete PlayerEnterViewNotf::default_instance_;
+  delete PlayerEnterViewNotf_reflection_;
+  delete EnterPlayerViewNotf::default_instance_;
+  delete EnterPlayerViewNotf_reflection_;
 }
 
 void protobuf_AddDesc_message_2eproto() {
@@ -317,13 +405,22 @@ void protobuf_AddDesc_message_2eproto() {
     "est\022\016\n\006map_id\030\001 \002(\005\022\r\n\005pos_x\030\002 \002(\005\022\r\n\005po"
     "s_y\030\003 \002(\005\"O\n\022ClientMoveResponse\022\013\n\003ret\030\001"
     " \002(\005\022\016\n\006map_id\030\002 \002(\005\022\r\n\005pos_x\030\003 \002(\005\022\r\n\005p"
-    "os_y\030\004 \002(\005*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQ"
-    "UEST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002"
-    "*\233\001\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_IN"
-    "FO\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_L"
-    "OGIN\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017"
-    "MSG_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006*#"
-    "\n\rDbMessageType\022\022\n\rMSG_DB_COMMON\020\220N", 995);
+    "os_y\030\004 \002(\005\"(\n\023PlayerLeaveViewNotf\022\021\n\tpla"
+    "yer_id\030\001 \002(\005\"(\n\023LeavePlayerViewNotf\022\021\n\tp"
+    "layer_id\030\001 \003(\005\"7\n\023PlayerEnterViewNotf\022 \n"
+    "\013player_info\030\001 \002(\0132\013.PlayerInfo\"7\n\023Enter"
+    "PlayerViewNotf\022 \n\013player_info\030\001 \003(\0132\013.Pl"
+    "ayerInfo*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQUE"
+    "ST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*\235"
+    "\002\n\013MessageType\022\032\n\026MSG_SOCCER_PLAYER_INFO"
+    "\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOG"
+    "IN\020\003\022\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017MS"
+    "G_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006\022\036\n\032"
+    "MSG_PLAYER_LEAVE_VIEW_NOTF\020\007\022\037\n\033MSG_LEAV"
+    "E_PLAYERS_VIEW_NOTF\020\010\022\036\n\032MSG_PLAYER_ENTE"
+    "R_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER_PLAYERS_VIEW_"
+    "NOTF\020\n*#\n\rDbMessageType\022\022\n\rMSG_DB_COMMON"
+    "\020\220N", 1323);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   PosInfo::default_instance_ = new PosInfo();
@@ -336,6 +433,10 @@ void protobuf_AddDesc_message_2eproto() {
   ClientInitNotf::default_instance_ = new ClientInitNotf();
   ClientMoveRequest::default_instance_ = new ClientMoveRequest();
   ClientMoveResponse::default_instance_ = new ClientMoveResponse();
+  PlayerLeaveViewNotf::default_instance_ = new PlayerLeaveViewNotf();
+  LeavePlayerViewNotf::default_instance_ = new LeavePlayerViewNotf();
+  PlayerEnterViewNotf::default_instance_ = new PlayerEnterViewNotf();
+  EnterPlayerViewNotf::default_instance_ = new EnterPlayerViewNotf();
   PosInfo::default_instance_->InitAsDefaultInstance();
   PlayerInfo::default_instance_->InitAsDefaultInstance();
   NpcInfo::default_instance_->InitAsDefaultInstance();
@@ -346,6 +447,10 @@ void protobuf_AddDesc_message_2eproto() {
   ClientInitNotf::default_instance_->InitAsDefaultInstance();
   ClientMoveRequest::default_instance_->InitAsDefaultInstance();
   ClientMoveResponse::default_instance_->InitAsDefaultInstance();
+  PlayerLeaveViewNotf::default_instance_->InitAsDefaultInstance();
+  LeavePlayerViewNotf::default_instance_->InitAsDefaultInstance();
+  PlayerEnterViewNotf::default_instance_->InitAsDefaultInstance();
+  EnterPlayerViewNotf::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_message_2eproto);
 }
 
@@ -382,6 +487,10 @@ bool MessageType_IsValid(int value) {
     case 4:
     case 5:
     case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
       return true;
     default:
       return false;
@@ -3235,6 +3344,849 @@ void ClientMoveResponse::Swap(ClientMoveResponse* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = ClientMoveResponse_descriptor_;
   metadata.reflection = ClientMoveResponse_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int PlayerLeaveViewNotf::kPlayerIdFieldNumber;
+#endif  // !_MSC_VER
+
+PlayerLeaveViewNotf::PlayerLeaveViewNotf()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void PlayerLeaveViewNotf::InitAsDefaultInstance() {
+}
+
+PlayerLeaveViewNotf::PlayerLeaveViewNotf(const PlayerLeaveViewNotf& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void PlayerLeaveViewNotf::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+PlayerLeaveViewNotf::~PlayerLeaveViewNotf() {
+  SharedDtor();
+}
+
+void PlayerLeaveViewNotf::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void PlayerLeaveViewNotf::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* PlayerLeaveViewNotf::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return PlayerLeaveViewNotf_descriptor_;
+}
+
+const PlayerLeaveViewNotf& PlayerLeaveViewNotf::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+PlayerLeaveViewNotf* PlayerLeaveViewNotf::default_instance_ = NULL;
+
+PlayerLeaveViewNotf* PlayerLeaveViewNotf::New() const {
+  return new PlayerLeaveViewNotf;
+}
+
+void PlayerLeaveViewNotf::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    player_id_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool PlayerLeaveViewNotf::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required int32 player_id = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void PlayerLeaveViewNotf::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required int32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->player_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* PlayerLeaveViewNotf::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required int32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->player_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int PlayerLeaveViewNotf::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required int32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->player_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void PlayerLeaveViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const PlayerLeaveViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const PlayerLeaveViewNotf*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void PlayerLeaveViewNotf::MergeFrom(const PlayerLeaveViewNotf& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void PlayerLeaveViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PlayerLeaveViewNotf::CopyFrom(const PlayerLeaveViewNotf& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PlayerLeaveViewNotf::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void PlayerLeaveViewNotf::Swap(PlayerLeaveViewNotf* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata PlayerLeaveViewNotf::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = PlayerLeaveViewNotf_descriptor_;
+  metadata.reflection = PlayerLeaveViewNotf_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int LeavePlayerViewNotf::kPlayerIdFieldNumber;
+#endif  // !_MSC_VER
+
+LeavePlayerViewNotf::LeavePlayerViewNotf()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void LeavePlayerViewNotf::InitAsDefaultInstance() {
+}
+
+LeavePlayerViewNotf::LeavePlayerViewNotf(const LeavePlayerViewNotf& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void LeavePlayerViewNotf::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+LeavePlayerViewNotf::~LeavePlayerViewNotf() {
+  SharedDtor();
+}
+
+void LeavePlayerViewNotf::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void LeavePlayerViewNotf::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* LeavePlayerViewNotf::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return LeavePlayerViewNotf_descriptor_;
+}
+
+const LeavePlayerViewNotf& LeavePlayerViewNotf::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+LeavePlayerViewNotf* LeavePlayerViewNotf::default_instance_ = NULL;
+
+LeavePlayerViewNotf* LeavePlayerViewNotf::New() const {
+  return new LeavePlayerViewNotf;
+}
+
+void LeavePlayerViewNotf::Clear() {
+  player_id_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool LeavePlayerViewNotf::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated int32 player_id = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_player_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 1, 8, input, this->mutable_player_id())));
+        } else if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag)
+                   == ::google::protobuf::internal::WireFormatLite::
+                      WIRETYPE_LENGTH_DELIMITED) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, this->mutable_player_id())));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(8)) goto parse_player_id;
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void LeavePlayerViewNotf::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // repeated int32 player_id = 1;
+  for (int i = 0; i < this->player_id_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(
+      1, this->player_id(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* LeavePlayerViewNotf::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // repeated int32 player_id = 1;
+  for (int i = 0; i < this->player_id_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteInt32ToArray(1, this->player_id(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int LeavePlayerViewNotf::ByteSize() const {
+  int total_size = 0;
+
+  // repeated int32 player_id = 1;
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->player_id_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::
+        Int32Size(this->player_id(i));
+    }
+    total_size += 1 * this->player_id_size() + data_size;
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void LeavePlayerViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const LeavePlayerViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const LeavePlayerViewNotf*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void LeavePlayerViewNotf::MergeFrom(const LeavePlayerViewNotf& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  player_id_.MergeFrom(from.player_id_);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void LeavePlayerViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LeavePlayerViewNotf::CopyFrom(const LeavePlayerViewNotf& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LeavePlayerViewNotf::IsInitialized() const {
+
+  return true;
+}
+
+void LeavePlayerViewNotf::Swap(LeavePlayerViewNotf* other) {
+  if (other != this) {
+    player_id_.Swap(&other->player_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata LeavePlayerViewNotf::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = LeavePlayerViewNotf_descriptor_;
+  metadata.reflection = LeavePlayerViewNotf_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int PlayerEnterViewNotf::kPlayerInfoFieldNumber;
+#endif  // !_MSC_VER
+
+PlayerEnterViewNotf::PlayerEnterViewNotf()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void PlayerEnterViewNotf::InitAsDefaultInstance() {
+  player_info_ = const_cast< ::PlayerInfo*>(&::PlayerInfo::default_instance());
+}
+
+PlayerEnterViewNotf::PlayerEnterViewNotf(const PlayerEnterViewNotf& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void PlayerEnterViewNotf::SharedCtor() {
+  _cached_size_ = 0;
+  player_info_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+PlayerEnterViewNotf::~PlayerEnterViewNotf() {
+  SharedDtor();
+}
+
+void PlayerEnterViewNotf::SharedDtor() {
+  if (this != default_instance_) {
+    delete player_info_;
+  }
+}
+
+void PlayerEnterViewNotf::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* PlayerEnterViewNotf::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return PlayerEnterViewNotf_descriptor_;
+}
+
+const PlayerEnterViewNotf& PlayerEnterViewNotf::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+PlayerEnterViewNotf* PlayerEnterViewNotf::default_instance_ = NULL;
+
+PlayerEnterViewNotf* PlayerEnterViewNotf::New() const {
+  return new PlayerEnterViewNotf;
+}
+
+void PlayerEnterViewNotf::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (has_player_info()) {
+      if (player_info_ != NULL) player_info_->::PlayerInfo::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool PlayerEnterViewNotf::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .PlayerInfo player_info = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_player_info()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void PlayerEnterViewNotf::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required .PlayerInfo player_info = 1;
+  if (has_player_info()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->player_info(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* PlayerEnterViewNotf::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required .PlayerInfo player_info = 1;
+  if (has_player_info()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->player_info(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int PlayerEnterViewNotf::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .PlayerInfo player_info = 1;
+    if (has_player_info()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->player_info());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void PlayerEnterViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const PlayerEnterViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const PlayerEnterViewNotf*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void PlayerEnterViewNotf::MergeFrom(const PlayerEnterViewNotf& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_info()) {
+      mutable_player_info()->::PlayerInfo::MergeFrom(from.player_info());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void PlayerEnterViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PlayerEnterViewNotf::CopyFrom(const PlayerEnterViewNotf& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PlayerEnterViewNotf::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  if (has_player_info()) {
+    if (!this->player_info().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void PlayerEnterViewNotf::Swap(PlayerEnterViewNotf* other) {
+  if (other != this) {
+    std::swap(player_info_, other->player_info_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata PlayerEnterViewNotf::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = PlayerEnterViewNotf_descriptor_;
+  metadata.reflection = PlayerEnterViewNotf_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int EnterPlayerViewNotf::kPlayerInfoFieldNumber;
+#endif  // !_MSC_VER
+
+EnterPlayerViewNotf::EnterPlayerViewNotf()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void EnterPlayerViewNotf::InitAsDefaultInstance() {
+}
+
+EnterPlayerViewNotf::EnterPlayerViewNotf(const EnterPlayerViewNotf& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void EnterPlayerViewNotf::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+EnterPlayerViewNotf::~EnterPlayerViewNotf() {
+  SharedDtor();
+}
+
+void EnterPlayerViewNotf::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void EnterPlayerViewNotf::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* EnterPlayerViewNotf::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return EnterPlayerViewNotf_descriptor_;
+}
+
+const EnterPlayerViewNotf& EnterPlayerViewNotf::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+EnterPlayerViewNotf* EnterPlayerViewNotf::default_instance_ = NULL;
+
+EnterPlayerViewNotf* EnterPlayerViewNotf::New() const {
+  return new EnterPlayerViewNotf;
+}
+
+void EnterPlayerViewNotf::Clear() {
+  player_info_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool EnterPlayerViewNotf::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .PlayerInfo player_info = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_player_info:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_player_info()));
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(10)) goto parse_player_info;
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void EnterPlayerViewNotf::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // repeated .PlayerInfo player_info = 1;
+  for (int i = 0; i < this->player_info_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->player_info(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* EnterPlayerViewNotf::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // repeated .PlayerInfo player_info = 1;
+  for (int i = 0; i < this->player_info_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->player_info(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int EnterPlayerViewNotf::ByteSize() const {
+  int total_size = 0;
+
+  // repeated .PlayerInfo player_info = 1;
+  total_size += 1 * this->player_info_size();
+  for (int i = 0; i < this->player_info_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->player_info(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void EnterPlayerViewNotf::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const EnterPlayerViewNotf* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const EnterPlayerViewNotf*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void EnterPlayerViewNotf::MergeFrom(const EnterPlayerViewNotf& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  player_info_.MergeFrom(from.player_info_);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void EnterPlayerViewNotf::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EnterPlayerViewNotf::CopyFrom(const EnterPlayerViewNotf& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EnterPlayerViewNotf::IsInitialized() const {
+
+  for (int i = 0; i < player_info_size(); i++) {
+    if (!this->player_info(i).IsInitialized()) return false;
+  }
+  return true;
+}
+
+void EnterPlayerViewNotf::Swap(EnterPlayerViewNotf* other) {
+  if (other != this) {
+    player_info_.Swap(&other->player_info_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata EnterPlayerViewNotf::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = EnterPlayerViewNotf_descriptor_;
+  metadata.reflection = EnterPlayerViewNotf_reflection_;
   return metadata;
 }
 

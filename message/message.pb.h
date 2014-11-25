@@ -44,6 +44,10 @@ class ClientLoginResponse;
 class ClientInitNotf;
 class ClientMoveRequest;
 class ClientMoveResponse;
+class PlayerLeaveViewNotf;
+class LeavePlayerViewNotf;
+class PlayerEnterViewNotf;
+class EnterPlayerViewNotf;
 
 enum MSG_ACTION_TYPE {
   MSG_REQUEST = 0,
@@ -71,11 +75,15 @@ enum MessageType {
   MSG_CLIENT_LOGIN = 3,
   MSG_GATE_SERVER_REGISTER = 4,
   MSG_INIT_CLIENT = 5,
-  MSG_CLIENT_MOVE = 6
+  MSG_CLIENT_MOVE = 6,
+  MSG_PLAYER_LEAVE_VIEW_NOTF = 7,
+  MSG_LEAVE_PLAYERS_VIEW_NOTF = 8,
+  MSG_PLAYER_ENTER_VIEW_NOTF = 9,
+  MSG_ENTER_PLAYERS_VIEW_NOTF = 10
 };
 bool MessageType_IsValid(int value);
 const MessageType MessageType_MIN = MSG_SOCCER_PLAYER_INFO;
-const MessageType MessageType_MAX = MSG_CLIENT_MOVE;
+const MessageType MessageType_MAX = MSG_ENTER_PLAYERS_VIEW_NOTF;
 const int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor();
@@ -1115,6 +1123,342 @@ class ClientMoveResponse : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static ClientMoveResponse* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class PlayerLeaveViewNotf : public ::google::protobuf::Message {
+ public:
+  PlayerLeaveViewNotf();
+  virtual ~PlayerLeaveViewNotf();
+
+  PlayerLeaveViewNotf(const PlayerLeaveViewNotf& from);
+
+  inline PlayerLeaveViewNotf& operator=(const PlayerLeaveViewNotf& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PlayerLeaveViewNotf& default_instance();
+
+  void Swap(PlayerLeaveViewNotf* other);
+
+  // implements Message ----------------------------------------------
+
+  PlayerLeaveViewNotf* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const PlayerLeaveViewNotf& from);
+  void MergeFrom(const PlayerLeaveViewNotf& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 player_id = 1;
+  inline bool has_player_id() const;
+  inline void clear_player_id();
+  static const int kPlayerIdFieldNumber = 1;
+  inline ::google::protobuf::int32 player_id() const;
+  inline void set_player_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:PlayerLeaveViewNotf)
+ private:
+  inline void set_has_player_id();
+  inline void clear_has_player_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 player_id_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static PlayerLeaveViewNotf* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class LeavePlayerViewNotf : public ::google::protobuf::Message {
+ public:
+  LeavePlayerViewNotf();
+  virtual ~LeavePlayerViewNotf();
+
+  LeavePlayerViewNotf(const LeavePlayerViewNotf& from);
+
+  inline LeavePlayerViewNotf& operator=(const LeavePlayerViewNotf& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const LeavePlayerViewNotf& default_instance();
+
+  void Swap(LeavePlayerViewNotf* other);
+
+  // implements Message ----------------------------------------------
+
+  LeavePlayerViewNotf* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const LeavePlayerViewNotf& from);
+  void MergeFrom(const LeavePlayerViewNotf& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated int32 player_id = 1;
+  inline int player_id_size() const;
+  inline void clear_player_id();
+  static const int kPlayerIdFieldNumber = 1;
+  inline ::google::protobuf::int32 player_id(int index) const;
+  inline void set_player_id(int index, ::google::protobuf::int32 value);
+  inline void add_player_id(::google::protobuf::int32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      player_id() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_player_id();
+
+  // @@protoc_insertion_point(class_scope:LeavePlayerViewNotf)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > player_id_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static LeavePlayerViewNotf* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class PlayerEnterViewNotf : public ::google::protobuf::Message {
+ public:
+  PlayerEnterViewNotf();
+  virtual ~PlayerEnterViewNotf();
+
+  PlayerEnterViewNotf(const PlayerEnterViewNotf& from);
+
+  inline PlayerEnterViewNotf& operator=(const PlayerEnterViewNotf& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PlayerEnterViewNotf& default_instance();
+
+  void Swap(PlayerEnterViewNotf* other);
+
+  // implements Message ----------------------------------------------
+
+  PlayerEnterViewNotf* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const PlayerEnterViewNotf& from);
+  void MergeFrom(const PlayerEnterViewNotf& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .PlayerInfo player_info = 1;
+  inline bool has_player_info() const;
+  inline void clear_player_info();
+  static const int kPlayerInfoFieldNumber = 1;
+  inline const ::PlayerInfo& player_info() const;
+  inline ::PlayerInfo* mutable_player_info();
+  inline ::PlayerInfo* release_player_info();
+  inline void set_allocated_player_info(::PlayerInfo* player_info);
+
+  // @@protoc_insertion_point(class_scope:PlayerEnterViewNotf)
+ private:
+  inline void set_has_player_info();
+  inline void clear_has_player_info();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::PlayerInfo* player_info_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static PlayerEnterViewNotf* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class EnterPlayerViewNotf : public ::google::protobuf::Message {
+ public:
+  EnterPlayerViewNotf();
+  virtual ~EnterPlayerViewNotf();
+
+  EnterPlayerViewNotf(const EnterPlayerViewNotf& from);
+
+  inline EnterPlayerViewNotf& operator=(const EnterPlayerViewNotf& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const EnterPlayerViewNotf& default_instance();
+
+  void Swap(EnterPlayerViewNotf* other);
+
+  // implements Message ----------------------------------------------
+
+  EnterPlayerViewNotf* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const EnterPlayerViewNotf& from);
+  void MergeFrom(const EnterPlayerViewNotf& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .PlayerInfo player_info = 1;
+  inline int player_info_size() const;
+  inline void clear_player_info();
+  static const int kPlayerInfoFieldNumber = 1;
+  inline const ::PlayerInfo& player_info(int index) const;
+  inline ::PlayerInfo* mutable_player_info(int index);
+  inline ::PlayerInfo* add_player_info();
+  inline const ::google::protobuf::RepeatedPtrField< ::PlayerInfo >&
+      player_info() const;
+  inline ::google::protobuf::RepeatedPtrField< ::PlayerInfo >*
+      mutable_player_info();
+
+  // @@protoc_insertion_point(class_scope:EnterPlayerViewNotf)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::RepeatedPtrField< ::PlayerInfo > player_info_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static EnterPlayerViewNotf* default_instance_;
+};
 // ===================================================================
 
 
@@ -1926,6 +2270,132 @@ inline ::google::protobuf::int32 ClientMoveResponse::pos_y() const {
 inline void ClientMoveResponse::set_pos_y(::google::protobuf::int32 value) {
   set_has_pos_y();
   pos_y_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// PlayerLeaveViewNotf
+
+// required int32 player_id = 1;
+inline bool PlayerLeaveViewNotf::has_player_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void PlayerLeaveViewNotf::set_has_player_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void PlayerLeaveViewNotf::clear_has_player_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void PlayerLeaveViewNotf::clear_player_id() {
+  player_id_ = 0;
+  clear_has_player_id();
+}
+inline ::google::protobuf::int32 PlayerLeaveViewNotf::player_id() const {
+  return player_id_;
+}
+inline void PlayerLeaveViewNotf::set_player_id(::google::protobuf::int32 value) {
+  set_has_player_id();
+  player_id_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// LeavePlayerViewNotf
+
+// repeated int32 player_id = 1;
+inline int LeavePlayerViewNotf::player_id_size() const {
+  return player_id_.size();
+}
+inline void LeavePlayerViewNotf::clear_player_id() {
+  player_id_.Clear();
+}
+inline ::google::protobuf::int32 LeavePlayerViewNotf::player_id(int index) const {
+  return player_id_.Get(index);
+}
+inline void LeavePlayerViewNotf::set_player_id(int index, ::google::protobuf::int32 value) {
+  player_id_.Set(index, value);
+}
+inline void LeavePlayerViewNotf::add_player_id(::google::protobuf::int32 value) {
+  player_id_.Add(value);
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+LeavePlayerViewNotf::player_id() const {
+  return player_id_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+LeavePlayerViewNotf::mutable_player_id() {
+  return &player_id_;
+}
+
+// -------------------------------------------------------------------
+
+// PlayerEnterViewNotf
+
+// required .PlayerInfo player_info = 1;
+inline bool PlayerEnterViewNotf::has_player_info() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void PlayerEnterViewNotf::set_has_player_info() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void PlayerEnterViewNotf::clear_has_player_info() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void PlayerEnterViewNotf::clear_player_info() {
+  if (player_info_ != NULL) player_info_->::PlayerInfo::Clear();
+  clear_has_player_info();
+}
+inline const ::PlayerInfo& PlayerEnterViewNotf::player_info() const {
+  return player_info_ != NULL ? *player_info_ : *default_instance_->player_info_;
+}
+inline ::PlayerInfo* PlayerEnterViewNotf::mutable_player_info() {
+  set_has_player_info();
+  if (player_info_ == NULL) player_info_ = new ::PlayerInfo;
+  return player_info_;
+}
+inline ::PlayerInfo* PlayerEnterViewNotf::release_player_info() {
+  clear_has_player_info();
+  ::PlayerInfo* temp = player_info_;
+  player_info_ = NULL;
+  return temp;
+}
+inline void PlayerEnterViewNotf::set_allocated_player_info(::PlayerInfo* player_info) {
+  delete player_info_;
+  player_info_ = player_info;
+  if (player_info) {
+    set_has_player_info();
+  } else {
+    clear_has_player_info();
+  }
+}
+
+// -------------------------------------------------------------------
+
+// EnterPlayerViewNotf
+
+// repeated .PlayerInfo player_info = 1;
+inline int EnterPlayerViewNotf::player_info_size() const {
+  return player_info_.size();
+}
+inline void EnterPlayerViewNotf::clear_player_info() {
+  player_info_.Clear();
+}
+inline const ::PlayerInfo& EnterPlayerViewNotf::player_info(int index) const {
+  return player_info_.Get(index);
+}
+inline ::PlayerInfo* EnterPlayerViewNotf::mutable_player_info(int index) {
+  return player_info_.Mutable(index);
+}
+inline ::PlayerInfo* EnterPlayerViewNotf::add_player_info() {
+  return player_info_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::PlayerInfo >&
+EnterPlayerViewNotf::player_info() const {
+  return player_info_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::PlayerInfo >*
+EnterPlayerViewNotf::mutable_player_info() {
+  return &player_info_;
 }
 
 

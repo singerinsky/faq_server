@@ -116,7 +116,6 @@ bool map_object::init_map_data(std::string data,int w,int h)
     }
     
     _cells_vec = new map_cells[((_map_height+ MAP_CELL_HEIGHT - 1)/MAP_CELL_HEIGHT)*((_map_width + MAP_CELL_WIDTH - 1)/MAP_CELL_WIDTH)];    
-// 
 //     auto test_itr = data_split.begin();
 //     for(;test_itr != data_split.end();test_itr++)
 //     {

@@ -18,6 +18,10 @@ enum MessageType
     MSG_GATE_SERVER_REGISTER = 4;//gate server register
     MSG_INIT_CLIENT         = 5;
     MSG_CLIENT_MOVE     = 6;
+    MSG_PLAYER_LEAVE_VIEW_NOTF = 7;
+    MSG_LEAVE_PLAYERS_VIEW_NOTF = 8;
+    MSG_PLAYER_ENTER_VIEW_NOTF = 9;
+    MSG_ENTER_PLAYERS_VIEW_NOTF = 10;
 }
 
 message PosInfo 
@@ -91,5 +95,25 @@ message ClientMoveResponse
     required int32 map_id = 2;
     required int32 pos_x = 3;
     required int32 pos_y = 4;
+}
+
+message PlayerLeaveViewNotf
+{
+    required int32 player_id = 1;
+}
+
+message LeavePlayerViewNotf
+{
+    repeated int32 player_id = 1;
+}
+
+message PlayerEnterViewNotf
+{
+    required PlayerInfo player_info = 1;
+}
+
+message EnterPlayerViewNotf
+{
+    repeated PlayerInfo player_info = 1;
 }
 

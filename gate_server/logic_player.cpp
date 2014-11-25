@@ -56,10 +56,10 @@ void LogicPlayer::Move(int x,int y)
            _map->fill_all_player_cells(new_cell_pos,&_player_round_set);
 
            //send 离开自己视野的玩家列表
-           
+            send_leave_view_notf(leave_set);           
            //send 玩家自己在他们视野里的列表
            ////send enter view
-           //
+            send_enter_view_notf(enter_set); 
            //
            //
         }
@@ -126,5 +126,12 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
 
 void LogicPlayer::send_leave_view_notf(player_set_vec_t& leave_set)
 {
-
+    LOG(INFO)<<"send player leave";
 }
+
+void LogicPlayer::send_enter_view_notf(player_set_vec_t& enter_set)
+{
+    LOG(INFO)<<"send player enter";
+}
+
+
