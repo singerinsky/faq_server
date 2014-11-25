@@ -107,6 +107,7 @@ bool map_object::init_map_data(std::string data,int w,int h)
     _map_y = h;
     _map_width = (_map_y+ MAP_CELL_HEIGHT - 1)/MAP_CELL_HEIGHT;
     _map_height = (_map_x+ MAP_CELL_WIDTH - 1)/MAP_CELL_WIDTH;    
+    LOG(INFO)<<"map init x_cell "<<_map_width <<"  y_cell"<<_map_height;
     std::vector<std::string> data_split;
     split(data,',',data_split);
 
@@ -162,8 +163,8 @@ map_cells* map_object::get_cells(Position pos,int cell_offset)
     }
 
     if(pos.pos_x()< 0 || pos.pos_y() < 0)return NULL;
-    if(pos.pos_x() > _map_width)return NULL;
-    if(pos.pos_y() > _map_height) return NULL;
+    if(pos.pos_x() >= _map_width)return NULL;
+    if(pos.pos_y() >= _map_height) return NULL;
     return _cells_vec + pos.pos_y()*_map_width + pos.pos_x();
 }
 
