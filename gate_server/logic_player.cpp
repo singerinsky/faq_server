@@ -36,6 +36,8 @@ bool LogicPlayer::CheckCanMove(int x,int y)
 
 void LogicPlayer::Move(int x,int y)
 {
+    if((x == _user_info.get_pos_x()) && (y == _user_info.get_pos_y()))
+        return;
     if(CheckCanMove(x,y))
     {
         Position rst(x,y),delt;

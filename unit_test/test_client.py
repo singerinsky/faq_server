@@ -66,7 +66,7 @@ class CClient:
 
     def do_enter_npc_view(self,message):
         for npc in message.npc_info:
-            print 'npc',npc.npc_id
+            print 'npc',npc.npc_id,npc.pos.x,":",npc.pos.y
 
     def process_msg(self,msg_id,msg_content):
         if MSG_NAME.has_key(msg_id):
@@ -116,8 +116,8 @@ class CClient:
             self.do_move()
 
     def do_move(self):
-        move_x = random.randint(0,10);
-        move_y = random.randint(0,10);
+        move_x = self.user_info.pos_x + random.randint(0,1);
+        move_y = self.user_info.pos_y + random.randint(0,1);
         message_body = ClientMoveRequest();
         message_body.pos_x = move_x;
         message_body.pos_y = move_y;

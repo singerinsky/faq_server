@@ -123,6 +123,7 @@ bool map_object::init_map_data(std::string data,int w,int h)
         {
             _map_pos.set(index);
         }
+        index++;
     }
     _cells_vec = new map_cells[_map_width*_map_height];
     return true;

@@ -103,7 +103,7 @@ class map_object
         bool map2cell(Position& src_pos,Position& rst_pos);
         int  pos2off(Position& pos)
         {
-            return pos.pos_y()*_map_x+ _map_y;
+            return pos.pos_y()*_map_x+ pos.pos_x();
         }
         bool is_set(Position& pos)
         {
