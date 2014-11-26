@@ -11,6 +11,11 @@
 gate_client::~gate_client()
 {
     VLOG(1)<<"delete gate_client";
+    if(_player_info)
+    {
+        delete _player_info; 
+        _player_info = NULL;
+    }
 //    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 };
 

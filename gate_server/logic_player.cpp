@@ -43,14 +43,13 @@ void LogicPlayer::Move(int x,int y)
         Position rst(x,y),delt;
         int step_count = _map->step(_pos,rst,&delt);
         _pos.modify_pos(delt);
-        _user_info.set_pos_x(delt.pos_x());
-        _user_info.set_pos_y(delt.pos_y());
+        _user_info.set_pos_x(_pos.pos_x());
+        _user_info.set_pos_y(_pos.pos_y());
 
         Position new_cell_pos;
         _map->map2cell(_pos,new_cell_pos);
         if(new_cell_pos != _cell_pos)
         {
-           //TODO ... 
            _map->get_player_incell(_cell_pos)->erase(this);
            _map->get_player_incell(new_cell_pos)->insert(this);
            player_set_vec_t new_set,enter_set,leave_set; 

@@ -140,6 +140,7 @@ void db_connection::update_binder(sql_binder* binder)
     request.body.set_operate_type(DbOperateType::DB_WORK_UPDATE);
     request.body.set_operate_string(buffer);
     send_packet(&request);
+    binder->clear_dirty();
 }
 
 

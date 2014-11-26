@@ -35,9 +35,38 @@ db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/db_message.pb.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/message.pb.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/message_define.h
+db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/action_data_work_message.cpp
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/action_data_work_message.cpp.o: ../db_server/work_manager.h
+
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/event2/buffer.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/event2/bufferevent.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/event2/event-config.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/event2/event.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/event2/listener.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/event2/util.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/gflags/gflags.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/log_severity.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/logging.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/vlog_is_on.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/actions_mananger.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/aliased_buf.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/game_packet.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/head.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/packet.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/reactor_core.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/singleton.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/socket.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/template_message.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/tinyxml.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../include/tinystr.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../include/tinyxml.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/db_message.pb.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/message.pb.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/message_define.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/tb_user.pb.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/action_heart_message.cpp
 
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: .././include/event2/buffer.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: .././include/event2/bufferevent.h
@@ -66,6 +95,9 @@ db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../common/tin
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../common/worker.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../include/tinystr.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../include/tinyxml.h
+db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../message/db_message.pb.h
+db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../message/message.pb.h
+db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/data_worker.cpp
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: ../db_server/db_connection_pool.h
@@ -132,6 +164,8 @@ db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/mysql_tim
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/mysql_version.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: .././include/mysql/typelib.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/actions_mananger.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/aliased_buf.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/game_packet.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/head.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/lock.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/mysql_connection.h
@@ -146,6 +180,9 @@ db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/worke
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../include/tinystr.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../include/tinyxml.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/db_message.pb.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/message.pb.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/message_define.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/data_worker.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/db_client.cpp
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/db_client.h
