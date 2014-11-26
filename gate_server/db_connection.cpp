@@ -85,7 +85,6 @@ int db_connection::process_db_response(packet_info* info)
 
 int db_connection::on_load_user_info(const db_tb_user& info)
 {
-    LOG(INFO)<<"load user info "<<info.user_name();
     cs_packet_init_client_notf notf;
     notf.body.set_ret(1);
     db_tb_user * user_info = notf.body.mutable_user_info();

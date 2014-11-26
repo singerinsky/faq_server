@@ -117,6 +117,7 @@ class map_object
         void          fill_all_npc_cells(Position& pos, npc_set_vec_t*);
         void          get_all_npc_round(Position& pos,std::set<NpcObject*>& npc_set);
         int           step(Position src_pos,Position rst_pos,Position* delt_pos);
+        int           map_id(){return _map_id;}
     private:
         int                 _map_id;
         int                 _map_x;

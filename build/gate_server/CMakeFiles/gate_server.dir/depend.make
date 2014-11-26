@@ -279,6 +279,8 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: .././include/gflags/g
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: .././include/glog/log_severity.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: .././include/glog/logging.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: .././include/glog/vlog_is_on.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/aliased_buf.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/game_packet.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/head.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/packet.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/reactor_core.h
@@ -291,6 +293,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../inc
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../include/tinyxml.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/db_message.pb.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/message.pb.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/message_define.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/sql_binder.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/tb_user.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../message/tb_user.pb.h
@@ -298,6 +301,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/db_con
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/fighter.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/game_define.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/gate_application.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/gate_client.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/logic_player.cpp
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/logic_player.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/map_manager.h
@@ -320,6 +324,9 @@ gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../comm
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/util_file.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../include/tinystr.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../include/tinyxml.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../message/db_message.pb.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../message/message.pb.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../message/tb_user.pb.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/fighter.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/game_define.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/map_manager.cpp
@@ -341,6 +348,9 @@ gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../commo
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/tinyxml.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../include/tinystr.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../include/tinyxml.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../message/db_message.pb.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../message/message.pb.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../message/tb_user.pb.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/fighter.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/game_define.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/map_manager.h

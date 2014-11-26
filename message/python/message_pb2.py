@@ -16,7 +16,7 @@ import tb_user_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
   package='',
-  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\x1a\rtb_user.proto\"\x1f\n\x07PosInfo\x12\t\n\x01x\x18\x01 \x02(\x05\x12\t\n\x01y\x18\x02 \x02(\x05\"\x8f\x01\n\nPlayerInfo\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\x12\x17\n\x0fplayer_nickname\x18\x02 \x02(\t\x12\x14\n\x0cplayer_level\x18\x03 \x02(\x05\x12\x11\n\tcareer_id\x18\x04 \x02(\x05\x12\x15\n\rplayer_status\x18\x05 \x02(\x05\x12\x15\n\x03pos\x18\x06 \x02(\x0b\x32\x08.PosInfo\"i\n\x07NpcInfo\x12\x0e\n\x06npc_id\x18\x01 \x02(\x05\x12\x14\n\x0cnpc_nickname\x18\x02 \x02(\t\x12\x11\n\tnpc_level\x18\x03 \x02(\x05\x12\x11\n\ttotoal_hp\x18\x04 \x02(\x05\x12\x12\n\ncurrent_hp\x18\x05 \x02(\x05\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\"=\n\x0e\x43lientInitNotf\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x1e\n\tuser_info\x18\x02 \x02(\x0b\x32\x0b.db_tb_user\"A\n\x11\x43lientMoveRequest\x12\x0e\n\x06map_id\x18\x01 \x02(\x05\x12\r\n\x05pos_x\x18\x02 \x02(\x05\x12\r\n\x05pos_y\x18\x03 \x02(\x05\"O\n\x12\x43lientMoveResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0e\n\x06map_id\x18\x02 \x02(\x05\x12\r\n\x05pos_x\x18\x03 \x02(\x05\x12\r\n\x05pos_y\x18\x04 \x02(\x05\"(\n\x13PlayerLeaveViewNotf\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\")\n\x14LeavePlayersViewNotf\x12\x11\n\tplayer_id\x18\x01 \x03(\x05\"7\n\x13PlayerEnterViewNotf\x12 \n\x0bplayer_info\x18\x01 \x02(\x0b\x32\x0b.PlayerInfo\"8\n\x14\x45nterPlayersViewNotf\x12 \n\x0bplayer_info\x18\x01 \x03(\x0b\x32\x0b.PlayerInfo\"/\n\x11\x45nterNpcsViewNotf\x12\x1a\n\x08npc_info\x18\x01 \x03(\x0b\x32\x08.NpcInfo*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*\xbb\x02\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04\x12\x13\n\x0fMSG_INIT_CLIENT\x10\x05\x12\x13\n\x0fMSG_CLIENT_MOVE\x10\x06\x12\x1e\n\x1aMSG_PLAYER_LEAVE_VIEW_NOTF\x10\x07\x12\x1f\n\x1bMSG_LEAVE_PLAYERS_VIEW_NOTF\x10\x08\x12\x1e\n\x1aMSG_PLAYER_ENTER_VIEW_NOTF\x10\t\x12\x1f\n\x1bMSG_ENTER_PLAYERS_VIEW_NOTF\x10\n\x12\x1c\n\x18MSG_ENTER_NPCS_VIEW_NOTF\x10\x0b*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
+  serialized_pb='\n\rmessage.proto\x1a\x10\x64\x62_message.proto\x1a\rtb_user.proto\"\x1f\n\x07PosInfo\x12\t\n\x01x\x18\x01 \x02(\x05\x12\t\n\x01y\x18\x02 \x02(\x05\"\x8f\x01\n\nPlayerInfo\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\x12\x17\n\x0fplayer_nickname\x18\x02 \x02(\t\x12\x14\n\x0cplayer_level\x18\x03 \x02(\x05\x12\x11\n\tcareer_id\x18\x04 \x02(\x05\x12\x15\n\rplayer_status\x18\x05 \x02(\x05\x12\x15\n\x03pos\x18\x06 \x02(\x0b\x32\x08.PosInfo\"\x80\x01\n\x07NpcInfo\x12\x0e\n\x06npc_id\x18\x01 \x02(\x05\x12\x14\n\x0cnpc_nickname\x18\x02 \x02(\t\x12\x11\n\tnpc_level\x18\x03 \x02(\x05\x12\x11\n\ttotoal_hp\x18\x04 \x02(\x05\x12\x12\n\ncurrent_hp\x18\x05 \x02(\x05\x12\x15\n\x03pos\x18\x06 \x02(\x0b\x32\x08.PosInfo\"-\n\x16\x43lientHeartBeatRequest\x12\x13\n\x0b\x63lient_time\x18\x01 \x02(\x05\".\n\x17\x43lientHeartBeatResponse\x12\x13\n\x0bserver_time\x18\x01 \x02(\x05\"4\n\x12\x43lientLoginRequest\x12\x0f\n\x07role_id\x18\x01 \x02(\x05\x12\r\n\x05token\x18\x02 \x02(\t\"\"\n\x13\x43lientLoginResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\"=\n\x0e\x43lientInitNotf\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x1e\n\tuser_info\x18\x02 \x02(\x0b\x32\x0b.db_tb_user\"A\n\x11\x43lientMoveRequest\x12\x0e\n\x06map_id\x18\x01 \x02(\x05\x12\r\n\x05pos_x\x18\x02 \x02(\x05\x12\r\n\x05pos_y\x18\x03 \x02(\x05\"O\n\x12\x43lientMoveResponse\x12\x0b\n\x03ret\x18\x01 \x02(\x05\x12\x0e\n\x06map_id\x18\x02 \x02(\x05\x12\r\n\x05pos_x\x18\x03 \x02(\x05\x12\r\n\x05pos_y\x18\x04 \x02(\x05\"(\n\x13PlayerLeaveViewNotf\x12\x11\n\tplayer_id\x18\x01 \x02(\x05\")\n\x14LeavePlayersViewNotf\x12\x11\n\tplayer_id\x18\x01 \x03(\x05\"7\n\x13PlayerEnterViewNotf\x12 \n\x0bplayer_info\x18\x01 \x02(\x0b\x32\x0b.PlayerInfo\"8\n\x14\x45nterPlayersViewNotf\x12 \n\x0bplayer_info\x18\x01 \x03(\x0b\x32\x0b.PlayerInfo\"/\n\x11\x45nterNpcsViewNotf\x12\x1a\n\x08npc_info\x18\x01 \x03(\x0b\x32\x08.NpcInfo*D\n\x0fMSG_ACTION_TYPE\x12\x0f\n\x0bMSG_REQUEST\x10\x00\x12\x10\n\x0cMSG_RESPONSE\x10\x01\x12\x0e\n\nMSG_NOTIFY\x10\x02*\xbb\x02\n\x0bMessageType\x12\x1a\n\x16MSG_SOCCER_PLAYER_INFO\x10\x01\x12\x12\n\x0eMSG_HEART_BEAT\x10\x02\x12\x14\n\x10MSG_CLIENT_LOGIN\x10\x03\x12\x1c\n\x18MSG_GATE_SERVER_REGISTER\x10\x04\x12\x13\n\x0fMSG_INIT_CLIENT\x10\x05\x12\x13\n\x0fMSG_CLIENT_MOVE\x10\x06\x12\x1e\n\x1aMSG_PLAYER_LEAVE_VIEW_NOTF\x10\x07\x12\x1f\n\x1bMSG_LEAVE_PLAYERS_VIEW_NOTF\x10\x08\x12\x1e\n\x1aMSG_PLAYER_ENTER_VIEW_NOTF\x10\t\x12\x1f\n\x1bMSG_ENTER_PLAYERS_VIEW_NOTF\x10\n\x12\x1c\n\x18MSG_ENTER_NPCS_VIEW_NOTF\x10\x0b*#\n\rDbMessageType\x12\x12\n\rMSG_DB_COMMON\x10\x90N')
 
 _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   name='MSG_ACTION_TYPE',
@@ -39,8 +39,8 @@ _MSG_ACTION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=981,
-  serialized_end=1049,
+  serialized_start=1005,
+  serialized_end=1073,
 )
 
 MSG_ACTION_TYPE = enum_type_wrapper.EnumTypeWrapper(_MSG_ACTION_TYPE)
@@ -97,8 +97,8 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1052,
-  serialized_end=1367,
+  serialized_start=1076,
+  serialized_end=1391,
 )
 
 MessageType = enum_type_wrapper.EnumTypeWrapper(_MESSAGETYPE)
@@ -115,8 +115,8 @@ _DBMESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1369,
-  serialized_end=1404,
+  serialized_start=1393,
+  serialized_end=1428,
 )
 
 DbMessageType = enum_type_wrapper.EnumTypeWrapper(_DBMESSAGETYPE)
@@ -278,6 +278,13 @@ _NPCINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='pos', full_name='NpcInfo.pos', index=5,
+      number=6, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -287,8 +294,8 @@ _NPCINFO = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=229,
-  serialized_end=334,
+  serialized_start=230,
+  serialized_end=358,
 )
 
 
@@ -315,8 +322,8 @@ _CLIENTHEARTBEATREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=336,
-  serialized_end=381,
+  serialized_start=360,
+  serialized_end=405,
 )
 
 
@@ -343,8 +350,8 @@ _CLIENTHEARTBEATRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=383,
-  serialized_end=429,
+  serialized_start=407,
+  serialized_end=453,
 )
 
 
@@ -378,8 +385,8 @@ _CLIENTLOGINREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=431,
-  serialized_end=483,
+  serialized_start=455,
+  serialized_end=507,
 )
 
 
@@ -406,8 +413,8 @@ _CLIENTLOGINRESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=485,
-  serialized_end=519,
+  serialized_start=509,
+  serialized_end=543,
 )
 
 
@@ -441,8 +448,8 @@ _CLIENTINITNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=521,
-  serialized_end=582,
+  serialized_start=545,
+  serialized_end=606,
 )
 
 
@@ -483,8 +490,8 @@ _CLIENTMOVEREQUEST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=584,
-  serialized_end=649,
+  serialized_start=608,
+  serialized_end=673,
 )
 
 
@@ -532,8 +539,8 @@ _CLIENTMOVERESPONSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=651,
-  serialized_end=730,
+  serialized_start=675,
+  serialized_end=754,
 )
 
 
@@ -560,8 +567,8 @@ _PLAYERLEAVEVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=732,
-  serialized_end=772,
+  serialized_start=756,
+  serialized_end=796,
 )
 
 
@@ -588,8 +595,8 @@ _LEAVEPLAYERSVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=774,
-  serialized_end=815,
+  serialized_start=798,
+  serialized_end=839,
 )
 
 
@@ -616,8 +623,8 @@ _PLAYERENTERVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=817,
-  serialized_end=872,
+  serialized_start=841,
+  serialized_end=896,
 )
 
 
@@ -644,8 +651,8 @@ _ENTERPLAYERSVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=874,
-  serialized_end=930,
+  serialized_start=898,
+  serialized_end=954,
 )
 
 
@@ -672,11 +679,12 @@ _ENTERNPCSVIEWNOTF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=932,
-  serialized_end=979,
+  serialized_start=956,
+  serialized_end=1003,
 )
 
 _PLAYERINFO.fields_by_name['pos'].message_type = _POSINFO
+_NPCINFO.fields_by_name['pos'].message_type = _POSINFO
 _CLIENTINITNOTF.fields_by_name['user_info'].message_type = tb_user_pb2._DB_TB_USER
 _PLAYERENTERVIEWNOTF.fields_by_name['player_info'].message_type = _PLAYERINFO
 _ENTERPLAYERSVIEWNOTF.fields_by_name['player_info'].message_type = _PLAYERINFO

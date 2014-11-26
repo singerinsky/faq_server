@@ -44,6 +44,7 @@ void gate_client::init()
 {
     // gate_application::db_conn_->build_query(DbOperateType::MSG_DB_GET_USER_INFO, LOAD_USER_INFO); 
     _player_info = new LogicPlayer();
+    _player_info->BindPlayer(this);
 }
 
 void gate_client::init_player()

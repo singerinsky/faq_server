@@ -443,6 +443,15 @@ class NpcInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 current_hp() const;
   inline void set_current_hp(::google::protobuf::int32 value);
 
+  // required .PosInfo pos = 6;
+  inline bool has_pos() const;
+  inline void clear_pos();
+  static const int kPosFieldNumber = 6;
+  inline const ::PosInfo& pos() const;
+  inline ::PosInfo* mutable_pos();
+  inline ::PosInfo* release_pos();
+  inline void set_allocated_pos(::PosInfo* pos);
+
   // @@protoc_insertion_point(class_scope:NpcInfo)
  private:
   inline void set_has_npc_id();
@@ -455,6 +464,8 @@ class NpcInfo : public ::google::protobuf::Message {
   inline void clear_has_totoal_hp();
   inline void set_has_current_hp();
   inline void clear_has_current_hp();
+  inline void set_has_pos();
+  inline void clear_has_pos();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -463,9 +474,10 @@ class NpcInfo : public ::google::protobuf::Message {
   ::google::protobuf::int32 npc_level_;
   ::google::protobuf::int32 totoal_hp_;
   ::google::protobuf::int32 current_hp_;
+  ::PosInfo* pos_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
 
   friend void  protobuf_AddDesc_message_2eproto();
   friend void protobuf_AssignDesc_message_2eproto();
@@ -1957,6 +1969,44 @@ inline ::google::protobuf::int32 NpcInfo::current_hp() const {
 inline void NpcInfo::set_current_hp(::google::protobuf::int32 value) {
   set_has_current_hp();
   current_hp_ = value;
+}
+
+// required .PosInfo pos = 6;
+inline bool NpcInfo::has_pos() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void NpcInfo::set_has_pos() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void NpcInfo::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void NpcInfo::clear_pos() {
+  if (pos_ != NULL) pos_->::PosInfo::Clear();
+  clear_has_pos();
+}
+inline const ::PosInfo& NpcInfo::pos() const {
+  return pos_ != NULL ? *pos_ : *default_instance_->pos_;
+}
+inline ::PosInfo* NpcInfo::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) pos_ = new ::PosInfo;
+  return pos_;
+}
+inline ::PosInfo* NpcInfo::release_pos() {
+  clear_has_pos();
+  ::PosInfo* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+inline void NpcInfo::set_allocated_pos(::PosInfo* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
 }
 
 // -------------------------------------------------------------------

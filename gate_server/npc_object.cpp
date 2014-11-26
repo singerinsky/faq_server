@@ -1,6 +1,7 @@
 #include "npc_object.h"
 #include "head.h"
 #include "map_manager.h"
+#include "message.pb.h"
 
 void NpcObject::init()
 {
@@ -30,4 +31,16 @@ bool NpcObject::enter_map(map_object* p_map,Position& pos)
         itr++; 
     }
     return true;
+}
+
+void NpcObject::fill_npc_info(NpcInfo* info)
+{
+    info->set_npc_id(get_id());
+    info->set_npc_nickname(_nickname);
+    info->set_npc_level(_level);
+    info->set_totoal_hp(_hp);
+    info->set_current_hp(_hp);
+    PosInfo* pos = info->mutable_pos();
+    pos->set_x(_pos.pos_x());
+    pos->set_y(_pos.pos_y());
 }

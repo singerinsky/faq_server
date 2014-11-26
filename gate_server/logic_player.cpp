@@ -9,6 +9,8 @@
 #include "npc_object.h"
 #include <iterator>
 #include <algorithm>
+#include "message_define.h"
+#include "gate_client.h"
 
 void LogicPlayer::LoadPlayerInfo()
 {
@@ -18,11 +20,12 @@ void LogicPlayer::LoadPlayerInfo()
 void LogicPlayer::InitPlayer(const db_tb_user& user_info)
 {
     _user_info.load_from_pb(user_info);
-    LOG(INFO)<<_user_info.get_user_name();
+    LOG(INFO)<<_user_info.get_user_name()<<" init data from db";
     _pos.set_pos_x(_user_info.get_pos_x());
     _pos.set_pos_y(_user_info.get_pos_y());
     _save_timer.set_owner(this);
     _save_timer.set_expire(10000);
+    enter_map(_user_info.get_map_id(),_pos.pos_x(),_pos.pos_y());
 //    gate_application::db_conn_->update_binder(&_user_info);
 }
 
@@ -104,8 +107,8 @@ void LogicPlayer::broad_round_player(packet* data)
 
 void LogicPlayer::enter_map(int map_id,int x,int y)
 {
-    if(_user_info.get_map_id() == map_id)
-        return;
+    //if(_user_info.get_map_id() == map_id)
+    //    return;
     map_object* map_enter= Singleton<map_manager>::GetInstance()->get_map(map_id);    
     if(map_enter == NULL)
     {
@@ -136,6 +139,19 @@ void LogicPlayer::send_leave_view_notf(player_set_vec_t& leave_set)
     LOG(INFO)<<"send player leave";
 }
 
+void LogicPlayer::fill_player_info(PlayerInfo* info)
+{
+    info->set_player_id(GetDbUserInfo().get_id());
+    info->set_player_nickname(GetDbUserInfo().get_user_name());
+    info->set_player_level(GetDbUserInfo().get_level());
+    info->set_career_id(1);
+    info->set_player_status(1);
+    PosInfo* pos = info->mutable_pos();
+    pos->set_x(GetDbUserInfo().get_pos_x());
+    pos->set_y(GetDbUserInfo().get_pos_y());
+
+}
+
 void LogicPlayer::send_player_enter_view_notf(player_set_vec_t& enter_set)
 {
     cs_packet_enter_players_notf player_notf;
@@ -147,18 +163,28 @@ void LogicPlayer::send_player_enter_view_notf(player_set_vec_t& enter_set)
         {
             LogicPlayer* player = *ply_itr;
             PlayerInfo* info = player_notf.body.add_player_info();          
-            info->set_player_id(player->GetDbUserInfo().get_id());
-            info->set_player_nickname(player->GetDbUserInfo().get_user_name());
-            info->set_player_level(player->GetDbUserInfo().get_level());
-            info->set_career_id(1);
-            info->set_player_status(1);
-            PosInfo* pos = info->mutable_pos();
-            pos.set_x(player->GetDbUserInfo().get_pos_x());
-            pos.set_y(player->GetDbUserInfo().get_pos_y());
-        }
+            player->fill_player_info(info);
+       }
          
     }
-    LOG(INFO)<<"send player enter";
+}
+
+void LogicPlayer::send_npc_enter_view_notf(npc_set_vec_t& enter_set)
+{
+    cs_packet_enter_npcs_notf notf;
+    auto itr = enter_set.begin();
+    for(;itr != enter_set.end();itr++)
+    {
+        auto npc_itr = (*itr)->begin();
+        for(;npc_itr != (*itr)->end(); npc_itr++)
+        {
+            NpcObject* npc = *npc_itr;
+            NpcInfo* info = notf.body.add_npc_info();
+            npc->fill_npc_info(info);
+            LOG(INFO)<<"npc "<<npc->get_id()<<" around";
+        }
+    }
+    _client->send_packet(&notf);
 }
 
 void LogicPlayer::copy_to(PlayerInfo& info)

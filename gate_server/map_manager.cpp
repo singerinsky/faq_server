@@ -37,6 +37,7 @@ bool map_manager::init()
     {
         map_object* pmap = new map_object();
         pmap->init(map_path+*itr); 
+        _all_map[pmap->map_id()] = pmap;
     }
     return true;
 }
@@ -73,7 +74,7 @@ void map_object::init(std::string map_file)
     if(npc_node)
     {
         TiXmlNode* child_node = 0;//npc_node->FirstChild();
-		while( (child_node = npc_node->IterateChildren( child_node )) != NULL )
+		while( child_node = npc_node->IterateChildren( child_node ) )
         {
             TiXmlElement* ele = child_node->ToElement();
             int npc_id = 0,pos_x,pos_y;
@@ -87,6 +88,7 @@ void map_object::init(std::string map_file)
             object->enter_map(this,npc_pos);
             _all_npc.push_back(object);
         }
+        //while((child_node = npc_node->IterateChildren(child_node)) != NULL)
     }
 
     delete doc;

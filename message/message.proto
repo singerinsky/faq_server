@@ -48,6 +48,7 @@ message NpcInfo
     required int32  npc_level = 3;
     required int32  totoal_hp = 4;
     required int32  current_hp = 5; 
+    required PosInfo pos = 6;
 }
 
 enum DbMessageType

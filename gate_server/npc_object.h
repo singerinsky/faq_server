@@ -2,6 +2,7 @@
 #define _NpcObject_h_
 
 #include "game_define.h"
+#include "message.pb.h"
 #include "map_manager.h"
 #include "fighter.h"
 
@@ -29,6 +30,7 @@ class NpcObject:public Fighter
         }
 
         bool  enter_map(map_object*,Position& pos);
+        void  fill_npc_info(NpcInfo* info);
     private:
         Position _pos; 
         int  _attr[PLY_ATTR_END];
@@ -36,6 +38,8 @@ class NpcObject:public Fighter
         int  _mp;
         bool _alive;
         int  _npc_id;
+        int  _level;
+        string _nickname;
         player_set_vec_t    _player_round;
         map_object*         _map_in;
 };

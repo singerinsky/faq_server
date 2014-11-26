@@ -280,6 +280,8 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
  .././include/glog/log_severity.h
  .././include/glog/logging.h
  .././include/glog/vlog_is_on.h
+ ../gate_server/../common/aliased_buf.h
+ ../gate_server/../common/game_packet.h
  ../gate_server/../common/head.h
  ../gate_server/../common/packet.h
  ../gate_server/../common/reactor_core.h
@@ -292,6 +294,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
  ../gate_server/../include/tinyxml.h
  ../gate_server/../message/db_message.pb.h
  ../gate_server/../message/message.pb.h
+ ../gate_server/../message/message_define.h
  ../gate_server/../message/sql_binder.h
  ../gate_server/../message/tb_user.h
  ../gate_server/../message/tb_user.pb.h
@@ -299,6 +302,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
  /home/gl/faq_server/gate_server/fighter.h
  /home/gl/faq_server/gate_server/game_define.h
  /home/gl/faq_server/gate_server/gate_application.h
+ /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.cpp
  /home/gl/faq_server/gate_server/logic_player.h
  /home/gl/faq_server/gate_server/map_manager.h
@@ -321,6 +325,9 @@ gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o
  ../gate_server/../common/util_file.h
  ../gate_server/../include/tinystr.h
  ../gate_server/../include/tinyxml.h
+ ../gate_server/../message/db_message.pb.h
+ ../gate_server/../message/message.pb.h
+ ../gate_server/../message/tb_user.pb.h
  /home/gl/faq_server/gate_server/fighter.h
  /home/gl/faq_server/gate_server/game_define.h
  /home/gl/faq_server/gate_server/map_manager.cpp
@@ -342,6 +349,9 @@ gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o
  ../gate_server/../common/tinyxml.h
  ../gate_server/../include/tinystr.h
  ../gate_server/../include/tinyxml.h
+ ../gate_server/../message/db_message.pb.h
+ ../gate_server/../message/message.pb.h
+ ../gate_server/../message/tb_user.pb.h
  /home/gl/faq_server/gate_server/fighter.h
  /home/gl/faq_server/gate_server/game_define.h
  /home/gl/faq_server/gate_server/map_manager.h

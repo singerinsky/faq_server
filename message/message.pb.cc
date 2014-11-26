@@ -113,12 +113,13 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PlayerInfo));
   NpcInfo_descriptor_ = file->message_type(2);
-  static const int NpcInfo_offsets_[5] = {
+  static const int NpcInfo_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcInfo, npc_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcInfo, npc_nickname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcInfo, npc_level_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcInfo, totoal_hp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcInfo, current_hp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcInfo, pos_),
   };
   NpcInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -414,37 +415,37 @@ void protobuf_AddDesc_message_2eproto() {
     "\005\"\217\001\n\nPlayerInfo\022\021\n\tplayer_id\030\001 \002(\005\022\027\n\017p"
     "layer_nickname\030\002 \002(\t\022\024\n\014player_level\030\003 \002"
     "(\005\022\021\n\tcareer_id\030\004 \002(\005\022\025\n\rplayer_status\030\005"
-    " \002(\005\022\025\n\003pos\030\006 \002(\0132\010.PosInfo\"i\n\007NpcInfo\022\016"
-    "\n\006npc_id\030\001 \002(\005\022\024\n\014npc_nickname\030\002 \002(\t\022\021\n\t"
-    "npc_level\030\003 \002(\005\022\021\n\ttotoal_hp\030\004 \002(\005\022\022\n\ncu"
-    "rrent_hp\030\005 \002(\005\"-\n\026ClientHeartBeatRequest"
-    "\022\023\n\013client_time\030\001 \002(\005\".\n\027ClientHeartBeat"
-    "Response\022\023\n\013server_time\030\001 \002(\005\"4\n\022ClientL"
-    "oginRequest\022\017\n\007role_id\030\001 \002(\005\022\r\n\005token\030\002 "
-    "\002(\t\"\"\n\023ClientLoginResponse\022\013\n\003ret\030\001 \002(\005\""
-    "=\n\016ClientInitNotf\022\013\n\003ret\030\001 \002(\005\022\036\n\tuser_i"
-    "nfo\030\002 \002(\0132\013.db_tb_user\"A\n\021ClientMoveRequ"
-    "est\022\016\n\006map_id\030\001 \002(\005\022\r\n\005pos_x\030\002 \002(\005\022\r\n\005po"
-    "s_y\030\003 \002(\005\"O\n\022ClientMoveResponse\022\013\n\003ret\030\001"
-    " \002(\005\022\016\n\006map_id\030\002 \002(\005\022\r\n\005pos_x\030\003 \002(\005\022\r\n\005p"
-    "os_y\030\004 \002(\005\"(\n\023PlayerLeaveViewNotf\022\021\n\tpla"
-    "yer_id\030\001 \002(\005\")\n\024LeavePlayersViewNotf\022\021\n\t"
-    "player_id\030\001 \003(\005\"7\n\023PlayerEnterViewNotf\022 "
-    "\n\013player_info\030\001 \002(\0132\013.PlayerInfo\"8\n\024Ente"
-    "rPlayersViewNotf\022 \n\013player_info\030\001 \003(\0132\013."
-    "PlayerInfo\"/\n\021EnterNpcsViewNotf\022\032\n\010npc_i"
-    "nfo\030\001 \003(\0132\010.NpcInfo*D\n\017MSG_ACTION_TYPE\022\017"
-    "\n\013MSG_REQUEST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG"
-    "_NOTIFY\020\002*\273\002\n\013MessageType\022\032\n\026MSG_SOCCER_"
-    "PLAYER_INFO\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020MSG"
-    "_CLIENT_LOGIN\020\003\022\034\n\030MSG_GATE_SERVER_REGIS"
-    "TER\020\004\022\023\n\017MSG_INIT_CLIENT\020\005\022\023\n\017MSG_CLIENT"
-    "_MOVE\020\006\022\036\n\032MSG_PLAYER_LEAVE_VIEW_NOTF\020\007\022"
-    "\037\n\033MSG_LEAVE_PLAYERS_VIEW_NOTF\020\010\022\036\n\032MSG_"
-    "PLAYER_ENTER_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER_PL"
-    "AYERS_VIEW_NOTF\020\n\022\034\n\030MSG_ENTER_NPCS_VIEW"
-    "_NOTF\020\013*#\n\rDbMessageType\022\022\n\rMSG_DB_COMMO"
-    "N\020\220N", 1404);
+    " \002(\005\022\025\n\003pos\030\006 \002(\0132\010.PosInfo\"\200\001\n\007NpcInfo\022"
+    "\016\n\006npc_id\030\001 \002(\005\022\024\n\014npc_nickname\030\002 \002(\t\022\021\n"
+    "\tnpc_level\030\003 \002(\005\022\021\n\ttotoal_hp\030\004 \002(\005\022\022\n\nc"
+    "urrent_hp\030\005 \002(\005\022\025\n\003pos\030\006 \002(\0132\010.PosInfo\"-"
+    "\n\026ClientHeartBeatRequest\022\023\n\013client_time\030"
+    "\001 \002(\005\".\n\027ClientHeartBeatResponse\022\023\n\013serv"
+    "er_time\030\001 \002(\005\"4\n\022ClientLoginRequest\022\017\n\007r"
+    "ole_id\030\001 \002(\005\022\r\n\005token\030\002 \002(\t\"\"\n\023ClientLog"
+    "inResponse\022\013\n\003ret\030\001 \002(\005\"=\n\016ClientInitNot"
+    "f\022\013\n\003ret\030\001 \002(\005\022\036\n\tuser_info\030\002 \002(\0132\013.db_t"
+    "b_user\"A\n\021ClientMoveRequest\022\016\n\006map_id\030\001 "
+    "\002(\005\022\r\n\005pos_x\030\002 \002(\005\022\r\n\005pos_y\030\003 \002(\005\"O\n\022Cli"
+    "entMoveResponse\022\013\n\003ret\030\001 \002(\005\022\016\n\006map_id\030\002"
+    " \002(\005\022\r\n\005pos_x\030\003 \002(\005\022\r\n\005pos_y\030\004 \002(\005\"(\n\023Pl"
+    "ayerLeaveViewNotf\022\021\n\tplayer_id\030\001 \002(\005\")\n\024"
+    "LeavePlayersViewNotf\022\021\n\tplayer_id\030\001 \003(\005\""
+    "7\n\023PlayerEnterViewNotf\022 \n\013player_info\030\001 "
+    "\002(\0132\013.PlayerInfo\"8\n\024EnterPlayersViewNotf"
+    "\022 \n\013player_info\030\001 \003(\0132\013.PlayerInfo\"/\n\021En"
+    "terNpcsViewNotf\022\032\n\010npc_info\030\001 \003(\0132\010.NpcI"
+    "nfo*D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQUEST\020\000\022"
+    "\020\n\014MSG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*\273\002\n\013Me"
+    "ssageType\022\032\n\026MSG_SOCCER_PLAYER_INFO\020\001\022\022\n"
+    "\016MSG_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOGIN\020\003\022"
+    "\034\n\030MSG_GATE_SERVER_REGISTER\020\004\022\023\n\017MSG_INI"
+    "T_CLIENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006\022\036\n\032MSG_P"
+    "LAYER_LEAVE_VIEW_NOTF\020\007\022\037\n\033MSG_LEAVE_PLA"
+    "YERS_VIEW_NOTF\020\010\022\036\n\032MSG_PLAYER_ENTER_VIE"
+    "W_NOTF\020\t\022\037\n\033MSG_ENTER_PLAYERS_VIEW_NOTF\020"
+    "\n\022\034\n\030MSG_ENTER_NPCS_VIEW_NOTF\020\013*#\n\rDbMes"
+    "sageType\022\022\n\rMSG_DB_COMMON\020\220N", 1428);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   PosInfo::default_instance_ = new PosInfo();
@@ -1229,6 +1230,7 @@ const int NpcInfo::kNpcNicknameFieldNumber;
 const int NpcInfo::kNpcLevelFieldNumber;
 const int NpcInfo::kTotoalHpFieldNumber;
 const int NpcInfo::kCurrentHpFieldNumber;
+const int NpcInfo::kPosFieldNumber;
 #endif  // !_MSC_VER
 
 NpcInfo::NpcInfo()
@@ -1237,6 +1239,7 @@ NpcInfo::NpcInfo()
 }
 
 void NpcInfo::InitAsDefaultInstance() {
+  pos_ = const_cast< ::PosInfo*>(&::PosInfo::default_instance());
 }
 
 NpcInfo::NpcInfo(const NpcInfo& from)
@@ -1252,6 +1255,7 @@ void NpcInfo::SharedCtor() {
   npc_level_ = 0;
   totoal_hp_ = 0;
   current_hp_ = 0;
+  pos_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1264,6 +1268,7 @@ void NpcInfo::SharedDtor() {
     delete npc_nickname_;
   }
   if (this != default_instance_) {
+    delete pos_;
   }
 }
 
@@ -1299,6 +1304,9 @@ void NpcInfo::Clear() {
     npc_level_ = 0;
     totoal_hp_ = 0;
     current_hp_ = 0;
+    if (has_pos()) {
+      if (pos_ != NULL) pos_->::PosInfo::Clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -1386,6 +1394,20 @@ bool NpcInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(50)) goto parse_pos;
+        break;
+      }
+
+      // required .PosInfo pos = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_pos:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_pos()));
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -1437,6 +1459,12 @@ void NpcInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->current_hp(), output);
   }
 
+  // required .PosInfo pos = 6;
+  if (has_pos()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->pos(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1473,6 +1501,13 @@ void NpcInfo::SerializeWithCachedSizes(
   // required int32 current_hp = 5;
   if (has_current_hp()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->current_hp(), target);
+  }
+
+  // required .PosInfo pos = 6;
+  if (has_pos()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->pos(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1521,6 +1556,13 @@ int NpcInfo::ByteSize() const {
           this->current_hp());
     }
 
+    // required .PosInfo pos = 6;
+    if (has_pos()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->pos());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -1563,6 +1605,9 @@ void NpcInfo::MergeFrom(const NpcInfo& from) {
     if (from.has_current_hp()) {
       set_current_hp(from.current_hp());
     }
+    if (from.has_pos()) {
+      mutable_pos()->::PosInfo::MergeFrom(from.pos());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1580,8 +1625,11 @@ void NpcInfo::CopyFrom(const NpcInfo& from) {
 }
 
 bool NpcInfo::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
+  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
 
+  if (has_pos()) {
+    if (!this->pos().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -1592,6 +1640,7 @@ void NpcInfo::Swap(NpcInfo* other) {
     std::swap(npc_level_, other->npc_level_);
     std::swap(totoal_hp_, other->totoal_hp_);
     std::swap(current_hp_, other->current_hp_);
+    std::swap(pos_, other->pos_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

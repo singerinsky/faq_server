@@ -69,6 +69,7 @@ class LogicPlayer:public Fighter
         void send_player_enter_view_notf(player_set_vec_t& enter_set);
         void send_npc_enter_view_notf(npc_set_vec_t&);
         void copy_to(PlayerInfo& info);
+        void fill_player_info(PlayerInfo* info);
 
     private:
         gate_client* _client;

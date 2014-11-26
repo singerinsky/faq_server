@@ -84,6 +84,9 @@ void db_client::on_load_user_data(MysqlResult& result,db_job* job)
         user_info->set_map_id(row.get_int(3));
         user_info->set_pos_x(row.get_int(4));
         user_info->set_pos_y(row.get_int(5));
+        user_info->set_hp(row.get_int(6));
+        user_info->set_mp(row.get_int(7));
+        user_info->set_direct(row.get_int(8));
         LOG(INFO)<<response.body.user_info().user_name();
         send_packet(&response);
     }

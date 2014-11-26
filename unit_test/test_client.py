@@ -64,8 +64,17 @@ class CClient:
         print "init client from message name %s id %d"%(message.user_info.user_name,message.user_info.id)
         self.user_info = message.user_info
 
+    def do_enter_npc_view(self,message):
+        for npc in message.npc_info:
+            print 'npc',npc.npc_id
+
     def process_msg(self,msg_id,msg_content):
-        print "process msg code",msg_id>>2
+        if MSG_NAME.has_key(msg_id):
+            print "process msg ",MSG_NAME[msg_id]
+        else:
+            print "receive unkown msg",msg_id
+            return
+
         if msg_id == CSMSG_CLIENT_LOGIN_ACK:
             message = response_factory[msg_id]
             message.ParseFromString(msg_content)
@@ -74,7 +83,13 @@ class CClient:
             message = response_factory[msg_id]
             message.ParseFromString(msg_content)
             self.do_init_client(message)
-
+        if msg_id == CSMSG_ENTER_NPCS_NOTF:
+            message = response_factory[msg_id]
+            message.ParseFromString(msg_content)
+            self.do_enter_npc_view(message)
+            #else:
+            #    print "parse error"
+            
 
     def do_login(self):
         message_body = ClientLoginRequest();  
