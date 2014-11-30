@@ -94,9 +94,9 @@ message ClientMoveRequest
 message ClientMoveResponse
 {
     required int32 ret = 1;
-    required int32 map_id = 2;
-    required int32 pos_x = 3;
-    required int32 pos_y = 4;
+    optional int32 map_id = 2;
+    optional int32 pos_x = 3;
+    optional int32 pos_y = 4;
 }
 
 message PlayerLeaveViewNotf

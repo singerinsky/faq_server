@@ -428,7 +428,7 @@ void protobuf_AddDesc_message_2eproto() {
     "b_user\"A\n\021ClientMoveRequest\022\016\n\006map_id\030\001 "
     "\002(\005\022\r\n\005pos_x\030\002 \002(\005\022\r\n\005pos_y\030\003 \002(\005\"O\n\022Cli"
     "entMoveResponse\022\013\n\003ret\030\001 \002(\005\022\016\n\006map_id\030\002"
-    " \002(\005\022\r\n\005pos_x\030\003 \002(\005\022\r\n\005pos_y\030\004 \002(\005\"(\n\023Pl"
+    " \001(\005\022\r\n\005pos_x\030\003 \001(\005\022\r\n\005pos_y\030\004 \001(\005\"(\n\023Pl"
     "ayerLeaveViewNotf\022\021\n\tplayer_id\030\001 \002(\005\")\n\024"
     "LeavePlayersViewNotf\022\021\n\tplayer_id\030\001 \003(\005\""
     "7\n\023PlayerEnterViewNotf\022 \n\013player_info\030\001 "
@@ -3189,7 +3189,7 @@ bool ClientMoveResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 map_id = 2;
+      // optional int32 map_id = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -3205,7 +3205,7 @@ bool ClientMoveResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 pos_x = 3;
+      // optional int32 pos_x = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -3221,7 +3221,7 @@ bool ClientMoveResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 pos_y = 4;
+      // optional int32 pos_y = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -3260,17 +3260,17 @@ void ClientMoveResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->ret(), output);
   }
 
-  // required int32 map_id = 2;
+  // optional int32 map_id = 2;
   if (has_map_id()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->map_id(), output);
   }
 
-  // required int32 pos_x = 3;
+  // optional int32 pos_x = 3;
   if (has_pos_x()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->pos_x(), output);
   }
 
-  // required int32 pos_y = 4;
+  // optional int32 pos_y = 4;
   if (has_pos_y()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->pos_y(), output);
   }
@@ -3288,17 +3288,17 @@ void ClientMoveResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->ret(), target);
   }
 
-  // required int32 map_id = 2;
+  // optional int32 map_id = 2;
   if (has_map_id()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->map_id(), target);
   }
 
-  // required int32 pos_x = 3;
+  // optional int32 pos_x = 3;
   if (has_pos_x()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->pos_x(), target);
   }
 
-  // required int32 pos_y = 4;
+  // optional int32 pos_y = 4;
   if (has_pos_y()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->pos_y(), target);
   }
@@ -3321,21 +3321,21 @@ int ClientMoveResponse::ByteSize() const {
           this->ret());
     }
 
-    // required int32 map_id = 2;
+    // optional int32 map_id = 2;
     if (has_map_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->map_id());
     }
 
-    // required int32 pos_x = 3;
+    // optional int32 pos_x = 3;
     if (has_pos_x()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->pos_x());
     }
 
-    // required int32 pos_y = 4;
+    // optional int32 pos_y = 4;
     if (has_pos_y()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -3398,7 +3398,7 @@ void ClientMoveResponse::CopyFrom(const ClientMoveResponse& from) {
 }
 
 bool ClientMoveResponse::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
   return true;
 }

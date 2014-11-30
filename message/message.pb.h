@@ -1088,21 +1088,21 @@ class ClientMoveResponse : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 ret() const;
   inline void set_ret(::google::protobuf::int32 value);
 
-  // required int32 map_id = 2;
+  // optional int32 map_id = 2;
   inline bool has_map_id() const;
   inline void clear_map_id();
   static const int kMapIdFieldNumber = 2;
   inline ::google::protobuf::int32 map_id() const;
   inline void set_map_id(::google::protobuf::int32 value);
 
-  // required int32 pos_x = 3;
+  // optional int32 pos_x = 3;
   inline bool has_pos_x() const;
   inline void clear_pos_x();
   static const int kPosXFieldNumber = 3;
   inline ::google::protobuf::int32 pos_x() const;
   inline void set_pos_x(::google::protobuf::int32 value);
 
-  // required int32 pos_y = 4;
+  // optional int32 pos_y = 4;
   inline bool has_pos_y() const;
   inline void clear_pos_y();
   static const int kPosYFieldNumber = 4;
@@ -2343,7 +2343,7 @@ inline void ClientMoveResponse::set_ret(::google::protobuf::int32 value) {
   ret_ = value;
 }
 
-// required int32 map_id = 2;
+// optional int32 map_id = 2;
 inline bool ClientMoveResponse::has_map_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -2365,7 +2365,7 @@ inline void ClientMoveResponse::set_map_id(::google::protobuf::int32 value) {
   map_id_ = value;
 }
 
-// required int32 pos_x = 3;
+// optional int32 pos_x = 3;
 inline bool ClientMoveResponse::has_pos_x() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -2387,7 +2387,7 @@ inline void ClientMoveResponse::set_pos_x(::google::protobuf::int32 value) {
   pos_x_ = value;
 }
 
-// required int32 pos_y = 4;
+// optional int32 pos_y = 4;
 inline bool ClientMoveResponse::has_pos_y() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }

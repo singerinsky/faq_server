@@ -18,6 +18,7 @@ class move_message_action: public template_message<ClientMoveRequest,ClientMoveR
     public:
         int process_message(ClientMoveRequest *request,socket_client* client)
         {
+            rsp_message_packet response;
             gate_client* gclient = (gate_client*)client;
             LogicPlayer* logic_player = gclient->get_player_info();
             if(logic_player == NULL)
@@ -28,9 +29,24 @@ class move_message_action: public template_message<ClientMoveRequest,ClientMoveR
             int pos_x = request->pos_x();
             int pos_y = request->pos_y();
             int map_id = request->map_id();
+            map_object* map = logic_player->get_map_in();
+            if(map == NULL)
+            {
+                response.body.set_ret(-1); 
+                client->send_packet(&response);
+                return 1;
+            }
+            Position pos;
+            pos.set_pos_x(pos_x);
+            pos.set_pos_y(pos_y);
+            if(!(map->is_vaild(pos)))
+            {
+                response.body.set_ret(-1); 
+                client->send_packet(&response);
+                return 1;
+            }
             LOG(INFO)<<"role move to"<<pos_x<<":"<<pos_y<<":"<<map_id; 
             logic_player->Move(pos_x,pos_y);
-            //rsp_message_packet response;
             //response.body.set_ret(1); 
             //client->send_packet(&response);
             return 1;

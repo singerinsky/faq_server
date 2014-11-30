@@ -69,6 +69,10 @@ class LogicPlayer:public Fighter
  
         void broad_round_player(packet*);
         void enter_map(int map_id,int x,int y);
+        map_object* get_map_in() const 
+        {
+            return _map;
+        }
 
         void send_leave_view_notf(player_set_vec_t& leave_set);
         void send_player_enter_view_notf(player_set_vec_t& enter_set);
