@@ -11,11 +11,6 @@
 gate_client::~gate_client()
 {
     VLOG(1)<<"delete gate_client";
-    if(_player_info)
-    {
-        delete _player_info; 
-        _player_info = NULL;
-    }
 //    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 };
 
@@ -30,6 +25,13 @@ int gate_client::process_msg(packet_info* info)
 void gate_client::on_error(bufferevent* ev)
 {
     LOG(INFO)<<"gate client disconnection "<<_role_id;
+    if(_player_info != NULL)
+    {
+        _player_info->OnLogout(); 
+        delete _player_info;
+        _player_info = NULL;
+    }
+
     Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 }
 

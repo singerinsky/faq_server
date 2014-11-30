@@ -134,12 +134,12 @@ void db_connection::update_binder(sql_binder* binder)
     }
     char buffer[2048] = {0};
     int update_size = binder->sql_update(buffer,2048);
-    LOG(INFO)<<"update size "<<update_size;
     cs_packet_db_common_request request;
     request.body.set_seq(1);
     request.body.set_operate_type(DbOperateType::DB_WORK_UPDATE);
     request.body.set_operate_string(buffer);
     send_packet(&request);
+    VLOG(1)<<buffer;
     binder->clear_dirty();
 }
 

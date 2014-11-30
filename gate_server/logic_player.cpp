@@ -42,6 +42,8 @@ void LogicPlayer::Move(int x,int y)
     {
         Position rst(x,y),delt;
         int step_count = _map->step(_pos,rst,&delt);
+        if(step_count == -1)
+            return;
         _pos.modify_pos(delt);
         _user_info.set_pos_x(_pos.pos_x());
         _user_info.set_pos_y(_pos.pos_y());
@@ -68,7 +70,7 @@ void LogicPlayer::Move(int x,int y)
            //
         }
 
-        LOG(INFO)<<"player "<<_user_info.get_id()<<" move to "<<x<<":"<<y;
+        LOG(INFO)<<"player "<<_user_info.get_id()<<" move to "<<_user_info.get_pos_x()<<":"<<_user_info.get_pos_y();
         //show all new npc
         set<NpcObject*> all_npc;
         _map->get_all_npc_round(_pos,all_npc);

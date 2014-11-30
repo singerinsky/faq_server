@@ -23,6 +23,11 @@ class LogicPlayer:public Fighter
         ~LogicPlayer(){
 
         };
+
+        void OnLogout()
+        {
+            SavePlayer(); 
+        }
         void BindPlayer(gate_client* client)
         {
             _client = client; 
