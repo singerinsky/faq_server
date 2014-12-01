@@ -17,7 +17,7 @@ class data_work_action: public template_message<DBCommonReq,DBCommonRep,MSG_DB_C
             count++;
             db_job* job = new db_job();
             job->_sql_str = request->operate_string();
-            LOG(INFO)<<"sql "<<job->_sql_str;
+            //LOG(INFO)<<"sql "<<job->_sql_str;
             job->_selector = (db_client*)client;
             job->_operate_type = request->operate_type(); 
             job->_seq = 1;

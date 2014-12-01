@@ -17,6 +17,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/gate_server/map_manager.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o"
   "/home/gl/faq_server/gate_server/npc_object.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o"
   "/home/gl/faq_server/gate_server/player_manager.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.o"
+  "/home/gl/faq_server/gate_server/state.cpp" "/home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir/state.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

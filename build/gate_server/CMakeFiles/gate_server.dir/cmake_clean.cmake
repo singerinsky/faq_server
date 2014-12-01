@@ -7,6 +7,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/gate_server.dir/action_login_message.cpp.o"
   "CMakeFiles/gate_server.dir/config_manager.cpp.o"
   "CMakeFiles/gate_server.dir/gate_application.cpp.o"
+  "CMakeFiles/gate_server.dir/state.cpp.o"
   "CMakeFiles/gate_server.dir/client_service.cpp.o"
   "CMakeFiles/gate_server.dir/map_manager.cpp.o"
   "CMakeFiles/gate_server.dir/player_manager.cpp.o"

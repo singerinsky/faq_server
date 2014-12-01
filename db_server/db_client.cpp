@@ -37,7 +37,7 @@ void db_client::on_timeout()
 void db_client::do_data_call(MysqlResult& result,db_job* job)
 {
     DbOperateType query_type = ( DbOperateType)job->_operate_type;
-    LOG(INFO)<<"finish query  "<<DbOperateType_Name(query_type);
+    //LOG(INFO)<<"finish query  "<<DbOperateType_Name(query_type);
     
     switch(query_type)
     {
@@ -69,7 +69,7 @@ void db_client::init(int db_work)
 
 void db_client::on_load_user_data(MysqlResult& result,db_job* job)
 {
-    LOG(INFO)<<"finish load user data query"<<job->_operate_type;
+    //LOG(INFO)<<"finish load user data query"<<job->_operate_type;
     if(result.next())
     {
         MysqlResultRow row = result.get_next_row(); 
@@ -87,7 +87,6 @@ void db_client::on_load_user_data(MysqlResult& result,db_job* job)
         user_info->set_hp(row.get_int(6));
         user_info->set_mp(row.get_int(7));
         user_info->set_direct(row.get_int(8));
-        LOG(INFO)<<response.body.user_info().user_name();
         send_packet(&response);
     }
 }

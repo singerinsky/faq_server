@@ -47,8 +47,12 @@ class move_message_action: public template_message<ClientMoveRequest,ClientMoveR
             }
             LOG(INFO)<<"role move to"<<pos_x<<":"<<pos_y<<":"<<map_id; 
             logic_player->Move(pos_x,pos_y);
-            //response.body.set_ret(1); 
-            //client->send_packet(&response);
+            
+            response.body.set_map_id(map_id);
+            response.body.set_pos_x(logic_player->GetDbUserInfo().get_pos_x());
+            response.body.set_pos_y(logic_player->GetDbUserInfo().get_pos_y());
+            response.body.set_ret(1); 
+            client->send_packet(&response);
             return 1;
         }
 

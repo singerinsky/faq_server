@@ -14,8 +14,12 @@ void data_worker::do_job(db_job* event)
     int ret = _db_conn->exec_format(event->_sql_str.c_str());
     if(ret < 0)
     {
-        LOG(ERROR)<<ret<<event->_sql_str.c_str(); 
+        LOG(ERROR)<<ret<<":"<<event->_sql_str.c_str(); 
         return;
+    }
+    else
+    {
+        LOG(INFO)<<ret<<":"<<event->_sql_str.c_str(); 
     }
 
     if(event->_operate_type == DbOperateType::DB_WORK_UPDATE)

@@ -5,8 +5,9 @@
 #include "message.pb.h"
 #include "map_manager.h"
 #include "fighter.h"
+#include "state.h"
 
-class NpcObject:public Fighter
+class NpcObject:public Fighter,StateObject
 {
     public:
         NpcObject(int npc_id)
@@ -14,6 +15,7 @@ class NpcObject:public Fighter
             _npc_id = npc_id;
             _hp = 0;
             _mp = 0;
+            _state = NULL;
         }
 
         void  init();
@@ -32,6 +34,7 @@ class NpcObject:public Fighter
         bool  enter_map(map_object*,Position& pos);
         void  fill_npc_info(NpcInfo* info);
         void  show_npc_around();
+
     private:
         Position _pos; 
         Position _cell_pos;

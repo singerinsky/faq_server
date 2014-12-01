@@ -424,6 +424,30 @@ player_manager.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/player_manager.cpp.s
 .PHONY : player_manager.cpp.s
 
+state.o: state.cpp.o
+.PHONY : state.o
+
+# target to build an object file
+state.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/state.cpp.o
+.PHONY : state.cpp.o
+
+state.i: state.cpp.i
+.PHONY : state.i
+
+# target to preprocess a source file
+state.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/state.cpp.i
+.PHONY : state.cpp.i
+
+state.s: state.cpp.s
+.PHONY : state.s
+
+# target to generate assembly for a file
+state.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/state.cpp.s
+.PHONY : state.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -472,6 +496,9 @@ help:
 	@echo "... player_manager.o"
 	@echo "... player_manager.i"
 	@echo "... player_manager.s"
+	@echo "... state.o"
+	@echo "... state.i"
+	@echo "... state.s"
 .PHONY : help
 
 

@@ -74,22 +74,22 @@ class CClient:
         else:
             print "receive unkown msg",msg_id
             return
+        message = response_factory[msg_id]
+        message.ParseFromString(msg_content)
 
         if msg_id == CSMSG_CLIENT_LOGIN_ACK:
-            message = response_factory[msg_id]
-            message.ParseFromString(msg_content)
             print "login message",message.ret
         if msg_id == CSMSG_INIT_PLAYER_NOTF:
-            message = response_factory[msg_id]
-            message.ParseFromString(msg_content)
             self.do_init_client(message)
         if msg_id == CSMSG_ENTER_NPCS_NOTF:
-            message = response_factory[msg_id]
-            message.ParseFromString(msg_content)
             self.do_enter_npc_view(message)
+        if msg_id == CSMSG_CLIENT_MOVE_REP:
+            self.do_update_move(message)
             #else:
             #    print "parse error"
             
+    def do_update_move(self,message):
+        print "player position x:",message.pos_x," y:",message.pos_y
 
     def do_login(self):
         message_body = ClientLoginRequest();  
