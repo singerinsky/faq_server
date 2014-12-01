@@ -12,6 +12,7 @@ class Fighter
 {
     public:
         Fighter(){}
+        virtual ~Fighter(){}
         int Attack(Fighter& f);
         int MagicAttack(Fighter& f,int skill_id);
         virtual void set_hp(int hp) = 0;

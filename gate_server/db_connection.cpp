@@ -128,12 +128,19 @@ int db_connection::build_query(int seq,int operate_type,const char* sql_str,...)
 
 void db_connection::update_binder(sql_binder* binder)
 {
+    if(socket_client::is_online() == false)
+    {
+        LOG(ERROR)<<"lost connection to db_server!"; 
+        return;
+    }
+
     if(!(binder->is_dirty()))
     {
         return; 
     }
     char buffer[2048] = {0};
     int update_size = binder->sql_update(buffer,2048);
+    VLOG(3)<<"update sql str size "<<update_size;
     cs_packet_db_common_request request;
     request.body.set_seq(1);
     request.body.set_operate_type(DbOperateType::DB_WORK_UPDATE);

@@ -198,14 +198,6 @@ singleton.h
 tinyxml.h
 ../gate_server/../common/tinyxml.h
 
-../gate_server/../common/packet.h
-stdint.h
--
-endian.h
--
-byteswap.h
--
-
 ../gate_server/../common/singleton.h
 cstdlib
 -
@@ -229,18 +221,6 @@ sstream
 -
 tinystr.h
 ../gate_server/../common/tinystr.h
-
-../gate_server/../common/util_file.h
-sys/types.h
--
-dirent.h
--
-string
--
-vector
--
-sstream
--
 
 ../gate_server/../include/tinystr.h
 assert.h
@@ -332,22 +312,6 @@ game_define.h
 
 /home/gl/faq_server/gate_server/game_define.h
 
-/home/gl/faq_server/gate_server/map_manager.cpp
-map_manager.h
-/home/gl/faq_server/gate_server/map_manager.h
-sys/types.h
--
-dirent.h
--
-util_file.h
-/home/gl/faq_server/gate_server/util_file.h
-head.h
-/home/gl/faq_server/gate_server/head.h
-npc_object.h
-/home/gl/faq_server/gate_server/npc_object.h
-packet.h
-/home/gl/faq_server/gate_server/packet.h
-
 /home/gl/faq_server/gate_server/map_manager.h
 singleton.h
 /home/gl/faq_server/gate_server/singleton.h
@@ -363,6 +327,16 @@ game_define.h
 /home/gl/faq_server/gate_server/game_define.h
 map
 -
+
+/home/gl/faq_server/gate_server/npc_object.cpp
+npc_object.h
+/home/gl/faq_server/gate_server/npc_object.h
+head.h
+/home/gl/faq_server/gate_server/head.h
+map_manager.h
+/home/gl/faq_server/gate_server/map_manager.h
+message.pb.h
+/home/gl/faq_server/gate_server/message.pb.h
 
 /home/gl/faq_server/gate_server/npc_object.h
 game_define.h

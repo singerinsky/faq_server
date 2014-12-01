@@ -20,7 +20,7 @@ class LogicPlayer:public Fighter
         LogicPlayer(){
 
         };
-        ~LogicPlayer(){
+        virtual ~LogicPlayer(){
 
         };
 

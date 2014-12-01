@@ -31,8 +31,10 @@ class NpcObject:public Fighter
 
         bool  enter_map(map_object*,Position& pos);
         void  fill_npc_info(NpcInfo* info);
+        void  show_npc_around();
     private:
         Position _pos; 
+        Position _cell_pos;
         int  _attr[PLY_ATTR_END];
         int  _hp;
         int  _mp;
