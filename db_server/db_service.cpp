@@ -10,7 +10,6 @@ int db_service::on_accept(struct bufferevent* event,evutil_socket_t fd,struct so
 {
     //bufferevent* bev,int socket,sockaddr_in& addr
     db_client* db = new db_client(event,fd,sa);
-    db->init_cb();
     Singleton<db_manager>::GetInstance()->add_session(fd,db);
     db->init_timer();
     return 1;

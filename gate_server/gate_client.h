@@ -19,6 +19,7 @@ class gate_client: public socket_client
                 ):socket_client(bev,socket,addr)
         {
             init();
+            init_cb();
             _login_status = UN_LOGIN;
         }
         virtual ~gate_client();

@@ -17,7 +17,7 @@ gate_client::~gate_client()
 
 int gate_client::process_msg(packet_info* info)
 {
-    VLOG(1)<<"Recive message type "<<info->type;
+    VLOG(2)<<"Recive message type "<<info->type;
     Singleton<actions_mananger>::GetInstance()->do_action(info->type,info,this);
     return 1;
 }

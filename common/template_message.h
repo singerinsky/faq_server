@@ -3,6 +3,7 @@
 #include "packet.h"
 #include "game_packet.h"
 #include "actions_mananger.h"
+#include "head.h"
 
 enum
 {
@@ -41,6 +42,7 @@ class template_message:public action_handler
             //TODO decode from packet_info
             req_message_packet t; 
             if(t.decode(info->data,info->size) != info->size)return -1;
+            VLOG(1)<<"process message "<<(&(t.body))->descriptor()->name();
             process_message(&(t.body),client);
             return 1;
         }

@@ -157,7 +157,7 @@ void common_event_cb(struct bufferevent* ev,short error_no,void *user_data)
     }
     else
     {
-        VLOG(1)<<"lost connection"<<error_no;
+        VLOG(1)<<"lost connection";
         ((socket_client*)user_data)->on_disconnection(ev);
     }
 }

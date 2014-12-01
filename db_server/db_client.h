@@ -14,14 +14,13 @@ class db_client: public socket_client
         db_client(bufferevent* bev,evutil_socket_t socket,sockaddr_in* addr
                 ):socket_client(bev,socket,addr)
         {
-            LOG(INFO)<<"new dbclient connect"; 
+            LOG(INFO)<<"new db client connect!"; 
+            socket_client::init_cb();
         }
         virtual ~db_client(){
         };
         void init(int db_work);
-
         void init_timer();
-
 
     public:
         int process_msg(packet_info* info);
@@ -31,7 +30,6 @@ class db_client: public socket_client
         
         void on_load_user_data(MysqlResult& result,db_job* job);
         void on_load_item_list_data(MysqlResult& result,db_job* job);
-        //        int work_job_left();
         //       void release();
     public:
         void do_data_call(MysqlResult& result,db_job* job);
