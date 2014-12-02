@@ -6,8 +6,11 @@
 #include "map_manager.h"
 #include "fighter.h"
 #include "state.h"
+#include "singleton.h"
+#include "timer.h"
 
-class NpcObject:public Fighter,StateObject
+class LogicPlayer;
+class NpcObject:public Fighter,public StateObject
 {
     public:
         NpcObject(int npc_id)
@@ -16,6 +19,7 @@ class NpcObject:public Fighter,StateObject
             _hp = 0;
             _mp = 0;
             _state = NULL;
+            init();
         }
 
         void  init();
@@ -26,6 +30,14 @@ class NpcObject:public Fighter,StateObject
         void  set_mp(int new_mp){_mp = new_mp;} 
         bool  is_alive(){return _alive;}
         int   get_id(){return _npc_id;}
+        void  set_name(std::string name)
+        {
+            _nickname = name;
+        }
+        std::string get_name()
+        {
+            return _nickname;
+        }
         void  set_player_round(player_set_vec_t& ply_vec)
         {
             _player_round = ply_vec; 
@@ -34,6 +46,8 @@ class NpcObject:public Fighter,StateObject
         bool  enter_map(map_object*,Position& pos);
         void  fill_npc_info(NpcInfo* info);
         void  show_npc_around();
+        LogicPlayer* get_nearest_player();
+
 
     private:
         Position _pos; 
@@ -48,4 +62,21 @@ class NpcObject:public Fighter,StateObject
         player_set_vec_t    _player_round;
         map_object*         _map_in;
 };
+
+
+class NpcManager:public Singleton<NpcManager>
+{
+
+friend  Singleton<NpcManager>;
+public:
+    void       Init();
+    NpcObject* GetNpc(int id);
+    void       AddNpc(int id,NpcObject*);
+    void       OnTimeOut();
+
+private:
+    template_timer<NpcManager,&NpcManager::OnTimeOut>    _m_timer;
+    std::map<int,NpcObject*>    _all_npc;
+};
+#define NpcManagerPtr NpcManager::GetInstance()
 #endif

@@ -3,7 +3,8 @@
 #include "head.h"
 
 enum{
-    NPC_STATE_WAIT =0,
+    NPC_STATE_WAIT = 0,
+    NPC_CHASE_PLAYER = 1,
 };
 
 class State
@@ -82,6 +83,21 @@ class NpcWaitState:public BaseState<NpcObject,NPC_STATE_WAIT>
         void Run();
         void Enter(){}
         void Leave(){}
+};
+
+class NpcChasePlayerState:public BaseState<NpcObject,NPC_CHASE_PLAYER>
+{
+    public:
+        virtual ~NpcChasePlayerState(){}
+        void Run();
+        void Enter();
+        void Leave();
+        void SetTarget(int player_id)
+        {
+            _target = player_id; 
+        }
+    private:
+        int _target;
 };
 
 #endif

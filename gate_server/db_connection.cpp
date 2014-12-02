@@ -4,6 +4,7 @@
 #include "db_message.pb.h"
 #include "logic_player.h"
 #include "client_service.h"
+#include "player_manager.h"
 
 void db_connection::on_error(bufferevent* bev)
 {
@@ -94,6 +95,8 @@ int db_connection::on_load_user_info(const db_tb_user& info)
     {
         LogicPlayer* player = client->get_player_info();
         player->InitPlayer(info);
+        Singleton<LogicPlayerManager>::GetInstance()->AddPlayer(player->GetDbUserInfo().get_id(),player);
+
         client->send_packet(&notf);
     }
     else

@@ -78,15 +78,19 @@ void map_object::init(std::string map_file)
         {
             TiXmlElement* ele = child_node->ToElement();
             int npc_id = 0,pos_x,pos_y;
+            std::string nickname;
             ele->Attribute("npc_id",&npc_id);
             ele->Attribute("pos_x",&pos_x);
             ele->Attribute("pos_y",&pos_y);
+            nickname = ele->Attribute("name");
             Position npc_pos;
             npc_pos.set_pos_x(pos_x);
             npc_pos.set_pos_y(pos_y);
             NpcObject* object = new NpcObject(npc_id);
+            object->set_name(nickname);
             object->enter_map(this,npc_pos);
             _all_npc.push_back(object);
+            NpcManagerPtr->AddNpc(npc_id,object);
         }
         //while((child_node = npc_node->IterateChildren(child_node)) != NULL)
     }

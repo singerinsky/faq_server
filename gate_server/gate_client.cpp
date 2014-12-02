@@ -7,6 +7,7 @@
 #include "db_connection.h"
 #include "client_service.h"
 #include "logic_player.h"
+#include "player_manager.h"
 
 gate_client::~gate_client()
 {
@@ -31,7 +32,7 @@ void gate_client::on_error(bufferevent* ev)
         delete _player_info;
         _player_info = NULL;
     }
-
+    LogicManagerPtr->RemovePlayer(_role_id);
     Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 }
 
@@ -54,7 +55,3 @@ void gate_client::init()
     _player_info->BindPlayer(this);
 }
 
-void gate_client::init_player()
-{
-    LOG(INFO)<<"init player data";
-}

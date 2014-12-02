@@ -11,6 +11,7 @@ class LogicPlayerManager:public Singleton<LogicPlayerManager>
         friend Singleton<LogicPlayerManager>;
         LogicPlayer*    GetPlayer(int ply_id);
         void    AddPlayer(int ply_id,LogicPlayer*);
+        void    RemovePlayer(int ply_id);
 
     private:
         std::map<int,LogicPlayer* > _player_map;

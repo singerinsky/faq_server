@@ -4,6 +4,7 @@
 #include "session_manager.h"
 #include "db_connection.h"
 #include "map_manager.h"
+#include "npc_object.h"
 
 db_connection* gate_application::db_conn_ = NULL;
 gate_application::~gate_application()
@@ -38,6 +39,7 @@ int main(int argc,char** argv)
     gate_application app("gate");
     app.init();
     Singleton<map_manager>::GetInstance()->init();
+    Singleton<NpcManager>::GetInstance()->Init();
     client_service* cs = new client_service("127.0.0.1",9998);
     app.add_service(cs);
 

@@ -2,10 +2,17 @@
 #include "head.h"
 #include "map_manager.h"
 #include "message.pb.h"
+#include "logic_player.h"
+#include "state.h"
+
+
+template<> 
+NpcManager* Singleton<NpcManager>::_instance = 0;
 
 void NpcObject::init()
 {
-
+    NpcWaitState *state = new NpcWaitState();
+    state->SetOwner(this);
 }
 
 bool NpcObject::enter_map(map_object* p_map,Position& pos)
@@ -47,3 +54,65 @@ void NpcObject::fill_npc_info(NpcInfo* info)
     pos->set_x(_pos.pos_x());
     pos->set_y(_pos.pos_y());
 }
+
+        
+LogicPlayer* NpcObject::get_nearest_player()
+{
+    auto itr = _player_round.begin();
+    double distance = 1000.;
+    LogicPlayer* near_player = NULL;
+    while(itr != _player_round.end())
+    {
+        auto vec_itr = (*itr)->begin();    
+        while(vec_itr != (*itr)->end())
+        {
+            double temp = (*vec_itr)->get_distance(_pos);
+            if(distance > temp)
+            {
+                distance = temp; 
+                near_player = *vec_itr; 
+            }
+            vec_itr++;
+        }
+        itr++;
+    }
+    return near_player;
+}
+
+void NpcManager::Init()
+{
+    _m_timer.set_owner(this); 
+    _m_timer.set_expire(100); 
+}
+
+NpcObject* NpcManager::GetNpc(int id)
+{
+    auto itr = _all_npc.find(id);
+    if(itr == _all_npc.end())
+    {
+        return NULL;
+    }
+    return itr->second;
+}
+
+void  NpcManager::AddNpc(int id,NpcObject* npc)
+{
+    _all_npc[id] = npc;
+}
+
+void  NpcManager::OnTimeOut()
+{
+    VLOG(2)<<"run npc state ....";
+    auto itr = _all_npc.begin();
+    for(;itr != _all_npc.end();itr++)
+    {
+        NpcObject* npc = itr->second;
+        if(npc->GetState() != NULL)
+        {
+            npc->GetState()->Run();
+        }
+    }
+    _m_timer.set_expire(100);
+}
+
+

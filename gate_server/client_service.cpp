@@ -10,8 +10,8 @@ int client_service::on_accept(struct bufferevent* event,evutil_socket_t fd,struc
 {
     //bufferevent* bev,int socket,sockaddr_in& addr
     gate_client* client = new gate_client(event,fd,sa);
-    LOG(INFO)<<"trigger client accept in fd "<<fd; 
-    //Singleton<client_manager>::GetInstance()->add_session(fd,client);
+    VLOG(1)<<"trigger client accept in fd "<<fd; 
+    Singleton<client_manager>::GetInstance()->add_session(fd,client);
     //client->init_timer();
     return 1;
 }

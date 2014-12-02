@@ -31,7 +31,6 @@ class gate_client: public socket_client
         int process_msg(packet_info* info);
         void on_error(bufferevent* ev);
         void on_timeout();
-        void init_player();
         const LogicPlayer* get_player_info() const
         {
             return _player_info; 

@@ -54,6 +54,7 @@ void LogicPlayer::Move(int x,int y)
         _map->map2cell(_pos,new_cell_pos);
         if(new_cell_pos != _cell_pos)
         {
+           _cell_pos = new_cell_pos;
            _map->get_player_incell(_cell_pos)->erase(this);
            _map->get_player_incell(new_cell_pos)->insert(this);
            player_set_vec_t new_set,enter_set,leave_set; 
@@ -186,7 +187,6 @@ void LogicPlayer::send_npc_enter_view_notf(npc_set_vec_t& enter_set)
             NpcObject* npc = *npc_itr;
             NpcInfo* info = notf.body.add_npc_info();
             npc->fill_npc_info(info);
-            LOG(INFO)<<"npc "<<npc->get_id()<<" around";
         }
     }
     _client->send_packet(&notf);
@@ -195,4 +195,16 @@ void LogicPlayer::send_npc_enter_view_notf(npc_set_vec_t& enter_set)
 void LogicPlayer::copy_to(PlayerInfo& info)
 {
 
+}
+
+double LogicPlayer::get_distance(Position& pos)
+{
+    return _pos.square_distance_to(pos);
+}
+
+void LogicPlayer::leave_map()
+{
+    if(_map != NULL)
+        _map->get_player_incell(_cell_pos)->erase(this);
+    //TODO send leave notf
 }

@@ -26,6 +26,7 @@ class LogicPlayer:public Fighter
 
         void OnLogout()
         {
+            leave_map();
             SavePlayer(); 
         }
         void BindPlayer(gate_client* client)
@@ -66,6 +67,8 @@ class LogicPlayer:public Fighter
         {
             return _user_info.get_mp(); 
         }
+
+        double get_distance(Position& pos);
  
         void broad_round_player(packet*);
         void enter_map(int map_id,int x,int y);
@@ -79,6 +82,8 @@ class LogicPlayer:public Fighter
         void send_npc_enter_view_notf(npc_set_vec_t&);
         void copy_to(PlayerInfo& info);
         void fill_player_info(PlayerInfo* info);
+
+        void leave_map();
 
     private:
         gate_client* _client;
