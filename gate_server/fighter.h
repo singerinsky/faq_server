@@ -13,8 +13,8 @@ class Fighter
     public:
         Fighter(){}
         virtual ~Fighter(){}
-        int Attack(Fighter& f);
-        int MagicAttack(Fighter& f,int skill_id);
+        int Attack(Fighter* f);
+        int MagicAttack(Fighter* f,int skill_id);
         virtual void SetHp(int hp) = 0;
         virtual void SetMp(int hp) = 0;
         virtual int  GetHp() = 0;

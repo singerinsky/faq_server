@@ -107,13 +107,13 @@ class CClient:
             request.client_time = int(time.time())
             body_data = request.SerializeToString()
             head_data = pack_head_message(CSMSG_HEART_REQ,body_data)
-            self.client_socket.send(head_data)
-            self.client_socket.send(body_data)
+            #self.client_socket.send(head_data)
+            #self.client_socket.send(body_data)
             self.alive_time = time.time()
 
         rand_value = random.randint(0,99);
-        if rand_value <= 10:
-            self.do_move()
+        #if rand_value <= 10:
+            #self.do_move()
 
     def do_move(self):
         move_x = self.user_info.pos_x + random.randint(0,1);

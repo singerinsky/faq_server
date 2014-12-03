@@ -138,7 +138,7 @@ LogicPlayer* NpcObject::get_nearest_player()
 void NpcManager::Init()
 {
     _m_timer.set_owner(this); 
-    _m_timer.set_expire(100); 
+    _m_timer.set_expire(1000); 
 }
 
 NpcObject* NpcManager::GetNpc(int id)
@@ -168,7 +168,7 @@ void  NpcManager::OnTimeOut()
             npc->GetState()->Run();
         }
     }
-    _m_timer.set_expire(100);
+    _m_timer.set_expire(1000);
 }
 
 void NpcObject::SendLeaveNpcViewNotf(player_set_vec_t& leave_set_vec)

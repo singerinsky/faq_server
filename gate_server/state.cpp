@@ -19,7 +19,6 @@ void NpcWaitState::Run()
 
 void NpcChasePlayerState::Run()
 {
-    VLOG(1)<<" player "<<_t->get_id()<<" enter chase player"<<_target;
     LogicPlayer* player =  Singleton<LogicPlayerManager>::GetInstance()->GetPlayer(_target);
     if(player == NULL)
     {
@@ -27,15 +26,20 @@ void NpcChasePlayerState::Run()
         wait_state->SetOwner(_t);
         return;
     }
-    LOG(INFO)<<" move to player"<< player->GetDbUserInfo().get_user_name() <<" x:"<<player->GetPos().pos_x()<<" y:"<<player->GetPos().pos_y();
+    VLOG(1)<<" move to player"<< player->GetDbUserInfo().get_user_name() <<" x:"<<player->GetPos().pos_x()<<" y:"<<player->GetPos().pos_y();
     _t->move(player->GetPos());
-    LOG(INFO)<<" npc position x:"<<_t->GetPos().pos_x()<<"  y"<<_t->GetPos().pos_y();
+    VLOG(1)<<" npc position x:"<<_t->GetPos().pos_x()<<"  y"<<_t->GetPos().pos_y();
     //move to player ,when near player attack it
+    double distance = _t->GetPos().square_distance_to(player->GetPos()); 
+    if(distance <= 2)
+    {
+       _t->Attack(player);  
+    }
 }
 
 void NpcChasePlayerState::Enter()
 {
-
+    VLOG(1)<<" npc "<<_t->get_id()<<" enter chase player"<<_target;
 }
 
 void NpcChasePlayerState::Leave()
