@@ -198,6 +198,14 @@ singleton.h
 tinyxml.h
 ../gate_server/../common/tinyxml.h
 
+../gate_server/../common/packet.h
+stdint.h
+-
+endian.h
+-
+byteswap.h
+-
+
 ../gate_server/../common/reactor_core.h
 singleton.h
 ../gate_server/../common/singleton.h
@@ -249,6 +257,18 @@ sstream
 -
 tinystr.h
 ../gate_server/../common/tinystr.h
+
+../gate_server/../common/util_file.h
+sys/types.h
+-
+dirent.h
+-
+string
+-
+vector
+-
+sstream
+-
 
 ../gate_server/../include/tinystr.h
 assert.h
@@ -318,24 +338,6 @@ db_message.pb.h
 tb_user.pb.h
 ../gate_server/../message/tb_user.pb.h
 
-../gate_server/../message/sql_binder.h
-stdint.h
--
-string.h
--
-stdio.h
--
-string
--
-vector
--
-
-../gate_server/../message/tb_user.h
-tb_user.pb.h
-../gate_server/../message/tb_user.pb.h
-sql_binder.h
-../gate_server/../message/sql_binder.h
-
 ../gate_server/../message/tb_user.pb.h
 string
 -
@@ -358,23 +360,21 @@ game_define.h
 
 /home/gl/faq_server/gate_server/game_define.h
 
-/home/gl/faq_server/gate_server/logic_player.h
-head.h
-/home/gl/faq_server/gate_server/head.h
-tb_user.pb.h
-/home/gl/faq_server/gate_server/tb_user.pb.h
-tb_user.h
-/home/gl/faq_server/gate_server/tb_user.h
-timer.h
-/home/gl/faq_server/gate_server/timer.h
+/home/gl/faq_server/gate_server/map_manager.cpp
 map_manager.h
 /home/gl/faq_server/gate_server/map_manager.h
-game_define.h
-/home/gl/faq_server/gate_server/game_define.h
-fighter.h
-/home/gl/faq_server/gate_server/fighter.h
-message.pb.h
-/home/gl/faq_server/gate_server/message.pb.h
+sys/types.h
+-
+dirent.h
+-
+util_file.h
+/home/gl/faq_server/gate_server/util_file.h
+head.h
+/home/gl/faq_server/gate_server/head.h
+npc_object.h
+/home/gl/faq_server/gate_server/npc_object.h
+packet.h
+/home/gl/faq_server/gate_server/packet.h
 
 /home/gl/faq_server/gate_server/map_manager.h
 singleton.h
@@ -407,22 +407,6 @@ singleton.h
 /home/gl/faq_server/gate_server/singleton.h
 timer.h
 /home/gl/faq_server/gate_server/timer.h
-
-/home/gl/faq_server/gate_server/player_manager.h
-singleton.h
-/home/gl/faq_server/gate_server/singleton.h
-map
--
-
-/home/gl/faq_server/gate_server/state.cpp
-state.h
-/home/gl/faq_server/gate_server/state.h
-npc_object.h
-/home/gl/faq_server/gate_server/npc_object.h
-logic_player.h
-/home/gl/faq_server/gate_server/logic_player.h
-player_manager.h
-/home/gl/faq_server/gate_server/player_manager.h
 
 /home/gl/faq_server/gate_server/state.h
 head.h

@@ -251,6 +251,7 @@ int map_object::step(Position src_pos,Position rst_pos,Position* delt_pos)
 {
     delt_pos->set_pos_x(rst_pos.pos_x() - src_pos.pos_x());
     delt_pos->set_pos_y(rst_pos.pos_y() - src_pos.pos_y());
+  
     int step_count = 0;
     if(delt_pos->pos_x() == delt_pos->pos_y() || delt_pos->pos_x() == -delt_pos->pos_y())
     {
@@ -266,7 +267,15 @@ int map_object::step(Position src_pos,Position rst_pos,Position* delt_pos)
     }
     else
     {
-        return -1; 
+        if(abs(delt_pos->pos_y()) > abs(delt_pos->pos_x()))
+        {
+            delt_pos->set_pos_y(abs(delt_pos->pos_x())*(delt_pos->pos_y()/abs(delt_pos->pos_y()))); 
+        }
+        else
+        {
+            delt_pos->set_pos_x(abs(delt_pos->pos_y())*(delt_pos->pos_x()/abs(delt_pos->pos_x()))); 
+        }
+        step_count = abs(delt_pos->pos_x());
     }
 
     if(step_count != 0)
