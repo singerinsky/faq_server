@@ -123,6 +123,7 @@ common/CMakeFiles/common.dir/socket.cpp.o
  /home/gl/faq_server/common/net_util.h
  /home/gl/faq_server/common/packet.h
  /home/gl/faq_server/common/reactor_core.h
+ /home/gl/faq_server/common/service.h
  /home/gl/faq_server/common/singleton.h
  /home/gl/faq_server/common/socket.cpp
  /home/gl/faq_server/common/socket.h
@@ -160,6 +161,7 @@ common/CMakeFiles/common.dir/timer.cpp.o
  .././include/glog/vlog_is_on.h
  /home/gl/faq_server/common/head.h
  /home/gl/faq_server/common/reactor_core.h
+ /home/gl/faq_server/common/service.h
  /home/gl/faq_server/common/singleton.h
  /home/gl/faq_server/common/timer.cpp
  /home/gl/faq_server/common/timer.h

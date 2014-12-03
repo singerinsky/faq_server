@@ -5,12 +5,10 @@
 #include "message.pb.h"
 #include "message_define.h"
 #include "head.h"
-#include "socket.h"
 #include "gate_client.h"
 #include "gate_application.h"
 #include "db_connection.h"
 #include "sql_define.h"
-//#include "client_service.h"
 #include "logic_player.h"
 
 class move_message_action: public template_message<ClientMoveRequest,ClientMoveResponse,MSG_CLIENT_MOVE>
@@ -29,7 +27,7 @@ class move_message_action: public template_message<ClientMoveRequest,ClientMoveR
             int pos_x = request->pos_x();
             int pos_y = request->pos_y();
             int map_id = request->map_id();
-            map_object* map = logic_player->get_map_in();
+            map_object* map = logic_player->GetMapIn();
             if(map == NULL)
             {
                 response.body.set_ret(-1); 

@@ -8,7 +8,7 @@ ReactorCore* Singleton<ReactorCore>::_instance = 0;
 void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data)
 {
     struct bufferevent* bev;
-    service* ls = (service*)user_data; 
+    Service* ls = (Service*)user_data;
     bev = bufferevent_socket_new(ReactorCore::GetInstance()->GetEventBase(), fd, BEV_OPT_CLOSE_ON_FREE);
     if(!bev)
     {
@@ -36,7 +36,7 @@ bool ReactorCore::init()
     return true;
 }
 
-int ReactorCore::add_listener_event(std::string ip,int port,service* ls)
+int ReactorCore::add_listener_event(std::string ip,int port,Service* ls)
 {
     sockaddr_in addr_in;
     int rst = init_sa_in(&addr_in, ip.c_str(),port);

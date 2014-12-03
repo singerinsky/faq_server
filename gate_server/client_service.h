@@ -5,10 +5,10 @@
 #include "session_manager.h"
 
 typedef session_manager<int,gate_client> client_manager;
-class client_service:public service
+class client_service:public Service
 {
     public:
-        client_service(const char* ip,int port):service(ip,port)
+        client_service(const char* ip,int port):Service(ip,port)
     {
 
 

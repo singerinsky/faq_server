@@ -6,7 +6,7 @@ int Fighter::Attack(Fighter& f)
     int attack_rst = _attr[PLY_ATTR_ATTACK] - f._attr[PLY_ATTR_DEFENSE];
     if(attack_rst > 0)
     {
-        f.set_hp(attack_rst); 
+        f.SetHp(attack_rst); 
     }
     return 0;
 }

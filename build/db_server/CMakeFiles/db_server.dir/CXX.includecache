@@ -273,6 +273,8 @@ byteswap.h
 ../db_server/../common/reactor_core.h
 singleton.h
 ../db_server/../common/singleton.h
+service.h
+../db_server/../common/service.h
 head.h
 ../db_server/../common/head.h
 
@@ -283,8 +285,18 @@ reactor_core.h
 ../db_server/../common/reactor_core.h
 
 ../db_server/../common/service.h
-head.h
-../db_server/../common/head.h
+event2/bufferevent.h
+-
+event2/buffer.h
+-
+event2/listener.h
+-
+event2/util.h
+-
+event2/event.h
+-
+string
+-
 
 ../db_server/../common/session_manager.h
 singleton.h

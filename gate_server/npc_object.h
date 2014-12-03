@@ -23,11 +23,11 @@ class NpcObject:public Fighter,public StateObject
         }
 
         void  init();
-        int   get_hp(){return _hp;} 
-        void  set_hp(int new_hp){_hp = new_hp;} 
+        int   GetHp(){return _hp;} 
+        void  SetHp(int new_hp){_hp = new_hp;} 
 
-        int   get_mp(){return _mp;} 
-        void  set_mp(int new_mp){_mp = new_mp;} 
+        int   GetMp(){return _mp;} 
+        void  SetMp(int new_mp){_mp = new_mp;} 
         bool  is_alive(){return _alive;}
         int   get_id(){return _npc_id;}
         void  set_name(std::string name)
@@ -40,14 +40,18 @@ class NpcObject:public Fighter,public StateObject
         }
         void  set_player_round(player_set_vec_t& ply_vec)
         {
-            _player_round = ply_vec; 
+            _player_round_set = ply_vec; 
         }
 
         bool  enter_map(map_object*,Position& pos);
+        void  move(Position pos); 
         void  fill_npc_info(NpcInfo* info);
         void  show_npc_around();
         LogicPlayer* get_nearest_player();
 
+        void SendLeaveNpcViewNotf(player_set_vec_t& leave_set_vec);           
+        void SendNpcEnterViewNotf(player_set_vec_t& enter_set_vec); 
+        bool CheckCanMove(Position& pos);
 
     private:
         Position _pos; 
@@ -59,7 +63,7 @@ class NpcObject:public Fighter,public StateObject
         int  _npc_id;
         int  _level;
         string _nickname;
-        player_set_vec_t    _player_round;
+        player_set_vec_t    _player_round_set;
         map_object*         _map_in;
 };
 

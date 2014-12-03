@@ -20,10 +20,65 @@ bool NpcObject::enter_map(map_object* p_map,Position& pos)
     _map_in = p_map;
     _pos = pos;
     _map_in->map2cell(_pos,_cell_pos);
-    _map_in->fill_all_player_cells(_cell_pos,&_player_round);
+    _map_in->fill_all_player_cells(_cell_pos,&_player_round_set);
     _map_in->get_npc_incell(_cell_pos)->insert(this);
     //show_npc_around();
     return true;
+}
+
+bool NpcObject::CheckCanMove(Position& pos)
+{
+    return true;
+}
+
+void NpcObject::move(Position pos)
+{
+    VLOG(1)<<"npc move to"<<pos.pos_x()<<":"<<pos.pos_y();
+    if(pos == _pos)
+        return;
+    if(CheckCanMove(pos))
+    {
+        Position rst = pos;
+        Position delt;
+        int step_count = _map_in->step(_pos,rst,&delt);
+        if(step_count == -1)
+        {
+            return;
+        }
+        _pos.modify_pos(delt);
+
+        Position new_cell_pos;
+        _map_in->map2cell(_pos,new_cell_pos);
+        if(new_cell_pos != _cell_pos)
+        {
+           _cell_pos = new_cell_pos;
+           _map_in->get_npc_incell(_cell_pos)->erase(this);
+           _map_in->get_npc_incell(new_cell_pos)->insert(this);
+           player_set_vec_t new_set,enter_set,leave_set; 
+           _map_in->fill_all_player_cells(new_cell_pos,&new_set);
+           set_difference(new_set.begin(),new_set.end(),_player_round_set.begin(),_player_round_set.end(),std::inserter(enter_set,enter_set.begin()));
+           set_difference(_player_round_set.begin(),_player_round_set.end(),new_set.begin(),new_set.end(),std::inserter(leave_set,leave_set.begin()));
+           _player_round_set.clear();
+           _map_in->fill_all_player_cells(new_cell_pos,&_player_round_set);
+
+           //send 离开自己视野的玩家列表
+            SendLeaveNpcViewNotf(leave_set);           
+           //send 玩家自己在他们视野里的列表
+           ////send enter view
+            SendNpcEnterViewNotf(enter_set); 
+           //
+           //
+        }
+
+        LOG(INFO)<<"npc "<<get_id()<<" move to "<<_pos.pos_x()<<":"<<_pos.pos_y();
+        //show all new npc
+        set<NpcObject*> all_npc;
+        _map_in->get_all_npc_round(_pos,all_npc);
+        for(auto itr = all_npc.begin();itr!= all_npc.end();itr++)
+        {
+            LOG(INFO)<<"NPC "<<(*itr)->get_id()<<" around you"; 
+        }
+    }
 }
 
 void NpcObject::show_npc_around()
@@ -43,6 +98,7 @@ void NpcObject::show_npc_around()
     }
 }
 
+
 void NpcObject::fill_npc_info(NpcInfo* info)
 {
     info->set_npc_id(get_id());
@@ -58,15 +114,15 @@ void NpcObject::fill_npc_info(NpcInfo* info)
         
 LogicPlayer* NpcObject::get_nearest_player()
 {
-    auto itr = _player_round.begin();
+    auto itr = _player_round_set.begin();
     double distance = 1000.;
     LogicPlayer* near_player = NULL;
-    while(itr != _player_round.end())
+    while(itr != _player_round_set.end())
     {
         auto vec_itr = (*itr)->begin();    
         while(vec_itr != (*itr)->end())
         {
-            double temp = (*vec_itr)->get_distance(_pos);
+            double temp = (*vec_itr)->GetDistance(_pos);
             if(distance > temp)
             {
                 distance = temp; 
@@ -113,6 +169,17 @@ void  NpcManager::OnTimeOut()
         }
     }
     _m_timer.set_expire(100);
+}
+
+void NpcObject::SendLeaveNpcViewNotf(player_set_vec_t& leave_set_vec)
+{
+    //cs_packet_leave_npc_notf notf;
+
+}
+
+void NpcObject::SendNpcEnterViewNotf(player_set_vec_t& enter_set_vec)
+{
+
 }
 
 

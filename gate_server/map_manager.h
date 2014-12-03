@@ -142,5 +142,24 @@ class map_manager:public Singleton<map_manager>
         std::map<int ,map_object*> _all_map;
 };
 
+class MapPlayerVisitor
+{
+    public:
+        MapPlayerVisitor(){}
+        virtual ~MapPlayerVisitor(){}
+        virtual void visit(LogicPlayer* player) = 0; 
+};
+
+class MapNpcVisitor
+{
+    public:
+        MapNpcVisitor(){}
+        virtual ~MapNpcVisitor(){}
+        virtual void visit(NpcObject* npc) = 0; 
+};
+
+
+void visit_all_map_player(player_set_vec_t& t,MapPlayerVisitor*);
+void visit_all_map_npc(npc_set_vec_t& t,MapNpcVisitor*);
 
 #endif

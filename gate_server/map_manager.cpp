@@ -9,6 +9,35 @@
 template<> 
 map_manager* Singleton<map_manager>::_instance = 0;
 
+void visit_all_map_player(player_set_vec_t& t,MapPlayerVisitor* visitor)
+{
+    auto itr = t.begin();
+    for(;itr != t.end();itr++)
+    {
+        auto ply_itr = (*itr)->begin();
+        for(;ply_itr != (*itr)->end(); ply_itr++)
+        {
+            LogicPlayer* player = *ply_itr;
+            visitor->visit(player);
+        }
+    }
+}
+
+void visit_all_map_npc(npc_set_vec_t& t,MapNpcVisitor* visitor)
+{
+    auto itr = t.begin();
+    for(;itr != t.end();itr++)
+    {
+        auto npc_itr = (*itr)->begin();
+        for(;npc_itr != (*itr)->end(); npc_itr++)
+        {
+            NpcObject* npc = *npc_itr;
+            visitor->visit(npc);
+        }
+    }
+}
+
+
 //TODO 
 void map_cells::broadcast_region(packet* p)
 {

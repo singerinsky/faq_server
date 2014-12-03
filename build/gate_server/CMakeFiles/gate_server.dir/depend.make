@@ -17,6 +17,7 @@ gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_serve
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/head.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/packet.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/reactor_core.h
+gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/service.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/socket.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/template_message.h
@@ -84,6 +85,7 @@ gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/packet.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/reactor_core.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/server_application.h
+gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/service.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/socket.h
 gate_server/CMakeFiles/gate_server.dir/action_move_message.cpp.o: ../gate_server/../common/template_message.h
@@ -291,6 +293,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../com
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/packet.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/reactor_core.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/server_application.h
+gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/service.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/socket.h
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/../common/timer.h
@@ -327,6 +330,7 @@ gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: .././include/glog/vlog
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/head.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/packet.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/reactor_core.h
+gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/service.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/timer.h
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/../common/tinyxml.h
@@ -355,6 +359,7 @@ gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/glog/loggi
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: .././include/glog/vlog_is_on.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/head.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/reactor_core.h
+gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/service.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/timer.h
 gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o: ../gate_server/../common/tinyxml.h
@@ -389,6 +394,7 @@ gate_server/CMakeFiles/gate_server.dir/state.cpp.o: .././include/glog/logging.h
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: .././include/glog/vlog_is_on.h
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/../common/head.h
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/../common/reactor_core.h
+gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/../common/service.h
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/../common/timer.h
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/../common/tinyxml.h

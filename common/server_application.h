@@ -3,7 +3,7 @@
 #include "head.h"
 #include "reactor_core.h"
 
-class service;
+class Service;
 class server_appliaction
 {
     public:
@@ -11,7 +11,7 @@ class server_appliaction
         virtual ~server_appliaction();
         bool start_service();
         virtual bool init()=0;
-        void add_service(service* pservice);
+        void add_service(Service* pservice);
     private:
         ReactorCore* _reactor;
         std::string _service_name;

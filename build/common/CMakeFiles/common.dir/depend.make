@@ -122,6 +122,7 @@ common/CMakeFiles/common.dir/socket.cpp.o: ../common/head.h
 common/CMakeFiles/common.dir/socket.cpp.o: ../common/net_util.h
 common/CMakeFiles/common.dir/socket.cpp.o: ../common/packet.h
 common/CMakeFiles/common.dir/socket.cpp.o: ../common/reactor_core.h
+common/CMakeFiles/common.dir/socket.cpp.o: ../common/service.h
 common/CMakeFiles/common.dir/socket.cpp.o: ../common/singleton.h
 common/CMakeFiles/common.dir/socket.cpp.o: ../common/socket.cpp
 common/CMakeFiles/common.dir/socket.cpp.o: ../common/socket.h
@@ -159,6 +160,7 @@ common/CMakeFiles/common.dir/timer.cpp.o: .././include/glog/logging.h
 common/CMakeFiles/common.dir/timer.cpp.o: .././include/glog/vlog_is_on.h
 common/CMakeFiles/common.dir/timer.cpp.o: ../common/head.h
 common/CMakeFiles/common.dir/timer.cpp.o: ../common/reactor_core.h
+common/CMakeFiles/common.dir/timer.cpp.o: ../common/service.h
 common/CMakeFiles/common.dir/timer.cpp.o: ../common/singleton.h
 common/CMakeFiles/common.dir/timer.cpp.o: ../common/timer.cpp
 common/CMakeFiles/common.dir/timer.cpp.o: ../common/timer.h

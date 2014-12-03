@@ -3,10 +3,10 @@
 #include "service.h"
 #include "db_client.h"
 
-class db_service:public service
+class db_service:public Service
 {
     public:
-        db_service(const char* ip,int port):service(ip,port)
+        db_service(const char* ip,int port):Service(ip,port)
     {
 
 

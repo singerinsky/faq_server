@@ -20,7 +20,7 @@ bool server_appliaction::start_service()
     return false;
 }
 
-void server_appliaction::add_service(service *pservice)
+void server_appliaction::add_service(Service *pservice)
 {
     if(_reactor->add_listener_event(pservice->get_service_ip(),pservice->get_service_port(),pservice) < 0)
     {

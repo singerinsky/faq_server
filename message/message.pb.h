@@ -46,6 +46,7 @@ class ClientMoveRequest;
 class ClientMoveResponse;
 class PlayerLeaveViewNotf;
 class LeavePlayersViewNotf;
+class LeaveNpcViewNotf;
 class PlayerEnterViewNotf;
 class EnterPlayersViewNotf;
 class EnterNpcsViewNotf;
@@ -81,11 +82,12 @@ enum MessageType {
   MSG_LEAVE_PLAYERS_VIEW_NOTF = 8,
   MSG_PLAYER_ENTER_VIEW_NOTF = 9,
   MSG_ENTER_PLAYERS_VIEW_NOTF = 10,
-  MSG_ENTER_NPCS_VIEW_NOTF = 11
+  MSG_ENTER_NPCS_VIEW_NOTF = 11,
+  MSG_LEAVE_NPC_NOTF = 12
 };
 bool MessageType_IsValid(int value);
 const MessageType MessageType_MIN = MSG_SOCCER_PLAYER_INFO;
-const MessageType MessageType_MAX = MSG_ENTER_NPCS_VIEW_NOTF;
+const MessageType MessageType_MAX = MSG_LEAVE_NPC_NOTF;
 const int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor();
@@ -1306,6 +1308,88 @@ class LeavePlayersViewNotf : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class LeaveNpcViewNotf : public ::google::protobuf::Message {
+ public:
+  LeaveNpcViewNotf();
+  virtual ~LeaveNpcViewNotf();
+
+  LeaveNpcViewNotf(const LeaveNpcViewNotf& from);
+
+  inline LeaveNpcViewNotf& operator=(const LeaveNpcViewNotf& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const LeaveNpcViewNotf& default_instance();
+
+  void Swap(LeaveNpcViewNotf* other);
+
+  // implements Message ----------------------------------------------
+
+  LeaveNpcViewNotf* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const LeaveNpcViewNotf& from);
+  void MergeFrom(const LeaveNpcViewNotf& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 npc_id = 1;
+  inline bool has_npc_id() const;
+  inline void clear_npc_id();
+  static const int kNpcIdFieldNumber = 1;
+  inline ::google::protobuf::int32 npc_id() const;
+  inline void set_npc_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:LeaveNpcViewNotf)
+ private:
+  inline void set_has_npc_id();
+  inline void clear_has_npc_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 npc_id_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_message_2eproto();
+  friend void protobuf_AssignDesc_message_2eproto();
+  friend void protobuf_ShutdownFile_message_2eproto();
+
+  void InitAsDefaultInstance();
+  static LeaveNpcViewNotf* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class PlayerEnterViewNotf : public ::google::protobuf::Message {
  public:
   PlayerEnterViewNotf();
@@ -2462,6 +2546,32 @@ LeavePlayersViewNotf::player_id() const {
 inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
 LeavePlayersViewNotf::mutable_player_id() {
   return &player_id_;
+}
+
+// -------------------------------------------------------------------
+
+// LeaveNpcViewNotf
+
+// required int32 npc_id = 1;
+inline bool LeaveNpcViewNotf::has_npc_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void LeaveNpcViewNotf::set_has_npc_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void LeaveNpcViewNotf::clear_has_npc_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void LeaveNpcViewNotf::clear_npc_id() {
+  npc_id_ = 0;
+  clear_has_npc_id();
+}
+inline ::google::protobuf::int32 LeaveNpcViewNotf::npc_id() const {
+  return npc_id_;
+}
+inline void LeaveNpcViewNotf::set_npc_id(::google::protobuf::int32 value) {
+  set_has_npc_id();
+  npc_id_ = value;
 }
 
 // -------------------------------------------------------------------

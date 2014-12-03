@@ -25,7 +25,7 @@ void LogicPlayer::InitPlayer(const db_tb_user& user_info)
     _pos.set_pos_y(_user_info.get_pos_y());
     _save_timer.set_owner(this);
     _save_timer.set_expire(10000);
-    enter_map(_user_info.get_map_id(),_pos.pos_x(),_pos.pos_y());
+    EnterMap(_user_info.get_map_id(),_pos.pos_x(),_pos.pos_y());
 //    gate_application::db_conn_->update_binder(&_user_info);
 }
 
@@ -65,10 +65,10 @@ void LogicPlayer::Move(int x,int y)
            _map->fill_all_player_cells(new_cell_pos,&_player_round_set);
 
            //send 离开自己视野的玩家列表
-            send_leave_view_notf(leave_set);           
+            SendLeaveViewNotf(leave_set);           
            //send 玩家自己在他们视野里的列表
            ////send enter view
-            send_player_enter_view_notf(enter_set); 
+            SendPlayerEnterViewNotf(enter_set); 
            //
            //
         }
@@ -96,7 +96,7 @@ void LogicPlayer::OnSaveTime()
     _save_timer.set_expire(10000);
 }
 
-void LogicPlayer::broad_round_player(packet* data)
+void LogicPlayer::BroadRoundPlayer(packet* data)
 {
     std::vector<player_set_t*>::iterator itr = _player_round_set.begin();
     while(itr != _player_round_set.end())
@@ -111,7 +111,7 @@ void LogicPlayer::broad_round_player(packet* data)
     }
 }
 
-void LogicPlayer::enter_map(int map_id,int x,int y)
+void LogicPlayer::EnterMap(int map_id,int x,int y)
 {
     //if(_user_info.get_map_id() == map_id)
     //    return;
@@ -136,16 +136,16 @@ void LogicPlayer::enter_map(int map_id,int x,int y)
     _map->fill_all_npc_cells(_cell_pos,&_npc_round_set);
     _map->get_player_incell(_cell_pos)->insert(this);
 
-    send_player_enter_view_notf(_player_round_set);
-    send_npc_enter_view_notf(_npc_round_set);
+    SendPlayerEnterViewNotf(_player_round_set);
+    SendNpcEnterViewNotf(_npc_round_set);
 }
 
-void LogicPlayer::send_leave_view_notf(player_set_vec_t& leave_set)
+void LogicPlayer::SendLeaveViewNotf(player_set_vec_t& leave_set)
 {
     LOG(INFO)<<"send player leave";
 }
 
-void LogicPlayer::fill_player_info(PlayerInfo* info)
+void LogicPlayer::FillPlayerInfo(PlayerInfo* info)
 {
     info->set_player_id(GetDbUserInfo().get_id());
     info->set_player_nickname(GetDbUserInfo().get_user_name());
@@ -158,24 +158,29 @@ void LogicPlayer::fill_player_info(PlayerInfo* info)
 
 }
 
-void LogicPlayer::send_player_enter_view_notf(player_set_vec_t& enter_set)
+void LogicPlayer::SendPlayerEnterViewNotf(player_set_vec_t& enter_set)
 {
-    cs_packet_enter_players_notf player_notf;
-    auto itr = enter_set.begin();
-    for(;itr != enter_set.end();itr++)
+    class PlayerEnterViewVisitor: public MapPlayerVisitor
     {
-        auto ply_itr = (*itr)->begin();
-        for(;ply_itr != (*itr)->end(); ply_itr++)
-        {
-            LogicPlayer* player = *ply_itr;
-            PlayerInfo* info = player_notf.body.add_player_info();          
-            player->fill_player_info(info);
-       }
-         
-    }
+        public:
+            PlayerEnterViewVisitor(EnterPlayersViewNotf* notf,int param):_notf_body(notf),_param(param){ }
+            virtual void visit(LogicPlayer* player)
+            {
+                PlayerInfo* info = _notf_body->add_player_info();
+                player->FillPlayerInfo(info);
+            }
+        private:
+            EnterPlayersViewNotf* _notf_body;
+            int                   _param;
+    };
+
+    cs_packet_enter_players_notf player_notf;
+    PlayerEnterViewVisitor visitor(&(player_notf.body),0);
+    visit_all_map_player(enter_set,&visitor);
+    _client->send_packet(&player_notf);
 }
 
-void LogicPlayer::send_npc_enter_view_notf(npc_set_vec_t& enter_set)
+void LogicPlayer::SendNpcEnterViewNotf(npc_set_vec_t& enter_set)
 {
     cs_packet_enter_npcs_notf notf;
     auto itr = enter_set.begin();
@@ -192,17 +197,17 @@ void LogicPlayer::send_npc_enter_view_notf(npc_set_vec_t& enter_set)
     _client->send_packet(&notf);
 }
 
-void LogicPlayer::copy_to(PlayerInfo& info)
+void LogicPlayer::CopyTo(PlayerInfo& info)
 {
 
 }
 
-double LogicPlayer::get_distance(Position& pos)
+double LogicPlayer::GetDistance(Position& pos)
 {
     return _pos.square_distance_to(pos);
 }
 
-void LogicPlayer::leave_map()
+void LogicPlayer::LeaveMap()
 {
     if(_map != NULL)
         _map->get_player_incell(_cell_pos)->erase(this);

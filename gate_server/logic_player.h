@@ -26,7 +26,7 @@ class LogicPlayer:public Fighter
 
         void OnLogout()
         {
-            leave_map();
+            LeaveMap();
             SavePlayer(); 
         }
         void BindPlayer(gate_client* client)
@@ -48,42 +48,42 @@ class LogicPlayer:public Fighter
             return _user_info; 
         }
     public:
-        void set_hp(int hp) 
+        void SetHp(int hp) 
         {
             _user_info.set_hp(hp); 
         }
 
-        void set_mp(int mp) 
+        void SetMp(int mp) 
         {
             _user_info.set_mp(mp); 
         }
        
-        int get_hp() 
+        int GetHp() 
         {
             return _user_info.get_hp(); 
         }
 
-        int get_mp() 
+        int GetMp() 
         {
             return _user_info.get_mp(); 
         }
 
-        double get_distance(Position& pos);
+        double GetDistance(Position& pos);
  
-        void broad_round_player(packet*);
-        void enter_map(int map_id,int x,int y);
-        map_object* get_map_in() const 
+        void BroadRoundPlayer(packet*);
+        void EnterMap(int map_id,int x,int y);
+        map_object* GetMapIn() const 
         {
             return _map;
         }
 
-        void send_leave_view_notf(player_set_vec_t& leave_set);
-        void send_player_enter_view_notf(player_set_vec_t& enter_set);
-        void send_npc_enter_view_notf(npc_set_vec_t&);
-        void copy_to(PlayerInfo& info);
-        void fill_player_info(PlayerInfo* info);
+        void SendLeaveViewNotf(player_set_vec_t& leave_set);
+        void SendPlayerEnterViewNotf(player_set_vec_t& enter_set);
+        void SendNpcEnterViewNotf(npc_set_vec_t&);
+        void CopyTo(PlayerInfo& info);
+        void FillPlayerInfo(PlayerInfo* info);
 
-        void leave_map();
+        void LeaveMap();
 
     private:
         gate_client* _client;
@@ -101,6 +101,7 @@ class LogicPlayer:public Fighter
         player_set_vec_t    _player_round_set;
         npc_set_vec_t       _npc_round_set;
 };
+
 
 #endif
 

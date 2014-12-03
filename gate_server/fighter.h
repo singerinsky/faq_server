@@ -15,10 +15,10 @@ class Fighter
         virtual ~Fighter(){}
         int Attack(Fighter& f);
         int MagicAttack(Fighter& f,int skill_id);
-        virtual void set_hp(int hp) = 0;
-        virtual void set_mp(int hp) = 0;
-        virtual int  get_hp() = 0;
-        virtual int  get_mp() = 0;
+        virtual void SetHp(int hp) = 0;
+        virtual void SetMp(int hp) = 0;
+        virtual int  GetHp() = 0;
+        virtual int  GetMp() = 0;
     public:
         int  _attr[PLY_ATTR_END];
 };

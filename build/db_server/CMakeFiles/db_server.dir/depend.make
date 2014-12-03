@@ -56,6 +56,7 @@ db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../c
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/head.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/packet.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/reactor_core.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/service.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/singleton.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/socket.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/template_message.h
@@ -171,6 +172,7 @@ db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/lock.
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/mysql_connection.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/packet.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/reactor_core.h
+db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/service.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/singleton.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/socket.h
 db_server/CMakeFiles/db_server.dir/db_client.cpp.o: ../db_server/../common/thread.h
@@ -269,6 +271,7 @@ db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/lo
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/mysql_connection.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/packet.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/reactor_core.h
+db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/service.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/singleton.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/socket.h
 db_server/CMakeFiles/db_server.dir/work_manager.cpp.o: ../db_server/../common/thread.h
