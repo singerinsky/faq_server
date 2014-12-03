@@ -182,18 +182,22 @@ void LogicPlayer::SendPlayerEnterViewNotf(player_set_vec_t& enter_set)
 
 void LogicPlayer::SendNpcEnterViewNotf(npc_set_vec_t& enter_set)
 {
-    cs_packet_enter_npcs_notf notf;
-    auto itr = enter_set.begin();
-    for(;itr != enter_set.end();itr++)
+    class NpcEnterViewVisitor:public MapNpcVisitor
     {
-        auto npc_itr = (*itr)->begin();
-        for(;npc_itr != (*itr)->end(); npc_itr++)
-        {
-            NpcObject* npc = *npc_itr;
-            NpcInfo* info = notf.body.add_npc_info();
-            npc->fill_npc_info(info);
-        }
-    }
+        public:
+            NpcEnterViewVisitor(EnterNpcsViewNotf* notf,int param):_notf_body(notf),_param(param){}
+            virtual void visit(NpcObject* npc)
+            {
+                NpcInfo* info = _notf_body->add_npc_info(); 
+                npc->fill_npc_info(info);
+            }
+        private:
+            EnterNpcsViewNotf*  _notf_body;
+            int                 _param;
+    };
+    cs_packet_enter_npcs_notf notf;
+    NpcEnterViewVisitor visitor(&(notf.body),0);
+    visit_all_map_npc(enter_set,&visitor);
     _client->send_packet(&notf);
 }
 

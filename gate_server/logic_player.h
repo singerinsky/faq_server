@@ -47,6 +47,10 @@ class LogicPlayer:public Fighter
         {
             return _user_info; 
         }
+        Position& GetPos()
+        {
+            return _pos; 
+        }
     public:
         void SetHp(int hp) 
         {

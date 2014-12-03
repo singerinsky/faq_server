@@ -52,6 +52,10 @@ class NpcObject:public Fighter,public StateObject
         void SendLeaveNpcViewNotf(player_set_vec_t& leave_set_vec);           
         void SendNpcEnterViewNotf(player_set_vec_t& enter_set_vec); 
         bool CheckCanMove(Position& pos);
+        Position&   GetPos()
+        {
+            return _pos; 
+        }
 
     private:
         Position _pos; 

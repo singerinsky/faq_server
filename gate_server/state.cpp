@@ -27,7 +27,9 @@ void NpcChasePlayerState::Run()
         wait_state->SetOwner(_t);
         return;
     }
-    LOG(INFO)<<" move to player"<< player->GetDbUserInfo().get_user_name();
+    LOG(INFO)<<" move to player"<< player->GetDbUserInfo().get_user_name() <<" x:"<<player->GetPos().pos_x()<<" y:"<<player->GetPos().pos_y();
+    _t->move(player->GetPos());
+    LOG(INFO)<<" npc position x:"<<_t->GetPos().pos_x()<<"  y"<<_t->GetPos().pos_y();
     //move to player ,when near player attack it
 }
 
