@@ -88,6 +88,14 @@ class LogicPlayer:public Fighter
         void FillPlayerInfo(PlayerInfo* info);
 
         void LeaveMap();
+        int SendPacket(packet* p)
+        {
+            if(_client)
+            {
+                return _client->send_packet(p); 
+            }
+            return -1; 
+        }
 
     private:
         gate_client* _client;

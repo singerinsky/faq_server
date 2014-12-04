@@ -216,4 +216,23 @@ void LogicPlayer::LeaveMap()
     if(_map != NULL)
         _map->get_player_incell(_cell_pos)->erase(this);
     //TODO send leave notf
+    class LeavePlayersViewVisitor:public MapPlayerVisitor
+    {
+        public:
+            LeavePlayersViewVisitor(int role_id):_param(role_id)
+            {
+                notf.body.set_player_id(role_id); 
+            }
+            virtual void visit(LogicPlayer* player)
+            {
+                player->SendPacket(&notf);
+            }
+        private:
+            cs_packet_leave_players_notf notf;
+            int                     _param;
+    
+    };
 }
+
+
+
