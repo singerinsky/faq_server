@@ -374,9 +374,11 @@ gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o
  .././include/glog/logging.h
  .././include/glog/vlog_is_on.h
  ../gate_server/../common/head.h
+ ../gate_server/../common/packet.h
  ../gate_server/../common/reactor_core.h
  ../gate_server/../common/service.h
  ../gate_server/../common/singleton.h
+ ../gate_server/../common/socket.h
  ../gate_server/../common/timer.h
  ../gate_server/../common/tinyxml.h
  ../gate_server/../include/tinystr.h
@@ -388,6 +390,7 @@ gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o
  ../gate_server/../message/tb_user.pb.h
  /home/gl/faq_server/gate_server/fighter.h
  /home/gl/faq_server/gate_server/game_define.h
+ /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
  /home/gl/faq_server/gate_server/map_manager.h
  /home/gl/faq_server/gate_server/npc_object.cpp
@@ -409,9 +412,11 @@ gate_server/CMakeFiles/gate_server.dir/state.cpp.o
  .././include/glog/logging.h
  .././include/glog/vlog_is_on.h
  ../gate_server/../common/head.h
+ ../gate_server/../common/packet.h
  ../gate_server/../common/reactor_core.h
  ../gate_server/../common/service.h
  ../gate_server/../common/singleton.h
+ ../gate_server/../common/socket.h
  ../gate_server/../common/timer.h
  ../gate_server/../common/tinyxml.h
  ../gate_server/../include/tinystr.h
@@ -423,6 +428,7 @@ gate_server/CMakeFiles/gate_server.dir/state.cpp.o
  ../gate_server/../message/tb_user.pb.h
  /home/gl/faq_server/gate_server/fighter.h
  /home/gl/faq_server/gate_server/game_define.h
+ /home/gl/faq_server/gate_server/gate_client.h
  /home/gl/faq_server/gate_server/logic_player.h
  /home/gl/faq_server/gate_server/map_manager.h
  /home/gl/faq_server/gate_server/npc_object.h
