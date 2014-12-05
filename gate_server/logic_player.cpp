@@ -214,8 +214,10 @@ double LogicPlayer::GetDistance(Position& pos)
 void LogicPlayer::LeaveMap()
 {
     if(_map != NULL)
+    {
         _map->get_player_incell(_cell_pos)->erase(this);
-    //TODO send leave notf
+    }
+    //send leave notf
     class PlayerLeaveViewVisitor:public MapPlayerVisitor
     {
         public:
@@ -223,16 +225,17 @@ void LogicPlayer::LeaveMap()
             {
                 notf.body.set_player_id(role_id); 
             }
+
             virtual void visit(LogicPlayer* player)
             {
                 player->SendPacket(&notf);
             }
+
         private:
             cs_packet_player_leave_notf notf;
             int                     _param;
     
     };
 }
-
 
 

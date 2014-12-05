@@ -1,0 +1,6 @@
+npc_id,npc_type,npc_name
+id of npc,type of npc,name of npc
+int32,int32,bytes
+1,1,i'am lilei
+2,1,you are hanmeimei
+3,0,who are you

@@ -1,0 +1,129 @@
+Notice:
+1) in proto definition file, if you want to use string types
+make sure it doesn't contail chinese, or else, use bytes
+instead of string. if use string, python try to convert it
+from utf-8 to unicode. But for bytes, it doesn't do any convention.
+
+2) if float type is used in proto files. make sure it has a default
+   float value, but not 0.0.  (suggest: 0.00000001)
+   if set to 0.0, or use pb default 0, it will all stored as int 0.
+
+
+csvtables : for csv format tables
+proto : protocol buffer proto file 
+python : protoc --python_out=./python
+cpp : protoc --cpp_out=./cpp
+streams : csv file -> build.sh => protobuf -> streams
+
+.
+├── build.sh
+├── cpp
+│   ├── creature_conf.pb.cc
+│   ├── creature_conf.pb.h
+│   ├── player_conf.pb.cc
+│   ├── player_conf.pb.h
+│   ├── yingling_conf.pb.cc
+│   └── yingling_conf.pb.h
+├── csvreader.py
+├── python
+│   ├── creature_conf_pb2.py
+│   ├── creature_conf_pb2.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── player_conf_pb2.py
+│   ├── player_conf_pb2.pyc
+│   ├── yingling_conf_pb2.py
+│   └── yingling_conf_pb2.pyc
+├── readme
+├── streams
+│   ├── creature.bin
+│   ├── player.bin
+│   └── yingling.bin
+├── template.csv
+│   ├── creature.csv
+│   ├── player.csv
+│   └── yingling.csv
+└── template.protos
+    ├── creature_conf.proto
+    ├── player_conf.proto
+    └── yingling_conf.proto
+
+5 directories, 26 files
+.
+├── build.sh
+├── cpp
+│   ├── character_growup.pb.cc
+│   ├── character_growup.pb.h
+│   ├── character_profession_growup.pb.cc
+│   ├── character_profession_growup.pb.h
+│   ├── creature_init_data.pb.cc
+│   ├── creature_init_data.pb.h
+│   ├── player_attribute_transit_rate.pb.cc
+│   ├── player_attribute_transit_rate.pb.h
+│   ├── player_init_data.pb.cc
+│   ├── player_init_data.pb.h
+│   ├── player_init_data.pb.o
+│   ├── skills.pb.cc
+│   ├── skills.pb.h
+│   ├── yingling_init_data.pb.cc
+│   ├── yingling_init_data.pb.h
+│   ├── yingling_profession_growup.pb.cc
+│   └── yingling_profession_growup.pb.h
+├── csvreader.py
+├── make.cmd
+├── python
+│   ├── character_growup_pb2.py
+│   ├── character_growup_pb2.pyc
+│   ├── character_profession_growup_pb2.py
+│   ├── character_profession_growup_pb2.pyc
+│   ├── creature_init_data_pb2.py
+│   ├── creature_init_data_pb2.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── player_attribute_transit_rate_pb2.py
+│   ├── player_attribute_transit_rate_pb2.pyc
+│   ├── player_init_data_pb2.py
+│   ├── player_init_data_pb2.pyc
+│   ├── skills_pb2.py
+│   ├── yingling_init_data_pb2.py
+│   ├── yingling_init_data_pb2.pyc
+│   ├── yingling_profession_growup_pb2.py
+│   └── yingling_profession_growup_pb2.pyc
+├── readme
+├── streams
+│   ├── character_growup.bin
+│   ├── character_profession_growup.bin
+│   ├── creature_init_data.bin
+│   ├── player_attribute_transit_rate.bin
+│   ├── player_init_data.bin
+│   ├── yingling_init_data.bin
+│   └── yingling_profession_growup.bin
+├── template.csv
+│   ├── test.py
+│   ├── ucsv.py
+│   ├── ucsv.pyc
+│   ├── \346\200\252\347\211\251\345\210\235\345\247\213\345\261\236\346\200\247\351\205\215\347\275\256.csv
+│   ├── \346\212\200\350\203\275\351\205\215\347\275\256\350\241\250.csv
+│   ├── \347\216\251\345\256\266\345\261\236\346\200\247\350\275\254\346\215\242\350\241\250.csv
+│   ├── \350\213\261\347\201\265\345\210\235\345\247\213\345\261\236\346\200\247\351\205\215\347\275\256.csv
+│   ├── \350\213\261\347\201\265\350\201\214\344\270\232\346\210\220\351\225\277\347\216\207.csv
+│   ├── \350\247\222\350\211\262\345\210\235\345\247\213\345\261\236\346\200\247\351\205\215\347\275\256.csv
+│   ├── \350\247\222\350\211\262\345\237\272\347\241\200\346\210\220\351\225\277\347\216\207.csv
+│   └── \350\247\222\350\211\262\350\201\214\344\270\232\346\210\220\351\225\277\347\216\207.csv
+├── template.protos
+│   ├── bak
+│   │   ├── creature_conf.proto
+│   │   ├── player_conf.proto
+│   │   └── yingling_conf.proto
+│   ├── character_growup.proto
+│   ├── character_profession_growup.proto
+│   ├── creature_init_data.proto
+│   ├── player_attribute_transit_rate.proto
+│   ├── player_init_data.proto
+│   ├── skills.proto
+│   ├── yingling_init_data.proto
+│   └── yingling_profession_growup.proto
+├── test
+└── test.cpp
+
+6 directories, 69 files
