@@ -216,10 +216,10 @@ void LogicPlayer::LeaveMap()
     if(_map != NULL)
         _map->get_player_incell(_cell_pos)->erase(this);
     //TODO send leave notf
-    class LeavePlayersViewVisitor:public MapPlayerVisitor
+    class PlayerLeaveViewVisitor:public MapPlayerVisitor
     {
         public:
-            LeavePlayersViewVisitor(int role_id):_param(role_id)
+            PlayerLeaveViewVisitor(int role_id):_param(role_id)
             {
                 notf.body.set_player_id(role_id); 
             }
@@ -228,7 +228,7 @@ void LogicPlayer::LeaveMap()
                 player->SendPacket(&notf);
             }
         private:
-            cs_packet_leave_players_notf notf;
+            cs_packet_player_leave_notf notf;
             int                     _param;
     
     };

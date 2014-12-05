@@ -9,6 +9,7 @@
 #include "game_define.h"
 #include "fighter.h"
 #include "message.pb.h"
+#include "gate_client.h"
 
 class NpcObject;
 class gate_client;
