@@ -238,6 +238,7 @@ gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/..
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/../message/message.pb.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/../message/sql_binder.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/../message/tb_user.pb.h
+gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/client_service.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/db_connection.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/fighter.h
@@ -248,6 +249,9 @@ gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/ga
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/map_manager.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/npc_object.h
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../gate_server/state.h
+gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../prototype/game_prototype.h
+gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../prototype/npc_data.pb.h
+gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o: ../prototype/npc_data_prototype.h
 
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/gate_client.cpp.o: .././include/event2/bufferevent.h

@@ -1,4 +1,7 @@
 /home/gl/faq_server/build/common/CMakeFiles/common.dir
+/home/gl/faq_server/build/common/CMakeFiles/commonso.dir
 /home/gl/faq_server/build/db_server/CMakeFiles/db_server.dir
 /home/gl/faq_server/build/gate_server/CMakeFiles/gate_server.dir
 /home/gl/faq_server/build/message/CMakeFiles/message_lib.dir
+/home/gl/faq_server/build/prototype/CMakeFiles/prototype.dir
+/home/gl/faq_server/build/prototype/CMakeFiles/prototypeso.dir

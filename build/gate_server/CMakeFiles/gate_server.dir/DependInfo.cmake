@@ -24,6 +24,7 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/gl/faq_server/build/common/CMakeFiles/common.dir/DependInfo.cmake"
+  "/home/gl/faq_server/build/prototype/CMakeFiles/prototype.dir/DependInfo.cmake"
   "/home/gl/faq_server/build/message/CMakeFiles/message_lib.dir/DependInfo.cmake"
   )
 
@@ -33,6 +34,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../gate_server/../include"
   "../gate_server/../common"
   "../gate_server/../message"
+  "../gate_server/../prototype"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

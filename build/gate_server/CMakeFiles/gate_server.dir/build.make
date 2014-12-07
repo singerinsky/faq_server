@@ -407,6 +407,7 @@ gate_server_EXTERNAL_OBJECTS =
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/state.cpp.o
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/build.make
 ../game_exe/gate_server: ../game_lib/libcommon.a
+../game_exe/gate_server: ../game_lib/libprototype.a
 ../game_exe/gate_server: game_lib/libmessage_lib.a
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../game_exe/gate_server"

@@ -112,12 +112,27 @@ common/fast:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/build
 .PHONY : common/fast
 
+# Convenience name for target.
+common/CMakeFiles/commonso.dir/rule:
+	cd /home/gl/faq_server/build && $(MAKE) -f CMakeFiles/Makefile2 common/CMakeFiles/commonso.dir/rule
+.PHONY : common/CMakeFiles/commonso.dir/rule
+
+# Convenience name for target.
+commonso: common/CMakeFiles/commonso.dir/rule
+.PHONY : commonso
+
+# fast build rule for target.
+commonso/fast:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/build
+.PHONY : commonso/fast
+
 actions_mananger.o: actions_mananger.cpp.o
 .PHONY : actions_mananger.o
 
 # target to build an object file
 actions_mananger.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/actions_mananger.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/actions_mananger.cpp.o
 .PHONY : actions_mananger.cpp.o
 
 actions_mananger.i: actions_mananger.cpp.i
@@ -126,6 +141,7 @@ actions_mananger.i: actions_mananger.cpp.i
 # target to preprocess a source file
 actions_mananger.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/actions_mananger.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/actions_mananger.cpp.i
 .PHONY : actions_mananger.cpp.i
 
 actions_mananger.s: actions_mananger.cpp.s
@@ -134,6 +150,7 @@ actions_mananger.s: actions_mananger.cpp.s
 # target to generate assembly for a file
 actions_mananger.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/actions_mananger.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/actions_mananger.cpp.s
 .PHONY : actions_mananger.cpp.s
 
 game_packet.o: game_packet.cpp.o
@@ -142,6 +159,7 @@ game_packet.o: game_packet.cpp.o
 # target to build an object file
 game_packet.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/game_packet.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/game_packet.cpp.o
 .PHONY : game_packet.cpp.o
 
 game_packet.i: game_packet.cpp.i
@@ -150,6 +168,7 @@ game_packet.i: game_packet.cpp.i
 # target to preprocess a source file
 game_packet.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/game_packet.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/game_packet.cpp.i
 .PHONY : game_packet.cpp.i
 
 game_packet.s: game_packet.cpp.s
@@ -158,6 +177,7 @@ game_packet.s: game_packet.cpp.s
 # target to generate assembly for a file
 game_packet.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/game_packet.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/game_packet.cpp.s
 .PHONY : game_packet.cpp.s
 
 job_factory.o: job_factory.cpp.o
@@ -166,6 +186,7 @@ job_factory.o: job_factory.cpp.o
 # target to build an object file
 job_factory.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/job_factory.cpp.o
 .PHONY : job_factory.cpp.o
 
 job_factory.i: job_factory.cpp.i
@@ -174,6 +195,7 @@ job_factory.i: job_factory.cpp.i
 # target to preprocess a source file
 job_factory.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/job_factory.cpp.i
 .PHONY : job_factory.cpp.i
 
 job_factory.s: job_factory.cpp.s
@@ -182,6 +204,7 @@ job_factory.s: job_factory.cpp.s
 # target to generate assembly for a file
 job_factory.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/job_factory.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/job_factory.cpp.s
 .PHONY : job_factory.cpp.s
 
 md5.o: md5.cpp.o
@@ -190,6 +213,7 @@ md5.o: md5.cpp.o
 # target to build an object file
 md5.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/md5.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/md5.cpp.o
 .PHONY : md5.cpp.o
 
 md5.i: md5.cpp.i
@@ -198,6 +222,7 @@ md5.i: md5.cpp.i
 # target to preprocess a source file
 md5.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/md5.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/md5.cpp.i
 .PHONY : md5.cpp.i
 
 md5.s: md5.cpp.s
@@ -206,6 +231,7 @@ md5.s: md5.cpp.s
 # target to generate assembly for a file
 md5.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/md5.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/md5.cpp.s
 .PHONY : md5.cpp.s
 
 mysql_connection.o: mysql_connection.cpp.o
@@ -214,6 +240,7 @@ mysql_connection.o: mysql_connection.cpp.o
 # target to build an object file
 mysql_connection.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/mysql_connection.cpp.o
 .PHONY : mysql_connection.cpp.o
 
 mysql_connection.i: mysql_connection.cpp.i
@@ -222,6 +249,7 @@ mysql_connection.i: mysql_connection.cpp.i
 # target to preprocess a source file
 mysql_connection.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/mysql_connection.cpp.i
 .PHONY : mysql_connection.cpp.i
 
 mysql_connection.s: mysql_connection.cpp.s
@@ -230,6 +258,7 @@ mysql_connection.s: mysql_connection.cpp.s
 # target to generate assembly for a file
 mysql_connection.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/mysql_connection.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/mysql_connection.cpp.s
 .PHONY : mysql_connection.cpp.s
 
 net_util.o: net_util.cpp.o
@@ -238,6 +267,7 @@ net_util.o: net_util.cpp.o
 # target to build an object file
 net_util.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/net_util.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/net_util.cpp.o
 .PHONY : net_util.cpp.o
 
 net_util.i: net_util.cpp.i
@@ -246,6 +276,7 @@ net_util.i: net_util.cpp.i
 # target to preprocess a source file
 net_util.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/net_util.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/net_util.cpp.i
 .PHONY : net_util.cpp.i
 
 net_util.s: net_util.cpp.s
@@ -254,6 +285,7 @@ net_util.s: net_util.cpp.s
 # target to generate assembly for a file
 net_util.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/net_util.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/net_util.cpp.s
 .PHONY : net_util.cpp.s
 
 reactor_core.o: reactor_core.cpp.o
@@ -262,6 +294,7 @@ reactor_core.o: reactor_core.cpp.o
 # target to build an object file
 reactor_core.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/reactor_core.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/reactor_core.cpp.o
 .PHONY : reactor_core.cpp.o
 
 reactor_core.i: reactor_core.cpp.i
@@ -270,6 +303,7 @@ reactor_core.i: reactor_core.cpp.i
 # target to preprocess a source file
 reactor_core.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/reactor_core.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/reactor_core.cpp.i
 .PHONY : reactor_core.cpp.i
 
 reactor_core.s: reactor_core.cpp.s
@@ -278,6 +312,7 @@ reactor_core.s: reactor_core.cpp.s
 # target to generate assembly for a file
 reactor_core.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/reactor_core.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/reactor_core.cpp.s
 .PHONY : reactor_core.cpp.s
 
 server_application.o: server_application.cpp.o
@@ -286,6 +321,7 @@ server_application.o: server_application.cpp.o
 # target to build an object file
 server_application.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/server_application.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/server_application.cpp.o
 .PHONY : server_application.cpp.o
 
 server_application.i: server_application.cpp.i
@@ -294,6 +330,7 @@ server_application.i: server_application.cpp.i
 # target to preprocess a source file
 server_application.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/server_application.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/server_application.cpp.i
 .PHONY : server_application.cpp.i
 
 server_application.s: server_application.cpp.s
@@ -302,6 +339,7 @@ server_application.s: server_application.cpp.s
 # target to generate assembly for a file
 server_application.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/server_application.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/server_application.cpp.s
 .PHONY : server_application.cpp.s
 
 socket.o: socket.cpp.o
@@ -310,6 +348,7 @@ socket.o: socket.cpp.o
 # target to build an object file
 socket.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/socket.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/socket.cpp.o
 .PHONY : socket.cpp.o
 
 socket.i: socket.cpp.i
@@ -318,6 +357,7 @@ socket.i: socket.cpp.i
 # target to preprocess a source file
 socket.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/socket.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/socket.cpp.i
 .PHONY : socket.cpp.i
 
 socket.s: socket.cpp.s
@@ -326,6 +366,7 @@ socket.s: socket.cpp.s
 # target to generate assembly for a file
 socket.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/socket.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/socket.cpp.s
 .PHONY : socket.cpp.s
 
 thread.o: thread.cpp.o
@@ -334,6 +375,7 @@ thread.o: thread.cpp.o
 # target to build an object file
 thread.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/thread.cpp.o
 .PHONY : thread.cpp.o
 
 thread.i: thread.cpp.i
@@ -342,6 +384,7 @@ thread.i: thread.cpp.i
 # target to preprocess a source file
 thread.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/thread.cpp.i
 .PHONY : thread.cpp.i
 
 thread.s: thread.cpp.s
@@ -350,6 +393,7 @@ thread.s: thread.cpp.s
 # target to generate assembly for a file
 thread.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/thread.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/thread.cpp.s
 .PHONY : thread.cpp.s
 
 timer.o: timer.cpp.o
@@ -358,6 +402,7 @@ timer.o: timer.cpp.o
 # target to build an object file
 timer.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/timer.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/timer.cpp.o
 .PHONY : timer.cpp.o
 
 timer.i: timer.cpp.i
@@ -366,6 +411,7 @@ timer.i: timer.cpp.i
 # target to preprocess a source file
 timer.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/timer.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/timer.cpp.i
 .PHONY : timer.cpp.i
 
 timer.s: timer.cpp.s
@@ -374,6 +420,7 @@ timer.s: timer.cpp.s
 # target to generate assembly for a file
 timer.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/timer.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/timer.cpp.s
 .PHONY : timer.cpp.s
 
 tinystr.o: tinystr.cpp.o
@@ -382,6 +429,7 @@ tinystr.o: tinystr.cpp.o
 # target to build an object file
 tinystr.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinystr.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinystr.cpp.o
 .PHONY : tinystr.cpp.o
 
 tinystr.i: tinystr.cpp.i
@@ -390,6 +438,7 @@ tinystr.i: tinystr.cpp.i
 # target to preprocess a source file
 tinystr.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinystr.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinystr.cpp.i
 .PHONY : tinystr.cpp.i
 
 tinystr.s: tinystr.cpp.s
@@ -398,6 +447,7 @@ tinystr.s: tinystr.cpp.s
 # target to generate assembly for a file
 tinystr.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinystr.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinystr.cpp.s
 .PHONY : tinystr.cpp.s
 
 tinyxml.o: tinyxml.cpp.o
@@ -406,6 +456,7 @@ tinyxml.o: tinyxml.cpp.o
 # target to build an object file
 tinyxml.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxml.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxml.cpp.o
 .PHONY : tinyxml.cpp.o
 
 tinyxml.i: tinyxml.cpp.i
@@ -414,6 +465,7 @@ tinyxml.i: tinyxml.cpp.i
 # target to preprocess a source file
 tinyxml.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxml.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxml.cpp.i
 .PHONY : tinyxml.cpp.i
 
 tinyxml.s: tinyxml.cpp.s
@@ -422,6 +474,7 @@ tinyxml.s: tinyxml.cpp.s
 # target to generate assembly for a file
 tinyxml.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxml.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxml.cpp.s
 .PHONY : tinyxml.cpp.s
 
 tinyxmlerror.o: tinyxmlerror.cpp.o
@@ -430,6 +483,7 @@ tinyxmlerror.o: tinyxmlerror.cpp.o
 # target to build an object file
 tinyxmlerror.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlerror.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlerror.cpp.o
 .PHONY : tinyxmlerror.cpp.o
 
 tinyxmlerror.i: tinyxmlerror.cpp.i
@@ -438,6 +492,7 @@ tinyxmlerror.i: tinyxmlerror.cpp.i
 # target to preprocess a source file
 tinyxmlerror.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlerror.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlerror.cpp.i
 .PHONY : tinyxmlerror.cpp.i
 
 tinyxmlerror.s: tinyxmlerror.cpp.s
@@ -446,6 +501,7 @@ tinyxmlerror.s: tinyxmlerror.cpp.s
 # target to generate assembly for a file
 tinyxmlerror.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlerror.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlerror.cpp.s
 .PHONY : tinyxmlerror.cpp.s
 
 tinyxmlparser.o: tinyxmlparser.cpp.o
@@ -454,6 +510,7 @@ tinyxmlparser.o: tinyxmlparser.cpp.o
 # target to build an object file
 tinyxmlparser.cpp.o:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlparser.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlparser.cpp.o
 .PHONY : tinyxmlparser.cpp.o
 
 tinyxmlparser.i: tinyxmlparser.cpp.i
@@ -462,6 +519,7 @@ tinyxmlparser.i: tinyxmlparser.cpp.i
 # target to preprocess a source file
 tinyxmlparser.cpp.i:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlparser.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlparser.cpp.i
 .PHONY : tinyxmlparser.cpp.i
 
 tinyxmlparser.s: tinyxmlparser.cpp.s
@@ -470,6 +528,7 @@ tinyxmlparser.s: tinyxmlparser.cpp.s
 # target to generate assembly for a file
 tinyxmlparser.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/tinyxmlparser.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlparser.cpp.s
 .PHONY : tinyxmlparser.cpp.s
 
 # Help Target
@@ -479,6 +538,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... common"
+	@echo "... commonso"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... actions_mananger.o"
