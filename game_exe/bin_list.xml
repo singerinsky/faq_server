@@ -1,0 +1,3 @@
+<streams_list> 
+    <npc_config stream_file="streams/npc_data.bin" />
+</streams_list>
