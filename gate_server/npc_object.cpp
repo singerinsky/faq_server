@@ -4,15 +4,19 @@
 #include "message.pb.h"
 #include "logic_player.h"
 #include "state.h"
+#include "npc_data.pb.h"
+#include "game_prototype.h"
 
 
 template<> 
 NpcManager* Singleton<NpcManager>::_instance = 0;
 
-void NpcObject::init()
+void NpcObject::Init(int npc_id)
 {
     NpcWaitState *state = new NpcWaitState();
     state->SetOwner(this);
+    NpcData* data = NpcDataProto->GetNpcData(npc_id);
+    LOG(INFO)<<" npc data"<<data->npc_name();
 }
 
 bool NpcObject::enter_map(map_object* p_map,Position& pos)

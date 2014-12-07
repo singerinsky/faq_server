@@ -9,7 +9,13 @@ class GamePrototype:public Singleton<GamePrototype>
     public:
         friend Singleton<GamePrototype>;
         bool Init();
+        NpcDataPrototype* GetNpcDataPrototype()
+        {
+            return &_npc_data_prototype; 
+        }
     public:
         NpcDataPrototype _npc_data_prototype;        
 };
+
+#define NpcDataProto  Singleton<GamePrototype>::GetInstance()->GetNpcDataPrototype()
 #endif

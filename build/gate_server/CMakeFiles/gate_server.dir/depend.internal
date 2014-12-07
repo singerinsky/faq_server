@@ -392,6 +392,9 @@ gate_server/CMakeFiles/gate_server.dir/npc_object.cpp.o
  ../gate_server/../message/sql_binder.h
  ../gate_server/../message/tb_user.h
  ../gate_server/../message/tb_user.pb.h
+ ../gate_server/../prototype/game_prototype.h
+ ../gate_server/../prototype/npc_data.pb.h
+ ../gate_server/../prototype/npc_data_prototype.h
  /home/gl/faq_server/gate_server/fighter.h
  /home/gl/faq_server/gate_server/game_define.h
  /home/gl/faq_server/gate_server/gate_client.h

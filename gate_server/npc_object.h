@@ -19,10 +19,10 @@ class NpcObject:public Fighter,public StateObject
             _hp = 0;
             _mp = 0;
             _state = NULL;
-            init();
+            Init(_npc_id);
         }
 
-        void  init();
+        void  Init(int npc_id);
         int   GetHp(){return _hp;} 
         void  SetHp(int new_hp){_hp = new_hp;} 
 
