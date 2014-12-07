@@ -118,6 +118,22 @@ glog/vlog_is_on.h
 glog/log_severity.h
 .././include/glog/glog/log_severity.h
 
+/home/gl/faq_server/common/actions_mananger.cpp
+actions_mananger.h
+/home/gl/faq_server/common/actions_mananger.h
+head.h
+/home/gl/faq_server/common/head.h
+template_message.h
+/home/gl/faq_server/common/template_message.h
+
+/home/gl/faq_server/common/actions_mananger.h
+map
+-
+singleton.h
+/home/gl/faq_server/common/singleton.h
+packet.h
+/home/gl/faq_server/common/packet.h
+
 /home/gl/faq_server/common/aliased_buf.h
 streambuf
 -
@@ -341,6 +357,16 @@ head.h
 /home/gl/faq_server/common/head.h
 reactor_core.h
 /home/gl/faq_server/common/reactor_core.h
+
+/home/gl/faq_server/common/template_message.h
+packet.h
+/home/gl/faq_server/common/packet.h
+game_packet.h
+/home/gl/faq_server/common/game_packet.h
+actions_mananger.h
+/home/gl/faq_server/common/actions_mananger.h
+head.h
+/home/gl/faq_server/common/head.h
 
 /home/gl/faq_server/common/timer.cpp
 timer.h

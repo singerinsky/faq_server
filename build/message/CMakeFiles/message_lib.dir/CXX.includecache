@@ -104,12 +104,6 @@ string
 vector
 -
 
-/home/gl/faq_server/message/sql_define.cpp
-sql_define.h
-/home/gl/faq_server/message/sql_define.h
-
-/home/gl/faq_server/message/sql_define.h
-
 /home/gl/faq_server/message/tb_user.cpp
 tb_user.h
 /home/gl/faq_server/message/tb_user.h
