@@ -1,5 +1,5 @@
-#ifndef _NpcObject_h_
-#define _NpcObject_h_
+#ifndef _NPC_OBJECT_H_
+#define _NPC_OBJECT_H_
 
 #include "game_define.h"
 #include "message.pb.h"

@@ -1,6 +1,6 @@
-npc_id,npc_type,npc_name
-id of npc,type of npc,name of npc
-int32,int32,bytes
-1,1,i'am lilei
-2,1,you are hanmeimei
-3,0,who are you
+npc_id,npc_type,npc_name,npc_hp,npc_mp,npc_level
+id of npc,type of npc,name of npc,npc hp,npc mp,npc level
+int32,int32,bytes,int32,int32,int32
+1,1,管磊,1000,1000,16
+2,1,张瑜兰,2000,2000,20
+3,0,管泽荣,2500,5250,25

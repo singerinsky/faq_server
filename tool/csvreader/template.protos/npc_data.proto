@@ -3,6 +3,9 @@ message NpcData
     required int32 npc_id = 1;
     required int32 npc_type = 2;
     required bytes npc_name = 3;
+    required int32 npc_hp = 4;
+    required int32 npc_mp = 5;
+    required int32 npc_level = 6;
 }
 
 message NpcDataGroup

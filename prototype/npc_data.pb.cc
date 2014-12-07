@@ -35,10 +35,13 @@ void protobuf_AssignDesc_npc_5fdata_2eproto() {
       "npc_data.proto");
   GOOGLE_CHECK(file != NULL);
   NpcData_descriptor_ = file->message_type(0);
-  static const int NpcData_offsets_[3] = {
+  static const int NpcData_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcData, npc_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcData, npc_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcData, npc_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcData, npc_hp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcData, npc_mp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NpcData, npc_level_),
   };
   NpcData_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -100,10 +103,11 @@ void protobuf_AddDesc_npc_5fdata_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\016npc_data.proto\"=\n\007NpcData\022\016\n\006npc_id\030\001 "
-    "\002(\005\022\020\n\010npc_type\030\002 \002(\005\022\020\n\010npc_name\030\003 \002(\014\""
-    "*\n\014NpcDataGroup\022\032\n\010npc_data\030\001 \003(\0132\010.NpcD"
-    "ata", 123);
+    "\n\016npc_data.proto\"p\n\007NpcData\022\016\n\006npc_id\030\001 "
+    "\002(\005\022\020\n\010npc_type\030\002 \002(\005\022\020\n\010npc_name\030\003 \002(\014\022"
+    "\016\n\006npc_hp\030\004 \002(\005\022\016\n\006npc_mp\030\005 \002(\005\022\021\n\tnpc_l"
+    "evel\030\006 \002(\005\"*\n\014NpcDataGroup\022\032\n\010npc_data\030\001"
+    " \003(\0132\010.NpcData", 174);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "npc_data.proto", &protobuf_RegisterTypes);
   NpcData::default_instance_ = new NpcData();
@@ -126,6 +130,9 @@ struct StaticDescriptorInitializer_npc_5fdata_2eproto {
 const int NpcData::kNpcIdFieldNumber;
 const int NpcData::kNpcTypeFieldNumber;
 const int NpcData::kNpcNameFieldNumber;
+const int NpcData::kNpcHpFieldNumber;
+const int NpcData::kNpcMpFieldNumber;
+const int NpcData::kNpcLevelFieldNumber;
 #endif  // !_MSC_VER
 
 NpcData::NpcData()
@@ -147,6 +154,9 @@ void NpcData::SharedCtor() {
   npc_id_ = 0;
   npc_type_ = 0;
   npc_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  npc_hp_ = 0;
+  npc_mp_ = 0;
+  npc_level_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -192,6 +202,9 @@ void NpcData::Clear() {
         npc_name_->clear();
       }
     }
+    npc_hp_ = 0;
+    npc_mp_ = 0;
+    npc_level_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -244,6 +257,54 @@ bool NpcData::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(32)) goto parse_npc_hp;
+        break;
+      }
+
+      // required int32 npc_hp = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_npc_hp:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &npc_hp_)));
+          set_has_npc_hp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(40)) goto parse_npc_mp;
+        break;
+      }
+
+      // required int32 npc_mp = 5;
+      case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_npc_mp:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &npc_mp_)));
+          set_has_npc_mp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(48)) goto parse_npc_level;
+        break;
+      }
+
+      // required int32 npc_level = 6;
+      case 6: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_npc_level:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &npc_level_)));
+          set_has_npc_level();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -282,6 +343,21 @@ void NpcData::SerializeWithCachedSizes(
       3, this->npc_name(), output);
   }
 
+  // required int32 npc_hp = 4;
+  if (has_npc_hp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->npc_hp(), output);
+  }
+
+  // required int32 npc_mp = 5;
+  if (has_npc_mp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->npc_mp(), output);
+  }
+
+  // required int32 npc_level = 6;
+  if (has_npc_level()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->npc_level(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -305,6 +381,21 @@ void NpcData::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         3, this->npc_name(), target);
+  }
+
+  // required int32 npc_hp = 4;
+  if (has_npc_hp()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->npc_hp(), target);
+  }
+
+  // required int32 npc_mp = 5;
+  if (has_npc_mp()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->npc_mp(), target);
+  }
+
+  // required int32 npc_level = 6;
+  if (has_npc_level()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->npc_level(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -337,6 +428,27 @@ int NpcData::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::BytesSize(
           this->npc_name());
+    }
+
+    // required int32 npc_hp = 4;
+    if (has_npc_hp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->npc_hp());
+    }
+
+    // required int32 npc_mp = 5;
+    if (has_npc_mp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->npc_mp());
+    }
+
+    // required int32 npc_level = 6;
+    if (has_npc_level()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->npc_level());
     }
 
   }
@@ -375,6 +487,15 @@ void NpcData::MergeFrom(const NpcData& from) {
     if (from.has_npc_name()) {
       set_npc_name(from.npc_name());
     }
+    if (from.has_npc_hp()) {
+      set_npc_hp(from.npc_hp());
+    }
+    if (from.has_npc_mp()) {
+      set_npc_mp(from.npc_mp());
+    }
+    if (from.has_npc_level()) {
+      set_npc_level(from.npc_level());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -392,7 +513,7 @@ void NpcData::CopyFrom(const NpcData& from) {
 }
 
 bool NpcData::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
 
   return true;
 }
@@ -402,6 +523,9 @@ void NpcData::Swap(NpcData* other) {
     std::swap(npc_id_, other->npc_id_);
     std::swap(npc_type_, other->npc_type_);
     std::swap(npc_name_, other->npc_name_);
+    std::swap(npc_hp_, other->npc_hp_);
+    std::swap(npc_mp_, other->npc_mp_);
+    std::swap(npc_level_, other->npc_level_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

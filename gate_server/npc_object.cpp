@@ -13,10 +13,15 @@ NpcManager* Singleton<NpcManager>::_instance = 0;
 
 void NpcObject::Init(int npc_id)
 {
+    _attr[PLY_ATTR_END] = {0};
+    _alive = true;
+    NpcData* data = NpcDataProto->GetNpcData(npc_id);
+    _hp = data->npc_hp();
+    _mp = data->npc_mp();
+    _level = data->npc_level();
+    _nickname = data->npc_name();
     NpcWaitState *state = new NpcWaitState();
     state->SetOwner(this);
-    NpcData* data = NpcDataProto->GetNpcData(npc_id);
-    LOG(INFO)<<" npc data"<<data->npc_name();
 }
 
 bool NpcObject::enter_map(map_object* p_map,Position& pos)

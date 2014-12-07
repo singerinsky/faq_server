@@ -116,6 +116,27 @@ class NpcData : public ::google::protobuf::Message {
   inline ::std::string* release_npc_name();
   inline void set_allocated_npc_name(::std::string* npc_name);
 
+  // required int32 npc_hp = 4;
+  inline bool has_npc_hp() const;
+  inline void clear_npc_hp();
+  static const int kNpcHpFieldNumber = 4;
+  inline ::google::protobuf::int32 npc_hp() const;
+  inline void set_npc_hp(::google::protobuf::int32 value);
+
+  // required int32 npc_mp = 5;
+  inline bool has_npc_mp() const;
+  inline void clear_npc_mp();
+  static const int kNpcMpFieldNumber = 5;
+  inline ::google::protobuf::int32 npc_mp() const;
+  inline void set_npc_mp(::google::protobuf::int32 value);
+
+  // required int32 npc_level = 6;
+  inline bool has_npc_level() const;
+  inline void clear_npc_level();
+  static const int kNpcLevelFieldNumber = 6;
+  inline ::google::protobuf::int32 npc_level() const;
+  inline void set_npc_level(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:NpcData)
  private:
   inline void set_has_npc_id();
@@ -124,15 +145,24 @@ class NpcData : public ::google::protobuf::Message {
   inline void clear_has_npc_type();
   inline void set_has_npc_name();
   inline void clear_has_npc_name();
+  inline void set_has_npc_hp();
+  inline void clear_has_npc_hp();
+  inline void set_has_npc_mp();
+  inline void clear_has_npc_mp();
+  inline void set_has_npc_level();
+  inline void clear_has_npc_level();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int32 npc_id_;
   ::google::protobuf::int32 npc_type_;
   ::std::string* npc_name_;
+  ::google::protobuf::int32 npc_hp_;
+  ::google::protobuf::int32 npc_mp_;
+  ::google::protobuf::int32 npc_level_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
 
   friend void  protobuf_AddDesc_npc_5fdata_2eproto();
   friend void protobuf_AssignDesc_npc_5fdata_2eproto();
@@ -345,6 +375,72 @@ inline void NpcData::set_allocated_npc_name(::std::string* npc_name) {
     clear_has_npc_name();
     npc_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
+}
+
+// required int32 npc_hp = 4;
+inline bool NpcData::has_npc_hp() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void NpcData::set_has_npc_hp() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void NpcData::clear_has_npc_hp() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void NpcData::clear_npc_hp() {
+  npc_hp_ = 0;
+  clear_has_npc_hp();
+}
+inline ::google::protobuf::int32 NpcData::npc_hp() const {
+  return npc_hp_;
+}
+inline void NpcData::set_npc_hp(::google::protobuf::int32 value) {
+  set_has_npc_hp();
+  npc_hp_ = value;
+}
+
+// required int32 npc_mp = 5;
+inline bool NpcData::has_npc_mp() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void NpcData::set_has_npc_mp() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void NpcData::clear_has_npc_mp() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void NpcData::clear_npc_mp() {
+  npc_mp_ = 0;
+  clear_has_npc_mp();
+}
+inline ::google::protobuf::int32 NpcData::npc_mp() const {
+  return npc_mp_;
+}
+inline void NpcData::set_npc_mp(::google::protobuf::int32 value) {
+  set_has_npc_mp();
+  npc_mp_ = value;
+}
+
+// required int32 npc_level = 6;
+inline bool NpcData::has_npc_level() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void NpcData::set_has_npc_level() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void NpcData::clear_has_npc_level() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void NpcData::clear_npc_level() {
+  npc_level_ = 0;
+  clear_has_npc_level();
+}
+inline ::google::protobuf::int32 NpcData::npc_level() const {
+  return npc_level_;
+}
+inline void NpcData::set_npc_level(::google::protobuf::int32 value) {
+  set_has_npc_level();
+  npc_level_ = value;
 }
 
 // -------------------------------------------------------------------
