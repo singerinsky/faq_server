@@ -7,6 +7,7 @@ class NpcDataPrototype
 {
     public:
         bool Load(const char* file);
+        NpcData* GetNpcData(int npc_id);
 
     public:
         typedef std::map<int,NpcData> Prototypes;
