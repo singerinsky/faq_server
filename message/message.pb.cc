@@ -66,6 +66,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* EnterNpcsViewNotf_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   EnterNpcsViewNotf_reflection_ = NULL;
+const ::google::protobuf::Descriptor* PlayerAttackNpcRequest_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  PlayerAttackNpcRequest_reflection_ = NULL;
+const ::google::protobuf::Descriptor* PlayerAttackNpcResponse_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  PlayerAttackNpcResponse_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* MSG_ACTION_TYPE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* MessageType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DbMessageType_descriptor_ = NULL;
@@ -337,6 +343,37 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(EnterNpcsViewNotf));
+  PlayerAttackNpcRequest_descriptor_ = file->message_type(16);
+  static const int PlayerAttackNpcRequest_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcRequest, npc_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcRequest, attack_type_),
+  };
+  PlayerAttackNpcRequest_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      PlayerAttackNpcRequest_descriptor_,
+      PlayerAttackNpcRequest::default_instance_,
+      PlayerAttackNpcRequest_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcRequest, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcRequest, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(PlayerAttackNpcRequest));
+  PlayerAttackNpcResponse_descriptor_ = file->message_type(17);
+  static const int PlayerAttackNpcResponse_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcResponse, ret_),
+  };
+  PlayerAttackNpcResponse_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      PlayerAttackNpcResponse_descriptor_,
+      PlayerAttackNpcResponse::default_instance_,
+      PlayerAttackNpcResponse_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcResponse, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayerAttackNpcResponse, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(PlayerAttackNpcResponse));
   MSG_ACTION_TYPE_descriptor_ = file->enum_type(0);
   MessageType_descriptor_ = file->enum_type(1);
   DbMessageType_descriptor_ = file->enum_type(2);
@@ -384,6 +421,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
     EnterPlayersViewNotf_descriptor_, &EnterPlayersViewNotf::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     EnterNpcsViewNotf_descriptor_, &EnterNpcsViewNotf::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    PlayerAttackNpcRequest_descriptor_, &PlayerAttackNpcRequest::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    PlayerAttackNpcResponse_descriptor_, &PlayerAttackNpcResponse::default_instance());
 }
 
 }  // namespace
@@ -421,6 +462,10 @@ void protobuf_ShutdownFile_message_2eproto() {
   delete EnterPlayersViewNotf_reflection_;
   delete EnterNpcsViewNotf::default_instance_;
   delete EnterNpcsViewNotf_reflection_;
+  delete PlayerAttackNpcRequest::default_instance_;
+  delete PlayerAttackNpcRequest_reflection_;
+  delete PlayerAttackNpcResponse::default_instance_;
+  delete PlayerAttackNpcResponse_reflection_;
 }
 
 void protobuf_AddDesc_message_2eproto() {
@@ -457,19 +502,22 @@ void protobuf_AddDesc_message_2eproto() {
     "layerEnterViewNotf\022 \n\013player_info\030\001 \002(\0132"
     "\013.PlayerInfo\"8\n\024EnterPlayersViewNotf\022 \n\013"
     "player_info\030\001 \003(\0132\013.PlayerInfo\"/\n\021EnterN"
-    "pcsViewNotf\022\032\n\010npc_info\030\001 \003(\0132\010.NpcInfo*"
-    "D\n\017MSG_ACTION_TYPE\022\017\n\013MSG_REQUEST\020\000\022\020\n\014M"
-    "SG_RESPONSE\020\001\022\016\n\nMSG_NOTIFY\020\002*\323\002\n\013Messag"
-    "eType\022\032\n\026MSG_SOCCER_PLAYER_INFO\020\001\022\022\n\016MSG"
-    "_HEART_BEAT\020\002\022\024\n\020MSG_CLIENT_LOGIN\020\003\022\034\n\030M"
-    "SG_GATE_SERVER_REGISTER\020\004\022\023\n\017MSG_INIT_CL"
-    "IENT\020\005\022\023\n\017MSG_CLIENT_MOVE\020\006\022\036\n\032MSG_PLAYE"
-    "R_LEAVE_VIEW_NOTF\020\007\022\037\n\033MSG_LEAVE_PLAYERS"
-    "_VIEW_NOTF\020\010\022\036\n\032MSG_PLAYER_ENTER_VIEW_NO"
-    "TF\020\t\022\037\n\033MSG_ENTER_PLAYERS_VIEW_NOTF\020\n\022\034\n"
-    "\030MSG_ENTER_NPCS_VIEW_NOTF\020\013\022\026\n\022MSG_LEAVE"
-    "_NPC_NOTF\020\014*#\n\rDbMessageType\022\022\n\rMSG_DB_C"
-    "OMMON\020\220N", 1488);
+    "pcsViewNotf\022\032\n\010npc_info\030\001 \003(\0132\010.NpcInfo\""
+    "=\n\026PlayerAttackNpcRequest\022\016\n\006npc_id\030\001 \002("
+    "\005\022\023\n\013attack_type\030\002 \002(\005\"&\n\027PlayerAttackNp"
+    "cResponse\022\013\n\003ret\030\001 \002(\005*D\n\017MSG_ACTION_TYP"
+    "E\022\017\n\013MSG_REQUEST\020\000\022\020\n\014MSG_RESPONSE\020\001\022\016\n\n"
+    "MSG_NOTIFY\020\002*\356\002\n\013MessageType\022\032\n\026MSG_SOCC"
+    "ER_PLAYER_INFO\020\001\022\022\n\016MSG_HEART_BEAT\020\002\022\024\n\020"
+    "MSG_CLIENT_LOGIN\020\003\022\034\n\030MSG_GATE_SERVER_RE"
+    "GISTER\020\004\022\023\n\017MSG_INIT_CLIENT\020\005\022\023\n\017MSG_CLI"
+    "ENT_MOVE\020\006\022\036\n\032MSG_PLAYER_LEAVE_VIEW_NOTF"
+    "\020\007\022\037\n\033MSG_LEAVE_PLAYERS_VIEW_NOTF\020\010\022\036\n\032M"
+    "SG_PLAYER_ENTER_VIEW_NOTF\020\t\022\037\n\033MSG_ENTER"
+    "_PLAYERS_VIEW_NOTF\020\n\022\034\n\030MSG_ENTER_NPCS_V"
+    "IEW_NOTF\020\013\022\026\n\022MSG_LEAVE_NPC_NOTF\020\014\022\031\n\025MS"
+    "G_PLAYER_ATTACK_NPC\020\r*#\n\rDbMessageType\022\022"
+    "\n\rMSG_DB_COMMON\020\220N", 1618);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   PosInfo::default_instance_ = new PosInfo();
@@ -488,6 +536,8 @@ void protobuf_AddDesc_message_2eproto() {
   PlayerEnterViewNotf::default_instance_ = new PlayerEnterViewNotf();
   EnterPlayersViewNotf::default_instance_ = new EnterPlayersViewNotf();
   EnterNpcsViewNotf::default_instance_ = new EnterNpcsViewNotf();
+  PlayerAttackNpcRequest::default_instance_ = new PlayerAttackNpcRequest();
+  PlayerAttackNpcResponse::default_instance_ = new PlayerAttackNpcResponse();
   PosInfo::default_instance_->InitAsDefaultInstance();
   PlayerInfo::default_instance_->InitAsDefaultInstance();
   NpcInfo::default_instance_->InitAsDefaultInstance();
@@ -504,6 +554,8 @@ void protobuf_AddDesc_message_2eproto() {
   PlayerEnterViewNotf::default_instance_->InitAsDefaultInstance();
   EnterPlayersViewNotf::default_instance_->InitAsDefaultInstance();
   EnterNpcsViewNotf::default_instance_->InitAsDefaultInstance();
+  PlayerAttackNpcRequest::default_instance_->InitAsDefaultInstance();
+  PlayerAttackNpcResponse::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_message_2eproto);
 }
 
@@ -546,6 +598,7 @@ bool MessageType_IsValid(int value) {
     case 10:
     case 11:
     case 12:
+    case 13:
       return true;
     default:
       return false;
@@ -4705,6 +4758,464 @@ void EnterNpcsViewNotf::Swap(EnterNpcsViewNotf* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = EnterNpcsViewNotf_descriptor_;
   metadata.reflection = EnterNpcsViewNotf_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int PlayerAttackNpcRequest::kNpcIdFieldNumber;
+const int PlayerAttackNpcRequest::kAttackTypeFieldNumber;
+#endif  // !_MSC_VER
+
+PlayerAttackNpcRequest::PlayerAttackNpcRequest()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void PlayerAttackNpcRequest::InitAsDefaultInstance() {
+}
+
+PlayerAttackNpcRequest::PlayerAttackNpcRequest(const PlayerAttackNpcRequest& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void PlayerAttackNpcRequest::SharedCtor() {
+  _cached_size_ = 0;
+  npc_id_ = 0;
+  attack_type_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+PlayerAttackNpcRequest::~PlayerAttackNpcRequest() {
+  SharedDtor();
+}
+
+void PlayerAttackNpcRequest::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void PlayerAttackNpcRequest::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* PlayerAttackNpcRequest::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return PlayerAttackNpcRequest_descriptor_;
+}
+
+const PlayerAttackNpcRequest& PlayerAttackNpcRequest::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+PlayerAttackNpcRequest* PlayerAttackNpcRequest::default_instance_ = NULL;
+
+PlayerAttackNpcRequest* PlayerAttackNpcRequest::New() const {
+  return new PlayerAttackNpcRequest;
+}
+
+void PlayerAttackNpcRequest::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    npc_id_ = 0;
+    attack_type_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool PlayerAttackNpcRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required int32 npc_id = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &npc_id_)));
+          set_has_npc_id();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(16)) goto parse_attack_type;
+        break;
+      }
+
+      // required int32 attack_type = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_attack_type:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &attack_type_)));
+          set_has_attack_type();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void PlayerAttackNpcRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required int32 npc_id = 1;
+  if (has_npc_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->npc_id(), output);
+  }
+
+  // required int32 attack_type = 2;
+  if (has_attack_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->attack_type(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* PlayerAttackNpcRequest::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required int32 npc_id = 1;
+  if (has_npc_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->npc_id(), target);
+  }
+
+  // required int32 attack_type = 2;
+  if (has_attack_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->attack_type(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int PlayerAttackNpcRequest::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required int32 npc_id = 1;
+    if (has_npc_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->npc_id());
+    }
+
+    // required int32 attack_type = 2;
+    if (has_attack_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->attack_type());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void PlayerAttackNpcRequest::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const PlayerAttackNpcRequest* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const PlayerAttackNpcRequest*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void PlayerAttackNpcRequest::MergeFrom(const PlayerAttackNpcRequest& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_npc_id()) {
+      set_npc_id(from.npc_id());
+    }
+    if (from.has_attack_type()) {
+      set_attack_type(from.attack_type());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void PlayerAttackNpcRequest::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PlayerAttackNpcRequest::CopyFrom(const PlayerAttackNpcRequest& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PlayerAttackNpcRequest::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void PlayerAttackNpcRequest::Swap(PlayerAttackNpcRequest* other) {
+  if (other != this) {
+    std::swap(npc_id_, other->npc_id_);
+    std::swap(attack_type_, other->attack_type_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata PlayerAttackNpcRequest::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = PlayerAttackNpcRequest_descriptor_;
+  metadata.reflection = PlayerAttackNpcRequest_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int PlayerAttackNpcResponse::kRetFieldNumber;
+#endif  // !_MSC_VER
+
+PlayerAttackNpcResponse::PlayerAttackNpcResponse()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void PlayerAttackNpcResponse::InitAsDefaultInstance() {
+}
+
+PlayerAttackNpcResponse::PlayerAttackNpcResponse(const PlayerAttackNpcResponse& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void PlayerAttackNpcResponse::SharedCtor() {
+  _cached_size_ = 0;
+  ret_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+PlayerAttackNpcResponse::~PlayerAttackNpcResponse() {
+  SharedDtor();
+}
+
+void PlayerAttackNpcResponse::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void PlayerAttackNpcResponse::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* PlayerAttackNpcResponse::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return PlayerAttackNpcResponse_descriptor_;
+}
+
+const PlayerAttackNpcResponse& PlayerAttackNpcResponse::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_message_2eproto();
+  return *default_instance_;
+}
+
+PlayerAttackNpcResponse* PlayerAttackNpcResponse::default_instance_ = NULL;
+
+PlayerAttackNpcResponse* PlayerAttackNpcResponse::New() const {
+  return new PlayerAttackNpcResponse;
+}
+
+void PlayerAttackNpcResponse::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    ret_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool PlayerAttackNpcResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required int32 ret = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &ret_)));
+          set_has_ret();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void PlayerAttackNpcResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required int32 ret = 1;
+  if (has_ret()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->ret(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* PlayerAttackNpcResponse::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required int32 ret = 1;
+  if (has_ret()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->ret(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int PlayerAttackNpcResponse::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required int32 ret = 1;
+    if (has_ret()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->ret());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void PlayerAttackNpcResponse::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const PlayerAttackNpcResponse* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const PlayerAttackNpcResponse*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void PlayerAttackNpcResponse::MergeFrom(const PlayerAttackNpcResponse& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_ret()) {
+      set_ret(from.ret());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void PlayerAttackNpcResponse::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PlayerAttackNpcResponse::CopyFrom(const PlayerAttackNpcResponse& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PlayerAttackNpcResponse::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void PlayerAttackNpcResponse::Swap(PlayerAttackNpcResponse* other) {
+  if (other != this) {
+    std::swap(ret_, other->ret_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata PlayerAttackNpcResponse::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = PlayerAttackNpcResponse_descriptor_;
+  metadata.reflection = PlayerAttackNpcResponse_reflection_;
   return metadata;
 }
 
