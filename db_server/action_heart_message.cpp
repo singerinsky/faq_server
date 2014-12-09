@@ -6,11 +6,12 @@
 #include "message_define.h"
 #include "head.h"
 #include "socket.h"
+#include "db_client.h"
 
-class heart_message_action: public template_message<ClientHeartBeatRequest,ClientHeartBeatResponse,MSG_HEART_BEAT>  
+class heart_message_action: public template_message<ClientHeartBeatRequest,ClientHeartBeatResponse,MSG_HEART_BEAT,db_client>  
 {
     public:
-        int process_message(ClientHeartBeatRequest *request,socket_client* client)
+        int process_message(ClientHeartBeatRequest *request,db_client* client)
         {
             if((request->client_time() - process_count_) != 1)
             {

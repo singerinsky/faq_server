@@ -11,10 +11,10 @@
 #include "sql_define.h"
 #include "logic_player.h"
 
-class move_message_action: public template_message<ClientMoveRequest,ClientMoveResponse,MSG_CLIENT_MOVE>
+class move_message_action: public template_message<ClientMoveRequest,ClientMoveResponse,MSG_CLIENT_MOVE,gate_client>
 {
     public:
-        int process_message(ClientMoveRequest *request,socket_client* client)
+        int process_message(ClientMoveRequest *request,gate_client* client)
         {
             rsp_message_packet response;
             gate_client* gclient = (gate_client*)client;

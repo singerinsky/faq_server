@@ -21,6 +21,7 @@ gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_serve
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/singleton.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/socket.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/template_message.h
+gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/timer.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../common/tinyxml.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../include/tinystr.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../include/tinyxml.h
@@ -29,6 +30,7 @@ gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_serve
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../message/message_define.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/../message/tb_user.pb.h
 gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/action_heart_message.cpp
+gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o: ../gate_server/gate_client.h
 
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: .././include/event2/buffer.h
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: .././include/event2/bufferevent.h

@@ -50,16 +50,25 @@ db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/gfla
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/log_severity.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/logging.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/glog/vlog_is_on.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/my_alloc.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/my_list.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/mysql.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/mysql_com.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/mysql_time.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/mysql_version.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: .././include/mysql/typelib.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/actions_mananger.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/aliased_buf.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/game_packet.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/head.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/mysql_connection.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/packet.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/reactor_core.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/service.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/singleton.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/socket.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/template_message.h
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/timer.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../common/tinyxml.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../include/tinystr.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../include/tinyxml.h
@@ -68,6 +77,7 @@ db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../m
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/message_define.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/../message/tb_user.pb.h
 db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/action_heart_message.cpp
+db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.o: ../db_server/db_client.h
 
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: .././include/event2/buffer.h
 db_server/CMakeFiles/db_server.dir/data_worker.cpp.o: .././include/event2/bufferevent.h
