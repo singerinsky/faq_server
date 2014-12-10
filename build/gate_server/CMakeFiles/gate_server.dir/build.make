@@ -256,9 +256,32 @@ gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o.provides: gate_ser
 
 gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o.provides.build: gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o
 
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o: gate_server/CMakeFiles/gate_server.dir/flags.make
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o: ../gate_server/action_attack_npc_message.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o"
+	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o -c /home/gl/faq_server/gate_server/action_attack_npc_message.cpp
+
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.i"
+	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/gate_server/action_attack_npc_message.cpp > CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.i
+
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.s"
+	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/gate_server/action_attack_npc_message.cpp -o CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.s
+
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.requires:
+.PHONY : gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.requires
+
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.provides: gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.requires
+	$(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.provides.build
+.PHONY : gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.provides
+
+gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.provides.build: gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o
+
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: gate_server/CMakeFiles/gate_server.dir/flags.make
 gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o: ../gate_server/logic_player.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o"
 	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gate_server.dir/logic_player.cpp.o -c /home/gl/faq_server/gate_server/logic_player.cpp
 
@@ -281,7 +304,7 @@ gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o.provides.build: gate_s
 
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: gate_server/CMakeFiles/gate_server.dir/flags.make
 gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o: ../gate_server/action_login_message.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o"
 	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gate_server.dir/action_login_message.cpp.o -c /home/gl/faq_server/gate_server/action_login_message.cpp
 
@@ -304,7 +327,7 @@ gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o.provides.build
 
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: gate_server/CMakeFiles/gate_server.dir/flags.make
 gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o: ../gate_server/map_manager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o"
 	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gate_server.dir/map_manager.cpp.o -c /home/gl/faq_server/gate_server/map_manager.cpp
 
@@ -327,7 +350,7 @@ gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o.provides.build: gate_se
 
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: gate_server/CMakeFiles/gate_server.dir/flags.make
 gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o: ../gate_server/client_service.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o"
 	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gate_server.dir/client_service.cpp.o -c /home/gl/faq_server/gate_server/client_service.cpp
 
@@ -350,7 +373,7 @@ gate_server/CMakeFiles/gate_server.dir/client_service.cpp.o.provides.build: gate
 
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: gate_server/CMakeFiles/gate_server.dir/flags.make
 gate_server/CMakeFiles/gate_server.dir/state.cpp.o: ../gate_server/state.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gate_server/CMakeFiles/gate_server.dir/state.cpp.o"
 	cd /home/gl/faq_server/build/gate_server && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gate_server.dir/state.cpp.o -c /home/gl/faq_server/gate_server/state.cpp
 
@@ -382,6 +405,7 @@ gate_server_OBJECTS = \
 "CMakeFiles/gate_server.dir/config_manager.cpp.o" \
 "CMakeFiles/gate_server.dir/action_heart_message.cpp.o" \
 "CMakeFiles/gate_server.dir/gate_application.cpp.o" \
+"CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o" \
 "CMakeFiles/gate_server.dir/logic_player.cpp.o" \
 "CMakeFiles/gate_server.dir/action_login_message.cpp.o" \
 "CMakeFiles/gate_server.dir/map_manager.cpp.o" \
@@ -400,6 +424,7 @@ gate_server_EXTERNAL_OBJECTS =
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.o
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o
+../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o
 ../game_exe/gate_server: gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o
@@ -426,6 +451,7 @@ gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_ser
 gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/config_manager.cpp.o.requires
 gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/action_heart_message.cpp.o.requires
 gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/gate_application.cpp.o.requires
+gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o.requires
 gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/logic_player.cpp.o.requires
 gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/action_login_message.cpp.o.requires
 gate_server/CMakeFiles/gate_server.dir/requires: gate_server/CMakeFiles/gate_server.dir/map_manager.cpp.o.requires

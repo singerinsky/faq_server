@@ -11,10 +11,10 @@
 #include "sql_define.h"
 #include "logic_player.h"
 
-class player_attack_npc_message_action: public template_message<PlayerAttackNpcRequest,PlayerAttackNpcResponse,MSG_PLAYER_ATTACK_NPC>
+class player_attack_npc_message_action: public template_message<PlayerAttackNpcRequest,PlayerAttackNpcResponse,MSG_PLAYER_ATTACK_NPC,gate_client>
 {
     public:
-        int process_message(PlayerAttackNpcRequest*request,socket_client* client)
+        int process_message(PlayerAttackNpcRequest*request,gate_client* client)
         {
             rsp_message_packet response;
             gate_client* gclient = (gate_client*)client;
@@ -24,12 +24,9 @@ class player_attack_npc_message_action: public template_message<PlayerAttackNpcR
                 return -1; 
             }
             
-            LOG(INFO)<<"role player_attack_npc to"<<pos_x<<":"<<pos_y<<":"<<map_id; 
-            
             response.body.set_ret(1); 
             client->send_packet(&response);
             return 1;
         }
-
 }g_player_attack_npc_message_action;
 

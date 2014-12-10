@@ -112,6 +112,30 @@ gate_server/fast:
 	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/build
 .PHONY : gate_server/fast
 
+action_attack_npc_message.o: action_attack_npc_message.cpp.o
+.PHONY : action_attack_npc_message.o
+
+# target to build an object file
+action_attack_npc_message.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.o
+.PHONY : action_attack_npc_message.cpp.o
+
+action_attack_npc_message.i: action_attack_npc_message.cpp.i
+.PHONY : action_attack_npc_message.i
+
+# target to preprocess a source file
+action_attack_npc_message.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.i
+.PHONY : action_attack_npc_message.cpp.i
+
+action_attack_npc_message.s: action_attack_npc_message.cpp.s
+.PHONY : action_attack_npc_message.s
+
+# target to generate assembly for a file
+action_attack_npc_message.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/action_attack_npc_message.cpp.s
+.PHONY : action_attack_npc_message.cpp.s
+
 action_heart_message.o: action_heart_message.cpp.o
 .PHONY : action_heart_message.o
 
@@ -457,6 +481,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... gate_server"
 	@echo "... rebuild_cache"
+	@echo "... action_attack_npc_message.o"
+	@echo "... action_attack_npc_message.i"
+	@echo "... action_attack_npc_message.s"
 	@echo "... action_heart_message.o"
 	@echo "... action_heart_message.i"
 	@echo "... action_heart_message.s"

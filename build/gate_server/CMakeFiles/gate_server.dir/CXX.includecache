@@ -256,10 +256,6 @@ event2/event.h
 string
 -
 
-../gate_server/../common/session_manager.h
-singleton.h
-../gate_server/../common/singleton.h
-
 ../gate_server/../common/singleton.h
 cstdlib
 -
@@ -400,6 +396,12 @@ vector
 
 ../gate_server/../message/sql_define.h
 
+../gate_server/../message/tb_user.h
+tb_user.pb.h
+../gate_server/../message/tb_user.pb.h
+sql_binder.h
+../gate_server/../message/sql_binder.h
+
 ../gate_server/../message/tb_user.pb.h
 string
 -
@@ -416,7 +418,7 @@ google/protobuf/extension_set.h
 google/protobuf/unknown_field_set.h
 -
 
-/home/gl/faq_server/gate_server/action_login_message.cpp
+/home/gl/faq_server/gate_server/action_attack_npc_message.cpp
 packet.h
 /home/gl/faq_server/gate_server/packet.h
 game_packet.h
@@ -431,8 +433,6 @@ message_define.h
 /home/gl/faq_server/gate_server/message_define.h
 head.h
 /home/gl/faq_server/gate_server/head.h
-socket.h
-/home/gl/faq_server/gate_server/socket.h
 gate_client.h
 /home/gl/faq_server/gate_server/gate_client.h
 gate_application.h
@@ -441,16 +441,8 @@ db_connection.h
 /home/gl/faq_server/gate_server/db_connection.h
 sql_define.h
 /home/gl/faq_server/gate_server/sql_define.h
-client_service.h
-/home/gl/faq_server/gate_server/client_service.h
-
-/home/gl/faq_server/gate_server/client_service.h
-service.h
-/home/gl/faq_server/gate_server/service.h
-gate_client.h
-/home/gl/faq_server/gate_server/gate_client.h
-session_manager.h
-/home/gl/faq_server/gate_server/session_manager.h
+logic_player.h
+/home/gl/faq_server/gate_server/logic_player.h
 
 /home/gl/faq_server/gate_server/db_connection.h
 socket.h
@@ -461,6 +453,12 @@ db_message.pb.h
 /home/gl/faq_server/gate_server/db_message.pb.h
 sql_binder.h
 /home/gl/faq_server/gate_server/sql_binder.h
+
+/home/gl/faq_server/gate_server/fighter.h
+game_define.h
+/home/gl/faq_server/gate_server/game_define.h
+
+/home/gl/faq_server/gate_server/game_define.h
 
 /home/gl/faq_server/gate_server/gate_application.h
 head.h
@@ -473,4 +471,40 @@ timer.h
 /home/gl/faq_server/gate_server/timer.h
 socket.h
 /home/gl/faq_server/gate_server/socket.h
+
+/home/gl/faq_server/gate_server/logic_player.h
+head.h
+/home/gl/faq_server/gate_server/head.h
+tb_user.pb.h
+/home/gl/faq_server/gate_server/tb_user.pb.h
+tb_user.h
+/home/gl/faq_server/gate_server/tb_user.h
+timer.h
+/home/gl/faq_server/gate_server/timer.h
+map_manager.h
+/home/gl/faq_server/gate_server/map_manager.h
+game_define.h
+/home/gl/faq_server/gate_server/game_define.h
+fighter.h
+/home/gl/faq_server/gate_server/fighter.h
+message.pb.h
+/home/gl/faq_server/gate_server/message.pb.h
+gate_client.h
+/home/gl/faq_server/gate_server/gate_client.h
+
+/home/gl/faq_server/gate_server/map_manager.h
+singleton.h
+/home/gl/faq_server/gate_server/singleton.h
+set
+-
+string
+-
+vector
+-
+bitset
+-
+game_define.h
+/home/gl/faq_server/gate_server/game_define.h
+map
+-
 
