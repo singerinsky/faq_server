@@ -40,6 +40,7 @@
 #include <event2/buffer.h>
 #include <event2/listener.h>
 #include <event2/util.h>
+#include <event2/event-config.h>
 #include <event2/event.h>
 #include "singleton.h"
 #include "tinyxml.h"

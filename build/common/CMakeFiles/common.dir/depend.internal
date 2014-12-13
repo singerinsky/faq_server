@@ -80,6 +80,7 @@ common/CMakeFiles/common.dir/reactor_core.cpp.o
  /home/gl/faq_server/common/net_util.h
  /home/gl/faq_server/common/reactor_core.cpp
  /home/gl/faq_server/common/reactor_core.h
+ /home/gl/faq_server/common/server_application.h
  /home/gl/faq_server/common/service.h
  /home/gl/faq_server/common/singleton.h
  /home/gl/faq_server/common/tinyxml.h

@@ -1,5 +1,6 @@
 #include "reactor_core.h"
 #include "net_util.h"
+#include "server_application.h"
 #include "service.h"
 
 template<> 
@@ -22,6 +23,12 @@ void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struc
         LOG(ERROR)<<"accept error ,free bev"; 
         bufferevent_free(bev);
     }
+}
+
+void common_sign_cb(evutil_socket_t fd,short event,void* user_data)
+{
+   server_appliaction* application = (server_appliaction*)user_data; 
+   application->process_signal(event);
 }
 
 

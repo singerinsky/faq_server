@@ -79,6 +79,7 @@ common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/head.h
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/net_util.h
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/reactor_core.cpp
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/reactor_core.h
+common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/server_application.h
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/service.h
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/singleton.h
 common/CMakeFiles/common.dir/reactor_core.cpp.o: ../common/tinyxml.h
