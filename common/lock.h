@@ -62,48 +62,36 @@ class MutexLock : public LockBase
     public:
         MutexLock(void)
         {
-            _lock = NULL;
         }
 
         ~MutexLock(void)
         {
-            if (_lock)
-            {
-                pthread_mutex_destroy(_lock);
-                delete _lock;
-                _lock = NULL;
-            }
+            pthread_mutex_destroy(&_lock);
         }
 
         int init()
         {
-            assert(_lock == NULL);
-
-            _lock = new pthread_mutex_t();
-            assert(_lock);
-            pthread_mutex_init(_lock, NULL);
+            pthread_mutex_init(&_lock, NULL);
             return 0;
         }
 
         virtual void lock(void)
         {
-            assert(_lock);
 
-            pthread_mutex_lock(_lock);
+            pthread_mutex_lock(&_lock);
         }
 
         virtual void unlock(void)
         {
-            assert(_lock);
 
-            pthread_mutex_unlock(_lock);
+            pthread_mutex_unlock(&_lock);
         }
 
         pthread_mutex_t* get_mutex(){
-            return _lock;
+            return &_lock;
         };
     private:
-        pthread_mutex_t *_lock;
+        pthread_mutex_t _lock;
 };
 
 class SpinLock : public LockBase

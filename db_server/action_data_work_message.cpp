@@ -18,7 +18,7 @@ class data_work_action: public template_message<DBCommonReq,DBCommonRep,MSG_DB_C
             db_job* job = new db_job();
             job->_sql_str = request->operate_string();
             //LOG(INFO)<<"sql "<<job->_sql_str;
-            job->_selector = (db_client*)client;
+            job->_selector = (data_object*)client;
             job->_operate_type = request->operate_type(); 
             job->_seq = 1;
             Singleton<work_manager>::GetInstance()->add_work_job(job);

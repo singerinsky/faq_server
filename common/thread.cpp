@@ -60,14 +60,11 @@ THREAD_HANDLE thread::get_current_handle()
 void thread::thread_resume(timespec *time_wait){
     pthread_mutex_lock(&m_mutex);
     if(time_wait == NULL){
-        timespec tm;
-        timeval now;
-        gettimeofday(&now,NULL);
-        tm.tv_sec = now.tv_sec + 60*60*24*365;
-        tm.tv_nsec = now.tv_usec + 0;	
-        time_wait = &tm;
+        pthread_cond_wait(&m_cond,&m_mutex);
+    }else
+    {
+        pthread_cond_timedwait(&m_cond,&m_mutex,time_wait);
     }
-    pthread_cond_timedwait(&m_cond,&m_mutex,time_wait);
     pthread_mutex_unlock(&m_mutex);
 }
 

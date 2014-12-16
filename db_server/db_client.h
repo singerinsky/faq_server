@@ -3,11 +3,10 @@
 #include "socket.h"
 #include "timer.h"
 #include "mysql_connection.h"
+#include "data_worker.h"
 
-class MysqlResultRow;
 class db_job;
-class data_worker;
-class db_client: public socket_client
+class db_client: public socket_client,public data_object
 {
     public:
         //bufferevent* bev,int socket,sockaddr_in& addr

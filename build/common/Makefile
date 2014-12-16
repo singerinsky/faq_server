@@ -153,6 +153,60 @@ actions_mananger.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/actions_mananger.cpp.s
 .PHONY : actions_mananger.cpp.s
 
+data_worker.o: data_worker.cpp.o
+.PHONY : data_worker.o
+
+# target to build an object file
+data_worker.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/data_worker.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/data_worker.cpp.o
+.PHONY : data_worker.cpp.o
+
+data_worker.i: data_worker.cpp.i
+.PHONY : data_worker.i
+
+# target to preprocess a source file
+data_worker.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/data_worker.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/data_worker.cpp.i
+.PHONY : data_worker.cpp.i
+
+data_worker.s: data_worker.cpp.s
+.PHONY : data_worker.s
+
+# target to generate assembly for a file
+data_worker.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/data_worker.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/data_worker.cpp.s
+.PHONY : data_worker.cpp.s
+
+db_connection_pool.o: db_connection_pool.cpp.o
+.PHONY : db_connection_pool.o
+
+# target to build an object file
+db_connection_pool.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/db_connection_pool.cpp.o
+.PHONY : db_connection_pool.cpp.o
+
+db_connection_pool.i: db_connection_pool.cpp.i
+.PHONY : db_connection_pool.i
+
+# target to preprocess a source file
+db_connection_pool.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/db_connection_pool.cpp.i
+.PHONY : db_connection_pool.cpp.i
+
+db_connection_pool.s: db_connection_pool.cpp.s
+.PHONY : db_connection_pool.s
+
+# target to generate assembly for a file
+db_connection_pool.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/db_connection_pool.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/db_connection_pool.cpp.s
+.PHONY : db_connection_pool.cpp.s
+
 game_packet.o: game_packet.cpp.o
 .PHONY : game_packet.o
 
@@ -531,6 +585,33 @@ tinyxmlparser.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/tinyxmlparser.cpp.s
 .PHONY : tinyxmlparser.cpp.s
 
+work_manager.o: work_manager.cpp.o
+.PHONY : work_manager.o
+
+# target to build an object file
+work_manager.cpp.o:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/work_manager.cpp.o
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/work_manager.cpp.o
+.PHONY : work_manager.cpp.o
+
+work_manager.i: work_manager.cpp.i
+.PHONY : work_manager.i
+
+# target to preprocess a source file
+work_manager.cpp.i:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/work_manager.cpp.i
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/work_manager.cpp.i
+.PHONY : work_manager.cpp.i
+
+work_manager.s: work_manager.cpp.s
+.PHONY : work_manager.s
+
+# target to generate assembly for a file
+work_manager.cpp.s:
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/work_manager.cpp.s
+	cd /home/gl/faq_server/build && $(MAKE) -f common/CMakeFiles/commonso.dir/build.make common/CMakeFiles/commonso.dir/work_manager.cpp.s
+.PHONY : work_manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -544,6 +625,12 @@ help:
 	@echo "... actions_mananger.o"
 	@echo "... actions_mananger.i"
 	@echo "... actions_mananger.s"
+	@echo "... data_worker.o"
+	@echo "... data_worker.i"
+	@echo "... data_worker.s"
+	@echo "... db_connection_pool.o"
+	@echo "... db_connection_pool.i"
+	@echo "... db_connection_pool.s"
 	@echo "... game_packet.o"
 	@echo "... game_packet.i"
 	@echo "... game_packet.s"
@@ -586,6 +673,9 @@ help:
 	@echo "... tinyxmlparser.o"
 	@echo "... tinyxmlparser.i"
 	@echo "... tinyxmlparser.s"
+	@echo "... work_manager.o"
+	@echo "... work_manager.i"
+	@echo "... work_manager.s"
 .PHONY : help
 
 

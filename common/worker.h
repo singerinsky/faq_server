@@ -11,7 +11,6 @@ class worker:public thread
     public:
         worker()
         {
-            _list_locker.init(); 
             _work_flag = true;
         }
         virtual ~worker()
@@ -38,29 +37,37 @@ class worker:public thread
 
         void add_job(T* event)
         {
-            _list_locker.lock(); 
+            thread_lock();
             _job_list.push(event);  
-            _list_locker.unlock();
+            thread_unlock();
             thread_suspend(); 
+            LOG(INFO)<<"........................21342134";
         }
 
         T* pop_job()
         {
             T* event = NULL;
-            _list_locker.lock();
+            thread_lock();
+            LOG(INFO)<<"log info ....1";
             if(_job_list.size() == 0)
             {
-                _list_locker.unlock(); 
+                LOG(INFO)<<"log info ....2";
+                thread_unlock();
+                LOG(INFO)<<"log info ....3";
                 thread_resume(NULL);
-                _list_locker.lock();
+                LOG(INFO)<<"log info ....4";
+                thread_lock();
             }
 
+            LOG(INFO)<<"log info ....5";
             if(_job_list.size() >0)
             {
+                LOG(INFO)<<"log info ....6";
                 event = _job_list.front();
                 _job_list.pop();
             }
-            _list_locker.unlock();
+            LOG(INFO)<<"log info ....7";
+            thread_unlock();
             return event;
         }
 
@@ -71,14 +78,13 @@ class worker:public thread
 
         size_t job_in_list()
         {
-            ScopeLock<MutexLock> lock(_list_locker);   
+            thread_lock();
             return _job_list.size();
         }
 
     private:
         std::queue<T*> _job_list;
         volatile bool  _work_flag;
-        MutexLock      _list_locker;
 };
 
 

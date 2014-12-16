@@ -5,6 +5,8 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/common/actions_mananger.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/actions_mananger.cpp.o"
+  "/home/gl/faq_server/common/data_worker.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/data_worker.cpp.o"
+  "/home/gl/faq_server/common/db_connection_pool.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/db_connection_pool.cpp.o"
   "/home/gl/faq_server/common/game_packet.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/game_packet.cpp.o"
   "/home/gl/faq_server/common/job_factory.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/job_factory.cpp.o"
   "/home/gl/faq_server/common/md5.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/md5.cpp.o"
@@ -19,6 +21,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/gl/faq_server/common/tinyxml.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/tinyxml.cpp.o"
   "/home/gl/faq_server/common/tinyxmlerror.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/tinyxmlerror.cpp.o"
   "/home/gl/faq_server/common/tinyxmlparser.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/tinyxmlparser.cpp.o"
+  "/home/gl/faq_server/common/work_manager.cpp" "/home/gl/faq_server/build/common/CMakeFiles/common.dir/work_manager.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

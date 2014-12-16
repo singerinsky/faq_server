@@ -160,30 +160,6 @@ action_heart_message.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/action_heart_message.cpp.s
 .PHONY : action_heart_message.cpp.s
 
-data_worker.o: data_worker.cpp.o
-.PHONY : data_worker.o
-
-# target to build an object file
-data_worker.cpp.o:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/data_worker.cpp.o
-.PHONY : data_worker.cpp.o
-
-data_worker.i: data_worker.cpp.i
-.PHONY : data_worker.i
-
-# target to preprocess a source file
-data_worker.cpp.i:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/data_worker.cpp.i
-.PHONY : data_worker.cpp.i
-
-data_worker.s: data_worker.cpp.s
-.PHONY : data_worker.s
-
-# target to generate assembly for a file
-data_worker.cpp.s:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/data_worker.cpp.s
-.PHONY : data_worker.cpp.s
-
 db_application.o: db_application.cpp.o
 .PHONY : db_application.o
 
@@ -232,30 +208,6 @@ db_client.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/db_client.cpp.s
 .PHONY : db_client.cpp.s
 
-db_connection_pool.o: db_connection_pool.cpp.o
-.PHONY : db_connection_pool.o
-
-# target to build an object file
-db_connection_pool.cpp.o:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/db_connection_pool.cpp.o
-.PHONY : db_connection_pool.cpp.o
-
-db_connection_pool.i: db_connection_pool.cpp.i
-.PHONY : db_connection_pool.i
-
-# target to preprocess a source file
-db_connection_pool.cpp.i:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/db_connection_pool.cpp.i
-.PHONY : db_connection_pool.cpp.i
-
-db_connection_pool.s: db_connection_pool.cpp.s
-.PHONY : db_connection_pool.s
-
-# target to generate assembly for a file
-db_connection_pool.cpp.s:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/db_connection_pool.cpp.s
-.PHONY : db_connection_pool.cpp.s
-
 db_service.o: db_service.cpp.o
 .PHONY : db_service.o
 
@@ -280,30 +232,6 @@ db_service.cpp.s:
 	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/db_service.cpp.s
 .PHONY : db_service.cpp.s
 
-work_manager.o: work_manager.cpp.o
-.PHONY : work_manager.o
-
-# target to build an object file
-work_manager.cpp.o:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/work_manager.cpp.o
-.PHONY : work_manager.cpp.o
-
-work_manager.i: work_manager.cpp.i
-.PHONY : work_manager.i
-
-# target to preprocess a source file
-work_manager.cpp.i:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/work_manager.cpp.i
-.PHONY : work_manager.cpp.i
-
-work_manager.s: work_manager.cpp.s
-.PHONY : work_manager.s
-
-# target to generate assembly for a file
-work_manager.cpp.s:
-	cd /home/gl/faq_server/build && $(MAKE) -f db_server/CMakeFiles/db_server.dir/build.make db_server/CMakeFiles/db_server.dir/work_manager.cpp.s
-.PHONY : work_manager.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -319,24 +247,15 @@ help:
 	@echo "... action_heart_message.o"
 	@echo "... action_heart_message.i"
 	@echo "... action_heart_message.s"
-	@echo "... data_worker.o"
-	@echo "... data_worker.i"
-	@echo "... data_worker.s"
 	@echo "... db_application.o"
 	@echo "... db_application.i"
 	@echo "... db_application.s"
 	@echo "... db_client.o"
 	@echo "... db_client.i"
 	@echo "... db_client.s"
-	@echo "... db_connection_pool.o"
-	@echo "... db_connection_pool.i"
-	@echo "... db_connection_pool.s"
 	@echo "... db_service.o"
 	@echo "... db_service.i"
 	@echo "... db_service.s"
-	@echo "... work_manager.o"
-	@echo "... work_manager.i"
-	@echo "... work_manager.s"
 .PHONY : help
 
 
