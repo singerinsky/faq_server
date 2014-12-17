@@ -41,32 +41,24 @@ class worker:public thread
             _job_list.push(event);  
             thread_unlock();
             thread_suspend(); 
-            LOG(INFO)<<"........................21342134";
         }
 
         T* pop_job()
         {
             T* event = NULL;
             thread_lock();
-            LOG(INFO)<<"log info ....1";
             if(_job_list.size() == 0)
             {
-                LOG(INFO)<<"log info ....2";
                 thread_unlock();
-                LOG(INFO)<<"log info ....3";
                 thread_resume(NULL);
-                LOG(INFO)<<"log info ....4";
                 thread_lock();
             }
 
-            LOG(INFO)<<"log info ....5";
             if(_job_list.size() >0)
             {
-                LOG(INFO)<<"log info ....6";
                 event = _job_list.front();
                 _job_list.pop();
             }
-            LOG(INFO)<<"log info ....7";
             thread_unlock();
             return event;
         }

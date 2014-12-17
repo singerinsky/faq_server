@@ -59,9 +59,11 @@ THREAD_HANDLE thread::get_current_handle()
 
 void thread::thread_resume(timespec *time_wait){
     pthread_mutex_lock(&m_mutex);
-    if(time_wait == NULL){
+    if(time_wait == NULL)
+    {
         pthread_cond_wait(&m_cond,&m_mutex);
-    }else
+    }
+    else
     {
         pthread_cond_timedwait(&m_cond,&m_mutex,time_wait);
     }

@@ -19,7 +19,8 @@ class LogicPlayer:public Fighter
 {
     public:
         LogicPlayer(){
-
+            _map = NULL;
+            _client = NULL;
         };
         virtual ~LogicPlayer(){
 
