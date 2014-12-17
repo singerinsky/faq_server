@@ -13,7 +13,7 @@ NpcManager* Singleton<NpcManager>::_instance = 0;
 
 void NpcObject::Init(int npc_id)
 {
-    _attr[PLY_ATTR_END] = {0};
+    memset(_attr,0,sizeof(_attr));
     _alive = true;
     NpcData* data = NpcDataProto->GetNpcData(npc_id);
     _hp = data->npc_hp();
@@ -31,7 +31,6 @@ bool NpcObject::enter_map(map_object* p_map,Position& pos)
     _map_in->map2cell(_pos,_cell_pos);
     _map_in->fill_all_player_cells(_cell_pos,&_player_round_set);
     _map_in->get_npc_incell(_cell_pos)->insert(this);
-    //show_npc_around();
     return true;
 }
 

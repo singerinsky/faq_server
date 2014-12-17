@@ -253,6 +253,8 @@ map
 -
 list
 -
+set
+-
 glog/logging.h
 -
 ../include/tinyxml.h
@@ -527,6 +529,24 @@ data_worker.h
 /home/gl/faq_server/db_server/data_worker.h
 work_manager.h
 /home/gl/faq_server/db_server/work_manager.h
+
+/home/gl/faq_server/db_server/action_heart_message.cpp
+packet.h
+/home/gl/faq_server/db_server/packet.h
+game_packet.h
+/home/gl/faq_server/db_server/game_packet.h
+actions_mananger.h
+/home/gl/faq_server/db_server/actions_mananger.h
+template_message.h
+/home/gl/faq_server/db_server/template_message.h
+message.pb.h
+/home/gl/faq_server/db_server/message.pb.h
+message_define.h
+/home/gl/faq_server/db_server/message_define.h
+head.h
+/home/gl/faq_server/db_server/head.h
+socket.h
+/home/gl/faq_server/db_server/socket.h
 
 /home/gl/faq_server/db_server/db_application.cpp
 db_application.h

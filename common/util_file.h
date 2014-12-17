@@ -15,6 +15,7 @@ void get_file_in_dir(const char* dir,vector<string>& all_file)
         {
             all_file.push_back(ent->d_name);    
         }
+
     }
     closedir(pdir);
 }

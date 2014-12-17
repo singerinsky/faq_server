@@ -18,11 +18,13 @@ class map_object;
 class LogicPlayer:public Fighter
 {
     public:
-        LogicPlayer(){
+        LogicPlayer()
+        {
             _map = NULL;
             _client = NULL;
         };
-        virtual ~LogicPlayer(){
+        virtual ~LogicPlayer()
+        {
 
         };
 
@@ -88,9 +90,8 @@ class LogicPlayer:public Fighter
         void SendNpcEnterViewNotf(npc_set_vec_t&);
         void CopyTo(PlayerInfo& info);
         void FillPlayerInfo(PlayerInfo* info);
-
         void LeaveMap();
-        int SendPacket(packet* p)
+        int  SendPacket(packet* p)
         {
             if(_client)
             {
@@ -102,14 +103,14 @@ class LogicPlayer:public Fighter
     private:
         gate_client* _client;
     protected:
-        int  _level;
-        int  _exp;
-        string _name;
+        int         _level;
+        int         _exp;
+        std::string _name;
 
         map_object* _map;
-        Position _pos;
-        Position _cell_pos;
-        tb_user _user_info;
+        Position    _pos;
+        Position    _cell_pos;
+        tb_user     _user_info;
         template_timer<LogicPlayer,&LogicPlayer::OnSaveTime>    _save_timer;
 
         player_set_vec_t    _player_round_set;
@@ -118,4 +119,3 @@ class LogicPlayer:public Fighter
 
 
 #endif
-

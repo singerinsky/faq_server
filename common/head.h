@@ -32,6 +32,7 @@
 #include <vector>
 #include <map>
 #include <list>
+#include <set>
 //third part
 #include <glog/logging.h>
 #include "../include/tinyxml.h"
