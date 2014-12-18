@@ -52,3 +52,7 @@ int main(int argc,char** argv)
     return 0;
 }
 
+void gate_application::process_signal(int signal)
+{
+    LOG(INFO)<<"signal receive signal "<<signal;
+}

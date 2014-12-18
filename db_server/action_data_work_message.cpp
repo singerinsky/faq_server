@@ -9,16 +9,16 @@
 #include "data_worker.h"
 #include "work_manager.h"
 
-class data_work_action: public template_message<DBCommonReq,DBCommonRep,MSG_DB_COMMON>  
+class data_work_action: public template_message<DBCommonReq,DBCommonRep,MSG_DB_COMMON,db_client>  
 {
     public:
-        int process_message(DBCommonReq* request,socket_client* client)
+        int process_message(DBCommonReq* request,db_client* client)
         {
             count++;
             db_job* job = new db_job();
             job->_sql_str = request->operate_string();
             //LOG(INFO)<<"sql "<<job->_sql_str;
-            job->_selector = (data_object*)client;
+            job->_selector = client;
             job->_operate_type = request->operate_type(); 
             job->_seq = 1;
             Singleton<work_manager>::GetInstance()->add_work_job(job);

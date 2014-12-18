@@ -7,6 +7,8 @@
 //class service;
 void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struct sockaddr* sa,int socklen,void* user_data);
 
+void common_sign_cb(evutil_socket_t fd,short event,void* arg);
+
 class ReactorCore:public Singleton<ReactorCore>
 {
     public:

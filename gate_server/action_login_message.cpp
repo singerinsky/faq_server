@@ -12,10 +12,10 @@
 #include "sql_define.h"
 #include "client_service.h"
 
-class login_message_action: public template_message<ClientLoginRequest,ClientLoginResponse,MSG_CLIENT_LOGIN>
+class login_message_action: public template_message<ClientLoginRequest,ClientLoginResponse,MSG_CLIENT_LOGIN,gate_client>
 {
     public:
-        int process_message(ClientLoginRequest *request,socket_client* client)
+        int process_message(ClientLoginRequest *request,gate_client* client)
         {
             LOG(INFO)<<"role "<< request->role_id()<<" required login";
             gate_client* user_client = Singleton<client_manager>::GetInstance()->get_session(request->role_id());

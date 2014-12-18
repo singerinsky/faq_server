@@ -17,14 +17,12 @@ class Singleton
             }
             return _instance;
         }
-
     private:
         static T* _instance;
 };
 
 template<class T> 
 T* Singleton<T>::_instance = 0;
-
 #endif
 
 

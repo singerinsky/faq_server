@@ -6,11 +6,12 @@
 #include "message_define.h"
 #include "head.h"
 #include "socket.h"
+#include "gate_client.h"
 
-class heart_message_action: public template_message<ClientHeartBeatRequest,ClientHeartBeatResponse,MSG_HEART_BEAT>  
+class heart_message_action: public template_message<ClientHeartBeatRequest,ClientHeartBeatResponse,MSG_HEART_BEAT,gate_client>  
 {
     public:
-        int process_message(ClientHeartBeatRequest *request,socket_client* client)
+        int process_message(ClientHeartBeatRequest *request,gate_client* client)
         {
 //            LOG(INFO)<<request->client_time();
             rsp_message_packet response;

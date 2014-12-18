@@ -21,7 +21,7 @@ typedef cs_packet<MSG_HEART_BEAT_REQ,ClientHeartBeatRequest> cs_packet_heart_req
 typedef cs_packet<MSG_HEART_BEAT_REP,ClientHeartBeatResponse> cs_packet_heart_response;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-//GATE TO CLIENT MESSAGE DEFINE FOR ACTION UN DEFINE
+//GATE TO CLIENT NOTF MESSAGE DEFINE FOR ACTION UNDEFINE
 enum
 {
     GC_MSG_INIT_CLIENT_NOTF = MSG_INIT_CLIENT << 2|MSG_NOTIFY,

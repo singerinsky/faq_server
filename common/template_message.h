@@ -18,7 +18,7 @@ class action_handler
 
 };
 
-template<class RequestBody,class ResponseBoby,int MessageCode>
+template<class RequestBody,class ResponseBoby,int MessageCode,class TClient>
 class template_message:public action_handler
 {
     public:
@@ -43,10 +43,10 @@ class template_message:public action_handler
             if(t.decode(info->data,info->size) != info->size)
                 return -1;
             VLOG(1)<<"process message "<<(&(t.body))->descriptor()->name();
-            process_message(&(t.body),client);
+            process_message(&(t.body),(TClient*)client);
             return 1;
         }
-        virtual int process_message(RequestBody *body,socket_client*) = 0;
+        virtual int process_message(RequestBody *body,TClient*) = 0;
 
 };
 

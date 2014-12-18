@@ -2,7 +2,8 @@
 #define _STATE_H_
 #include "head.h"
 
-enum{
+enum
+{
     NPC_STATE_WAIT = 0,
     NPC_CHASE_PLAYER = 1,
 };
