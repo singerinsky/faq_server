@@ -8,8 +8,8 @@
 #include "game_prototype.h"
 
 
-template<> 
-NpcManager* Singleton<NpcManager>::_instance = 0;
+//template<> 
+//NpcManager* Singleton<NpcManager>::_instance = 0;
 
 void NpcObject::Init(int npc_id)
 {

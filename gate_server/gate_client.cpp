@@ -12,7 +12,7 @@
 gate_client::~gate_client()
 {
 //    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
-};
+}
 
 int gate_client::process_msg(packet_info* info)
 {

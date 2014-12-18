@@ -2,8 +2,8 @@
 #include "session_manager.h"
 
 //typedef session_manager<int,gate_client> client_manager;
-template<> 
-client_manager* Singleton<client_manager >::_instance = 0;
+//template<> 
+//client_manager* Singleton<client_manager >::_instance = 0;
 
 
 int client_service::on_accept(struct bufferevent* event,evutil_socket_t fd,struct sockaddr_in* sa)

@@ -6,8 +6,8 @@
 #include "npc_object.h"
 #include "packet.h"
 
-template<> 
-map_manager* Singleton<map_manager>::_instance = 0;
+//template<> 
+//map_manager* Singleton<map_manager>::_instance = 0;
 
 void visit_all_map_player(player_set_vec_t& t,MapPlayerVisitor* visitor)
 {

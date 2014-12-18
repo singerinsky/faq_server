@@ -1,8 +1,8 @@
 #include "game_prototype.h"
 #include "../common/head.h"
 
-template<> 
-GamePrototype* Singleton<GamePrototype>::_instance = 0;
+//template<> 
+//GamePrototype* Singleton<GamePrototype>::_instance = 0;
 #define stream_list_file "bin_list.xml"
 bool GamePrototype::Init()
 { 

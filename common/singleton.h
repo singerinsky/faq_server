@@ -1,10 +1,10 @@
 #ifndef _TEMPLATE_SINGLETON_H_
 #define _TEMPLATE_SINGLETON_H_
+
 #include <cstdlib>
 template<class T>
 class Singleton
 {
-
     protected:
         Singleton(){}
         ~Singleton(){}
@@ -18,10 +18,12 @@ class Singleton
             return _instance;
         }
 
-
     private:
         static T* _instance;
 };
+
+template<class T> 
+T* Singleton<T>::_instance = 0;
 
 #endif
 

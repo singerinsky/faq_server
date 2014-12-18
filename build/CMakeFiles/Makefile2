@@ -295,9 +295,9 @@ gate_server/preinstall:
 # Target rules for target gate_server/CMakeFiles/gate_server.dir
 
 # All Build rule for target.
+gate_server/CMakeFiles/gate_server.dir/all: prototype/CMakeFiles/prototype.dir/all
 gate_server/CMakeFiles/gate_server.dir/all: message/CMakeFiles/message_lib.dir/all
 gate_server/CMakeFiles/gate_server.dir/all: common/CMakeFiles/common.dir/all
-gate_server/CMakeFiles/gate_server.dir/all: prototype/CMakeFiles/prototype.dir/all
 	$(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/depend
 	$(MAKE) -f gate_server/CMakeFiles/gate_server.dir/build.make gate_server/CMakeFiles/gate_server.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/build/CMakeFiles  42 43 44 45 46 47 48 49 50 51 52 53 54 55

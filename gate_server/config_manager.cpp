@@ -5,20 +5,17 @@ ConfigManager::ConfigManager()
 {
     if(Init() == false)
     {
-        LOG(INFO)<"init config false!"; 
+        LOG(INFO)<<"init config false!"; 
     }
 }
 
 ConfigManager::~ConfigManager()
 {
 
-
 }
 
 bool ConfigManager::Init()
 {
-
-
     return true;
 }
 

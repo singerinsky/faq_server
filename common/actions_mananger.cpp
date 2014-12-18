@@ -2,8 +2,8 @@
 #include "head.h"
 #include "template_message.h"
 
-template<> 
-actions_mananger* Singleton<actions_mananger>::_instance = 0;
+//template<> 
+//actions_mananger* Singleton<actions_mananger>::_instance = 0;
 
 void actions_mananger::register_action(int action_id,action_handler* p_action)
 {

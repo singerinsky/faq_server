@@ -17,12 +17,13 @@ template<typename T,void (T::*callback)() = &T::on_timeout>
 class template_timer:public base_timer
 {
     public:
-        template_timer(T* owner = NULL):m_owner(owner){
+        template_timer(T* owner = NULL):m_owner(owner)
+        {
             m_ev = evtimer_new(Singleton<ReactorCore>::GetInstance()->GetEventBase(),common_timeout_call,(void*)this); 
-        
         }
 
-        ~template_timer(){
+        ~template_timer()
+        {
             if(m_ev != NULL)
             {
                 evtimer_del(m_ev);

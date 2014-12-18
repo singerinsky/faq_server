@@ -2,8 +2,8 @@
 #include "head.h"
 #include <algorithm>
 
-template<>
-work_manager* Singleton<work_manager>::_instance = 0;
+//template<>
+//work_manager* Singleton<work_manager>::_instance = 0;
 
 void    work_manager::init(int work_count)
 {
