@@ -1,9 +1,6 @@
 #include "db_connection_pool.h"
 #include "head.h"
 
-//template<> 
-//db_pool* Singleton<db_pool>::_instance = 0;
-
 #define DB_CONFIG "server.xml"
 
 bool db_pool::init_config()

@@ -2,9 +2,6 @@
 #include "head.h"
 #include "template_message.h"
 
-//template<> 
-//actions_mananger* Singleton<actions_mananger>::_instance = 0;
-
 void actions_mananger::register_action(int action_id,action_handler* p_action)
 {
     auto itr = _actions.find(action_id);

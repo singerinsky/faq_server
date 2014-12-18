@@ -8,9 +8,6 @@
 #include "game_prototype.h"
 
 
-//template<> 
-//NpcManager* Singleton<NpcManager>::_instance = 0;
-
 void NpcObject::Init(int npc_id)
 {
     memset(_attr,0,sizeof(_attr));
