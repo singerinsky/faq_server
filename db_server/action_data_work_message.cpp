@@ -8,6 +8,7 @@
 #include "head.h"
 #include "data_worker.h"
 #include "work_manager.h"
+#include "db_client.h"
 
 class data_work_action: public template_message<DBCommonReq,DBCommonRep,MSG_DB_COMMON,db_client>  
 {
