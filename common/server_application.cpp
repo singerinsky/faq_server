@@ -34,12 +34,9 @@ void server_appliaction::add_service(Service *pservice)
 void server_appliaction::init_signal_func()
 {
     _signal_event = evsignal_new(_reactor->GetEventBase(),SIGUSR1,common_sign_cb,(void*)this);
-    //_signal_event = event_new(_reactor->GetEventBase(),SIGUSR1,EV_SIGNAL|EV_PERSIST,common_sign_cb,this);
-    //event_assign(_signal_event,_reactor->GetEventBase(),SIGUSR1,EV_SIGNAL|EV_PERSIST,common_sign_cb,(void*)this);
     if(!_signal_event || event_add(_signal_event,NULL))
     {
         LOG(ERROR)<<"add signal call failed";
         assert(false);
     }
-    //event_add(_signal_event,NULL);
 }

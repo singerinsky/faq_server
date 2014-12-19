@@ -142,7 +142,7 @@ bool map_object::init_map_data(std::string data,int w,int h)
     std::vector<std::string> data_split;
     split(data,',',data_split);
 
-    if(data_split.size() != h*w)
+    if(data_split.size() != (size_t)h*w)
         return false;
 
     int index = 0;

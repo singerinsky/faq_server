@@ -27,10 +27,9 @@ void gate_client::on_error(bufferevent* ev)
     if( _player_info != NULL )
     {
         _player_info->OnLogout(); 
-        delete _player_info;
+        LogicManagerPtr->RemovePlayer(_role_id);
         _player_info = NULL;
     }
-    LogicManagerPtr->RemovePlayer(_role_id);
     Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 }
 

@@ -13,9 +13,11 @@ class GamePrototype:public Singleton<GamePrototype>
         {
             return &_npc_data_prototype; 
         }
+        void Reload();
     public:
         NpcDataPrototype _npc_data_prototype;        
 };
 
+#define GameDataProto Singleton<GamePrototype>::GetInstance()
 #define NpcDataProto  Singleton<GamePrototype>::GetInstance()->GetNpcDataPrototype()
 #endif

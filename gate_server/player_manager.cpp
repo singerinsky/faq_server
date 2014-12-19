@@ -1,4 +1,5 @@
 #include "player_manager.h"
+#include "logic_player.h"
 
 LogicPlayer* LogicPlayerManager::GetPlayer(int ply_id)
 {
@@ -18,6 +19,10 @@ void    LogicPlayerManager::AddPlayer(int ply_id,LogicPlayer* player)
 void    LogicPlayerManager::RemovePlayer(int ply_id)
 {
     auto itr = _player_map.find(ply_id);
-    _player_map.erase(itr);
+    if(itr != _player_map.end())
+    {
+        delete itr->second;
+        _player_map.erase(itr);
+    }
 }
 

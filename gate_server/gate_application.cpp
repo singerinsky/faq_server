@@ -58,5 +58,11 @@ void gate_application::process_signal(int signal)
     if(signal == (int)SIGUSR1)
     {
         LOG(INFO)<<"reload config from prototype"; 
+        GameDataProto->Reload();
     }
 }
+
+
+
+
+

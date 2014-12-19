@@ -34,3 +34,8 @@ bool GamePrototype::Init()
     LOG(INFO)<<"load game config!";
     return true;
 }
+
+void GamePrototype::Reload()
+{
+    LOG(INFO)<<"reload game prototype!";
+}
