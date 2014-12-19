@@ -25,7 +25,7 @@ void common_listener_cb(struct evconnlistener* listener,evutil_socket_t fd,struc
 void common_sign_cb(evutil_socket_t fd,short event,void* user_data)
 {
    server_appliaction* application = (server_appliaction*)user_data; 
-   application->process_signal(event);
+   application->process_signal(fd);
 }
 
 

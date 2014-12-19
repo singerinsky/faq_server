@@ -94,7 +94,6 @@ int socket_client::on_read(bufferevent* ev)
         delete info.data;
     }
 
-    //TODO断开链接
     if(msg_len < 0)
     {
         LOG(ERROR)<<"message error !"; 
@@ -104,15 +103,6 @@ int socket_client::on_read(bufferevent* ev)
 
     if(msg_len == 0)
         return 0;
-
-
-    /*
-       int n = 0;
-       while ((n = evbuffer_remove(input, buf, sizeof(buf))) > 0) {
-        //fwrite(buf, 1, n, stdout);
-        LOG(INFO)<<buf;
-    }
-    */
     return 1;
 }
 

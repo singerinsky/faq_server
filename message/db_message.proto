@@ -18,6 +18,7 @@ message DBUserItemList
     repeated DBUserItem item_list = 1;
 }
 
+//common data require message
 message DBCommonReq
 {
     required int32  seq = 1;
@@ -25,6 +26,7 @@ message DBCommonReq
     required string operate_string = 3;
 }
 
+//common data response message
 message DBCommonRep
 {
     required int32 ret = 1;

@@ -17,18 +17,18 @@ class gate_client: public socket_client
         //bufferevent* bev,int socket,sockaddr_in& addr
         gate_client(bufferevent* bev,evutil_socket_t socket,sockaddr_in* addr):socket_client(bev,socket,addr)
         {
+            _login_status = UN_LOGIN;
             init();
             init_cb();
-            _login_status = UN_LOGIN;
         }
         virtual ~gate_client();
-        void init();
-        void init_timer();
+        void    init();
+        void    init_timer();
 
     public:
-        int  process_msg(packet_info* info);
-        void on_error(bufferevent* ev);
-        void on_timeout();
+        int     process_msg(packet_info* info);
+        void    on_error(bufferevent* ev);
+        void    on_timeout();
         const LogicPlayer* get_player_info() const
         {
             return _player_info; 

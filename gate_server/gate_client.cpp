@@ -23,8 +23,8 @@ int gate_client::process_msg(packet_info* info)
 
 void gate_client::on_error(bufferevent* ev)
 {
-    LOG(INFO)<<"gate client disconnection "<<_role_id;
-    if(_player_info != NULL)
+    LOG(INFO)<<"gate client "<<_role_id<<" disconnection ";
+    if( _player_info != NULL )
     {
         _player_info->OnLogout(); 
         delete _player_info;

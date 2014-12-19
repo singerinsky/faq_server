@@ -16,7 +16,9 @@ class db_client: public socket_client,public data_object
             LOG(INFO)<<"new db client connect!"; 
             socket_client::init_cb();
         }
-        virtual ~db_client(){
+       
+        virtual ~db_client()
+        {
         };
         void init(int db_work);
         void init_timer();

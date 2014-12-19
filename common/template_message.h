@@ -22,13 +22,13 @@ template<class RequestBody,class ResponseBoby,int MessageCode,class TClient>
 class template_message:public action_handler
 {
     public:
-        //typedef RequestBody typeT;
+        //typedef RequestBody type T;
         enum
         {
             REQ_ID = MessageCode<<2|MSG_REQUEST_MASK,
             RSP_ID = MessageCode<<2|MSG_RESPONSE_MASK,
         };
-        typedef cs_packet<REQ_ID,RequestBody>    req_message_packet;
+        typedef cs_packet<REQ_ID,RequestBody>     req_message_packet;
         typedef cs_packet<RSP_ID,ResponseBoby>    rsp_message_packet;
     public:
         template_message()
@@ -38,16 +38,15 @@ class template_message:public action_handler
         
         int do_message_action(packet_info* info,socket_client* client)
         {
-            //TODO decode from packet_info
             req_message_packet t; 
             if(t.decode(info->data,info->size) != info->size)
                 return -1;
-            VLOG(1)<<"process message "<<(&(t.body))->descriptor()->name();
+            VLOG(2)<<"process message "<<(&(t.body))->descriptor()->name();
             process_message(&(t.body),(TClient*)client);
             return 1;
         }
-        virtual int process_message(RequestBody *body,TClient*) = 0;
 
+        virtual int process_message(RequestBody *body,TClient*) = 0;
 };
 
 #endif

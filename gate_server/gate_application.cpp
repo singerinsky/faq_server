@@ -55,4 +55,8 @@ int main(int argc,char** argv)
 void gate_application::process_signal(int signal)
 {
     LOG(INFO)<<"signal receive signal "<<signal;
+    if(signal == (int)SIGUSR1)
+    {
+        LOG(INFO)<<"reload config from prototype"; 
+    }
 }

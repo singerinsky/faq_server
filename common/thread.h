@@ -45,8 +45,6 @@ private:
 public:
 	pthread_mutex_t m_mutex;
 	pthread_cond_t m_cond;
-
-
 };
 
 
