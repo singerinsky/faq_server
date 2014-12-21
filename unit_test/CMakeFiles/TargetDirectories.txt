@@ -1,4 +1,0 @@
-/home/gl/faq_server/unit_test/common/CMakeFiles/common.dir
-/home/gl/faq_server/unit_test/db_server/CMakeFiles/db_server.dir
-/home/gl/faq_server/unit_test/gate_server/CMakeFiles/gate_server.dir
-/home/gl/faq_server/unit_test/message/CMakeFiles/message_lib.dir

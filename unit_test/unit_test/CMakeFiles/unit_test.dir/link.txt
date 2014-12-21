@@ -1,1 +1,0 @@
-/usr/bin/c++     -std=c++11 -O0 -Wall -g -D_GNU_SOURCE -fPIC    CMakeFiles/unit_test.dir/main.cpp.o  -o ../../game_exe/unit_test  -L../game_lib  -L/usr/local/lib -rdynamic -lgflags -lglog ../../game_lib/libcommon.a -levent -lrt ../game_lib/libmessage_lib.a -lprotobuf -lmysqlclient -Wl,-rpath,../game_lib:/usr/local/lib 
