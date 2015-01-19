@@ -4,6 +4,7 @@
 #include "timer.h"
 #include "mysql_connection.h"
 #include "data_worker.h"
+#include "work_manager.h"
 
 class db_job;
 class db_client: public socket_client,public data_object
@@ -15,10 +16,12 @@ class db_client: public socket_client,public data_object
         {
             LOG(INFO)<<"new db client connect!"; 
             socket_client::init_cb();
+            Singleton<work_manager>::GetInstance()->register_client(this);
         }
        
         virtual ~db_client()
         {
+            Singleton<work_manager>::GetInstance()->remove_client(this);
         };
         void init(int db_work);
         void init_timer();

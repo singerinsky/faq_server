@@ -19,7 +19,7 @@ class work_manager:public Singleton<work_manager>
 
     private:
         std::vector<data_worker*>   _data_vec;
-        std::vector<data_object*>     _db_clients;
+        std::vector<data_object*>     _db_objects;
         MutexLock                   _lock;
 };
 

@@ -3,6 +3,8 @@
 #include "work_manager.h"
 #include "../message/message.pb.h"
 
+int data_object::_next_id = 1;
+
 data_worker::~data_worker()
 {
     Singleton<db_pool>::GetInstance()->push(_db_conn);    

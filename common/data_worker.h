@@ -3,29 +3,53 @@
 #include "worker.h"
 #include "mysql_connection.h"
 
-class data_object;
+class db_job;
+class data_object
+{
+    public:
+        data_object()
+        {
+            _seq_id = get_next_id();
+        }
+
+        virtual ~data_object()
+        {
+            _seq_id = -1;        
+        }
+
+        virtual void do_data_call(MysqlResult& result,db_job* job) = 0;
+        int     get_seq_id()
+        {
+            return _seq_id;
+        }
+
+        static int get_next_id()
+        {
+            return ++_next_id; 
+        }
+
+    private:
+        int     _seq_id;
+        static  int _next_id;
+};
+
+
 class db_job
 {
     public:
-        int         _seq;
+        int         _seq_id;
         int         _operate_type;
         std::string _sql_str;
         data_object*  _selector;
 
-        db_job()
-        {
-            _seq = -1; 
-            _operate_type = -1;
-            _selector = NULL;
-            _sql_str = "";
-        }
-};
-
-class data_object
-{
     public:
-        virtual ~data_object(){}
-        virtual void do_data_call(MysqlResult& result,db_job* job) = 0;
+        db_job(data_object* selector,std::string sql_str,int operate_type)
+        {
+            _operate_type = operate_type;
+            _selector = selector;
+            _sql_str = sql_str;
+            _seq_id = selector->get_seq_id(); 
+        }
 };
 
 class data_worker: public worker<db_job>

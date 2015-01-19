@@ -75,7 +75,7 @@ void db_client::on_load_user_data(MysqlResult& result,db_job* job)
         MysqlResultRow row = result.get_next_row(); 
         cs_packet_db_common_response response ;
         response.body.set_ret(0);
-        response.body.set_seq(job->_seq);
+        response.body.set_seq(job->_seq_id);
         response.body.set_operate_type(job->_operate_type);
         db_tb_user * user_info = response.body.mutable_user_info();
         user_info->set_id(row.get_int(0));
@@ -100,3 +100,5 @@ void db_client::on_load_item_list_data(MysqlResult& result,db_job* job)
         LOG(INFO)<<row.get_int(0)<<":"<<row.get_int(1); 
     }
 }
+
+

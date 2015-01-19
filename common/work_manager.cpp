@@ -19,44 +19,44 @@ void    work_manager::init(int work_count)
 void work_manager::add_work_job(db_job* job)
 {
     ScopeLock<MutexLock> lock(_lock);
-    auto itr = std::find(_db_clients.begin(),_db_clients.end(), job->_selector);
-    if(itr == _db_clients.end())
+    auto itr = std::find(_db_objects.begin(),_db_objects.end(), job->_selector);
+    if(itr == _db_objects.end())
     {
-        _db_clients.push_back(job->_selector); 
+        return;
     }
    
-    int index = job->_seq%_data_vec.size();
+    int index = job->_seq_id%_data_vec.size();
     _data_vec[index]->add_job(job);
-    
 }
 
 void    work_manager::register_client(data_object* client)
 {
     ScopeLock<MutexLock> lock(_lock);
-    auto itr = std::find(_db_clients.begin(),_db_clients.end(), client);
-    if(itr == _db_clients.end())
+    auto itr = std::find(_db_objects.begin(),_db_objects.end(), client);
+    if(itr == _db_objects.end())
     {
-        _db_clients.push_back(client); 
+        _db_objects.push_back(client); 
     }
 }
 
 void    work_manager::remove_client(data_object* client)
 {
     ScopeLock<MutexLock> lock(_lock);
-    auto itr = std::find(_db_clients.begin(),_db_clients.end(), client);
-    if(itr != _db_clients.end())
+    auto itr = std::find(_db_objects.begin(),_db_objects.end(), client);
+    if(itr != _db_objects.end())
     {
-        _db_clients.erase(itr); 
+        _db_objects.erase(itr); 
     }
 }
 
 bool    work_manager::check_client(db_job* job)
 {
     if((job== NULL) || (job->_selector == NULL))
+    {
         return false;
-    ScopeLock<MutexLock> lock(_lock);
-    auto itr = std::find(_db_clients.begin(),_db_clients.end(), job->_selector);
-    if(itr != _db_clients.end())
+    }
+    auto itr = std::find(_db_objects.begin(),_db_objects.end(), job->_selector);
+    if(itr != _db_objects.end())
     {
         return true;
     }
@@ -66,6 +66,7 @@ bool    work_manager::check_client(db_job* job)
 
 void    work_manager::process_query(MysqlResult& result,db_job* job)
 {
+    ScopeLock<MutexLock> lock(_lock);
     if(check_client(job))
     {
         job->_selector->do_data_call(result,job); 
