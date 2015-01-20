@@ -54,6 +54,7 @@ class socket_client
         int on_write(bufferevent* bev);
 
     public:
+        void disconnection();
         void on_disconnection(bufferevent* bev)
         {
             on_error(bev); 

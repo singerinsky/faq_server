@@ -10,13 +10,22 @@ class server_appliaction
         server_appliaction(std::string name);
         virtual ~server_appliaction();
         bool start_service();
-        virtual bool init()=0;
-        virtual void process_signal(int signal) = 0;
+        void stop_listener_service();
+        //subclass implement this class ,create it's own method
+        virtual bool init() =0;
+        //
+        void process_signal(int signal);
+    protected:
+        //subclass can extend this class ,and create these function
+        virtual void process_signal_usr1();
+        virtual void process_signal_usr2();
+        
+    public:
         void add_service(Service* pservice);
         void init_signal_func();
     private:
         ReactorCore* _reactor;
-        event*       _signal_event;
         std::string _service_name;
+        bool        _work_flag;
 };
 #endif

@@ -26,15 +26,15 @@ DEFINE_bool(daemon,false,"if start not daemon");
 int main(int argc,char** argv)
 {
     signal(SIGPIPE, SIG_IGN);
-//    test* te = new test(); 
-//    te->do_message_action();
- 	google::ParseCommandLineFlags(&argc,&argv,true);		
-	google::InitGoogleLogging(argv[0]);
-	if(FLAGS_daemon){
-		if(init_daemon() == -1){
-			VLOG(0)<<"ERROR OF DAEMON";
-		}
-	}
+    //    test* te = new test(); 
+    //    te->do_message_action();
+    google::ParseCommandLineFlags(&argc,&argv,true);		
+    google::InitGoogleLogging(argv[0]);
+    if(FLAGS_daemon){
+        if(init_daemon() == -1){
+            VLOG(0)<<"ERROR OF DAEMON";
+        }
+    }
     FLAGS_logtostderr = !FLAGS_daemon;
 
     gate_application app("gate");
@@ -52,16 +52,17 @@ int main(int argc,char** argv)
     return 0;
 }
 
-void gate_application::process_signal(int signal)
+void gate_application::process_signal_usr1()
 {
-    LOG(INFO)<<"signal receive signal "<<signal;
-    if(signal == (int)SIGUSR1)
-    {
-        LOG(INFO)<<"reload config from prototype"; 
-        GameDataProto->Reload();
-    }
+    LOG(INFO)<<"signal receive signal usr1,reload game config";
+    GameDataProto->Reload();
 }
 
+void gate_application::process_signal_usr2()
+{
+    LOG(INFO)<<"signal receive signal usr2 ,reload game config";
+    GameDataProto->Reload();
+}
 
 
 

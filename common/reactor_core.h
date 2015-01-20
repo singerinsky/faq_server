@@ -21,11 +21,11 @@ class ReactorCore:public Singleton<ReactorCore>
         void        RemoveEvent(){}
         void        Start();
         bufferevent* GetNewSocketEvent();
+        void        StopAllListener();
 
     private:
         event_base* _base;
         std::vector<evconnlistener*> _all_listener; 
-
 };
 
 #endif

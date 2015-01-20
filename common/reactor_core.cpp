@@ -74,3 +74,14 @@ bufferevent* ReactorCore::GetNewSocketEvent()
     }
     return bev;
 }
+
+void ReactorCore::StopAllListener()
+{
+    for(auto& itr :_all_listener)
+    {
+        LOG(INFO)<<"stop listener.....";
+        evconnlistener_disable(itr); 
+    }
+}
+
+

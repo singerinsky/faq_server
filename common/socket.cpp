@@ -9,7 +9,6 @@ socket_client::~socket_client()
 {
     if(_bev != NULL)
         bufferevent_free(_bev);
-
 }
 
 int socket_client::check_packet_info(packet_info* packet,struct evbuffer* read_buffer)
@@ -159,4 +158,10 @@ void common_write_cb(struct bufferevent* ev,void *user_data)
 void socket_client::re_connect()
 {
     connect_to(_ip.c_str(),_port);
+}
+
+void socket_client::disconnection()
+{
+    on_error(_bev); 
+    _is_online = false;
 }

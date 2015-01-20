@@ -11,7 +11,6 @@ class client_service:public Service
         client_service(const char* ip,int port):Service(ip,port)
     {
 
-
     }
         ~client_service(){};
 

@@ -13,7 +13,9 @@ class gate_application: public server_appliaction
         {}
         ~gate_application();
         virtual bool init();
-        virtual void process_signal(int signal);
+    protected:
+        virtual void process_signal_usr1();
+        virtual void process_signal_usr2();
     private:
         client_service* client_service_;
     public:

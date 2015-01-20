@@ -14,7 +14,9 @@ class Service
         Service(const char* ip,int port):_ip(ip),_port(port)
         {
         }
-        virtual ~Service(){}
+        virtual ~Service()
+        {
+        }
         virtual int on_accept(struct bufferevent* event,evutil_socket_t fd,struct sockaddr_in* sa) = 0;
         string  get_service_ip()
         {
@@ -26,7 +28,7 @@ class Service
             return _port; 
         }
 
-    private:
+   private:
         std::string _ip;
         int         _port;
 };
