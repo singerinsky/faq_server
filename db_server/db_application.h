@@ -12,7 +12,6 @@ class db_application: public server_appliaction
         {}
         ~db_application();
         virtual bool init();
-        virtual void process_signal(int signal);
     private:
         db_service* db_service_;
 };

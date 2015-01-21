@@ -21,7 +21,7 @@ int gate_client::process_msg(packet_info* info)
     return 1;
 }
 
-void gate_client::on_error(bufferevent* ev)
+void gate_client::on_error()
 {
     LOG(INFO)<<"gate client "<<_role_id<<" disconnection ";
     if( _player_info != NULL )
@@ -50,5 +50,11 @@ void gate_client::init()
     // gate_application::db_conn_->build_query(DbOperateType::MSG_DB_GET_USER_INFO, LOAD_USER_INFO); 
     _player_info = new LogicPlayer();
     _player_info->BindPlayer(this);
+}
+
+void gate_client::kick_out()
+{
+    socket_client::disconnection();
+    on_error(); 
 }
 

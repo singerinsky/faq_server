@@ -1,7 +1,6 @@
 #include "db_service.h"
 #include "session_manager.h"
-
-typedef session_manager<int,db_client> db_manager;
+#include "db_client.h"
 
 int db_service::on_accept(struct bufferevent* event,evutil_socket_t fd,struct sockaddr_in* sa)
 {

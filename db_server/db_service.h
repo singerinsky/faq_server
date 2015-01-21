@@ -1,8 +1,10 @@
 #ifndef _CLIENT_SERVICE_H_
 #define _CLIENT_SERVICE_H_
 #include "service.h"
-#include "db_client.h"
+#include "session_manager.h"
 
+class db_client;
+typedef session_manager<int,db_client> db_manager;
 class db_service:public Service
 {
     public:

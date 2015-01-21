@@ -57,12 +57,12 @@ class socket_client
         void disconnection();
         void on_disconnection(bufferevent* bev)
         {
-            on_error(bev); 
+            on_error(); 
             _is_online = false;
         }
-        virtual void on_error(bufferevent* bev) = 0;
+        virtual void on_error()=0;
         virtual void on_connection(bufferevent* bev){}
-        virtual int process_msg(packet_info* msg_packet)=0;
+        virtual int  process_msg(packet_info* msg_packet)=0;
 
     private:
         bufferevent* _bev;

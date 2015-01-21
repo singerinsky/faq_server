@@ -31,6 +31,7 @@ void common_sign_cb(evutil_socket_t fd,short event,void* user_data)
 
 bool ReactorCore::init()
 {
+    SetEventCfg();
     _base = event_base_new(); 
     if(_base == NULL)
     {
@@ -84,4 +85,18 @@ void ReactorCore::StopAllListener()
     }
 }
 
+void ReactorCore::StartAllListener()
+{
+    for(auto& itr :_all_listener)
+    {
+        LOG(INFO)<<"stop listener.....";
+        evconnlistener_enable(itr); 
+    }
+}
+void ReactorCore::SetEventCfg()
+{
+#ifdef EVENT_DEBUG_MODE
+    event_enable_debug_mode();
+#endif
 
+}

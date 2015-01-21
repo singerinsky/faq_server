@@ -22,6 +22,8 @@ class ReactorCore:public Singleton<ReactorCore>
         void        Start();
         bufferevent* GetNewSocketEvent();
         void        StopAllListener();
+        void        SetEventCfg();
+        void        StartAllListener();
 
     private:
         event_base* _base;

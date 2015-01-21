@@ -15,7 +15,7 @@ class db_connection:public socket_client
         }
 
     public:
-        void on_error(bufferevent* bev);
+        void on_error();
         int process_msg(packet_info* msg_packet);
         void on_timeout();
         int  build_query(int seq,int operate_type,const char* sql_str,...);

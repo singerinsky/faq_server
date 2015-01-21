@@ -6,7 +6,7 @@
 #include "client_service.h"
 #include "player_manager.h"
 
-void db_connection::on_error(bufferevent* bev)
+void db_connection::on_error()
 {
     LOG(INFO)<<"lost connection!";
     _m_timer.set_owner(this);

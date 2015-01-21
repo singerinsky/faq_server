@@ -162,6 +162,9 @@ void socket_client::re_connect()
 
 void socket_client::disconnection()
 {
-    on_error(_bev); 
+    if(_bev)
+    {
+        bufferevent_disable(_bev,EV_READ | EV_WRITE);
+    }
     _is_online = false;
 }

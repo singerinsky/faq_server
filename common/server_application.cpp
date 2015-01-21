@@ -19,10 +19,10 @@ server_appliaction::~server_appliaction()
 
 bool server_appliaction::start_service()
 {
+    _work_flag = true;
     int rst = event_base_dispatch(_reactor->GetEventBase());
     if(rst == 0)
     {
-        _work_flag = true;
         return true; 
     }
     return false;
@@ -73,8 +73,15 @@ void server_appliaction::process_signal(int signal)
 
 void server_appliaction::process_signal_usr1()
 {
-    LOG(INFO)<<"recive signal usr1,stop service...";    
-    stop_listener_service();
+    if(_work_flag == true)
+    {
+        LOG(INFO)<<"recive signal usr1,stop service...";    
+        stop_listener_service();
+    }else
+    {
+        LOG(INFO)<<"recive signal usr1,start service...";    
+        start_listener_service();
+    }
 }
 
 void server_appliaction::process_signal_usr2()
@@ -85,4 +92,11 @@ void server_appliaction::process_signal_usr2()
 void server_appliaction::stop_listener_service()
 {
     _reactor->StopAllListener();
+    _work_flag =false;
+}
+
+void server_appliaction::start_listener_service()
+{
+    _reactor->StartAllListener();
+    _work_flag = true;
 }

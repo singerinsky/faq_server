@@ -11,6 +11,7 @@ class server_appliaction
         virtual ~server_appliaction();
         bool start_service();
         void stop_listener_service();
+        void start_listener_service();
         //subclass implement this class ,create it's own method
         virtual bool init() =0;
         //

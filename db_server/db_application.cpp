@@ -43,7 +43,4 @@ int main(int argc,char** argv)
     return 0;
 }
 
-void db_application::process_signal(int signal)
-{
-    LOG(INFO)<<"db appliaction "<<signal;
-}
+

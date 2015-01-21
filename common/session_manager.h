@@ -1,6 +1,8 @@
 #ifndef _SESSION_MANAGER_H_
 #define _SESSION_MANAGER_H_
 #include "singleton.h"
+#include <map>
+using namespace std;
 
 template<class SessionIdType,class SessionType>
 class session_manager:public Singleton<session_manager<SessionIdType,SessionType> >

@@ -21,14 +21,16 @@ class db_client: public socket_client,public data_object
        
         virtual ~db_client()
         {
-            Singleton<work_manager>::GetInstance()->remove_client(this);
         };
+
+        void release();
         void init(int db_work);
         void init_timer();
+        void kick_out();
 
     public:
         int process_msg(packet_info* info);
-        void on_error(bufferevent* ev);
+        void on_error();
         void on_timeout();
     protected:
         

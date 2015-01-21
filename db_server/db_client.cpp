@@ -5,6 +5,7 @@
 #include "mysql_connection.h"
 #include "db_message.pb.h"
 #include "message_define.h"
+#include "db_service.h"
 
 
 int db_client::process_msg(packet_info* info)
@@ -14,11 +15,10 @@ int db_client::process_msg(packet_info* info)
     return 1;
 }
 
-void db_client::on_error(bufferevent* ev)
+void db_client::on_error()
 {
     LOG(INFO)<<"db client error"<<get_socket_fd();
-    //Singleton<client_manager>::GetInstance()->remove_session(get_socket_fd());
-    //init_timer();    
+    release();
 }
 
 void db_client::init_timer()
@@ -31,7 +31,8 @@ void db_client::on_timeout()
 {
     //LOG(INFO)<<"without login virfy,kick out";
     //on_error(NULL);
-    //release(); 
+    LOG(INFO)<<"kick db_client....";
+    kick_out();
 }
 
 void db_client::do_data_call(MysqlResult& result,db_job* job)
@@ -101,4 +102,14 @@ void db_client::on_load_item_list_data(MysqlResult& result,db_job* job)
     }
 }
 
+void db_client::kick_out()
+{
+    socket_client::disconnection();
+    release();
+}
 
+void db_client::release()
+{
+    Singleton<work_manager>::GetInstance()->remove_client(this);
+    Singleton<db_manager>::GetInstance()->remove_session(get_socket_fd());
+}

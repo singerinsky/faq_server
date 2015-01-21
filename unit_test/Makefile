@@ -125,6 +125,32 @@ common/fast:
 .PHONY : common/fast
 
 #=============================================================================
+# Target rules for targets named prototype
+
+# Build rule for target.
+prototype: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prototype
+.PHONY : prototype
+
+# fast build rule for target.
+prototype/fast:
+	$(MAKE) -f prototype/CMakeFiles/prototype.dir/build.make prototype/CMakeFiles/prototype.dir/build
+.PHONY : prototype/fast
+
+#=============================================================================
+# Target rules for targets named prototypeso
+
+# Build rule for target.
+prototypeso: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prototypeso
+.PHONY : prototypeso
+
+# fast build rule for target.
+prototypeso/fast:
+	$(MAKE) -f prototype/CMakeFiles/prototypeso.dir/build.make prototype/CMakeFiles/prototypeso.dir/build
+.PHONY : prototypeso/fast
+
+#=============================================================================
 # Target rules for targets named gate_server
 
 # Build rule for target.
@@ -160,6 +186,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... message_lib"
 	@echo "... common"
+	@echo "... prototype"
+	@echo "... prototypeso"
 	@echo "... gate_server"
 	@echo "... db_server"
 .PHONY : help
