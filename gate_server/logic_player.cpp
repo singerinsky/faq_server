@@ -12,6 +12,11 @@
 #include "message_define.h"
 #include "gate_client.h"
 
+LogicPlayer* LogicPlayer::CreateObject()
+{
+    return new LogicPlayer();
+}
+
 void LogicPlayer::LoadPlayerInfo()
 {
 

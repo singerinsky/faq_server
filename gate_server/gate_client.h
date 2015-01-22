@@ -22,6 +22,7 @@ class gate_client: public socket_client
             init_cb();
         }
         virtual ~gate_client();
+        void    fini();
         void    init();
         void    init_timer();
 

@@ -18,6 +18,8 @@ class map_object;
 class LogicPlayer:public Fighter
 {
     public:
+        static LogicPlayer* CreateObject();
+    public:
         LogicPlayer()
         {
             _map = NULL;

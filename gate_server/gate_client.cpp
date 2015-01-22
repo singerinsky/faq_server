@@ -11,12 +11,11 @@
 
 gate_client::~gate_client()
 {
-//    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
+
 }
 
 int gate_client::process_msg(packet_info* info)
 {
-    VLOG(2)<<"Recive message type "<<info->type;
     Singleton<actions_mananger>::GetInstance()->do_action(info->type,info,this);
     return 1;
 }
@@ -24,31 +23,23 @@ int gate_client::process_msg(packet_info* info)
 void gate_client::on_error()
 {
     LOG(INFO)<<"gate client "<<_role_id<<" disconnection ";
-    if( _player_info != NULL )
-    {
-        _player_info->OnLogout(); 
-        LogicManagerPtr->RemovePlayer(_role_id);
-        _player_info = NULL;
-    }
-    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
+    fini();
 }
 
 void gate_client::init_timer()
 {
-   _m_timer.set_owner(this); 
-   _m_timer.set_expire(2000); 
+    _m_timer.set_owner(this); 
+    _m_timer.set_expire(2000); 
 }
 
 void gate_client::on_timeout()
 {
-    //LOG(INFO)<<"without login virfy,kick out";
     //on_error(NULL);
 }
 
 void gate_client::init()
 {
-    // gate_application::db_conn_->build_query(DbOperateType::MSG_DB_GET_USER_INFO, LOAD_USER_INFO); 
-    _player_info = new LogicPlayer();
+    _player_info = LogicPlayer::CreateObject();
     _player_info->BindPlayer(this);
 }
 
@@ -56,5 +47,18 @@ void gate_client::kick_out()
 {
     socket_client::disconnection();
     on_error(); 
+}
+
+void gate_client::fini()
+{
+    _login_status = UN_LOGIN;
+    if( _player_info != nullptr)
+    {
+        _player_info->OnLogout(); 
+        LogicManagerPtr->RemovePlayer(_role_id);
+        _player_info = nullptr;
+    }
+
+    Singleton<client_manager>::GetInstance()->remove_session(_role_id);
 }
 
