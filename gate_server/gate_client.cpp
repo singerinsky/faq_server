@@ -34,7 +34,7 @@ void gate_client::init_timer()
 
 void gate_client::on_timeout()
 {
-    //on_error(NULL);
+    LOG(INFO)<<"gate client process time out";
 }
 
 void gate_client::init()

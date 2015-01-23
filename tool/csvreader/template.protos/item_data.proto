@@ -1,0 +1,13 @@
+message ItemData 
+{
+    required int32  item_template_id= 1;
+    required int32  item_type = 2;
+    required bytes  item_name = 3;
+    required int32  can_add = 4;
+    required int32  level_limit = 5;
+}
+
+message ItemDataGroup
+{
+    repeated ItemData item_data= 1;
+}

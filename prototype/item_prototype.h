@@ -28,9 +28,9 @@ class ItemTemplate
 class ItemTemplatePrototype:public Singleton<ItemTemplatePrototype>
 {
     public:
+        bool Load(const char* file);
         friend Singleton<ItemTemplatePrototype>;
         const ItemTemplate&  GetItemTemplate(TID tid);
-
 
     private:
         std::map<TID,ItemTemplate> _template_map;

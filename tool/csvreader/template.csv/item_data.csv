@@ -1,0 +1,6 @@
+item_template_id,item_type,item_name,can_add,level_limit
+id of item,type of item,name of item,item can add ,item use level  limit
+int32,int32,bytes,int32,int32
+1,1,bread,1000,1000
+2,1,bear,2000,2000
+3,0,archer,2500,5250
