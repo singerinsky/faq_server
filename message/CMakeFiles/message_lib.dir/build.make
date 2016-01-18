@@ -35,95 +35,173 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gl/faq_server/message
+CMAKE_SOURCE_DIR = /home/gl/workspace/faq_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gl/faq_server/message
+CMAKE_BINARY_DIR = /home/gl/workspace/faq_server
 
 # Include any dependencies generated for this target.
-include CMakeFiles/message_lib.dir/depend.make
+include message/CMakeFiles/message_lib.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/message_lib.dir/progress.make
+include message/CMakeFiles/message_lib.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/message_lib.dir/flags.make
+include message/CMakeFiles/message_lib.dir/flags.make
 
-CMakeFiles/message_lib.dir/message.pb.o: CMakeFiles/message_lib.dir/flags.make
-CMakeFiles/message_lib.dir/message.pb.o: message.pb.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/message_lib.dir/message.pb.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/message.pb.o -c /home/gl/faq_server/message/message.pb.cc
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o: message/tb_user.pb.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/workspace/faq_server/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/tb_user.pb.cc.o -c /home/gl/workspace/faq_server/message/tb_user.pb.cc
 
-CMakeFiles/message_lib.dir/message.pb.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/message.pb.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/message.pb.cc > CMakeFiles/message_lib.dir/message.pb.i
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/tb_user.pb.cc.i"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/workspace/faq_server/message/tb_user.pb.cc > CMakeFiles/message_lib.dir/tb_user.pb.cc.i
 
-CMakeFiles/message_lib.dir/message.pb.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/message.pb.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/message.pb.cc -o CMakeFiles/message_lib.dir/message.pb.s
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/tb_user.pb.cc.s"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/workspace/faq_server/message/tb_user.pb.cc -o CMakeFiles/message_lib.dir/tb_user.pb.cc.s
 
-CMakeFiles/message_lib.dir/message.pb.o.requires:
-.PHONY : CMakeFiles/message_lib.dir/message.pb.o.requires
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.requires
 
-CMakeFiles/message_lib.dir/message.pb.o.provides: CMakeFiles/message_lib.dir/message.pb.o.requires
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.o.provides.build
-.PHONY : CMakeFiles/message_lib.dir/message.pb.o.provides
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.provides: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.provides
 
-CMakeFiles/message_lib.dir/message.pb.o.provides.build: CMakeFiles/message_lib.dir/message.pb.o
+message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.provides.build: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o
 
-CMakeFiles/message_lib.dir/db_message.pb.o: CMakeFiles/message_lib.dir/flags.make
-CMakeFiles/message_lib.dir/db_message.pb.o: db_message.pb.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/faq_server/message/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/message_lib.dir/db_message.pb.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/db_message.pb.o -c /home/gl/faq_server/message/db_message.pb.cc
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o: message/db_message.pb.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/workspace/faq_server/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/db_message.pb.cc.o"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/db_message.pb.cc.o -c /home/gl/workspace/faq_server/message/db_message.pb.cc
 
-CMakeFiles/message_lib.dir/db_message.pb.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/db_message.pb.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/faq_server/message/db_message.pb.cc > CMakeFiles/message_lib.dir/db_message.pb.i
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/db_message.pb.cc.i"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/workspace/faq_server/message/db_message.pb.cc > CMakeFiles/message_lib.dir/db_message.pb.cc.i
 
-CMakeFiles/message_lib.dir/db_message.pb.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/db_message.pb.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/faq_server/message/db_message.pb.cc -o CMakeFiles/message_lib.dir/db_message.pb.s
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/db_message.pb.cc.s"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/workspace/faq_server/message/db_message.pb.cc -o CMakeFiles/message_lib.dir/db_message.pb.cc.s
 
-CMakeFiles/message_lib.dir/db_message.pb.o.requires:
-.PHONY : CMakeFiles/message_lib.dir/db_message.pb.o.requires
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
 
-CMakeFiles/message_lib.dir/db_message.pb.o.provides: CMakeFiles/message_lib.dir/db_message.pb.o.requires
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/db_message.pb.o.provides.build
-.PHONY : CMakeFiles/message_lib.dir/db_message.pb.o.provides
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides
 
-CMakeFiles/message_lib.dir/db_message.pb.o.provides.build: CMakeFiles/message_lib.dir/db_message.pb.o
+message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.provides.build: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o: message/sql_define.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/workspace/faq_server/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/sql_define.cpp.o"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/sql_define.cpp.o -c /home/gl/workspace/faq_server/message/sql_define.cpp
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/sql_define.cpp.i"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/workspace/faq_server/message/sql_define.cpp > CMakeFiles/message_lib.dir/sql_define.cpp.i
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/sql_define.cpp.s"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/workspace/faq_server/message/sql_define.cpp -o CMakeFiles/message_lib.dir/sql_define.cpp.s
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides: message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides
+
+message/CMakeFiles/message_lib.dir/sql_define.cpp.o.provides.build: message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+
+message/CMakeFiles/message_lib.dir/message.pb.cc.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/message.pb.cc.o: message/message.pb.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/workspace/faq_server/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/message.pb.cc.o"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/message.pb.cc.o -c /home/gl/workspace/faq_server/message/message.pb.cc
+
+message/CMakeFiles/message_lib.dir/message.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/message.pb.cc.i"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/workspace/faq_server/message/message.pb.cc > CMakeFiles/message_lib.dir/message.pb.cc.i
+
+message/CMakeFiles/message_lib.dir/message.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/message.pb.cc.s"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/workspace/faq_server/message/message.pb.cc -o CMakeFiles/message_lib.dir/message.pb.cc.s
+
+message/CMakeFiles/message_lib.dir/message.pb.cc.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/message.pb.cc.o.requires
+
+message/CMakeFiles/message_lib.dir/message.pb.cc.o.provides: message/CMakeFiles/message_lib.dir/message.pb.cc.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/message.pb.cc.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/message.pb.cc.o.provides
+
+message/CMakeFiles/message_lib.dir/message.pb.cc.o.provides.build: message/CMakeFiles/message_lib.dir/message.pb.cc.o
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o: message/CMakeFiles/message_lib.dir/flags.make
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o: message/tb_user.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/gl/workspace/faq_server/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object message/CMakeFiles/message_lib.dir/tb_user.cpp.o"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/message_lib.dir/tb_user.cpp.o -c /home/gl/workspace/faq_server/message/tb_user.cpp
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/message_lib.dir/tb_user.cpp.i"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/gl/workspace/faq_server/message/tb_user.cpp > CMakeFiles/message_lib.dir/tb_user.cpp.i
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/message_lib.dir/tb_user.cpp.s"
+	cd /home/gl/workspace/faq_server/message && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/gl/workspace/faq_server/message/tb_user.cpp -o CMakeFiles/message_lib.dir/tb_user.cpp.s
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o.requires:
+.PHONY : message/CMakeFiles/message_lib.dir/tb_user.cpp.o.requires
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides: message/CMakeFiles/message_lib.dir/tb_user.cpp.o.requires
+	$(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides.build
+.PHONY : message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides
+
+message/CMakeFiles/message_lib.dir/tb_user.cpp.o.provides.build: message/CMakeFiles/message_lib.dir/tb_user.cpp.o
 
 # Object files for target message_lib
 message_lib_OBJECTS = \
-"CMakeFiles/message_lib.dir/message.pb.o" \
-"CMakeFiles/message_lib.dir/db_message.pb.o"
+"CMakeFiles/message_lib.dir/tb_user.pb.cc.o" \
+"CMakeFiles/message_lib.dir/db_message.pb.cc.o" \
+"CMakeFiles/message_lib.dir/sql_define.cpp.o" \
+"CMakeFiles/message_lib.dir/message.pb.cc.o" \
+"CMakeFiles/message_lib.dir/tb_user.cpp.o"
 
 # External object files for target message_lib
 message_lib_EXTERNAL_OBJECTS =
 
-/home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/message.pb.o
-/home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/db_message.pb.o
-/home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/build.make
-/home/gl/faq_server/game_lib/libmessage_lib.a: CMakeFiles/message_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library /home/gl/faq_server/game_lib/libmessage_lib.a"
-	$(CMAKE_COMMAND) -P CMakeFiles/message_lib.dir/cmake_clean_target.cmake
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/message_lib.dir/link.txt --verbose=$(VERBOSE)
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/message.pb.cc.o
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/tb_user.cpp.o
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/build.make
+game_lib/libmessage_lib.a: message/CMakeFiles/message_lib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../game_lib/libmessage_lib.a"
+	cd /home/gl/workspace/faq_server/message && $(CMAKE_COMMAND) -P CMakeFiles/message_lib.dir/cmake_clean_target.cmake
+	cd /home/gl/workspace/faq_server/message && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/message_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/message_lib.dir/build: /home/gl/faq_server/game_lib/libmessage_lib.a
-.PHONY : CMakeFiles/message_lib.dir/build
+message/CMakeFiles/message_lib.dir/build: game_lib/libmessage_lib.a
+.PHONY : message/CMakeFiles/message_lib.dir/build
 
-CMakeFiles/message_lib.dir/requires: CMakeFiles/message_lib.dir/message.pb.o.requires
-CMakeFiles/message_lib.dir/requires: CMakeFiles/message_lib.dir/db_message.pb.o.requires
-.PHONY : CMakeFiles/message_lib.dir/requires
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o.requires
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/db_message.pb.cc.o.requires
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/sql_define.cpp.o.requires
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/message.pb.cc.o.requires
+message/CMakeFiles/message_lib.dir/requires: message/CMakeFiles/message_lib.dir/tb_user.cpp.o.requires
+.PHONY : message/CMakeFiles/message_lib.dir/requires
 
-CMakeFiles/message_lib.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/message_lib.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/message_lib.dir/clean
+message/CMakeFiles/message_lib.dir/clean:
+	cd /home/gl/workspace/faq_server/message && $(CMAKE_COMMAND) -P CMakeFiles/message_lib.dir/cmake_clean.cmake
+.PHONY : message/CMakeFiles/message_lib.dir/clean
 
-CMakeFiles/message_lib.dir/depend:
-	cd /home/gl/faq_server/message && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gl/faq_server/message /home/gl/faq_server/message /home/gl/faq_server/message /home/gl/faq_server/message /home/gl/faq_server/message/CMakeFiles/message_lib.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/message_lib.dir/depend
+message/CMakeFiles/message_lib.dir/depend:
+	cd /home/gl/workspace/faq_server && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gl/workspace/faq_server /home/gl/workspace/faq_server/message /home/gl/workspace/faq_server /home/gl/workspace/faq_server/message /home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : message/CMakeFiles/message_lib.dir/depend
 

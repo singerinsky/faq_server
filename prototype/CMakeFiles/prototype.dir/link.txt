@@ -1,0 +1,2 @@
+/usr/bin/ar cr /home/gl/workspace/game_lib/libprototype.a  CMakeFiles/prototype.dir/item_data.pb.cc.o CMakeFiles/prototype.dir/item_prototype.cpp.o CMakeFiles/prototype.dir/npc_data_prototype.cpp.o CMakeFiles/prototype.dir/game_prototype.cpp.o CMakeFiles/prototype.dir/npc_data.pb.cc.o
+/usr/bin/ranlib /home/gl/workspace/game_lib/libprototype.a

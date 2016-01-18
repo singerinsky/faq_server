@@ -1,0 +1,6 @@
+/home/gl/workspace/faq_server/common/CMakeFiles/common.dir
+/home/gl/workspace/faq_server/db_server/CMakeFiles/db_server.dir
+/home/gl/workspace/faq_server/gate_server/CMakeFiles/gate_server.dir
+/home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir
+/home/gl/workspace/faq_server/prototype/CMakeFiles/prototype.dir
+/home/gl/workspace/faq_server/prototype/CMakeFiles/prototypeso.dir

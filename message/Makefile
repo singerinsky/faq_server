@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gl/faq_server/message
+CMAKE_SOURCE_DIR = /home/gl/workspace/faq_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gl/faq_server/message
+CMAKE_BINARY_DIR = /home/gl/workspace/faq_server
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl/faq_server/message/CMakeFiles /home/gl/faq_server/message/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl/faq_server/message/CMakeFiles 0
+	cd /home/gl/workspace/faq_server && $(CMAKE_COMMAND) -E cmake_progress_start /home/gl/workspace/faq_server/CMakeFiles /home/gl/workspace/faq_server/message/CMakeFiles/progress.marks
+	cd /home/gl/workspace/faq_server && $(MAKE) -f CMakeFiles/Makefile2 message/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gl/workspace/faq_server/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/gl/workspace/faq_server && $(MAKE) -f CMakeFiles/Makefile2 message/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,61 +85,152 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/gl/workspace/faq_server && $(MAKE) -f CMakeFiles/Makefile2 message/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/gl/workspace/faq_server && $(MAKE) -f CMakeFiles/Makefile2 message/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/gl/workspace/faq_server && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named message_lib
+# Convenience name for target.
+message/CMakeFiles/message_lib.dir/rule:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f CMakeFiles/Makefile2 message/CMakeFiles/message_lib.dir/rule
+.PHONY : message/CMakeFiles/message_lib.dir/rule
 
-# Build rule for target.
-message_lib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 message_lib
+# Convenience name for target.
+message_lib: message/CMakeFiles/message_lib.dir/rule
 .PHONY : message_lib
 
 # fast build rule for target.
 message_lib/fast:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/build
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/build
 .PHONY : message_lib/fast
 
-# target to build an object file
-db_message.pb.o:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/db_message.pb.o
+db_message.pb.o: db_message.pb.cc.o
 .PHONY : db_message.pb.o
 
-# target to preprocess a source file
-db_message.pb.i:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/db_message.pb.i
+# target to build an object file
+db_message.pb.cc.o:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.o
+.PHONY : db_message.pb.cc.o
+
+db_message.pb.i: db_message.pb.cc.i
 .PHONY : db_message.pb.i
 
-# target to generate assembly for a file
-db_message.pb.s:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/db_message.pb.s
+# target to preprocess a source file
+db_message.pb.cc.i:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.i
+.PHONY : db_message.pb.cc.i
+
+db_message.pb.s: db_message.pb.cc.s
 .PHONY : db_message.pb.s
 
-# target to build an object file
-message.pb.o:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.o
+# target to generate assembly for a file
+db_message.pb.cc.s:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/db_message.pb.cc.s
+.PHONY : db_message.pb.cc.s
+
+message.pb.o: message.pb.cc.o
 .PHONY : message.pb.o
 
-# target to preprocess a source file
-message.pb.i:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.i
+# target to build an object file
+message.pb.cc.o:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/message.pb.cc.o
+.PHONY : message.pb.cc.o
+
+message.pb.i: message.pb.cc.i
 .PHONY : message.pb.i
 
-# target to generate assembly for a file
-message.pb.s:
-	$(MAKE) -f CMakeFiles/message_lib.dir/build.make CMakeFiles/message_lib.dir/message.pb.s
+# target to preprocess a source file
+message.pb.cc.i:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/message.pb.cc.i
+.PHONY : message.pb.cc.i
+
+message.pb.s: message.pb.cc.s
 .PHONY : message.pb.s
+
+# target to generate assembly for a file
+message.pb.cc.s:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/message.pb.cc.s
+.PHONY : message.pb.cc.s
+
+sql_define.o: sql_define.cpp.o
+.PHONY : sql_define.o
+
+# target to build an object file
+sql_define.cpp.o:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.o
+.PHONY : sql_define.cpp.o
+
+sql_define.i: sql_define.cpp.i
+.PHONY : sql_define.i
+
+# target to preprocess a source file
+sql_define.cpp.i:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.i
+.PHONY : sql_define.cpp.i
+
+sql_define.s: sql_define.cpp.s
+.PHONY : sql_define.s
+
+# target to generate assembly for a file
+sql_define.cpp.s:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/sql_define.cpp.s
+.PHONY : sql_define.cpp.s
+
+tb_user.o: tb_user.cpp.o
+.PHONY : tb_user.o
+
+# target to build an object file
+tb_user.cpp.o:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.o
+.PHONY : tb_user.cpp.o
+
+tb_user.i: tb_user.cpp.i
+.PHONY : tb_user.i
+
+# target to preprocess a source file
+tb_user.cpp.i:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.i
+.PHONY : tb_user.cpp.i
+
+tb_user.s: tb_user.cpp.s
+.PHONY : tb_user.s
+
+# target to generate assembly for a file
+tb_user.cpp.s:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.cpp.s
+.PHONY : tb_user.cpp.s
+
+tb_user.pb.o: tb_user.pb.cc.o
+.PHONY : tb_user.pb.o
+
+# target to build an object file
+tb_user.pb.cc.o:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o
+.PHONY : tb_user.pb.cc.o
+
+tb_user.pb.i: tb_user.pb.cc.i
+.PHONY : tb_user.pb.i
+
+# target to preprocess a source file
+tb_user.pb.cc.i:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.i
+.PHONY : tb_user.pb.cc.i
+
+tb_user.pb.s: tb_user.pb.cc.s
+.PHONY : tb_user.pb.s
+
+# target to generate assembly for a file
+tb_user.pb.cc.s:
+	cd /home/gl/workspace/faq_server && $(MAKE) -f message/CMakeFiles/message_lib.dir/build.make message/CMakeFiles/message_lib.dir/tb_user.pb.cc.s
+.PHONY : tb_user.pb.cc.s
 
 # Help Target
 help:
@@ -156,6 +247,15 @@ help:
 	@echo "... message.pb.o"
 	@echo "... message.pb.i"
 	@echo "... message.pb.s"
+	@echo "... sql_define.o"
+	@echo "... sql_define.i"
+	@echo "... sql_define.s"
+	@echo "... tb_user.o"
+	@echo "... tb_user.i"
+	@echo "... tb_user.s"
+	@echo "... tb_user.pb.o"
+	@echo "... tb_user.pb.i"
+	@echo "... tb_user.pb.s"
 .PHONY : help
 
 
@@ -167,6 +267,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/gl/workspace/faq_server && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

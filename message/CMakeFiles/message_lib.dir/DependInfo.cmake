@@ -4,8 +4,11 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/gl/faq_server/message/db_message.pb.cc" "/home/gl/faq_server/message/CMakeFiles/message_lib.dir/db_message.pb.o"
-  "/home/gl/faq_server/message/message.pb.cc" "/home/gl/faq_server/message/CMakeFiles/message_lib.dir/message.pb.o"
+  "/home/gl/workspace/faq_server/message/db_message.pb.cc" "/home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir/db_message.pb.cc.o"
+  "/home/gl/workspace/faq_server/message/message.pb.cc" "/home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir/message.pb.cc.o"
+  "/home/gl/workspace/faq_server/message/sql_define.cpp" "/home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir/sql_define.cpp.o"
+  "/home/gl/workspace/faq_server/message/tb_user.cpp" "/home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir/tb_user.cpp.o"
+  "/home/gl/workspace/faq_server/message/tb_user.pb.cc" "/home/gl/workspace/faq_server/message/CMakeFiles/message_lib.dir/tb_user.pb.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,9 +18,10 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "../include"
-  "../common"
-  ".."
+  "./include"
+  "message/../include"
+  "message/../common"
+  "message/.."
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
